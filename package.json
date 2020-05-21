@@ -1,0 +1,58 @@
+{
+  "author": {
+    "name": "Domfam",
+    "email": "domfam012@gmail.com",
+    "url": "http://www.domfam.com/domfam_homepage_v2019/dist/html/index.html"
+  },
+  "bugs": {
+    "url": "https://github.com/choi-hyunwon/kitkit1.6/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bootstrap": "^4.1.3",
+    "bootstrap-vue": "^2.0.0",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.4",
+    "node-sass": "^4.13.1",
+    "nuxt": "^2.0.0",
+    "nuxt-fontawesome": "^0.4.0",
+    "prismjs": "^1.20.0",
+    "shortid": "^2.2.15",
+    "vue": "^2.6.11",
+    "vue-carousel": "^0.18.0",
+    "vue-fragment": "^1.5.1",
+    "vue-prism-component": "^1.2.0",
+    "vuex": "^3.1.3"
+  },
+  "deprecated": false,
+  "description": "kitkit1.6",
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "engines": {
+    "node": ">=12.14.0",
+    "npm": ">=6.13.4"
+  },
+  "homepage": "https://github.com/choi-hyunwon/kitkit1.6#readme",
+  "keywords": [
+    "nuxt",
+    "vue",
+    "vuex",
+    "express",
+    "bootstrap"
+  ],
+  "license": "ISC",
+  "name": "kitkit1.6",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/choi-hyunwon/kitkit1.6.git"
+  },
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "generate": "nuxt generate",
+    "start": "cross-env NODE_ENV=production node server/index.js"
+  },
+  "version": "0.0.1"
+}
