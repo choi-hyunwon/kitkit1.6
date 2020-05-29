@@ -1,0 +1,17 @@
+npm i -g @vue/cli
+vue create hello-kit
+
+npm i vue-router vue-moment vuex axios
+
+npm i -D path run-script-os
+
+// dynamic import
+npm install -D @babel/plugin-syntax-dynamic-import
+[babel.config.js] 추가
+
+// vue configuration -> dev/prod, build
+npm i -D clean-webpack-plugin webpack-merge zip-webpack-plugin
+[vue.config.js]
+[./config/vue.common.js] | [./config/vue.dev.js] | [./config/vue.prod.js] | [./config/vue.zip.js]
+[package.json]
+
