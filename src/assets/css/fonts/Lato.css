@@ -1,0 +1,69 @@
+@font-face {
+  font-family: 'Lato-Black';
+  font-style: normal;
+  font-weight: 900;
+  src: url(../fonts/Lato/Lato-Black.ttf);
+}
+
+@font-face {
+  font-family: 'Lato-Black';
+  font-style: normal;
+  font-weight: 900;
+  src: url(../fonts/Lato/Lato-BlackItalic.ttf);
+}
+
+@font-face {
+  font-family: 'Lato-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/Lato/Lato-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Lato-BoldItalic';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/Lato/Lato-BoldItalic.ttf);
+}
+
+@font-face {
+  font-family: 'Lato-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Lato/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Lato-Italic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Lato/Lato-Italic.ttf);
+}
+
+@font-face {
+  font-family: 'Lato-Light';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/Lato/Lato-Light.ttf);
+}
+
+@font-face {
+  font-family: 'Lato-LightItalic';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/Lato/Lato-LightItalic.ttf);
+}
+
+@font-face {
+  font-family: 'Lato-Thin';
+  font-style: normal;
+  font-weight: 100;
+  src: url(../fonts/Lato/Lato-Thin.ttf);
+}
+
+@font-face {
+  font-family: 'Lato-ThinItalic';
+  font-style: normal;
+  font-weight: 100;
+  src: url(../fonts/Lato/Lato-ThinItalic.ttf);
+}
