@@ -1,11 +1,17 @@
 // pages
-import Main                 from '@/views/pages/main/Main';
+import Index from './../views/pages/Index.vue'
+import Menu from './../views/pages/doc/_menu.vue'
 
 export const routes = [
     {
-        name: 'main',
+        name: 'index',
         path: '/',
-        component: Main
+        component: Index
+    },
+    {
+        name: 'menu',
+        path: '/doc/:menu',
+        component: Menu
     }
 ];
 

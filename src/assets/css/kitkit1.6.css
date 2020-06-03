@@ -1,0 +1,193 @@
+/* font-face */
+@font-face {
+  font-family: 'Lato-Black';
+  font-style: normal;
+  font-weight: 900;
+  src: url(../fonts/Lato/Lato-Black.ttf);
+}
+
+@font-face {
+  font-family: 'Lato-Black';
+  font-style: normal;
+  font-weight: 900;
+  src: url(../fonts/Lato/Lato-BlackItalic.ttf);
+}
+
+@font-face {
+  font-family: 'Lato-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/Lato/Lato-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Lato-BoldItalic';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/Lato/Lato-BoldItalic.ttf);
+}
+
+@font-face {
+  font-family: 'Lato-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Lato/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Lato-Italic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Lato/Lato-Italic.ttf);
+}
+
+@font-face {
+  font-family: 'Lato-Light';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/Lato/Lato-Light.ttf);
+}
+
+@font-face {
+  font-family: 'Lato-LightItalic';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/Lato/Lato-LightItalic.ttf);
+}
+
+@font-face {
+  font-family: 'Lato-Thin';
+  font-style: normal;
+  font-weight: 100;
+  src: url(../fonts/Lato/Lato-Thin.ttf);
+}
+
+@font-face {
+  font-family: 'Lato-ThinItalic';
+  font-style: normal;
+  font-weight: 100;
+  src: url(../fonts/Lato/Lato-ThinItalic.ttf);
+}
+
+@font-face {
+  font-family: 'Ubuntu-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/Ubuntu/Ubuntu-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Ubuntu-BoldItalic';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/Ubuntu/Ubuntu-BoldItalic.ttf);
+}
+
+@font-face {
+  font-family: 'Ubuntu-Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: url(../fonts/Ubuntu/Ubuntu-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Ubuntu-MediumItalic';
+  font-style: normal;
+  font-weight: 500;
+  src: url(../fonts/Ubuntu/Ubuntu-MediumItalic.ttf);
+}
+
+@font-face {
+  font-family: 'Ubuntu-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Ubuntu/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Ubuntu-Italic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Ubuntu/Ubuntu-Italic.ttf);
+}
+
+@font-face {
+  font-family: 'Ubuntu-Light';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/Ubuntu/Ubuntu-Light.ttf);
+}
+
+@font-face {
+  font-family: 'Ubuntu-LightItalic';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/Ubuntu/Ubuntu-LightItalic.ttf);
+}
+
+@font-face {
+  font-family: 'Ubuntu-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/Ubuntu/Ubuntu-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Ubuntu-BoldItalic';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/Ubuntu/Ubuntu-BoldItalic.ttf);
+}
+
+@font-face {
+  font-family: 'Ubuntu-Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: url(../fonts/Ubuntu/Ubuntu-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Ubuntu-MediumItalic';
+  font-style: normal;
+  font-weight: 500;
+  src: url(../fonts/Ubuntu/Ubuntu-MediumItalic.ttf);
+}
+
+@font-face {
+  font-family: 'Ubuntu-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Ubuntu/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Ubuntu-Italic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Ubuntu/Ubuntu-Italic.ttf);
+}
+
+@font-face {
+  font-family: 'Ubuntu-Light';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/Ubuntu/Ubuntu-Light.ttf);
+}
+
+@font-face {
+  font-family: 'Ubuntu-LightItalic';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/Ubuntu/Ubuntu-LightItalic.ttf);
+}
+
+/* font */
+body {
+  font-family: 'Lato-Regular';
+}
+h1, h2 {
+  font-family: 'Ubuntu-Bold';
+}
+h1 {
+  font-size: 40px;
+}
