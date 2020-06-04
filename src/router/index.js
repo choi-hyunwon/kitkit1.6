@@ -2,6 +2,7 @@
 import Index from './../views/pages/Index.vue'
 import Menu from './../views/pages/doc/_menu.vue'
 import Login from './../views/pages/Login.vue'
+import Detail from './../views/pages/Detail.vue'
 
 export const routes = [
     {
@@ -18,6 +19,11 @@ export const routes = [
         name: 'login',
         path: '/login',
         component: Login
+    },
+    {
+        name: 'detail',
+        path: '/:detail',
+        component: Detail
     }
 ];
 
