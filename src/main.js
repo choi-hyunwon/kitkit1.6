@@ -12,7 +12,7 @@ Vue.use(
 );
 const router = new Router({
   /*base : `/${window.location.href.split('/').slice(3, window.location.href.split('/').indexOf(packageName)+1).join('/')}`,*/
-  base : '/',
+  base : '',
   routes : routes
 })
 
