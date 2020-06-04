@@ -10,6 +10,9 @@
           <li @click="reload" class="nav-item">
             <router-link class="nav-link" to="/doc/DocumentDoc">Documentation</router-link>
           </li>
+          <li @click="reload" class="nav-item">
+            <router-link class="nav-link" to="/login">Login</router-link>
+          </li>
         </ul>
       </nav>
     </div>

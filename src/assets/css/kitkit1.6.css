@@ -186,7 +186,8 @@ body {
   font-family: 'Lato-Regular';
 }
 h1, h2 {
-  font-family: 'Ubuntu-Bold';
+  font-family: 'Ubuntu';
+  font-weight: bold;
 }
 h1 {
   font-size: 40px;
@@ -202,4 +203,8 @@ h2 {
 
 .yale {
   color: #0c6290;
+}
+
+.container {
+
 }

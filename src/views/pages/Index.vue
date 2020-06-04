@@ -1,7 +1,6 @@
 <template>
     <div>
         <Header/>
-        <AgGridVue/>
         <IntroductionSection/>
         <div class="main-bg">
             <div class="bar left-bar"></div>
