@@ -22,7 +22,7 @@ export const routes = [
     },
     {
         name: 'detail',
-        path: '/:detail',
+        path: '/:user/:detail',
         component: Detail
     }
 ];

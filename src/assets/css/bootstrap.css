@@ -9481,17 +9481,16 @@ section.component .list .item .detail li {
   position: fixed;
   top: 0;
   left: 0;
-  width: 320px;
+  width: 180px;
   height: 100vh;
-  box-shadow: 3px 0 6px 0 rgba(0, 0, 0, 0.16);
-  background-color: #fbfeff;
+  background-color: #f6c221;
   z-index: 111; }
 .doc-aside .header {
   position: relative;
-  height: 70px;
-  min-width: 320px;
-  font-size: 24px;
-  color: #fff;
+  height: auto;
+  min-width: 180px;
+  font-size: 20px;
+  color: #5a3428;
   line-height: 60px;
   text-align: center; }
 .doc-aside .header.bg-header {

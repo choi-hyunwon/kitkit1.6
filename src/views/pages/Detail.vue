@@ -1,11 +1,14 @@
 <template>
-    <div>
-        <Header/>
-        <Aside :detail="detail"/>
-        <Footer/>
+    <div class="detail">
+        <Header :detail="detail"/>
+        <Aside :user="user"/>
+
+        <AgGrid v-if="detail === 'grid'" />
         <Create v-if="detail === 'create'" />
         <Download v-if="detail === 'download'" />
         <Support v-if="detail === 'support'" />
+
+        <Footer/>
     </div>
 </template>
 
@@ -14,6 +17,7 @@
     import Aside from "../../components/detail/Aside";
     import Footer from "../../components/detail/Footer";
 
+    import AgGrid from "../../components/detail/AgGrid";
     import Create from "../../components/detail/admin/Create";
     import Download from "../../components/detail/user/Download";
     import Support from "../../components/detail/user/Support";
@@ -23,16 +27,18 @@
             Header,
             Aside,
             Footer,
+            AgGrid,
             Create,
             Download,
             Support
         },
         computed: {
+            user() {
+                return this.$route.params.user;
+            },
             detail() {
                 return this.$route.params.detail;
             }
         }
     };
 </script>
-
-<style></style>

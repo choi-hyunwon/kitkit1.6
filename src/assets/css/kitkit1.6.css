@@ -196,14 +196,14 @@ h2 {
   font-size: 36px;
 }
 
-.container-fluid {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
 /**/
 .header {
   height: 80px;
+}
+
+.container-fluid {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .yale {

@@ -1,14 +1,22 @@
 <template>
-    <div>
-        <footer>
-            footer
-        </footer>
-    </div>
+    <footer class="footer detail-footer">
+        <div class="row">
+            <div class="col text-left">
+                <img src="~@/assets/img/common/enuma-logo.png" alt="enuma logo"/>
+            </div>
+            <div class="col text-center">
+                <div class="copyright">©2020 Enuma, Inc. All Rights Reserved.</div>
+            </div>
+            <div class="col text-right">
+                <div class="terms">Terms of Service | Legal Privacy | Policy</div>
+            </div>
+        </div>
+    </footer>
 </template>
 
 <script>
     export default {
-        name: 'footer',
+        name: 'Footer',
         layout : 'detail',
         components: {
 
@@ -17,29 +25,20 @@
 </script>
 
 <style>
-    .header .bg-header {
-        background-color: #f6c221;
-        height: 100%;
+    .detail .footer.detail-footer {
+        position: fixed;
+        bottom: 0;
+        width: calc(100% - 180px);
+        min-width: 1020px;
+        margin-left: 180px;
+        padding: 26px 40px;
+        text-align: center;
     }
 
-    .header .container-fluid {
-        padding-top: 16.5px;
-        padding-bottom: 16.5px;
-        height: 80px;
-    }
-
-    .header .logo {
-        width: 87px;
-        height: 47px;
-        vertical-align: bottom;
-    }
-
-    .header .title {
-        font-size: 38px;
-        line-height: 47px;
-        padding-left: 13px;
-        display: inline-block;
-        color: #5a3428;
+    .detail .footer.detail-footer .row {
+        color: #999;
+        font-size: 16px;
+        line-height: 27px;
     }
 </style>
 
