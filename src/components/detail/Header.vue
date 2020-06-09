@@ -28,6 +28,7 @@
         padding: 19px 40px;
         background-color: #fff;
         z-index: 100;
+        border-bottom: 1px solid #d2d2d2;
     }
 
     .detail .header.detail-header .title {

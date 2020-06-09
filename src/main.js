@@ -12,8 +12,9 @@ import '@fortawesome/fontawesome-pro/css/all.css';
 import '@fortawesome/fontawesome-pro/js/all.js';
 import { fas } from '@fortawesome/pro-solid-svg-icons';
 import { far } from '@fortawesome/pro-regular-svg-icons';
+import { fal } from '@fortawesome/pro-light-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-library.add(fas, far, fab);
+library.add(fas, far, fal, fab);
 
 import { store } from './store/store';
 Vue.config.productionTip = false

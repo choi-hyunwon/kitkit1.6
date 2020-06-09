@@ -6,21 +6,41 @@
             </router-link>
             <div class="account">willychoi</div>
             <button class="btn signout">
-                Sign out <i class="fas fa-camera"/>
+                Sign out <font-awesome-icon :icon="['fal', 'sign-out-alt']"/>
             </button>
         </div>
 
-        <div>
-            <ul v-if="user === 'user'">
-                <li><i>fa-</i><span>Dashboard</span></li>
-                <li><i>fa-</i><span>Download</span></li>
-                <li><i>fa-</i><span>Support</span></li>
-            </ul>
-            <ul v-if="user === 'admin'">
-                <li><i>fa-</i><span>Manage</span></li>
-                <li><i>fa-</i><span>Create</span></li>
-            </ul>
-        </div>
+
+        <ul class="menu" v-if="user === 'user'">
+            <li class="item">
+                <font-awesome-icon :icon="['far', 'desktop']"/>
+                <div class="text">Dashboard</div>
+                <div class="underline"></div>
+            </li>
+            <li class="item">
+                <font-awesome-icon :icon="['far', 'download']"/>
+                <div class="text">Download</div>
+                <div class="underline"></div>
+            </li>
+            <li class="item active">
+                <font-awesome-icon :icon="['far', 'info-circle']"/>
+                <div class="text">Support</div>
+                <div class="underline"></div>
+            </li>
+        </ul>
+        <ul class="menu" v-if="user === 'admin'">
+            <li class="item">
+                <font-awesome-icon :icon="['far', 'list-ul']"/>
+                <div class="text">Manage</div>
+                <div class="underline"></div>
+            </li>
+            <li class="item active">
+                <font-awesome-icon :icon="['far', 'user-check']"/>
+                <div class="text">Create</div>
+                <div class="underline"></div>
+            </li>
+        </ul>
+
     </aside>
 </template>
 
@@ -68,5 +88,40 @@
         font-weight: normal;
         line-height: 0;
     }
+
+    .doc-aside .menu {
+        padding: 0;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .doc-aside .menu .item {
+        padding: 27px 16px 23.5px 0;
+        margin-left: 14px;
+        width: 166px;
+        height: 120px;
+        border-bottom: 1px solid #ffda69;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        font-size: 24px;
+        color: #be8720;
+        font-weight: bold;
+        position: relative;
+    }
+    .doc-aside .menu .item.active {
+        background-color: #fff;
+        color: #5a3428;
+    }
+
+    .doc-aside .menu .item svg {
+        z-index: 100;
+        font-size: 32px;
+    }
+    .doc-aside .menu .item .text {
+        z-index: 100;
+        margin-top: 8.5px;
+        line-height: 29px;
+    }
+
 </style>
 
