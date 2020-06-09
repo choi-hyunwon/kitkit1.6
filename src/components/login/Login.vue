@@ -7,10 +7,13 @@
                         <form>
                             <h2 class="title">Welcome!</h2>
                             <div class="form-group">
-                                <input type="text" class="form-control" title="ID" placeholder="ID"/>
-                                <input type="text" class="form-control" title="Password" placeholder="Password"/>
+                                <input v-model="account" type="text" class="form-control" title="ID" placeholder="ID"/>
+                                <input v-model="password" type="text" class="form-control" title="Password" placeholder="Password"/>
                             </div>
-                            <button class="btn btn-primary btn-lg signin">
+                            <!-- todo 임시 소스, 수정 필요 -->
+                            <div class="error" v-if="signInError">We cannot find that username or password</div>
+                            <!-- todo 임시 소스, 수정 필요 -->
+                            <button @click="eventSignin" class="btn btn-primary btn-lg signin">
                                 Sign in
                             </button>
                             <div class="help yale">
@@ -27,9 +30,22 @@
 <script>
     export default {
         name: 'login',
-        layout : 'login',
-        components: {
-
+        data() {
+            return {
+                account : '',
+                password: ''
+            }
+        },
+        props : {
+            signInError : {
+                Boolean,
+                default(){return false}
+            }
+        },
+        methods : {
+            eventSignin: function() {
+                this.$EventBus.$emit('eventSignin', {account : this.account, password : this.password});
+            }
         }
     }
 </script>
@@ -72,5 +88,12 @@
     .section .card .help {
 
     }
+    /**
+    * todo 임시 소스, 수정 필요
+    */
+    .section .card .error {
+        color: #f56049;
+    }
+
 </style>
 
