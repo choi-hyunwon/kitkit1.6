@@ -32,7 +32,7 @@
                                 <span class="col-label-text">Name</span>
                             </label>
                             <div class="col col-form-input">
-                                <input type="text" class="form-control" title="example" placeholder="Please Enter ID">
+                                <input type="text" class="form-control" title="example" placeholder="Please Enter Name">
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                                 <span class="col-label-text">Email Address</span>
                             </label>
                             <div class="col col-form-input">
-                                <input type="text" class="form-control" title="example" placeholder="Please Enter Password">
+                                <input type="text" class="form-control" title="example" placeholder="Please Enter Email Address">
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                                 <span class="col-label-text">Organization</span>
                             </label>
                             <div class="col col-form-input">
-                                <input type="text" class="form-control" title="example" placeholder="Please Enter ID">
+                                <input type="text" class="form-control" title="example" placeholder="Please Enter Organization">
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                                 <span class="col-label-text">Organization Type</span>
                             </label>
                             <div class="col col-form-input">
-                                <input type="text" class="form-control" title="example" placeholder="Please Enter Password">
+                                <input type="text" class="form-control" title="example" placeholder="Please Enter Organization Type">
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                                 <span class="col-label-text">Country</span>
                             </label>
                             <div class="col col-form-input">
-                                <input type="text" class="form-control" title="example" placeholder="Please Enter ID">
+                                <input type="text" class="form-control" title="example" placeholder="Please Enter Country">
                             </div>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
                                 <span class="col-label-text">City/Province</span>
                             </label>
                             <div class="col col-form-input">
-                                <input type="text" class="form-control" title="example" placeholder="Please Enter Password">
+                                <input type="text" class="form-control" title="example" placeholder="Please Enter City/Province">
                             </div>
                         </div>
                     </div>
@@ -101,7 +101,7 @@
                                 <span class="col-label-text">Number Of license</span>
                             </label>
                             <div class="col col-form-input">
-                                <input type="text" class="form-control" title="example" placeholder="Please Enter ID">
+                                <input type="text" class="form-control" title="example" placeholder="Please Enter Number Of license">
                             </div>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                                 <span class="col-label-text">Expiration date</span>
                             </label>
                             <div class="col col-form-input">
-                                <input type="text" class="form-control" title="example" placeholder="Please Enter Password">
+                                <input type="text" class="form-control" title="example" placeholder="Please Enter Expiration date">
                             </div>
                         </div>
                     </div>
@@ -143,7 +143,7 @@
                                 <span class="col-label-text">Staff Name</span>
                             </label>
                             <div class="col col-form-input">
-                                <input type="text" class="form-control" title="example" placeholder="Please Enter ID">
+                                <input type="text" class="form-control" title="example" placeholder="Please Enter Staff Name">
                             </div>
                         </div>
                     </div>

@@ -10,11 +10,26 @@
                                 <input type="text" class="form-control" title="ID" placeholder="ID"/>
                                 <input type="text" class="form-control" title="Password" placeholder="Password"/>
                             </div>
+                            <div class="accountError">
+                                <div class="errorIcon">
+                                    <font-awesome-icon :icon="['far', 'exclamation-triangle']"/>
+                                </div>
+                                <div class="errorMsg">
+                                    <span>We cannot find an account or password</span>
+                                </div>
+                            </div>
                             <button class="btn btn-primary btn-lg signin">
                                 Sign in
                             </button>
-                            <div class="help yale">
-                                <i>!</i><span>Need help?</span>
+                            <div class="help yale"
+                                 v-b-tooltip="{
+                                    html: true,
+                                    title: tipData,
+                                    placement: 'top'
+                                }"
+                            >
+                                <font-awesome-icon :icon="['far', 'exclamation-circle']"/>
+                                <span class="text">Need help?</span>
                             </div>
                         </form>
                     </div>
@@ -25,11 +40,23 @@
 </template>
 
 <script>
+    import {BTooltip, VBTooltip} from "bootstrap-vue";
+
     export default {
         name: 'login',
         layout : 'login',
         components: {
-
+            // 'b-tooltip': BTooltip
+        },
+        directives: {
+            // Note that Vue automatically prefixes directive names with `v-`
+            'b-tooltip': VBTooltip
+        },
+        data() {
+            return {
+                tipData: '<span>Please send your account information (your name, email address, and organization) '
+                       + 'to <b class="email">kitkitsupport@enuma.com</b> and we will respond to you with the ID and Password.</span>'
+            }
         }
     }
 </script>
@@ -49,28 +76,88 @@
     .section .card {
         margin: 0 auto;
         width: 440px;
-        height: 416px;
-        padding: 23px 30px 0;
+        padding: 23px 30px 40px;
         border-radius: 8px;
         box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.26);
     }
+    .section .card form {
+        position: relative;
+    }
     .section .card .title {
+        padding-bottom: 10px;
         font-size: 36px;
         text-align: center;
         color: #5a3428;
     }
     .section .card .form-group {
         margin-top: 10px;
+        margin-bottom: 20px;
     }
     .section .card .form-group .form-control {
         margin-top: 20px;
     }
-    .section .card .btn.signin {
-        margin-top: 14px;
-        width: 100%;
+    .section .card .accountError {
+        display: none;
+        color: #f56049;
+        font-size: 24px;
+        margin-bottom: 20px;
     }
-    .section .card .help {
+    .section .card .accountError.show {
+        display: block;
+    }
+    .section .card .accountError .errorIcon {
+        position: absolute;
+    }
+    .section .card .accountError .errorMsg {
+        margin-left: 35px;
+    }
+    .section .card .btn.signin {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .section .card .help .text {
+        margin-left: 10px;
+    }
 
+    .tooltip-inner {
+        max-width: 420px !important;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.4) !important;
+        border: solid 2px #ff9800 !important;
+        background-color: #ffffff !important;
+        padding: 20px !important;
+        color: #333 !important;
+        font-size: 19px !important;
+        font-weight: 400;
+        line-height: 26px !important;
+        text-align: left !important;
+        letter-spacing: normal !important;
+    }
+
+    .tooltip-inner .email {
+        color: #0c6290;
+        font-weight: normal;
+        text-decoration: underline;
+    }
+
+    .bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^="top"] .arrow::before {
+        top: 0;
+        left: -179px;
+        border-width: 0.4rem 0.4rem 0;
+        border-top-color: #ff9800 !important;
+    }
+
+    .bs-tooltip-top .arrow::after, .bs-tooltip-auto[x-placement^="top"] .arrow::after {
+        top: -2px;
+        left: -178px;
+        border-width: 0.35rem 0.35rem 0;
+        border-top-color: #fff !important;
+    }
+
+    .tooltip .arrow::after {
+        position: absolute;
+        content: "";
+        border-color: transparent;
+        border-style: solid;
     }
 </style>
 
