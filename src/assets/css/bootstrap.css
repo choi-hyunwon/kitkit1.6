@@ -4901,7 +4901,7 @@ a.close.disabled {
 
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 600px;
+    max-width: 570px;
     margin: 1.75rem auto; }
   .modal-dialog-scrollable {
     max-height: calc(100% - 3.5rem); }
@@ -4912,7 +4912,8 @@ a.close.disabled {
   .modal-dialog-centered::before {
     height: calc(100vh - 3.5rem); }
   .modal-sm {
-    max-width: 380px; } }
+    max-width: 570px;
+    min-height: 300px; } }
 
 @media (min-width: 992px) {
   .modal-lg,
