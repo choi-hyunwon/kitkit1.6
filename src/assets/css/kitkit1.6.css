@@ -210,3 +210,20 @@ h2 {
   color: #0c6290;
 }
 
+.kitkit-modal-footer {
+  min-width: 0;
+  background-color: #fff;
+  border: none;
+  height: auto;
+  padding: 0 30px 32px;
+}
+
+.kitkit-modal-footer .btn {
+  width: 250px;
+  height: 60px;
+  margin: 0;
+}
+
+.kitkit-modal-footer .btn:first-child {
+  margin-right: 10px;
+}
