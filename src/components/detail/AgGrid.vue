@@ -29,7 +29,7 @@
         overflow-y: auto;
     }
     .grid {
-        height: 1000px;
+        /*height: 1000px;*/
         /*border: 1px solid lightsalmon;*/
         /*border-bottom: 10px solid rebeccapurple;*/
     }
