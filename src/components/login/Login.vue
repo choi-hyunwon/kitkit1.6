@@ -7,10 +7,10 @@
                         <form>
                             <h2 class="title">Welcome!</h2>
                             <div class="form-group">
-                                <input type="text" class="form-control" title="ID" placeholder="ID"/>
-                                <input type="text" class="form-control" title="Password" placeholder="Password"/>
+                                <input v-model="account" type="text" class="form-control" title="ID" placeholder="ID"/>
+                                <input v-model="password" type="text" class="form-control" title="Password" placeholder="Password"/>
                             </div>
-                            <div class="accountError">
+                            <div class="accountError" v-if="signInError">
                                 <div class="errorIcon">
                                     <font-awesome-icon :icon="['far', 'exclamation-triangle']"/>
                                 </div>
@@ -18,7 +18,7 @@
                                     <span>We cannot find an account or password</span>
                                 </div>
                             </div>
-                            <button class="btn btn-primary btn-lg signin">
+                            <button @click="eventSignin" class="btn btn-primary btn-lg signin">
                                 Sign in
                             </button>
                             <div class="help yale"
@@ -54,8 +54,21 @@
         },
         data() {
             return {
+                account : '',
+                password: '',
                 tipData: '<span>Please send your account information (your name, email address, and organization) '
                        + 'to <b class="email">kitkitsupport@enuma.com</b> and we will respond to you with the ID and Password.</span>'
+            }
+        },
+        props : {
+            signInError : {
+                Boolean,
+                default(){return false}
+            }
+        },
+        methods : {
+            eventSignin: function() {
+                this.$EventBus.$emit('eventSignin', {account : this.account, password : this.password});
             }
         }
     }
@@ -97,7 +110,6 @@
         margin-top: 20px;
     }
     .section .card .accountError {
-        display: none;
         color: #f56049;
         font-size: 24px;
         margin-bottom: 20px;

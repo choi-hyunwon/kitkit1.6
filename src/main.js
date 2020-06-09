@@ -15,7 +15,9 @@ import { far } from '@fortawesome/pro-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 library.add(fas, far, fab);
 
-Vue.config.productionTip = false;
+import { store } from './store/store';
+Vue.config.productionTip = false
+Vue.prototype.$EventBus = new Vue();
 
 Vue.use(
     Router,
@@ -33,5 +35,6 @@ const router = new Router({
 
 new Vue({
   render: h => h(App),
-  router
+  router,
+  store
 }).$mount('#app')
