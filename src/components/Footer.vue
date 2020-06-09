@@ -1,7 +1,0 @@
-<template>
-  <footer>
-    <div class="footer">
-      <div class="copyright">Copyright © Domfam Corp. All rights reserved.</div>
-    </div>
-  </footer>
-</template>
