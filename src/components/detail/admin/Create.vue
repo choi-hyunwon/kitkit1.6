@@ -105,16 +105,40 @@
                             </div>
                         </div>
                     </div>
+
+
                     <div class="col item" style="padding-right: 60px;">
                         <div class="form-group row">
                             <label class="col col-form-label">
                                 <span class="col-label-text">Expiration date</span>
                             </label>
-                            <div class="col col-form-input">
-                                <input type="text" class="form-control" title="example" placeholder="Please Enter Expiration date">
+                            <div class="col col-form-input form-control">
+
+                                <b-input-group class="mb-3">
+                                    <b-form-input
+                                            id="example-input"
+                                            v-model="value"
+                                            type="text"
+                                            placeholder="YYYY-MM-DD"
+                                            autocomplete="off"
+                                    />
+                                    <b-input-group-append>
+                                        <b-form-datepicker
+                                                v-model="value"
+                                                button-only
+                                                right
+                                                locale="en-US"
+                                                aria-controls="example-input"
+                                                @context="onContext"
+                                        />
+                                    </b-input-group-append>
+                                </b-input-group>
+
                             </div>
                         </div>
                     </div>
+
+
                 </div>
                 <div class="row">
                     <div class="col item">
@@ -161,13 +185,34 @@
 </template>
 
 <script>
+    import { BFormDatepicker, BInputGroup, BInputGroupAppend, BFormInput } from "bootstrap-vue";
     import Confirm from "../../popup/Confirm";
 
     export default {
         name: 'create',
         layout : 'detail',
         components: {
+            // 'b-input-group-text': BInputGroupText,
+            'b-form-datepicker': BFormDatepicker,
+            'b-input-group': BInputGroup,
+            'b-input-group-append': BInputGroupAppend,
+            'b-form-input': BFormInput
             // Confirm
+        },
+        data() {
+            return {
+                value: '',
+                formatted: '',
+                selected: ''
+            }
+        },
+        methods: {
+            onContext(ctx) {
+                // The date formatted in the locale, or the `label-no-date-selected` string
+                this.formatted = ctx.selectedFormatted
+                // The following will be an empty string until a valid date is entered
+                this.selected = ctx.selectedYMD
+            }
         }
     }
 </script>
