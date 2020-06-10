@@ -17,9 +17,8 @@ export const actions = {
      */
     postSignIn({commit}, options) {
         return kitkitApi.postSignIn(options).then(data => {
-            data.result ? commit('setSignIn', data) : '';
+            if(data.result) commit('setSignIn', data.data);
             return data.result;
         })
     },
-
 };

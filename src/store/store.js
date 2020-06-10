@@ -18,11 +18,16 @@ export const store = new Vuex.Store({
      * this.$store.state.CONSTANTS;
      */
     state: {
-        signInfo: {
+        init : {
             status : '',
-            accountID : ''
+            sessionID : '',
+            access : false
         },
-
+        global: {
+            status : localStorage.getItem('status') !== null ? localStorage.getItem('status') : '',
+            sessionID : localStorage.getItem('sessionID') !== null ? localStorage.getItem('sessionID') : '',
+            access : localStorage.getItem('sessionID') !== null
+        },
     },
     /**
      * global로 사용하는 getters
@@ -32,8 +37,15 @@ export const store = new Vuex.Store({
      * this.$store.getters.CONSTANTS
      */
     getters: {
-        getSignInfo: state => {
-            return state.signInfo
+        getStatus: state => {
+            if(state.global.status === 9 || state.global.status === '9' ) return 'admin';
+            else if(state.global.status === 2 || state.global.status === '2') return 'user';
+        },
+        getSessionID: state => {
+            return state.global.sessionID
+        },
+        getAccess: state => {
+            return state.global.access
         }
     },
     /**

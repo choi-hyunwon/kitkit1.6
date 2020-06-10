@@ -15,7 +15,17 @@ export const mutations = {
      * <br> - {String}       deviceInfo            - 디바이스 정보
      */
     setSignIn(state, signInfo) {
-        state.signInfo = signInfo.data;
+        localStorage.setItem('sessionID', signInfo.sessionID);
+        localStorage.setItem('status', signInfo.status);
+        state.global = Object.assign({}, state.global, signInfo, {access : true});
+    },
+    /**
+     * 로그아웃 한다.
+     *
+     * @param state
+     */
+    setSignOut(state) {
+        localStorage.clear();
+        state.global = Object.assign({}, state.init);
     }
-
 };

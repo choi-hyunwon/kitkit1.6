@@ -4,11 +4,11 @@
             <div class="row">
                 <div class="col align-self-center">
                     <div class="card">
-                        <form>
+                        <form @submit.prevent="eventSignin">
                             <h2 class="title">Welcome!</h2>
                             <div class="form-group">
-                                <input v-model="account" type="text" class="form-control" title="ID" placeholder="ID"/>
-                                <input v-model="password" type="text" class="form-control" title="Password" placeholder="Password"/>
+                                <input v-model="account"  class="form-control" placeholder="ID"/>
+                                <input v-model="password" class="form-control" placeholder="Password"/>
                             </div>
                             <div class="accountError" v-if="signInError">
                                 <div class="errorIcon">
@@ -18,7 +18,7 @@
                                     <span>We cannot find that username or password</span>
                                 </div>
                             </div>
-                            <button @click="eventSignin" class="btn btn-primary btn-lg signin">
+                            <button type="submit" class="btn btn-primary btn-lg signin">
                                 Sign in
                             </button>
                             <div class="help yale"
@@ -45,7 +45,6 @@
     export default {
         name: 'login',
         directives: {
-            // Note that Vue automatically prefixes directive names with `v-`
             'b-tooltip': VBTooltip
         },
         data() {
