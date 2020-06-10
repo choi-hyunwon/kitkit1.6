@@ -9,10 +9,8 @@
                 Sign out <font-awesome-icon :icon="['fal', 'sign-out-alt']"/>
             </button>
         </div>
-
-
-        <ul class="menu" v-if="user === 'user'">
-            <li class="item">
+        <ul class="menu" v-if="status === 2">
+            <li class="item active">
                 <font-awesome-icon :icon="['far', 'desktop']"/>
                 <div class="text">Dashboard</div>
                 <div class="underline"></div>
@@ -22,13 +20,13 @@
                 <div class="text">Download</div>
                 <div class="underline"></div>
             </li>
-            <li class="item active">
+            <li class="item">
                 <font-awesome-icon :icon="['far', 'info-circle']"/>
                 <div class="text">Support</div>
                 <div class="underline"></div>
             </li>
         </ul>
-        <ul class="menu" v-if="user === 'admin'">
+        <ul class="menu" v-else-if="status === 9">
             <li class="item">
                 <font-awesome-icon :icon="['far', 'list-ul']"/>
                 <div class="text">Manage</div>
@@ -45,16 +43,18 @@
 </template>
 
 <script>
+    import {mapGetters} from 'vuex'
+
     export default {
         name: 'Aside',
-        layout : 'detail',
-        components: {
-
-        },
         computed: {
-            user() {
-                return this.$route.params.user;
+            ...mapGetters({
+                signInfo  : 'getSignInfo'
+            }),
+            status (){
+               return this.signInfo.status
             }
+
         }
     }
 </script>

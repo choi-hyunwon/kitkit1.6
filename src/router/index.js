@@ -10,7 +10,7 @@ export const routes = [
     },
     {
         name: 'detail',
-        path: '/:user/:detail',
+        path: '/:detail',
         component: Detail
     }
 ];
