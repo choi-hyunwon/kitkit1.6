@@ -32,7 +32,7 @@
         computed: {
             ...mapGetters({
                 signInfo : 'getSignInfo'
-            }),
+            })
         },
         methods: {
             ...mapMutations({
@@ -49,11 +49,11 @@
                             this.signInError = false;
                             if (this.signInfo.status === 9){ // 관리자
                                 this.$router.push({
-                                    path: '/user/create'
+                                    path: '/create'
                                 });
                             }else if (this.signInfo.status === 2) {// 사용자
                                 this.$router.push({
-                                    path: '/user/grid'
+                                    path: '/grid'
                                 });
                             }
                         }else{

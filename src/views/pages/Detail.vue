@@ -1,13 +1,11 @@
 <template>
     <div class="detail">
         <Header :detail="detail"/>
-        <Aside :user="user"/>
-
+        <Aside/>
         <AgGrid v-if="detail === 'grid'" />
         <Create v-if="detail === 'create'" />
         <Download v-if="detail === 'download'" />
         <Support v-if="detail === 'support'" />
-
         <Footer/>
     </div>
 </template>
@@ -33,9 +31,6 @@
             Support
         },
         computed: {
-            user() {
-                return this.$route.params.user;
-            },
             detail() {
                 return this.$route.params.detail;
             }

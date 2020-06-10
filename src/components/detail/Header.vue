@@ -7,15 +7,13 @@
 <script>
     export default {
         name: 'Header',
-        layout : 'detail',
-        components: {
-
-        },
-        computed: {
-            detail() {
-                return this.$route.params.detail;
+        props : {
+            detail : {
+                String,
+                default(){return ''}
             }
         }
+
     }
 </script>
 

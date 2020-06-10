@@ -15,7 +15,7 @@
                                     <font-awesome-icon :icon="['far', 'exclamation-triangle']"/>
                                 </div>
                                 <div class="errorMsg">
-                                    <span>We cannot find an account or password</span>
+                                    <span>We cannot find that username or password</span>
                                 </div>
                             </div>
                             <button @click="eventSignin" class="btn btn-primary btn-lg signin">
@@ -40,14 +40,10 @@
 </template>
 
 <script>
-    import {BTooltip, VBTooltip} from "bootstrap-vue";
+    import {VBTooltip} from "bootstrap-vue";
 
     export default {
         name: 'login',
-        layout : 'login',
-        components: {
-            // 'b-tooltip': BTooltip
-        },
         directives: {
             // Note that Vue automatically prefixes directive names with `v-`
             'b-tooltip': VBTooltip
