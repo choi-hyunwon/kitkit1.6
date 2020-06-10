@@ -1,6 +1,7 @@
 <template>
     <div class="detail">
         <Header :detail="detail"/>
+        <Footer/>
         <Aside :user="user"/>
 
         <AgGrid v-if="detail === 'grid'" />
@@ -8,7 +9,6 @@
         <Download v-if="detail === 'download'" />
         <Support v-if="detail === 'support'" />
 
-        <Footer/>
     </div>
 </template>
 
