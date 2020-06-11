@@ -7,8 +7,8 @@
                         <form @submit.prevent="eventSignin">
                             <h2 class="title">Welcome!</h2>
                             <div class="form-group">
-                                <input v-model="account"  class="form-control" placeholder="ID"/>
-                                <input v-model="password" class="form-control" placeholder="Password"/>
+                                <input type="text" v-model="account"  class="form-control" placeholder="ID"/>
+                                <input type="password" v-model="password" class="form-control" placeholder="Password"/>
                             </div>
                             <div class="accountError" v-if="signInError">
                                 <div class="errorIcon">
@@ -25,7 +25,8 @@
                                  v-b-tooltip="{
                                     html: true,
                                     title: tipData,
-                                    placement: 'top'
+                                    placement: 'top',
+                                    animation: false
                                 }"
                             >
                                 <font-awesome-icon :icon="['far', 'exclamation-circle']"/>
@@ -126,7 +127,14 @@
         margin-left: 10px;
     }
 
+    .tooltip {
+        opacity: 1 !important;
+        /*transform: unset !important;*/
+        /*will-change: unset !important;*/
+    }
+
     .tooltip-inner {
+        margin-left: 17px !important;
         max-width: 420px !important;
         box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.4) !important;
         border: solid 2px #ff9800 !important;
@@ -148,14 +156,14 @@
 
     .bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^="top"] .arrow::before {
         top: 0;
-        left: -179px;
+        left: -170px;
         border-width: 0.4rem 0.4rem 0;
         border-top-color: #ff9800 !important;
     }
 
     .bs-tooltip-top .arrow::after, .bs-tooltip-auto[x-placement^="top"] .arrow::after {
         top: -2px;
-        left: -178px;
+        left: -169px;
         border-width: 0.35rem 0.35rem 0;
         border-top-color: #fff !important;
     }
