@@ -1,6 +1,10 @@
 <template>
     <div class="content">
+
+        <!-- Form -->
         <form class="createAccountForm">
+
+            <!-- Account Information -->
             <div class="category accountInfo">
                 <div class="font-weight-bold subtitle">Account Information</div>
                 <div class="row">
@@ -70,6 +74,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- User Information -->
             <div class="category userInfo">
                 <div class="font-weight-bold subtitle">User Information</div>
                 <div class="row">
@@ -132,8 +138,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col item"></div>
                 </div>
             </div>
+
+            <!-- Internal -->
             <div class="category internalInfo">
                 <div class="font-weight-bold subtitle">Internal</div>
                 <div class="row">
@@ -147,6 +156,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col item"></div>
                 </div>
             </div>
 
@@ -174,25 +184,23 @@
 
 <style>
     .createAccountForm {
-
+        max-width: 1530px;
+        margin: 0 auto;
     }
     .createAccountForm .category {
         min-width: 960px;
         padding: 30px 0;
     }
-    /*.createAccountForm .category .category-content{*/
-    /*    padding: 0 60px;*/
-    /*}*/
     .createAccountForm .category .subtitle{
         margin-bottom: 30px;
     }
     .createAccountForm .category .item {
-        padding: 0 60px 0 130px;
-        margin-bottom: 30px;
+        margin: 0 auto 30px;
         height: 60px;
-        width: 830px;
-        min-width: 830px;
+        min-width: 680px;
         max-width: 830px;
+    }
+    .createAccountForm .category .item:first-child {
     }
     .createAccountForm .category .item .col-form-label {
         width: 250px;
