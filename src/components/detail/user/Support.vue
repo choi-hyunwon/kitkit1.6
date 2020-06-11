@@ -3,9 +3,9 @@
 
         <h2 style="margin-bottom: 30px;">Please first check these resources (manuals and tutorial videos):</h2>
         <div class="resource row">
-            <div class="col">
-                <!--TODO: img 변경 필요-->
-                <img width="225" height="99" src="https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng.png" class="logo attachment-full size-full" rcset="https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng.png 500w, https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng-300x156.png 300w" sizes="(max-width: 207px) 100vw, 500px" alt="kitkit school logo"/>
+            <div class="col item">
+                <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="99" width="229" alt="kitkit english text logo"/>
+                <!--<img class="logo attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="99" width="229" alt="kitkit swahili text logo"/>-->
             </div>
             <div class="col item">
                 <font-awesome-icon :icon="['fab', 'youtube']"/>
@@ -215,12 +215,26 @@
         border: solid 1px #c2c2c2;
         background-color: #f9f9f9;
         min-width: 1000px;
-        padding: 50px 30px;
+        padding: 50px 30px 20px;
         margin: 0 auto;
     }
     .support .resource .item {
-        width: 260px;
+        width: 20%;
+        min-width: 260px;
         text-align: center;
+        margin-bottom: 30px;
+    }
+    @media (max-width: 1670px){
+        .support .resource .item {
+            min-width: 33%;
+            /*margin-left: 210px;*/
+            /*margin-left: 374px;*/
+            /*width: 50%;*/
+            /*min-width: 469px;*/
+        }
+    }
+    .support .resource .item .logo {
+        margin-top: 58px;
     }
     .support .resource .item svg {
         color: #0c6290;

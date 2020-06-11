@@ -9,7 +9,11 @@
                     <div class="copyright">©2020 Enuma, Inc. All Rights Reserved.</div>
                 </div>
                 <div class="col text-right">
-                    <div class="terms">Terms of Service | Legal Privacy | Policy</div>
+                    <div class="terms">
+                        <a href="https://enuma.com/tos/">Terms of Service | </a>
+                        <a href="http://kitkitschool.com/legal-kitkit/">Legal Privacy | </a>
+                        <a href="https://enuma.com/policy/">Policy</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -39,7 +43,7 @@
         padding-bottom: 24px;
         text-align: center;
     }
-    .footer .container-fluid > div {
+    .footer .container-fluid > div, .footer .container-fluid .terms a {
         color: #999;
         font-size: 16px;
         line-height: 27px;
