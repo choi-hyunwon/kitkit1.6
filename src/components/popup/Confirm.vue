@@ -1,83 +1,76 @@
 <template>
     <div>
-        <b-button @click="toggleConfirm">Open Alert</b-button>
-
+        <slot :toggleConfirm="toggleConfirm" :setCreateList="setCreateList"></slot>
         <b-modal centered
                  modal-class="accountCheck"
                  footer-class="kitkit-modal-footer"
                  v-model="showConfirm">
-            <template v-slot:modal-header="{ close }">
-                <!-- Emulate built in modal header close button action -->
-                <h5 class="modal-title">Modal Title</h5>
-                <button type="button" class="close" @click="close()">
-                    <span aria-hidden="true">×</span>
-                </button>
+            <template #modal-header="{ close }">
+                <h5 class="modal-title">Create Account</h5>
+                <button type="button" class="close" @click="close()"><span aria-hidden="true">×</span></button>
             </template>
-
-            <template v-slot:default>
-                <p class="notice text-center">
-                    Please check one more time before<br/>
-                    sending the confirmation email to the user.
-                </p>
+            <template #default>
+                <p class="notice text-center">Please check one more time before<br/>sending the confirmation email to the user.</p>
                 <div class="info">
                     <div class="accountId row">
                         <div class="col infoType">ID :</div>
-                        <div class="col infoValue">John park</div>
+                        <div class="col infoValue">{{createList.id}}</div>
                     </div>
                     <div class="accountPwd row">
                         <div class="col infoType">PW :</div>
-                        <div class="col infoValue">Johnpark123</div>
+                        <div class="col infoValue">{{createList.pw}}</div>
                     </div>
                     <div class="accountProduct row">
                         <div class="col infoType">Product :</div>
-                        <div class="col infoValue">English and Math</div>
+                        <div class="col infoValue">{{createList.product}}</div>
                     </div>
                     <div class="accountLicense row">
                         <div class="col infoType">Number of Licenses :</div>
-                        <div class="col infoValue">100</div>
+                        <div class="col infoValue">{{createList.licenses}}</div>
                     </div>
                     <div class="accountExpDate row">
                         <div class="col infoType">Expiration Date :</div>
-                        <div class="col infoValue">2021.12.31</div>
+                        <div class="col infoValue">{{createList.date}}</div>
                     </div>
                 </div>
             </template>
-
-            <template v-slot:modal-footer="{ ok, cancel }">
-                <b-button size="sm" variant="secondary" @click="cancel()">
-                    Cancel
-                </b-button>
-                <b-button size="sm" variant="primary" @click="ok()">
-                    Ok
-                </b-button>
+            <template #modal-footer="{ ok, cancel }">
+                <b-button size="sm" variant="secondary" @click="cancel()">Cancel</b-button>
+                <b-button size="sm" variant="primary" @click="eventConfirm">Ok</b-button>
             </template>
         </b-modal>
     </div>
 </template>
-
 
 <script>
     import {BModal, VBModal, BButton} from 'bootstrap-vue'
 
     export default {
         name: 'Confirm',
-        layout : 'popup',
         components: {
             'b-modal': BModal,
             'b-button': BButton
         },
         directives: {
-            // Note that Vue automatically prefixes directive names with `v-`
             'b-modal': VBModal
         },
         data: function() {
             return {
-                showConfirm: false
+                showConfirm: false,
+                createList : {}
             }
         },
         methods: {
             toggleConfirm: function() {
                 this.showConfirm = !this.showConfirm;
+            },
+           setCreateList: function(list) {
+                this.createList = list;
+            },
+            eventConfirm: function() {
+                this.showConfirm = false
+                this.$EventBus.$emit('eventConfirm')
+
             }
         }
     }

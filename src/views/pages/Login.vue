@@ -20,9 +20,7 @@
             }
         },
         components: {
-            Header,
-            Login,
-            Footer
+            Header, Login, Footer
         },
         created(){
             this.$EventBus.$on('eventSignin', (signIn) => {
