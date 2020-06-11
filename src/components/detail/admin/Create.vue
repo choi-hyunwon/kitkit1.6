@@ -170,6 +170,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col item"></div>
                 </div>
             </div>
             <div class="category internalInfo">
@@ -179,7 +180,7 @@
                         <div class="form-group row">
                             <label class="col col-form-label"><span class="col-label-text">Staff Name </span></label>
                             <div class="col col-form-input">
-                                <ValidationProvider name="Staff Name" rules="alpha_num|max:20" v-slot="{ errors }">
+                                <ValidationProvider name="Staff Name" rules="required|alpha_num|max:20" v-slot="{ errors }">
                                 <input type="text"
                                        class="form-control"
                                        placeholder="Please Enter Staff Name"
@@ -189,10 +190,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col item"></div>
                 </div>
             </div>
             <div class="buttonArea mx-auto">
-                <button type="reset" class="btn btn-lg btn-secondary" style="margin-right: 20px;">Reset</button>
+                <button @click="createInfoReset" type="reset" class="btn btn-lg btn-secondary" style="margin-right: 20px;">Reset</button>
                     <button class="btn btn-lg btn-primary" :disabled="invalid" >Create Account</button>
             </div>
         </form>
@@ -248,18 +250,13 @@
                 slotProps.toggleConfirm();
             },
             createInfoReset (){
-
+                Object.assign(this.$data.createInfo, this.$options.data().createInfo);
             },
             fetchCreate(){
                 this.postCreate(this.createInfo)
                     .then((result) => {
-                        if(result){
-                            console.log("create 성공");
-                            window.location.reload();
-                        }else {
-                            console.log("create 실패")
-                            window.location.reload();
-                        }
+                        console.log(`create : ${result}`);
+                        window.location.reload()
                     })
             }
         }
@@ -268,25 +265,23 @@
 
 <style>
     .createAccountForm {
-
+        max-width: 1530px;
+        margin: 0 auto;
     }
     .createAccountForm .category {
         min-width: 960px;
         padding: 30px 0;
     }
-    /*.createAccountForm .category .category-content{*/
-    /*    padding: 0 60px;*/
-    /*}*/
     .createAccountForm .category .subtitle{
         margin-bottom: 30px;
     }
     .createAccountForm .category .item {
-        padding: 0 60px 0 130px;
-        margin-bottom: 30px;
+        margin: 0 auto 30px;
         height: 60px;
-        width: 830px;
-        min-width: 830px;
+        min-width: 680px;
         max-width: 830px;
+    }
+    .createAccountForm .category .item:first-child {
     }
     .createAccountForm .category .item .col-form-label {
         width: 250px;
@@ -305,7 +300,6 @@
         padding-left: 0;
         padding-right: 0;
     }
-
     .createAccountForm .category .item .col-form-input span {
         font-size: 18px;
         font-weight: normal;
@@ -316,7 +310,6 @@
         text-align: left;
         color:  #f56049;
     }
-
     .createAccountForm .buttonArea {
         text-align: center;
         margin-bottom: 60px;

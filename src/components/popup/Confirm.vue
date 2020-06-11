@@ -22,7 +22,7 @@
                     </div>
                     <div class="accountProduct row">
                         <div class="col infoType">Product :</div>
-                        <div class="col infoValue">{{createList.product}}</div>
+                        <div class="col infoValue">{{createList.product === 1 ? 'English and Math' : 'Swahili and Math' }}</div>
                     </div>
                     <div class="accountLicense row">
                         <div class="col infoType">Number of Licenses :</div>
