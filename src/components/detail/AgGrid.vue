@@ -1,19 +1,11 @@
 <template>
     <div class="content gridView">
         <div class="any">
-            <!--<form class="search">
-                <input type="text" class="form-control" title="search" placeholder="Please enter a search term.">
-                <button class="btn btn-primary btn-lg search">
-                    <font-awesome-icon class="icon" :icon="['far', 'search']"/>
-                    SEARCH
-                </button>
-            </form>-->
             <button class="btn btn-primary btn-lg download">
                 <font-awesome-icon class="icon" :icon="['far', 'arrow-alt-to-bottom']"/>
                 Download
             </button>
         </div>
-
         <ag-grid-vue class="ag-theme-alpine ag-custom"
                      :headerHeight="80"
                      :rowStyle="{background: 'white'}"
@@ -23,40 +15,6 @@
                      :rowData="rowData"
                      @grid-ready="onGridReady">
         </ag-grid-vue>
-
-        <div class="pages">
-            <ul class="pagination pagination-circle">
-                <li class="page-item disabled">
-                    <a class="page-link page-arrow" aria-label="Previous">
-                        <span aria-hidden="true"><i class="fa fa-angle-double-left"></i></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                </li>
-                <li class="page-item disabled">
-                    <a class="page-link page-arrow" aria-label="Previous">
-                        <span aria-hidden="true"><i class="fa fa-angle-left"></i></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                </li>
-                <li class="page-item active"><a class="page-link">1</a></li>
-                <li class="page-item"><a class="page-link">2</a></li>
-                <li class="page-item"><a class="page-link">3</a></li>
-                <li class="page-item"><a class="page-link">4</a></li>
-                <li class="page-item"><a class="page-link">5</a></li>
-                <li class="page-item">
-                    <a class="page-link page-arrow" aria-label="Next">
-                        <span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link page-arrow" aria-label="Next">
-                        <span aria-hidden="true"><i class="fa fa-angle-double-right"></i></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
     </div>
 </template>
 
@@ -122,9 +80,7 @@
                         if(data.result){
                             console.log("리스트 조회  성공");
                             this.rowData = data.data.list;
-                        }else {
-                            console.log("리스트 조회 실패")
-                        }
+                        }else console.log("리스트 조회 실패")
                     })
             }
         }
