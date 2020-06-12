@@ -77,10 +77,8 @@
             fetchManage(){
                 this.postManage()
                     .then((data) => {
-                        if(data.result){
-                            console.log("리스트 조회  성공");
-                            this.rowData = data.data.list;
-                        }else console.log("리스트 조회 실패")
+                        console.log(`postManageResult : ${data.result}`);
+                        if(data.result) this.rowData = data.data.list;
                     })
             }
         }

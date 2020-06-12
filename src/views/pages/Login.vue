@@ -46,6 +46,7 @@
             fetchSignin(signIn){
                 this.postSignIn(signIn)
                     .then((result) => {
+                        console.log(`postSignInResult : ${result}`);
                         if(result){
                             this.signInError = false;
                             if (this.status === 'admin') this.$router.push({path: '/Create'});

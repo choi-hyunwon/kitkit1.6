@@ -255,7 +255,7 @@
             fetchCreate(){
                 this.postCreate(this.createInfo)
                     .then((result) => {
-                        console.log(`create : ${result}`);
+                        console.log(`postCreateResult : ${result}`);
                         window.location.reload()
                     })
             }
