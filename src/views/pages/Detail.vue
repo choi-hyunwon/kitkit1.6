@@ -22,13 +22,8 @@
 
     export default {
         components: {
-            Header,
-            Aside,
-            Footer,
-            AgGrid,
-            Create,
-            Download,
-            Support
+            Header, Aside, Footer,
+            AgGrid, Create, Download, Support
         },
         created(){
             this.$EventBus.$on('eventSignOut', () => {
