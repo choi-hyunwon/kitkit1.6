@@ -4,7 +4,7 @@ import App from './App.vue';
 import Fragment from 'vue-fragment';
 import { routes } from './router/index';
 import { store } from './store/store';
-import { BootstrapVue, VBTooltip} from 'bootstrap-vue';
+import { BootstrapVue} from 'bootstrap-vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/pro-solid-svg-icons';
