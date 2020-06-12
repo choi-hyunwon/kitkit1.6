@@ -19,17 +19,15 @@ library.add(fas, far, fal, fab);
 import { ValidationObserver, ValidationProvider, extend } from 'vee-validate';
 import * as rules from 'vee-validate/dist/rules';
 import { messages } from 'vee-validate/dist/locale/en.json';
-
 Object.keys(rules).forEach(rule => {
     extend(rule, {
-        ...rules[rule], // copies rule configuration
-        message: messages[rule] // assign message
+        ...rules[rule],
+        message: messages[rule]
     });
 });
 
 Vue.config.productionTip = false;
 Vue.prototype.$EventBus = new Vue();
-// Install components globally
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.component('ValidationObserver', ValidationObserver);
 Vue.component('ValidationProvider', ValidationProvider);
