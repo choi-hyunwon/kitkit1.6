@@ -64,7 +64,7 @@
             toggleConfirm: function() {
                 this.showConfirm = !this.showConfirm;
             },
-           setCreateList: function(list) {
+            setCreateList: function(list) {
                 this.createList = list;
             },
             eventConfirm: function() {
