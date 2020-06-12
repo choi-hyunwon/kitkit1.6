@@ -1,7 +1,7 @@
 <template>
     <div class="content gridView">
         <div class="any">
-            <button class="btn btn-primary btn-lg download">
+            <button @click="eventDownload" class="btn btn-primary btn-lg download">
                 <font-awesome-icon class="icon" :icon="['far', 'arrow-alt-to-bottom']"/>
                 Download
             </button>
@@ -10,19 +10,20 @@
                      :headerHeight="80"
                      :rowStyle="{background: 'white'}"
                      :rowHeight="60"
+                     @grid-ready="fetchManage"
+                     :gridOptions="gridOptions"
                      :columnDefs="columnDefs"
                      :defaultColDef="defaultColDef"
-                     :rowData="rowData"
-                     @grid-ready="onGridReady">
+                     :rowData="rowData">
         </ag-grid-vue>
     </div>
 </template>
 
 <script>
     import {mapActions} from 'vuex'
+    import { AgGridVue } from 'ag-grid-vue';
     import "ag-grid-community/dist/styles/ag-grid.css";
     import "ag-grid-community/dist/styles/ag-theme-alpine.css";
-    import { AgGridVue } from 'ag-grid-vue';
 
     export default {
         name: 'AgGrid',
@@ -31,35 +32,39 @@
         },
         data() {
             return {
+                gridOptions: null,
+                gridApi: null,
                 columnDefs: null,
                 rowData: null,
                 defaultColDef: null,
             }
         },
         beforeMount() {
+            this.gridOptions = {};
             this.columnDefs = [
                 {headerName: 'No.', field: 'num', pinned: 'left'},
-                {headerName: 'Reg date', field: 'regdate', pinned: 'left'},
-                {headerName: 'ID', field: 'account', pinned: 'left'},
-                {headerName: 'Name', field: 'sitename'},
-                {headerName: 'Email', field: 'siteEMail'},
-                {headerName: 'Organization', field: 'organization'},
+                {headerName: 'Reg date', field: 'regdate', pinned: 'left', sortable: true},
+                {headerName: 'ID', field: 'account', pinned: 'left', filter: true, sortable: true},
+                {headerName: 'Name', field: 'sitename', filter: true, sortable: true},
+                {headerName: 'Email', field: 'siteEMail', filter: true, sortable: true},
+                {headerName: 'Organization', field: 'organization', filter: true, sortable: true},
                 {headerName: 'Organization Type', field: 'organizationType'},
-                {headerName: 'Country', field: 'country'},
-                {headerName: 'City', field: 'city'},
+                {headerName: 'Country', field: 'country', filter: true, sortable: true},
+                {headerName: 'City', field: 'city', filter: true, sortable: true},
                 {headerName: 'License Issued', field: 'numberOfLicenses'},
                 {headerName: 'Product', field: 'productType'},
                 {headerName: 'Expiration Date', field: 'expdate'},
-                {headerName: 'Staff Name', field: 'contactName'},
-                {headerName: 'Last Update', field: 'lastUpdate'},
+                {headerName: 'Staff Name', field: 'contactName', filter: true, sortable: true},
+                {headerName: 'Last Update', field: 'lastUpdate', sortable: true},
                 {headerName: 'License Used', field: 'licenseUsed'},
                 {headerName: 'Registered Users', field: 'registeredUsers'},
                 {headerName: 'Users with Play Data', field: 'usersWithPlayData'},
                 {headerName: 'Total Playtime', field: 'totalPlayTime'}
             ];
             this.defaultColDef = {
-                sortable: true,
-                filter: true,
+                sort: 'desc',
+                unSortIcon: true,
+                sortingOrder: ['asc', 'desc'],
                 floatingFilter: true,
                 filterParams: {
                     filterOptions: ['contains', 'notContains'],
@@ -67,19 +72,22 @@
                     closeOnApply : true}
             };
         },
+        mounted() {
+            this.gridApi = this.gridOptions.api;
+        },
         methods : {
             ...mapActions({
                 postManage : 'postManage'
             }),
-            onGridReady() {
-                this.fetchManage();
-            },
             fetchManage(){
                 this.postManage()
                     .then((data) => {
                         console.log(`postManageResult : ${data.result}`);
                         if(data.result) this.rowData = data.data.list;
                     })
+            },
+            eventDownload(){
+                this.gridApi.exportDataAsCsv({fileName : `KitKitSchool_${this.$moment().format('YYYYMMDD')}`});
             }
         }
     }
@@ -165,5 +173,9 @@
     }
     .ag-layout-normal::-webkit-scrollbar {
         background-color: #faf;
+    }
+
+    .ag-sort-order {
+        display: none;
     }
 </style>

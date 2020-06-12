@@ -37,6 +37,7 @@ Vue.use(
     Fragment.Plugin,
     BootstrapVue
 );
+Vue.use(require('vue-moment'));
 
 const originalPush = Router.prototype.push;
 Router.prototype.push = function push(location) {
