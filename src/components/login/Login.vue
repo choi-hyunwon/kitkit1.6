@@ -3,13 +3,18 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col align-self-center">
+
+                    <!-- 로그인 card 영역 -->
                     <div class="card">
                         <form @submit.prevent="eventSignin">
+
                             <h2 class="title">Welcome!</h2>
+
                             <div class="form-group">
                                 <input type="text" v-model="account"  class="form-control" placeholder="ID"/>
                                 <input type="password" v-model="password" class="form-control" placeholder="Password"/>
                             </div>
+
                             <div class="accountError" v-if="signInError">
                                 <div class="errorIcon">
                                     <font-awesome-icon :icon="['far', 'exclamation-triangle']"/>
@@ -18,9 +23,12 @@
                                     <span>We cannot find that username or password</span>
                                 </div>
                             </div>
+
                             <button type="submit" class="btn btn-primary btn-lg signin">
                                 Sign in
                             </button>
+
+                            <!-- 도움말 툴팁 -->
                             <div class="help yale"
                                  v-b-tooltip="{
                                     html: true,
@@ -32,8 +40,12 @@
                                 <font-awesome-icon :icon="['far', 'exclamation-circle']"/>
                                 <span class="text">Need help?</span>
                             </div>
+                            <!-- // 도움말 툴팁 -->
+
                         </form>
                     </div>
+                    <!-- // 로그인 card 영역 -->
+
                 </div>
             </div>
         </div>
@@ -105,6 +117,9 @@
     .section .card .form-group .form-control {
         margin-top: 20px;
     }
+
+
+
     .section .card .accountError {
         color: #f56049;
         font-size: 24px;
@@ -127,12 +142,13 @@
         margin-left: 10px;
     }
 
+
+
     .tooltip {
         opacity: 1 !important;
         /*transform: unset !important;*/
         /*will-change: unset !important;*/
     }
-
     .tooltip-inner {
         margin-left: 17px !important;
         max-width: 420px !important;
@@ -147,27 +163,23 @@
         text-align: left !important;
         letter-spacing: normal !important;
     }
-
     .tooltip-inner .email {
         color: #0c6290;
         font-weight: normal;
         text-decoration: underline;
     }
-
     .bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^="top"] .arrow::before {
         top: 0;
         left: -170px;
         border-width: 0.4rem 0.4rem 0;
         border-top-color: #ff9800 !important;
     }
-
     .bs-tooltip-top .arrow::after, .bs-tooltip-auto[x-placement^="top"] .arrow::after {
         top: -2px;
         left: -169px;
         border-width: 0.35rem 0.35rem 0;
         border-top-color: #fff !important;
     }
-
     .tooltip .arrow::after {
         position: absolute;
         content: "";
