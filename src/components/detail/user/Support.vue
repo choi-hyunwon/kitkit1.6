@@ -1,6 +1,7 @@
 <template>
     <div class="content support">
 
+        <!-- Guide -->
         <h2 style="margin-bottom: 30px;">Please first check these resources (manuals and tutorial videos):</h2>
         <div class="resource row">
             <div class="col item">
@@ -24,13 +25,16 @@
                 <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in Swahili</b></p>
             </div>
         </div>
+        <!-- // Guide -->
 
+        <!-- FAQ -->
         <h2>FAQ</h2>
         <div class="faq">
             <h3 class="subtitle" style="margin-top: 30px;"><font-awesome-icon class="icon" :icon="['far', 'dot-circle']"/>Download</h3>
-            <div class="qna">
+            <div class="qna active">
                 <div class="question">
-                    <font-awesome-icon class="icon" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                     <div class="text">Can I install Kitkit School to tablet devices with other OS? Does it need to be an Android?</div>
                 </div>
                 <p class="answer">
@@ -39,7 +43,8 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                     <div class="text">Where do I check the device specification?</div>
                 </div>
                 <p class="answer">
@@ -52,7 +57,8 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                     <div class="text">Do I need to download all files from the list for installation?</div>
                 </div>
                 <p class="answer">
@@ -62,7 +68,8 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                     <div class="text">Can I directly download the installation package from the tablet device?</div>
                 </div>
                 <p class="answer">
@@ -73,7 +80,8 @@
             <h3 class="subtitle"><font-awesome-icon class="icon" :icon="['far', 'dot-circle']"/>Installation</h3>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                     <div class="text">Can I install Kitkit School to multiple numbers of tablet devices?</div>
                 </div>
                 <p class="answer">
@@ -82,7 +90,8 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                     <div class="text">Installation is not completed.</div>
                 </div>
                 <p class="answer">
@@ -98,7 +107,8 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                     <div class="text">I would like to modify the number of licenses I requested.</div>
                 </div>
                 <p class="answer">
@@ -109,7 +119,8 @@
             <h3 class="subtitle"><font-awesome-icon class="icon" :icon="['far', 'dot-circle']"/>Using Kitkit School</h3>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                     <div class="text">Would I still be able to access other applications after installing Kitkit School?</div>
                 </div>
                 <p class="answer">
@@ -118,7 +129,8 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                     <div class="text">Can I add multiple users to one device installed with Kitkit School?</div>
                 </div>
                 <p class="answer">
@@ -127,7 +139,8 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                     <div class="text">Can I transfer the user data from one device to another?</div>
                 </div>
                 <p class="answer">
@@ -138,7 +151,8 @@
             <h3 class="subtitle"><font-awesome-icon class="icon" :icon="['far', 'dot-circle']"/>About Dashboard</h3>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                     <div class="text">What is a dashboard?</div>
                 </div>
                 <p class="answer">
@@ -147,7 +161,8 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                     <div class="text">How do I upload the data?</div>
                 </div>
                 <p class="answer">
@@ -158,7 +173,8 @@
             <h3 class="subtitle"><font-awesome-icon class="icon" :icon="['far', 'dot-circle']"/>Troubleshooting</h3>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                     <div class="text">Kitkit School app crashes or fails to launch on screen.</div>
                 </div>
                 <p class="answer">
@@ -167,7 +183,8 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                     <div class="text">Tablet screen turns off while using Kitkit School.</div>
                 </div>
                 <p class="answer">
@@ -177,7 +194,8 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                     <div class="text">Can I reinstall Kitkit School?</div>
                 </div>
                 <p class="answer">
@@ -188,11 +206,14 @@
                 </p>
             </div>
         </div>
+        <!-- // FAQ -->
 
+        <!-- Contact Us -->
         <h2 style="margin-top: 20px;">Contact Us</h2>
         <div class="contactInfo">
             Please send us an email with a description of the issue, in addition to your account information (your id, name, email address, and organization) to <a class="email" href="mailto:kitkitsupport@enuma.com">kitkitsupport@enuma.com</a>
         </div>
+        <!-- // Contact Us -->
     </div>
 </template>
 
@@ -210,6 +231,7 @@
         margin-top: 30px;
     }
 
+    /* Guide Resource */
     .support .resource {
         border-radius: 16px;
         border: solid 1px #c2c2c2;
@@ -227,10 +249,6 @@
     @media (max-width: 1670px){
         .support .resource .item {
             min-width: 33%;
-            /*margin-left: 210px;*/
-            /*margin-left: 374px;*/
-            /*width: 50%;*/
-            /*min-width: 469px;*/
         }
     }
     .support .resource .item .logo {
@@ -248,6 +266,11 @@
         letter-spacing: normal;
         color: #333333;
     }
+    /* // Guide Resource */
+
+
+
+    /* FAQ */
     .support .faq .subtitle {
         font-size: 32px;
         line-height: 39px;
@@ -269,10 +292,25 @@
         border-top: 1px solid #dedede;
         padding: 22px 0 19px;
     }
+    .support .faq .qna.active .question {
+        color: #f6921e;
+    }
     .support .faq .qna .question .icon {
         position: absolute;
-        top: 22px;
+        top: 24px;
         left: 0;
+    }
+    .support .faq .qna .question .icon.closed {
+        display: inline;
+    }
+    .support .faq .qna .question .icon {
+        display: none;
+    }
+    .support .faq .qna.active .question .icon.closed {
+        display: none;
+    }
+    .support .faq .qna.active .question .icon.open {
+        display: inline;
     }
     .support .faq .qna .question .text {
         margin-left: 34px;
@@ -281,8 +319,16 @@
         margin-left: 34px;
         padding: 12px 0 18px;
         line-height: 50px;
+        display: none;
     }
+    .support .faq .qna.active .answer {
+        display: block;
+    }
+    /* // FAQ */
 
+
+
+    /* Contact */
     .support .contactInfo {
         padding: 20px 37px 80px 60px;
         color: #666;
@@ -290,15 +336,13 @@
         line-height: 36px;
         font-weight: normal;
     }
-
     .email {
         color: #0c6290;
         text-decoration: underline;
     }
-
     .email:hover {
         color: #0c6290;
         text-decoration: underline;
     }
-
+    /* // Contact */
 </style>
