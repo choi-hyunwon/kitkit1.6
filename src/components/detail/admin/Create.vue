@@ -36,7 +36,7 @@
                                     <span class="col-label-text">Password *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <ValidationProvider name="Password" rules="required|alpha_num|max:20" v-slot="{ errors }">
+                                    <ValidationProvider name="Password" rules="required|max:20" v-slot="{ errors }">
                                         <input type="password"
                                                class="form-control"
                                                :class="{'is-invalid' : errors[0]}"
