@@ -162,7 +162,7 @@
                                     <span class="col-label-text">Product *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <select class="custom-select" title="Product">
+                                    <select class="custom-select form-control" title="Product">
                                         <option value="1" selected>English and Math</option>
                                         <option value="2">Swahili and Math</option>
                                     </select>
@@ -267,6 +267,7 @@
         font-size: 24px;
         width: 300px;
         height: 60px;
+        line-height: 37px;
     }
 </style>
 

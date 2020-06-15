@@ -10,18 +10,22 @@
             </button>
         </div>
         <ul class="menu" v-if="status === 'user'">
-            <li @click="eventMenu" v-for="(userList, i) in userMenu" :key="i" class="item" :class="{active : userMenu[i].title === getActive}">
-                <font-awesome-icon :icon="`${userList.icon}`"/>
-                <div class="text">{{userList.title}}</div>
-                <div class="underline"></div>
-            </li>
+            <a href="#">
+                <li @click="event => eventMenu(event, userMenu[i].title)" v-for="(userList, i) in userMenu" :key="i" class="item" :class="{active : userMenu[i].title === getActive}">
+                    <font-awesome-icon :icon="`${userList.icon}`" class="icon">{{userList.title}}</font-awesome-icon>
+                    <div class="text">{{userList.title}}</div>
+                    <div class="underline"></div>
+                </li>
+            </a>
         </ul>
         <ul class="menu" v-else-if="status === 'admin'">
-            <li @click="eventMenu" v-for="(adminList, i) in adminMenu" :key="i" class="item" :class="{active : adminMenu[i].title === getActive }">
-                <font-awesome-icon :icon="`${adminList.icon}`"/>
-                <div class="text">{{adminList.title}}</div>
-                <div class="underline"></div>
-            </li>
+            <a href="#">
+                <li @click="event => eventMenu(event, adminMenu[i].title)" v-for="(adminList, i) in adminMenu" :key="i" class="item" :class="{active : adminMenu[i].title === getActive }">
+                    <font-awesome-icon :icon="`${adminList.icon}`" class="icon">{{adminList.title}}</font-awesome-icon>
+                    <div class="text">{{adminList.title}}</div>
+                    <div class="underline"></div>
+                </li>
+            </a>
         </ul>
     </aside>
 </template>
@@ -76,8 +80,8 @@
             eventSignOut() {
                 this.$EventBus.$emit('eventSignOut');
             },
-            eventMenu (event) {
-                this.$router.push({path: `/${event.target.innerText}`});
+            eventMenu (event, path) {
+                this.$router.push({path: `/${path}`});
             }
         }
     }
@@ -137,7 +141,7 @@
         color: #5a3428;
     }
 
-    .doc-aside .menu .item svg {
+    .doc-aside .menu .item .icon {
         z-index: 100;
         font-size: 32px;
     }
