@@ -1,24 +1,19 @@
 <template>
     <div class="content gridView">
         <div class="any">
-            <form class="search">
-                <input type="text" class="form-control" title="search" placeholder="Please enter a search term.">
-                <button class="btn btn-primary btn-lg search">
-                    <font-awesome-icon class="icon" :icon="['far', 'search']"/>
-                    SEARCH
-                </button>
-            </form>
-            <button class="btn btn-primary btn-lg download">
+            <button @click="eventDownload" class="btn btn-primary btn-lg download">
                 <font-awesome-icon class="icon" :icon="['far', 'arrow-alt-to-bottom']"/>
                 Download
             </button>
         </div>
-
         <ag-grid-vue class="ag-theme-alpine ag-custom"
                      :headerHeight="80"
                      :rowStyle="{background: 'white'}"
                      :rowHeight="60"
+                     @grid-ready="fetchManage"
+                     :gridOptions="gridOptions"
                      :columnDefs="columnDefs"
+                     :defaultColDef="defaultColDef"
                      :rowData="rowData">
         </ag-grid-vue>
 
@@ -60,238 +55,75 @@
 </template>
 
 <script>
+    import {mapActions} from 'vuex'
+    import { AgGridVue } from 'ag-grid-vue';
     import "ag-grid-community/dist/styles/ag-grid.css";
     import "ag-grid-community/dist/styles/ag-theme-alpine.css";
-    import { AgGridVue } from 'ag-grid-vue';
 
     export default {
         name: 'AgGrid',
         components: {
             AgGridVue
         },
+        data() {
+            return {
+                gridOptions: null,
+                gridApi: null,
+                columnDefs: null,
+                rowData: null,
+                defaultColDef: null,
+            }
+        },
         beforeMount() {
+            this.gridOptions = {};
             this.columnDefs = [
-                {headerName: 'No.', field: 'num', width: 100},
-                {headerName: 'Reg date', field: 'regDate', width: 100},
-                {headerName: 'ID', field: 'id', width: 100},
-                {headerName: 'Name', field: 'name', width: 100},
-                {headerName: 'Email', field: 'email', width: 100},
-                {headerName: 'Organization', field: 'org', width: 100},
-                {headerName: 'Organization Type', field: 'orgType', width: 100},
-                {headerName: 'Country', field: 'country', width: 100},
-                {headerName: 'City', field: 'city', width: 100},
-                {headerName: 'License Issued', field: 'licenseIssued', width: 100},
-                {headerName: 'Product', field: 'product', width: 100},
-                {headerName: 'Expiration Date', field: 'expDate', width: 100},
-                {headerName: 'Staff Name', field: 'staffName', width: 100},
-                {headerName: 'Last Update', field: 'lastUpdate', width: 100},
-                {headerName: 'License Used', field: 'licenseUsed', width: 100},
-                {headerName: 'Registered Users', field: 'regUsers', width: 100},
-                {headerName: 'Users with Play Data', field: 'usersPlayData', width: 100},
-                {headerName: 'Total Playtime', field: 'totalPlayTime', width: 100}
+                {headerName: 'No.', field: 'num', pinned: 'left'},
+                {headerName: 'Reg date', field: 'regdate', pinned: 'left', sortable: true},
+                {headerName: 'ID', field: 'account', pinned: 'left', filter: true, sortable: true},
+                {headerName: 'Name', field: 'sitename', filter: true, sortable: true},
+                {headerName: 'Email', field: 'siteEMail', filter: true, sortable: true},
+                {headerName: 'Organization', field: 'organization', filter: true, sortable: true},
+                {headerName: 'Organization Type', field: 'organizationType'},
+                {headerName: 'Country', field: 'country', filter: true, sortable: true},
+                {headerName: 'City', field: 'city', filter: true, sortable: true},
+                {headerName: 'License Issued', field: 'numberOfLicenses'},
+                {headerName: 'Product', field: 'productType'},
+                {headerName: 'Expiration Date', field: 'expdate'},
+                {headerName: 'Staff Name', field: 'contactName', filter: true, sortable: true},
+                {headerName: 'Last Update', field: 'lastUpdate', sortable: true},
+                {headerName: 'License Used', field: 'licenseUsed'},
+                {headerName: 'Registered Users', field: 'registeredUsers'},
+                {headerName: 'Users with Play Data', field: 'usersWithPlayData'},
+                {headerName: 'Total Playtime', field: 'totalPlayTime'}
             ];
-            this.rowData = [
-                {
-                    num: 23,
-                    regDate: '2020.06.15',
-                    id: 'Enuma',
-                    name: 'Proro',
-                    email: 'Proro@enuma.com',
-                    org: 'Enuma',
-                    orgType: 'NGO/non-profit',
-                    country: 'South Korea',
-                    city: 'Seoul',
-                    licenseIssued: 100,
-                    product: 'English and Math',
-                    expDate: '2021.12.31',
-                    staffName: 'Sana',
-                    lastUpdate: '2020.05.04 16:54:30(T3)',
-                    licenseUsed: 20,
-                    regUsers: 40,
-                    usersPlayData: 33,
-                    totalPlayTime: 345
-                },
-                {
-                    num: 22,
-                    regDate: '2020.06.15',
-                    id: 'Enuma',
-                    name: 'Proro',
-                    email: 'Proro@enuma.com',
-                    org: 'Enuma',
-                    orgType: 'NGO/non-profit',
-                    country: 'South Korea',
-                    city: 'Seoul',
-                    licenseIssued: 100,
-                    product: 'English and Math',
-                    expDate: '2021.12.31',
-                    staffName: 'Sana',
-                    lastUpdate: '2020.05.04 16:54:30(T3)',
-                    licenseUsed: 20,
-                    regUsers: 40,
-                    usersPlayData: 33,
-                    totalPlayTime: 345
-                },
-                {
-                    num: 21,
-                    regDate: '2020.06.15',
-                    id: 'Enuma',
-                    name: 'Proro',
-                    email: 'Proro@enuma.com',
-                    org: 'Enuma',
-                    orgType: 'NGO/non-profit',
-                    country: 'South Korea',
-                    city: 'Seoul',
-                    licenseIssued: 100,
-                    product: 'English and Math',
-                    expDate: '2021.12.31',
-                    staffName: 'Sana',
-                    lastUpdate: '2020.05.04 16:54:30(T3)',
-                    licenseUsed: 20,
-                    regUsers: 40,
-                    usersPlayData: 33,
-                    totalPlayTime: 345
-                },
-                {
-                    num: 20,
-                    regDate: '2020.06.15',
-                    id: 'Enuma',
-                    name: 'Proro',
-                    email: 'Proro@enuma.com',
-                    org: 'Enuma',
-                    orgType: 'NGO/non-profit',
-                    country: 'South Korea',
-                    city: 'Seoul',
-                    licenseIssued: 100,
-                    product: 'English and Math',
-                    expDate: '2021.12.31',
-                    staffName: 'Sana',
-                    lastUpdate: '2020.05.04 16:54:30(T3)',
-                    licenseUsed: 20,
-                    regUsers: 40,
-                    usersPlayData: 33,
-                    totalPlayTime: 345
-                },
-                {
-                    num: 19,
-                    regDate: '2020.06.15',
-                    id: 'Enuma',
-                    name: 'Proro',
-                    email: 'Proro@enuma.com',
-                    org: 'Enuma',
-                    orgType: 'NGO/non-profit',
-                    country: 'South Korea',
-                    city: 'Seoul',
-                    licenseIssued: 100,
-                    product: 'English and Math',
-                    expDate: '2021.12.31',
-                    staffName: 'Sana',
-                    lastUpdate: '2020.05.04 16:54:30(T3)',
-                    licenseUsed: 20,
-                    regUsers: 40,
-                    usersPlayData: 33,
-                    totalPlayTime: 345
-                },
-                {
-                    num: 18,
-                    regDate: '2020.06.15',
-                    id: 'Enuma',
-                    name: 'Proro',
-                    email: 'Proro@enuma.com',
-                    org: 'Enuma',
-                    orgType: 'NGO/non-profit',
-                    country: 'South Korea',
-                    city: 'Seoul',
-                    licenseIssued: 100,
-                    product: 'English and Math',
-                    expDate: '2021.12.31',
-                    staffName: 'Sana',
-                    lastUpdate: '2020.05.04 16:54:30(T3)',
-                    licenseUsed: 20,
-                    regUsers: 40,
-                    usersPlayData: 33,
-                    totalPlayTime: 345
-                },
-                {
-                    num: 17,
-                    regDate: '2020.06.15',
-                    id: 'Enuma',
-                    name: 'Proro',
-                    email: 'Proro@enuma.com',
-                    org: 'Enuma',
-                    orgType: 'NGO/non-profit',
-                    country: 'South Korea',
-                    city: 'Seoul',
-                    licenseIssued: 100,
-                    product: 'English and Math',
-                    expDate: '2021.12.31',
-                    staffName: 'Sana',
-                    lastUpdate: '2020.05.04 16:54:30(T3)',
-                    licenseUsed: 20,
-                    regUsers: 40,
-                    usersPlayData: 33,
-                    totalPlayTime: 345
-                },
-                {
-                    num: 16,
-                    regDate: '2020.06.15',
-                    id: 'Enuma',
-                    name: 'Proro',
-                    email: 'Proro@enuma.com',
-                    org: 'Enuma',
-                    orgType: 'NGO/non-profit',
-                    country: 'South Korea',
-                    city: 'Seoul',
-                    licenseIssued: 100,
-                    product: 'English and Math',
-                    expDate: '2021.12.31',
-                    staffName: 'Sana',
-                    lastUpdate: '2020.05.04 16:54:30(T3)',
-                    licenseUsed: 20,
-                    regUsers: 40,
-                    usersPlayData: 33,
-                    totalPlayTime: 345
-                },
-                {
-                    num: 15,
-                    regDate: '2020.06.15',
-                    id: 'Enuma',
-                    name: 'Proro',
-                    email: 'Proro@enuma.com',
-                    org: 'Enuma',
-                    orgType: 'NGO/non-profit',
-                    country: 'South Korea',
-                    city: 'Seoul',
-                    licenseIssued: 100,
-                    product: 'English and Math',
-                    expDate: '2021.12.31',
-                    staffName: 'Sana',
-                    lastUpdate: '2020.05.04 16:54:30(T3)',
-                    licenseUsed: 20,
-                    regUsers: 40,
-                    usersPlayData: 33,
-                    totalPlayTime: 345
-                },
-                {
-                    num: 14,
-                    regDate: '2020.06.15',
-                    id: 'Enuma',
-                    name: 'Proro',
-                    email: 'Proro@enuma.com',
-                    org: 'Enuma',
-                    orgType: 'NGO/non-profit',
-                    country: 'South Korea',
-                    city: 'Seoul',
-                    licenseIssued: 100,
-                    product: 'English and Math',
-                    expDate: '2021.12.31',
-                    staffName: 'Sana',
-                    lastUpdate: '2020.05.04 16:54:30(T3)',
-                    licenseUsed: 20,
-                    regUsers: 40,
-                    usersPlayData: 33,
-                    totalPlayTime: 345
-                }
-            ];
+            this.defaultColDef = {
+                sort: 'desc',
+                unSortIcon: true,
+                sortingOrder: ['asc', 'desc'],
+                floatingFilter: true,
+                filterParams: {
+                    filterOptions: ['contains', 'notContains'],
+                    resetButton: true,
+                    closeOnApply : true}
+            };
+        },
+        mounted() {
+            this.gridApi = this.gridOptions.api;
+        },
+        methods : {
+            ...mapActions({
+                postManage : 'postManage'
+            }),
+            fetchManage(){
+                this.postManage()
+                    .then((data) => {
+                        console.log(`postManageResult : ${data.result}`);
+                        if(data.result) this.rowData = data.data.list;
+                    })
+            },
+            eventDownload(){
+                this.gridApi.exportDataAsCsv({fileName : `KitKitSchool_${this.$moment().format('YYYYMMDD')}`});
+            }
         }
     }
 </script>
@@ -376,5 +208,9 @@
     }
     .ag-layout-normal::-webkit-scrollbar {
         background-color: #faf;
+    }
+
+    .ag-sort-order {
+        display: none;
     }
 </style>

@@ -15,8 +15,8 @@
         },
         mounted (){
           if (this.access) {
-              if(this.status === 'admin') this.$router.push({path: '/Create'});
-              else this.$router.push({path: '/Dashboard'});
+              if(this.status === 'admin') this.$router.push({path: `/${this.detail}`});
+              else this.$router.push({path:  `/${this.detail}`});
           }else this.$router.push({path: '/login'})
         },
         computed: {
@@ -24,6 +24,9 @@
                 status : 'getStatus',
                 access : 'getAccess',
             })
+            ,detail() {
+                return this.$route.params.detail;
+            }
         }
     }
 </script>

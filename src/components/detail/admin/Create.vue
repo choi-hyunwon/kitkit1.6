@@ -1,8 +1,11 @@
 <template>
     <div class="content">
 
+        <Confirm v-slot="slotProps">
+        <ValidationObserver ref="form" v-slot="{ handleSubmit , reset , invalid}">
+
         <!-- Form -->
-        <form class="createAccountForm">
+        <form class="createAccountForm" @submit.prevent="handleSubmit(showPopup(slotProps))"  @reset.prevent="reset">
 
             <!-- Account Information -->
             <div class="category accountInfo">
@@ -15,10 +18,15 @@
                                     <span class="col-label-text">ID *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <input type="text" class="form-control is-invalid" title="ID" placeholder="Please Enter ID" required>
-                                    <div class="invalid-feedback">
-                                        This is required. Please enter ID.
-                                    </div>
+                                    <ValidationProvider name="ID" rules="required|alpha_num|max:20" v-slot="{ errors }">
+                                        <input type="text"
+                                               class="form-control"
+                                               :class="{'is-invalid' : errors[0]}"
+                                               placeholder="Please Enter ID"
+                                               title="ID"
+                                               v-model="createInfo.account"/>
+                                        <div class="invalid-feedback">{{ errors[0] }}</div>
+                                    </ValidationProvider>
                                 </div>
                             </div>
                         </div>
@@ -28,10 +36,15 @@
                                     <span class="col-label-text">Password *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <input type="text" class="form-control" title="Password" placeholder="Please Enter Password" required>
-                                    <div class="invalid-feedback">
-                                        This is required. Please enter Password.
-                                    </div>
+                                    <ValidationProvider name="Password" rules="required|alpha_num|max:20" v-slot="{ errors }">
+                                        <input type="password"
+                                               class="form-control"
+                                               :class="{'is-invalid' : errors[0]}"
+                                               placeholder="Please Enter Password"
+                                               title="Password"
+                                               v-model="createInfo.password"/>
+                                        <div class="invalid-feedback">{{ errors[0] }}</div>
+                                    </ValidationProvider>
                                 </div>
                             </div>
                         </div>
@@ -43,10 +56,15 @@
                                     <span class="col-label-text">Name *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <input type="text" class="form-control" title="Name" placeholder="Please Enter Name" required>
-                                    <div class="invalid-feedback">
-                                        This is required. Please enter Name.
-                                    </div>
+                                    <ValidationProvider name="Name" rules="required|alpha_num|max:20" v-slot="{ errors }">
+                                        <input type="text"
+                                               class="form-control"
+                                               :class="{'is-invalid' : errors[0]}"
+                                               placeholder="Please Enter Name"
+                                               title="Enter Name"
+                                               v-model="createInfo.sitename"/>
+                                        <div class="invalid-feedback">{{ errors[0] }}</div>
+                                    </ValidationProvider>
                                 </div>
                             </div>
                         </div>
@@ -56,10 +74,15 @@
                                     <span class="col-label-text">Email Address *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <input type="text" class="form-control" title="Email Address" placeholder="Please Enter Email Address" required>
-                                    <div class="invalid-feedback">
-                                        This is required. Please enter Email Address.
-                                    </div>
+                                    <ValidationProvider name="Email Address" rules="required|email|max:20" v-slot="{ errors }">
+                                        <input type="text"
+                                               class="form-control"
+                                               :class="{'is-invalid' : errors[0]}"
+                                               placeholder="Please Enter Email Address"
+                                               title="Email Address"
+                                               v-model="createInfo.siteEMail"/>
+                                        <div class="invalid-feedback">{{ errors[0] }}</div>
+                                    </ValidationProvider>
                                 </div>
                             </div>
                         </div>
@@ -71,10 +94,15 @@
                                     <span class="col-label-text">Organization *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <input type="text" class="form-control" title="Organization" placeholder="Please Enter Organization" required>
-                                    <div class="invalid-feedback">
-                                        This is required. Please enter Organization.
-                                    </div>
+                                    <ValidationProvider name="Organization" rules="required|alpha_num|max:20" v-slot="{ errors }">
+                                        <input type="text"
+                                               class="form-control"
+                                               :class="{'is-invalid' : errors[0]}"
+                                               placeholder="Please Enter Organization"
+                                               title="Organization"
+                                               v-model="createInfo.organization"/>
+                                        <div class="invalid-feedback">{{ errors[0] }}</div>
+                                    </ValidationProvider>
                                 </div>
                             </div>
                         </div>
@@ -84,10 +112,15 @@
                                     <span class="col-label-text">Organization Type *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <input type="text" class="form-control" title="Organization Type" placeholder="Please Enter Organization Type" required>
-                                    <div class="invalid-feedback">
-                                        This is required. Please enter Organization Type.
-                                    </div>
+                                    <ValidationProvider name="Organization Type" rules="required|alpha_num|max:20" v-slot="{ errors }">
+                                        <input type="text"
+                                               class="form-control"
+                                               :class="{'is-invalid' : errors[0]}"
+                                               placeholder="Please Enter Organization Type"
+                                               title="Organization Type"
+                                               v-model="createInfo.organizationType"/>
+                                        <div class="invalid-feedback">{{ errors[0] }}</div>
+                                    </ValidationProvider>
                                 </div>
                             </div>
                         </div>
@@ -106,10 +139,15 @@
                                     <span class="col-label-text">Country *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <input type="text" class="form-control is-invalid" title="Country" placeholder="Please Enter Country" required>
-                                    <div class="invalid-feedback">
-                                        This is required. Please enter Country.
-                                    </div>
+                                    <ValidationProvider name="Country" rules="required|alpha_num|max:20" v-slot="{ errors }">
+                                        <input type="text"
+                                               class="form-control"
+                                               :class="{'is-invalid' : errors[0]}"
+                                               placeholder="Please Enter Country"
+                                               title="Country"
+                                               v-model="createInfo.country"/>
+                                        <div class="invalid-feedback">{{ errors[0] }}</div>
+                                    </ValidationProvider>
                                 </div>
                             </div>
                         </div>
@@ -119,10 +157,15 @@
                                     <span class="col-label-text">City/Province *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <input type="text" class="form-control" title="City/Province" placeholder="Please Enter City/Province" required>
-                                    <div class="invalid-feedback">
-                                        This is required. Please enter City/Province.
-                                    </div>
+                                    <ValidationProvider name="City/Province" rules="required|alpha_num|max:20" v-slot="{ errors }">
+                                        <input type="text"
+                                               class="form-control"
+                                               :class="{'is-invalid' : errors[0]}"
+                                               placeholder="Please Enter City/Province"
+                                               title="City/Province"
+                                               v-model="createInfo.city"/>
+                                        <div class="invalid-feedback">{{ errors[0] }}</div>
+                                    </ValidationProvider>
                                 </div>
                             </div>
                         </div>
@@ -134,10 +177,15 @@
                                     <span class="col-label-text">Number Of license *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <input type="text" class="form-control" title="Number Of license" placeholder="Please Enter Number Of license" required>
-                                    <div class="invalid-feedback">
-                                        This is required. Please enter Number Of license.
-                                    </div>
+                                    <ValidationProvider name="Number Of license" rules="required|numeric|max:20" v-slot="{ errors }">
+                                        <input type="text"
+                                               class="form-control"
+                                               :class="{'is-invalid' : errors[0]}"
+                                               placeholder="Please Enter Number Of license"
+                                               title="Number Of license"
+                                               v-model="createInfo.numberOfLicenses"/>
+                                        <div class="invalid-feedback">{{ errors[0] }}</div>
+                                    </ValidationProvider>
                                 </div>
                             </div>
                         </div>
@@ -147,10 +195,15 @@
                                     <span class="col-label-text">Expiration date *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <input type="text" class="form-control" title="Expiration date" placeholder="Please Enter Expiration date" required>
-                                    <div class="invalid-feedback">
-                                        This is required. Please enter Expiration date.
-                                    </div>
+                                    <ValidationProvider name="Expiration date" rules="required|max:20" v-slot="{ errors }">
+                                        <input type="text"
+                                               class="form-control"
+                                               :class="{'is-invalid' : errors[0]}"
+                                               placeholder="Please Enter Expiration date"
+                                               title="Expiration date"
+                                               v-model="createInfo.expdate">
+                                        <div class="invalid-feedback">{{ errors[0] }}</div>
+                                    </ValidationProvider>
                                 </div>
                             </div>
                         </div>
@@ -162,9 +215,9 @@
                                     <span class="col-label-text">Product *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <select class="custom-select form-control" title="Product">
-                                        <option value="1" selected>English and Math</option>
-                                        <option value="2">Swahili and Math</option>
+                                    <select v-model="createInfo.productType" class="custom-select form-control" title="Product">
+                                        <option value='1' selected>English and Math</option>
+                                        <option value='2'>Swahili and Math</option>
                                     </select>
                                 </div>
                             </div>
@@ -193,25 +246,72 @@
                     </div>
                 </div>
             </div>
-
             <div class="buttonArea mx-auto">
-                <div class="btn btn-lg btn-secondary" style="margin-right: 20px;">Reset</div>
-                <div class="btn btn-lg btn-primary">Create Account</div>
+                <button @click="createInfoReset" type="reset" class="btn btn-lg btn-secondary" style="margin-right: 20px;">Reset</button>
+                    <button class="btn btn-lg btn-primary" :disabled="invalid" >Create Account</button>
             </div>
         </form>
-
-<!--        <Confirm/>-->
+        </ValidationObserver>
+        </Confirm>
     </div>
 </template>
 
 <script>
+    import {mapActions} from 'vuex'
     import Confirm from "../../popup/Confirm";
 
     export default {
         name: 'create',
-        layout : 'detail',
         components: {
-            // Confirm
+           Confirm
+        },
+        data (){
+            return{
+                createInfo : {
+                    account: '',
+                    password: '',
+                    sitename: '',
+                    siteEMail: '',
+                    organization: '',
+                    organizationType: '',
+                    country: '',
+                    city: '',
+                    numberOfLicenses: '',
+                    productType: 1,
+                    expdate: '2021.12.31',
+                    contactName : ''
+                }
+            }
+        },
+        created(){
+            this.$EventBus.$on('eventConfirm', () => {
+                this.fetchCreate();
+            });
+        },
+        methods : {
+            ...mapActions({
+                postCreate : 'postCreate'
+            }),
+            showPopup (slotProps){
+                slotProps.setCreateList({
+                    id : this.createInfo.account,
+                    pw : this.createInfo.password,
+                    product : this.createInfo.productType,
+                    licenses : this.createInfo.numberOfLicenses,
+                    date : this.createInfo.expdate
+                });
+                slotProps.toggleConfirm();
+            },
+            createInfoReset (){
+                Object.assign(this.$data.createInfo, this.$options.data().createInfo);
+            },
+            fetchCreate(){
+                this.postCreate(this.createInfo)
+                    .then((result) => {
+                        console.log(`postCreateResult : ${result}`);
+                        window.location.reload()
+                    })
+            }
         }
     }
 </script>
@@ -257,7 +357,16 @@
         padding-left: 0;
         padding-right: 0;
     }
-
+    .createAccountForm .category .item .col-form-input span {
+        font-size: 18px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.11;
+        letter-spacing: normal;
+        text-align: left;
+        color:  #f56049;
+    }
     .createAccountForm .buttonArea {
         text-align: center;
         margin-bottom: 60px;

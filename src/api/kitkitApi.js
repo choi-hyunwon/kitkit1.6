@@ -1,5 +1,6 @@
 import axios from 'axios';
 import qs from 'qs';
+import {store} from '../store/store';
 
 export default class KitkitApi {
     constructor() {
@@ -29,6 +30,33 @@ export default class KitkitApi {
             data: qs.stringify({
                 deviceInfo : 'test-',
                 ...options
+            })
+        })
+    }
+
+    /**
+     * 사용자 등록을 요청한다.
+     *
+     */
+    postCreate(options) {
+        return this.request('/add2', {
+            method: 'post',
+            data: qs.stringify({
+                sessionID : store.getters.getSessionID,
+                ...options
+            })
+        })
+    }
+
+    /**
+     * 사용자 정보를 요청한다.
+     *
+     */
+    postManage() {
+        return this.request('/list2', {
+            method: 'post',
+            data: qs.stringify({
+                sessionID : store.getters.getSessionID,
             })
         })
     }

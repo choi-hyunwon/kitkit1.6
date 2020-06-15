@@ -20,9 +20,7 @@
             }
         },
         components: {
-            Header,
-            Login,
-            Footer
+            Header, Login, Footer
         },
         created(){
             this.$EventBus.$on('eventSignin', (signIn) => {
@@ -48,6 +46,7 @@
             fetchSignin(signIn){
                 this.postSignIn(signIn)
                     .then((result) => {
+                        console.log(`postSignInResult : ${result}`);
                         if(result){
                             this.signInError = false;
                             if (this.status === 'admin') this.$router.push({path: '/Create'});
