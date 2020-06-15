@@ -7,7 +7,7 @@
 </template>
 
 <script>
-    import {mapGetters, mapMutations, mapActions} from 'vuex'
+    import {mapGetters, mapActions} from 'vuex'
     import Header from '../../components/login/Header'
     import Login from '../../components/login/Login'
     import Footer from '../../components/login/Footer'
@@ -20,56 +20,42 @@
             }
         },
         components: {
-            Header,
-            Login,
-            Footer
+            Header, Login, Footer
         },
         created(){
             this.$EventBus.$on('eventSignin', (signIn) => {
                 this.fetchSignin(signIn)
             });
         },
+        mounted(){
+            if (this.access) {
+                if(this.status === 'admin') this.$router.push({path: '/Create'});
+                else this.$router.push({path: '/Dashboard'});
+            }
+        },
         computed: {
             ...mapGetters({
-                signInfo : 'getSignInfo'
+                status : 'getStatus',
+                access : 'getAccess',
             })
         },
         methods: {
-            ...mapMutations({
-
-            }),
             ...mapActions({
                 postSignIn : 'postSignIn'
             }),
             fetchSignin(signIn){
                 this.postSignIn(signIn)
                     .then((result) => {
+                        console.log(`postSignInResult : ${result}`);
                         if(result){
-                            console.log('로그인 성공');
                             this.signInError = false;
-                            if (this.signInfo.status === 9){ // 관리자
-                                this.$router.push({
-                                    path: '/create'
-                                });
-                            }else if (this.signInfo.status === 2) {// 사용자
-                                this.$router.push({
-                                    path: '/grid'
-                                });
-                            }
-                        }else{
-                            console.log('로그인 실패');
-                            this.signInError = true;
-                        }
+                            if (this.status === 'admin') this.$router.push({path: '/Create'});
+                            else if (this.status === 'user') this.$router.push({path: '/Dashboard'});
+                        }else this.signInError = true;
                     })
             }
         }
     }
 </script>
 
-<style>
-    .container-fluid {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-</style>
 

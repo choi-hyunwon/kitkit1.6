@@ -17,9 +17,33 @@ export const actions = {
      */
     postSignIn({commit}, options) {
         return kitkitApi.postSignIn(options).then(data => {
-            data.result ? commit('setSignIn', data) : '';
+            if(data.result) commit('setSignIn', data.data);
             return data.result;
         })
     },
 
+    /**
+     * 사용자 등록을 요청한다.
+     *
+     * @param commit
+     * @param {Object} options
+     *
+     */
+    postCreate({commit},options) {
+        return kitkitApi.postCreate(options).then(data => {
+            return data.result;
+        })
+    },
+
+    /**
+     * 사용자 정보를 요청한다.
+     *
+     * @param commit
+     *
+     */
+    postManage({commit}) {
+        return kitkitApi.postManage().then(data => {
+            return data;
+        })
+    },
 };

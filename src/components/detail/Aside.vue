@@ -5,40 +5,28 @@
                 <img width="116" height="62" src="https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng.png" class="logo attachment-full size-full" rcset="https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng.png 500w, https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng-300x156.png 300w" sizes="(max-width: 500px) 100vw, 500px" alt="kitkit school logo"/>
             </router-link>
             <div class="account">willychoi</div>
-            <button class="btn signout">
+            <button @click="eventSignOut" class="btn signout">
                 Sign out <font-awesome-icon :icon="['fal', 'sign-out-alt']"/>
             </button>
         </div>
-        <ul class="menu" v-if="status === 2">
-            <li class="item active">
-                <font-awesome-icon :icon="['far', 'desktop']"/>
-                <div class="text">Dashboard</div>
-                <div class="underline"></div>
-            </li>
-            <li class="item">
-                <font-awesome-icon :icon="['far', 'download']"/>
-                <div class="text">Download</div>
-                <div class="underline"></div>
-            </li>
-            <li class="item">
-                <font-awesome-icon :icon="['far', 'info-circle']"/>
-                <div class="text">Support</div>
-                <div class="underline"></div>
-            </li>
+        <ul class="menu" v-if="status === 'user'">
+            <a href="#">
+                <li @click="event => eventMenu(event, userMenu[i].title)" v-for="(userList, i) in userMenu" :key="i" class="item" :class="{active : userMenu[i].title === getActive}">
+                    <font-awesome-icon :icon="`${userList.icon}`" class="icon">{{userList.title}}</font-awesome-icon>
+                    <div class="text">{{userList.title}}</div>
+                    <div class="underline"></div>
+                </li>
+            </a>
         </ul>
-        <ul class="menu" v-else-if="status === 9">
-            <li class="item">
-                <font-awesome-icon :icon="['far', 'list-ul']"/>
-                <div class="text">Manage</div>
-                <div class="underline"></div>
-            </li>
-            <li class="item active">
-                <font-awesome-icon :icon="['far', 'user-check']"/>
-                <div class="text">Create</div>
-                <div class="underline"></div>
-            </li>
+        <ul class="menu" v-else-if="status === 'admin'">
+            <a href="#">
+                <li @click="event => eventMenu(event, adminMenu[i].title)" v-for="(adminList, i) in adminMenu" :key="i" class="item" :class="{active : adminMenu[i].title === getActive }">
+                    <font-awesome-icon :icon="`${adminList.icon}`" class="icon">{{adminList.title}}</font-awesome-icon>
+                    <div class="text">{{adminList.title}}</div>
+                    <div class="underline"></div>
+                </li>
+            </a>
         </ul>
-
     </aside>
 </template>
 
@@ -47,14 +35,54 @@
 
     export default {
         name: 'Aside',
+        data() {
+            return {
+                active : '',
+                adminMenu : [{
+                    title : 'Manage',
+                    icon : 'list-ul'
+                },{
+                    title : 'Create',
+                    icon : 'user-check'
+                }],
+                userMenu : [{
+                    title : 'Dashboard',
+                    icon : 'desktop'
+                },{
+                    title : 'Download',
+                    icon : 'download'
+                },{
+                    title : 'Support',
+                    icon : 'info-circle'
+                }]
+            }
+        },
+        mounted () {
+            this.active = this.detail
+        },
+        watch : {
+            'detail' () {
+                this.active = this.detail
+            }
+        },
         computed: {
             ...mapGetters({
-                signInfo  : 'getSignInfo'
+                status : 'getStatus'
             }),
-            status (){
-               return this.signInfo.status
+            getActive(){
+                return this.active
+            },
+            detail() {
+                return this.$route.params.detail;
             }
-
+        },
+        methods : {
+            eventSignOut() {
+                this.$EventBus.$emit('eventSignOut');
+            },
+            eventMenu (event, path) {
+                this.$router.push({path: `/${path}`});
+            }
         }
     }
 </script>
@@ -113,7 +141,7 @@
         color: #5a3428;
     }
 
-    .doc-aside .menu .item svg {
+    .doc-aside .menu .item .icon {
         z-index: 100;
         font-size: 32px;
     }

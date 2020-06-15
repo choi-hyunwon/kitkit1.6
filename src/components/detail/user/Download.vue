@@ -1,6 +1,9 @@
 <template>
     <div class="content">
+        <!-- Download Guide -->
         <ul class="guide">
+
+            <!-- 1. -->
             <li>
                 <div class="summary">
                     <div class="num">1.</div>
@@ -22,6 +25,9 @@
                     </ul>
                 </div>
             </li>
+            <!-- // 1. -->
+
+            <!-- 2. -->
             <li>
                 <div class="summary">
                     <div class="num">2.</div>
@@ -44,6 +50,9 @@
                     </div>
                 </div>
             </li>
+            <!-- // 2. -->
+
+            <!-- 3. -->
             <li>
                 <div class="summary">
                     <div class="num">3.</div>
@@ -87,6 +96,9 @@
                     </div>
                 </div>
             </li>
+            <!-- // 3. -->
+
+            <!-- 4. -->
             <li>
                 <div class="summary">
                     <div class="num">4.</div>
@@ -94,6 +106,9 @@
                 </div>
                 <span style="font-size: 24px; padding-left: 60px;">Please refer to the guides (PDF and videos) for detailed guidance.</span>
             </li>
+            <!-- // 4. -->
+
+            <!-- 5. -->
             <li>
                 <div class="summary" style="padding-top: 50px;">
                     <div class="num">5.</div>
@@ -116,12 +131,17 @@
                     </div>
                 </div>
             </li>
+            <!-- // 5. -->
+
+            <!-- 6. -->
             <li>
                 <div class="summary" style="padding-bottom: 50px;">
                     <div class="num">6.</div>
                     <div class="text">Please go to the Support page for more information on download, installation, and using Kitkit School</div>
                 </div>
             </li>
+            <!-- // 6. -->
+
         </ul>
     </div>
 </template>
@@ -140,6 +160,10 @@
     .content .guide {
         padding-top: 30px;
     }
+
+
+
+    /* Summary */
     .content .guide .summary {
         padding-top: 20px;
         margin-bottom: 30px;
@@ -153,6 +177,11 @@
     .content .guide .summary .text {
         margin-left: 43px;
     }
+    /* // Summary */
+
+
+
+    /* Detail */
     .content .guide .detail {
         margin-bottom: 30px;
         padding: 30px 40px;
@@ -165,6 +194,14 @@
         line-height: 29px;
         text-align: left;
         color: #333333;
+    }
+
+    .content .guide .detail .header {
+        text-align: center;
+    }
+    .content .guide .detail .header .title {
+        letter-spacing: -1.3px;
+        padding-left: 13px;
     }
 
     .content .guide .detail .list {
@@ -185,6 +222,7 @@
         border-radius: 3px;
         background-color: #333;
     }
+
     .content .guide .detail .item .spec {
         padding-left: 12px;
         padding-top: 12px;
@@ -212,13 +250,7 @@
         letter-spacing: normal;
         color: #333333;
     }
-    .content .guide .detail .header {
-        text-align: center;
-    }
-    .content .guide .detail .header .title {
-        letter-spacing: -1.3px;
-        padding-left: 13px;
-    }
+
     .content .guide .detail .packages {
         width: 740px;
         margin: 0 auto;
@@ -257,5 +289,6 @@
         width: 160px;
         height: 45px;
     }
+    /* // Detail */
 </style>
 
