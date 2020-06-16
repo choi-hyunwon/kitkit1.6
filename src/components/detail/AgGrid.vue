@@ -77,7 +77,7 @@
         beforeMount() {
             this.gridOptions = {};
             this.columnDefs = [
-                {headerName: 'No.', field: 'num', pinned: 'left'},
+
                 {headerName: 'Reg date', field: 'regdate', pinned: 'left', sortable: true},
                 {headerName: 'ID', field: 'account', pinned: 'left', filter: true, sortable: true},
                 {headerName: 'Name', field: 'sitename', filter: true, sortable: true},
