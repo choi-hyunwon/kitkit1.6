@@ -62,4 +62,17 @@ export default class KitkitApi {
     }
 
 
+    /**
+     * 대시보드 정보를 요청한다.
+     *
+     */
+    postDashboard() {
+        return this.request('/listLog', {
+            method: 'post',
+            data: qs.stringify({
+                sessionID : store.getters.getSessionID,
+            })
+        })
+    }
+
 }

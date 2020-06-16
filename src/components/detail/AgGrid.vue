@@ -10,7 +10,7 @@
                      :headerHeight="80"
                      :rowStyle="{background: 'white'}"
                      :rowHeight="60"
-                     @grid-ready="fetchManage"
+                     @grid-ready="fetchAgGridList"
                      :gridOptions="gridOptions"
                      :columnDefs="columnDefs"
                      :defaultColDef="defaultColDef"
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-    import {mapActions} from 'vuex'
+    import {mapActions, mapGetters} from 'vuex'
     import { AgGridVue } from 'ag-grid-vue';
     import "ag-grid-community/dist/styles/ag-grid.css";
     import "ag-grid-community/dist/styles/ag-theme-alpine.css";
@@ -42,33 +42,76 @@
         },
         beforeMount() {
             this.gridOptions = {};
-            this.columnDefs = [
-                {headerName: 'No.', field: 'num', pinned: 'left'},
-                {headerName: 'Reg date', field: 'regdate', pinned: 'left', sortable: true},
-                {headerName: 'ID', field: 'account', pinned: 'left', filter: true, sortable: true},
-                {headerName: 'Name', field: 'sitename', filter: true, sortable: true},
-                {headerName: 'Email', field: 'siteEMail', filter: true, sortable: true},
-                {headerName: 'Organization', field: 'organization', filter: true, sortable: true},
-                {headerName: 'Organization Type', field: 'organizationType'},
-                {headerName: 'Country', field: 'country', filter: true, sortable: true},
-                {headerName: 'City', field: 'city', filter: true, sortable: true},
-                {headerName: 'License Issued', field: 'numberOfLicenses'},
-                {headerName: 'Product', field: 'productType'},
-                {headerName: 'Expiration Date', field: 'expdate'},
-                {headerName: 'Staff Name', field: 'contactName', filter: true, sortable: true},
-                {headerName: 'Last Update', field: 'lastUpdate', sortable: true},
-                {headerName: 'License Used', field: 'licenseUsed'},
-                {headerName: 'Registered Users', field: 'registeredUsers'},
-                {headerName: 'Users with Play Data', field: 'usersWithPlayData'},
-                {headerName: 'Total Playtime', field: 'totalPlayTime'}
-            ];
+            if(this.status === 'user'){
+                this.columnDefs = [
+                    {headerName: '', field: 'userID'},
+                    {headerName: 'First name', field: 'firstName'},
+                    {headerName: 'Last name', field: 'lastName'},
+                    {headerName: 'Grade', field: 'grade'},
+                    {headerName: 'Class', field: 'class'},
+                    {headerName: 'TabletNumber', field: 'tabletNO'},
+                    {headerName: 'StartTime', field: 'startTime'},
+                    {headerName: 'End Time', field: 'endTime'},
+                    {headerName: 'Play Time (Total min.)', field: 'playTimeCount'},
+                    {headerName: 'Literacy Progress', groupId : 'progressLGroup',
+                        children : [
+                            {headerName: 'Egg', field: 'progressLEgg'},
+                            {headerName: 'Day', field: 'progressLDay'}]},
+                    {headerName: 'Math Progress', groupId : 'progressMGroup',
+                        children : [
+                            {headerName: 'Egg', field: 'progressMEgg'},
+                            {headerName: 'Day', field: 'progressMDay'}]},
+                    {headerName: 'Pre-test', groupId : 'PreTestGroup',
+                        children : [
+                            {headerName: 'Literacy', groupId : 'preTestLGroup',
+                                children : [
+                                    {headerName: 'Test Date', field: 'PretestLDate'},
+                                    {headerName: 'Score', field: 'PretestLScore'}]},
+                            {headerName: 'Math', groupId : 'preTestMGroup',
+                                children : [
+                                    {headerName: 'Test Date', field: 'PretestMDate'},
+                                    {headerName: 'Score', field: 'PretestMScore'}]}]},
+                    {headerName: 'Post test', groupId : 'PostTestGroup',
+                        children : [
+                            {headerName: 'Literacy', groupId : 'postTestLGroup',
+                                children : [
+                                    {headerName: 'TestDate', field: 'posttestLDate'},
+                                    {headerName: 'Score', field: 'posttestLScore'}]},
+                            {headerName: 'Math', groupId : 'postTestMGroup',
+                                children : [
+                                    {headerName: 'Test Date', field: 'posttestMDate'},
+                                    {headerName: 'Score', field: 'posttestMScore'}]}]},
+                ];
+            }else if (this.status === 'admin'){
+                this.columnDefs = [
+                    {headerName: 'Reg date', field: 'regdate', pinned: 'left', sortable: true},
+                    {headerName: 'ID', field: 'account', pinned: 'left', filter: true, sortable: true},
+                    {headerName: 'Name', field: 'sitename', filter: true, sortable: true},
+                    {headerName: 'Email', field: 'siteEMail', filter: true, sortable: true},
+                    {headerName: 'Organization', field: 'organization', filter: true, sortable: true},
+                    {headerName: 'Organization Type', field: 'organizationType'},
+                    {headerName: 'Country', field: 'country', filter: true, sortable: true},
+                    {headerName: 'City', field: 'city', filter: true, sortable: true},
+                    {headerName: 'License Issued', field: 'numberOfLicenses'},
+                    {headerName: 'Product', field: 'productType'},
+                    {headerName: 'Expiration Date', field: 'expdate'},
+                    {headerName: 'Staff Name', field: 'contactName', filter: true, sortable: true},
+                    {headerName: 'Last Update', field: 'lastUpdate', sortable: true},
+                    {headerName: 'License Used', field: 'licenseUsed'},
+                    {headerName: 'Registered Users', field: 'registeredUsers'},
+                    {headerName: 'Users with Play Data', field: 'usersWithPlayData'},
+                    {headerName: 'Total Playtime', field: 'totalPlayTime'}
+                ];
+            }
+
             this.defaultColDef = {
                 sort: 'desc',
                 unSortIcon: true,
                 sortingOrder: ['asc', 'desc'],
+                resizable: true,
                 floatingFilter: true,
                 filterParams: {
-                    filterOptions: ['contains', 'notContains'],
+                    filterOptions: ['contains'],
                     resetButton: true,
                     closeOnApply : true}
             };
@@ -76,16 +119,32 @@
         mounted() {
             this.gridApi = this.gridOptions.api;
         },
+        computed: {
+            ...mapGetters({
+                status : 'getStatus'
+            })
+        },
         methods : {
             ...mapActions({
-                postManage : 'postManage'
+                postManage : 'postManage',
+                postDashboard : 'postDashboard'
             }),
-            fetchManage(){
-                this.postManage()
-                    .then((data) => {
-                        console.log(`postManageResult : ${data.result}`);
-                        if(data.result) this.rowData = data.data.list;
-                    })
+            fetchAgGridList(){
+
+                if(this.status === 'user'){
+                    this.postDashboard()
+                        .then((data) => {
+                            console.log(`postDashboardResult : ${data.result}`);
+                            if(data.result) this.rowData = data.data.list;
+                        })
+                }else if(this.status === 'admin'){
+                    this.postManage()
+                        .then((data) => {
+                            console.log(`postManageResult : ${data.result}`);
+                            if(data.result) this.rowData = data.data.list;
+                        })
+                }
+
             },
             eventDownload(){
                 this.gridApi.exportDataAsCsv({fileName : `KitKitSchool_${this.$moment().format('YYYYMMDD')}`});

@@ -235,10 +235,16 @@
                         <div class="col item">
                             <div class="form-group row">
                                 <label class="col col-form-label">
-                                    <span class="col-label-text">Staff Name</span>
+                                    <span class="col-label-text">Staff Name *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <input type="text" class="form-control" title="Staff Name" placeholder="Please Enter Staff Name">
+                                    <ValidationProvider name="Staff Name" rules="required|alpha_num|max:20" v-slot="{ errors }">
+                                        <input type="text"
+                                               class="form-control"
+                                               placeholder="Please Enter Staff Name"
+                                               v-model="createInfo.contactName">
+                                        <span>{{ errors[0] }}</span>
+                                    </ValidationProvider>
                                 </div>
                             </div>
                         </div>
