@@ -49,7 +49,7 @@
                         console.log(`postSignInResult : ${result}`);
                         if(result){
                             this.signInError = false;
-                            if (this.status === 'admin') this.$router.push({path: '/Create'});
+                            if (this.status === 'admin') this.$router.push({path: '/Manage'});
                             else if (this.status === 'user') this.$router.push({path: '/Dashboard'});
                         }else this.signInError = true;
                     })
