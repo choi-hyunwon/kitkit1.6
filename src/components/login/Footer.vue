@@ -22,8 +22,7 @@
 
 <script>
     export default {
-        name: 'Footer',
-        layout : 'login',
+        name: 'footer',
         components: {
 
         }

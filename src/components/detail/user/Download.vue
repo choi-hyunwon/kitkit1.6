@@ -188,7 +188,6 @@
 <script>
     export default {
         name: 'download',
-        layout : 'detail',
         components: {
 
         }

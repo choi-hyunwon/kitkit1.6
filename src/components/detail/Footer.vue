@@ -20,8 +20,7 @@
 
 <script>
     export default {
-        name: 'Footer',
-        layout : 'detail',
+        name: 'footer',
         components: {
 
         }
