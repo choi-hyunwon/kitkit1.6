@@ -16,9 +16,9 @@
                         <li class="item">If you are installing Kitkit School to multiple devices, using an SD card is more efficient.</li>
                         <li class="item" style="margin: 30px 0;">Kitkit School works on Android tablet devices. Below are the minimum specification requirements for the tablets:
                             <p class="spec">
-                                - Minimum OS version: Android 6.0<br/>
-                                - Storage: 16GB with 6GB available space<br/>
-                                - RAM: 2GB
+                                - Minimum OS version: <span class="yale">Android 6.0</span><br/>
+                                - Storage: <span class="yale">16GB</span> with <span class="yale">6GB</span> available space<br/>
+                                - RAM: <span class="yale">1.8GB</span>
                             </p>
                         </li>
                         <li class="item">You check your device spec in the Settings app, under About Tablet and Storage menu</li>
