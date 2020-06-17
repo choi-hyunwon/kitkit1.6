@@ -321,8 +321,7 @@
                 slotProps.toggleConfirm();
             },
             createInfoReset (){
-                Object.assign(this.
-                    $data.createInfo, this.$options.data().createInfo);
+                Object.assign(this.$data.createInfo, this.$options.data().createInfo);
             },
             fetchCreate(){
                 this.postCreate(this.createInfo)
