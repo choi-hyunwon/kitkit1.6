@@ -118,12 +118,12 @@
 
     .doc-aside .menu .item {
         padding: 27px 16px 23.5px 0;
-        margin-left: 14px;
-        width: 166px;
+        margin-left: 10px;
+        width: 170px;
         height: 120px;
         margin-top: -1px;
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
         font-size: 24px;
         color: #be8720;
         font-weight: bold;
@@ -149,6 +149,7 @@
         height: 1px;
         position: absolute;
         bottom: 0;
+        right: 15px;
         width: 150px;
     }
 

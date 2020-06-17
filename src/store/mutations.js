@@ -28,6 +28,7 @@ export const mutations = {
     setSignOut(state) {
         localStorage.clear();
         state.global = Object.assign({}, state.init);
+        state.account = Object.assign({}, state.accountInit);
     },
 
     /**
@@ -35,11 +36,8 @@ export const mutations = {
      *
      * @param state
      * @param {Object} accountInfo
-     * <br> - {String}       account               - ID
-     * <br> - {String}       password              - PW
-     * <br> - {String}       deviceInfo            - 디바이스 정보
      */
     setAccountInfo(state, accountInfo) {
-        state.account = accountInfo
-    },
+        state.account = Object.assign({}, state.account, accountInfo, {access : true});
+    }
 };

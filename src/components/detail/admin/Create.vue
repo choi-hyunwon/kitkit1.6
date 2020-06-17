@@ -21,7 +21,8 @@
                                                :class="{'is-invalid' : errors[0]}"
                                                placeholder="Please Enter ID"
                                                title="ID"
-                                               v-model="createInfo.account"/>
+                                               v-model="createInfo.account"
+                                               autocomplete="off"/>
                                         <div class="invalid-feedback">{{ errors[0] }}</div>
                                     </ValidationProvider>
                                 </div>
@@ -39,7 +40,8 @@
                                                :class="{'is-invalid' : errors[0]}"
                                                placeholder="Please Enter Password"
                                                title="Password"
-                                               v-model="createInfo.password"/>
+                                               v-model="createInfo.password"
+                                               autocomplete="off"/>
                                         <div class="invalid-feedback">{{ errors[0] }}</div>
                                     </ValidationProvider>
                                 </div>
@@ -191,36 +193,26 @@
                                 <label class="col col-form-label">
                                     <span class="col-label-text">Expiration date *</span>
                                 </label>
-                                <div class="col col-form-input">
-<!--                                    <ValidationProvider name="Expiration date" rules="required|max:20" v-slot="{ errors }">-->
-<!--                                        <input type="text"-->
-<!--                                               class="form-control"-->
-<!--                                               :class="{'is-invalid' : errors[0]}"-->
-<!--                                               placeholder="Please Enter Expiration date"-->
-<!--                                               title="Expiration date"-->
-<!--                                               v-model="createInfo.expdate">-->
-<!--                                        <div class="invalid-feedback">{{ errors[0] }}</div>-->
-<!--                                    </ValidationProvider>-->
+                                <ValidationProvider name="Expiration date" rules="required|max:20" v-slot="{ errors }">
+                                    <div @mouseover="datePickerOver"
+                                         @mouseout="datePickerOut"
+                                         class="col col-form-input">
 
-<!--                                    <b-form-datepicker-->
-<!--                                            class="input-group date"-->
-<!--                                            calendar-width="312px"-->
-<!--                                            :hide-header="true"-->
-<!--                                    >-->
-<!--                                        <button slot="button-content" class="btn btn-outline-light btn-calendar add-on">-->
-<!--                                            <font-awesome-icon :icon="['far', 'calendar-alt']"/>-->
-<!--                                        </button>-->
-<!--                                    </b-form-datepicker>-->
+                                        <button :class="{'focus' : datePickerHover}"
+                                                class="btn btn-outline-light btn-calendar add-on">
+                                            <font-awesome-icon :icon="['far', 'calendar-alt']"/>
+                                        </button>
+                                        <Datepicker
+                                                wrapper-class="input-group date"
+                                                input-class="form-control"
+                                                title="Expiration date"
+                                                :class="{'is-invalid' : errors[0]}"
+                                                v-model="createInfo.expdate"
+                                                :format="dateFormatter"/>
+                                    </div>
+                                    <div class="invalid-feedback">{{ errors[0] }}</div>
+                                </ValidationProvider>
 
-                                    <button class="btn btn-outline-light btn-calendar add-on">
-                                        <font-awesome-icon :icon="['far', 'calendar-alt']"/>
-                                    </button>
-                                    <Datepicker
-                                            wrapper-class="input-group date"
-                                            input-class="form-control"
-                                    />
-
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -257,6 +249,7 @@
                                     <ValidationProvider name="Staff Name" rules="required|alpha_num|max:20" v-slot="{ errors }">
                                         <input type="text"
                                                class="form-control"
+                                               :class="{'is-invalid' : errors[0]}"
                                                placeholder="Please Enter Staff Name"
                                                v-model="createInfo.contactName">
                                         <div class="invalid-feedback">{{ errors[0] }}</div>
@@ -303,15 +296,19 @@
                     city: '',
                     numberOfLicenses: '',
                     productType: 1,
-                    expdate: '2021.12.31',
+                    expdate : '' ,
                     contactName : ''
-                }
+                },
+                datePickerHover: false
             }
         },
         created(){
             this.$EventBus.$on('eventConfirm', () => {
                 this.fetchCreate();
             });
+        },
+        mounted() {
+          this.createInfo.expdate = this.$moment().add(1 , 'year').endOf('year').format('YYYY.MM.DD');
         },
         methods : {
             ...mapActions({
@@ -329,19 +326,27 @@
             },
             createInfoReset (){
                 Object.assign(this.$data.createInfo, this.$options.data().createInfo);
+                this.createInfo.expdate = this.$moment().add(1 , 'year').endOf('year').format('YYYY.MM.DD');
             },
             fetchCreate(){
                 this.postCreate(this.createInfo)
                     .then((data) => {
                         console.log(`postCreateResult : ${data.result}`);
-                        if(data.result){
-                            this.$router.push({path: '/Manage'});
-                        }else{
-                            alert(data.errorCode);
-                            this.$router.push({path: '/Create'});
-                        }
-
+                        if(data.result)this.$router.push({path: '/Manage'});
+                        else this.$router.push({path: '/Create'});
                     })
+            },
+            datePickerOver() {
+                this.datePickerHover = true;
+            },
+            datePickerOut() {
+                this.datePickerHover = false;
+            },
+            dateFormatter(date) {
+                let format = this.$moment(date).format('YYYY.MM.DD');
+                this.createInfo.expdate = format
+                return format ;
+
             }
         }
     }
@@ -388,16 +393,11 @@
         padding-left: 0;
         padding-right: 0;
     }
-    /*.createAccountForm .category .item .col-form-input span {*/
-    /*    font-size: 18px;*/
-    /*    font-weight: normal;*/
-    /*    font-stretch: normal;*/
-    /*    font-style: normal;*/
-    /*    line-height: 1.11;*/
-    /*    letter-spacing: normal;*/
-    /*    text-align: left;*/
-    /*    color:  #f56049;*/
-    /*}*/
+    .createAccountForm .category .list .item .col-form-input .btn-calendar.focus {
+        background-color: #f2f2f2;
+        border-color: #f2f2f2;
+    }
+
     .createAccountForm .buttonArea {
         text-align: center;
         margin-bottom: 60px;

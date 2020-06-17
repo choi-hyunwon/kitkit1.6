@@ -1,6 +1,7 @@
 import axios from 'axios';
 import qs from 'qs';
 import {store} from '../store/store';
+import {mutations} from '../store/mutations';
 
 export default class KitkitApi {
     constructor() {
@@ -10,9 +11,16 @@ export default class KitkitApi {
         return axios({
             url: 'https://api.kitkitschool.com/account' + url,
             ...config
-        }).then(result => result.data)
-            .catch(result => {
-                console.log(result.response);
+        }).then(result => {
+            if(!result.data.result){
+                if(result.data.errorCode.split(':')[0] === 'CAD03') {
+                    console.log('세션 만료, 로그인 필요')
+                    mutations.setSignOut(store.getters.getState);
+                }
+            }
+            return result.data
+        }).catch(error => {
+                console.log(error);
                 throw new Error(`kitkitApi ${url} Error!!`);
             })
     }

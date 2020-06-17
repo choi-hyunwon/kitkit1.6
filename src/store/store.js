@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import { mutations } from './mutations';
 import { actions } from './actions';
+import createPersistedState from 'vuex-persistedstate'
 
 Vue.use(Vuex);
 
@@ -26,14 +27,25 @@ export const store = new Vuex.Store({
         global: {
             status : localStorage.getItem('status') !== null ? localStorage.getItem('status') : '',
             sessionID : localStorage.getItem('sessionID') !== null ? localStorage.getItem('sessionID') : '',
-            access : localStorage.getItem('sessionID') !== null
+            access : false
+        },
+        accountInit : {
+            lastUpdate: '',
+            licenseUsed: 0,
+            registeredUsers: 0,
+            productType : '',
+            access : false
+
         },
         account : {
             lastUpdate: '',
             licenseUsed: 0,
-            registeredUsers: 0
+            registeredUsers: 0,
+            productType : '',
+            access : false
         }
     },
+    plugins: [createPersistedState()],
     /**
      * global로 사용하는 getters
      * 각 컴포넌트에서 Vuex의 데이터를 접근할 때 중복된 코드를 반복호출 하게 될 때 여기서 정의 해 중복을 없앤다.
@@ -54,6 +66,9 @@ export const store = new Vuex.Store({
         },
         getAccount : state => {
             return state.account
+        },
+        getState : state => {
+            return state
         }
     },
     /**
