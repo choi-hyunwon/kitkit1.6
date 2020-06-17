@@ -1,31 +1,61 @@
 <template>
     <div>
         <Header/>
-        <Login/>
+        <Login :signInError="signInError"/>
         <Footer/>
     </div>
 </template>
 
 <script>
+    import {mapGetters, mapActions} from 'vuex'
     import Header from '../../components/login/Header'
     import Login from '../../components/login/Login'
     import Footer from '../../components/login/Footer'
 
     export default {
         name: 'login',
-        layout : 'login',
+        data() {
+            return {
+                signInError : false
+            }
+        },
         components: {
-            Header,
-            Login,
-            Footer
+            Header, Login, Footer
+        },
+        created(){
+            this.$EventBus.$on('eventSignin', (signIn) => {
+                this.fetchSignin(signIn)
+            });
+        },
+        mounted(){
+            if (this.access) {
+                if(this.status === 'admin') this.$router.push({path: '/Create'});
+                else this.$router.push({path: '/Dashboard'});
+            }
+        },
+        computed: {
+            ...mapGetters({
+                status : 'getStatus',
+                access : 'getAccess',
+            })
+        },
+        methods: {
+            ...mapActions({
+                postSignIn : 'postSignIn'
+            }),
+            fetchSignin(signIn){
+                this.postSignIn(signIn)
+                    .then((result) => {
+                        console.log(`postSignInResult : ${result}`);
+                        if(result){
+                            this.signInError = false;
+                            if (this.status === 'admin') this.$router.push({path: '/Create'});
+                            else if (this.status === 'user') this.$router.push({path: '/Dashboard'});
+                        }else this.signInError = true;
+                    })
+            }
         }
     }
 </script>
 
-<style>
-    .container-fluid {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-</style>
 

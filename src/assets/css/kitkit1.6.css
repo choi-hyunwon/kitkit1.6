@@ -196,6 +196,10 @@ h2 {
   font-size: 36px;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 /**/
 .header {
   height: 80px;
@@ -210,3 +214,53 @@ h2 {
   color: #0c6290;
 }
 
+.kitkit-modal-footer {
+  min-width: 0;
+  background-color: #fff;
+  border: none;
+  height: auto;
+  padding: 0 30px 32px;
+}
+
+.kitkit-modal-footer .btn {
+  width: 250px;
+  height: 60px;
+  margin: 0;
+}
+
+.kitkit-modal-footer .btn:first-child {
+  margin-right: 10px;
+}
+
+.content {
+  /*border: 1px solid lightseagreen;*/
+  position: absolute;
+  top: 80px;
+  left: 180px;
+  /*height: calc(100% - 160px);*/
+  width: calc(100% - 180px);
+  min-width: 1020px;
+  overflow-y: auto;
+  padding: 20px 60px 80px;
+}
+
+/* ag-grid scroll bar */
+.ag-root ::-webkit-scrollbar {
+  height: 16px;
+}
+
+.ag-root ::-webkit-scrollbar-button {
+  display: none;
+}
+
+.ag-root ::-webkit-scrollbar-track-piece {
+  height: 20px;
+  border: solid 1px #e8e8e8;
+  background-color: #fafafa;
+}
+
+.ag-root ::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 8px;
+}
+/* // ag-grid scroll bar */

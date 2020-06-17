@@ -1,95 +1,241 @@
 <template>
-    <div class="content">
-        .content
-        <div class="grid">
-            .AgGrid
-
-            <div>
-
-                <b-button @click="toggleAlert">Open Alert</b-button>
-
-                <b-modal centered
-                         hide-footer
-                         v-model="showAlert">
-                    <template v-slot:modal-header="{ close }">
-                        <!-- Emulate built in modal header close button action -->
-                        <h5>Modal Title</h5>
-                        <button type="button" class="close" @click="close()">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </template>
-
-                    <template v-slot:default="{ ok, cancel }">
-                        <p>Modal Body with button</p>
-                        <b-button size="sm" variant="secondary" @click="cancel()">
-                            Cancel
-                        </b-button>
-                        <b-button size="sm" variant="primary" @click="ok()">
-                            Ok
-                        </b-button>
-                    </template>
-                </b-modal>
-
-
-
-            </div>
-
+    <div class="content gridView">
+        <div class="any">
+            <button @click="eventDownload" class="btn btn-primary btn-lg download">
+                <font-awesome-icon class="icon" :icon="['far', 'arrow-alt-to-bottom']"/>
+                Download
+            </button>
         </div>
+        <ag-grid-vue class="ag-theme-alpine ag-custom"
+                     :headerHeight="80"
+                     :rowStyle="{background: 'white'}"
+                     :rowHeight="60"
+                     @grid-ready="fetchAgGridList"
+                     :gridOptions="gridOptions"
+                     :columnDefs="columnDefs"
+                     :defaultColDef="defaultColDef"
+                     :rowData="rowData">
+        </ag-grid-vue>
+
     </div>
 </template>
 
 <script>
-    import {BModal, VBModal, BButton} from 'bootstrap-vue'
+    import {mapActions, mapGetters} from 'vuex'
+    import { AgGridVue } from 'ag-grid-vue';
+    import "ag-grid-community/dist/styles/ag-grid.css";
+    import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 
     export default {
         name: 'AgGrid',
-        layout : 'detail',
         components: {
-            'b-modal': BModal,
-            'b-button': BButton
+            AgGridVue
         },
-        directives: {
-            // Note that Vue automatically prefixes directive names with `v-`
-            'b-modal': VBModal
-        },
-        data: function() {
+        data() {
             return {
-                showAlert: false,
-                showConfirm: false
+                gridOptions: null,
+                gridApi: null,
+                columnDefs: null,
+                rowData: null,
+                defaultColDef: null,
             }
         },
-        methods: {
-            showModal: function() {
-                this.$refs['alert-modal'].show();
+        beforeMount() {
+            this.gridOptions = {};
+            if(this.status === 'user'){
+                this.columnDefs = [
+                    {headerName: '', field: 'userID'},
+                    {headerName: 'First name', field: 'firstName'},
+                    {headerName: 'Last name', field: 'lastName'},
+                    {headerName: 'Grade', field: 'grade'},
+                    {headerName: 'Class', field: 'class'},
+                    {headerName: 'TabletNumber', field: 'tabletNO'},
+                    {headerName: 'StartTime', field: 'startTime'},
+                    {headerName: 'End Time', field: 'endTime'},
+                    {headerName: 'Play Time (Total min.)', field: 'playTimeCount'},
+                    {headerName: 'Literacy Progress', groupId : 'progressLGroup',
+                        children : [
+                            {headerName: 'Egg', field: 'progressLEgg'},
+                            {headerName: 'Day', field: 'progressLDay'}]},
+                    {headerName: 'Math Progress', groupId : 'progressMGroup',
+                        children : [
+                            {headerName: 'Egg', field: 'progressMEgg'},
+                            {headerName: 'Day', field: 'progressMDay'}]},
+                    {headerName: 'Pre-test', groupId : 'PreTestGroup',
+                        children : [
+                            {headerName: 'Literacy', groupId : 'preTestLGroup',
+                                children : [
+                                    {headerName: 'Test Date', field: 'PretestLDate'},
+                                    {headerName: 'Score', field: 'PretestLScore'}]},
+                            {headerName: 'Math', groupId : 'preTestMGroup',
+                                children : [
+                                    {headerName: 'Test Date', field: 'PretestMDate'},
+                                    {headerName: 'Score', field: 'PretestMScore'}]}]},
+                    {headerName: 'Post test', groupId : 'PostTestGroup',
+                        children : [
+                            {headerName: 'Literacy', groupId : 'postTestLGroup',
+                                children : [
+                                    {headerName: 'TestDate', field: 'posttestLDate'},
+                                    {headerName: 'Score', field: 'posttestLScore'}]},
+                            {headerName: 'Math', groupId : 'postTestMGroup',
+                                children : [
+                                    {headerName: 'Test Date', field: 'posttestMDate'},
+                                    {headerName: 'Score', field: 'posttestMScore'}]}]},
+                ];
+            }else if (this.status === 'admin'){
+                this.columnDefs = [
+                    {headerName: 'Reg date', field: 'regdate', pinned: 'left', sortable: true},
+                    {headerName: 'ID', field: 'account', pinned: 'left', filter: true, sortable: true},
+                    {headerName: 'Name', field: 'sitename', filter: true, sortable: true},
+                    {headerName: 'Email', field: 'siteEMail', filter: true, sortable: true},
+                    {headerName: 'Organization', field: 'organization', filter: true, sortable: true},
+                    {headerName: 'Organization Type', field: 'organizationType'},
+                    {headerName: 'Country', field: 'country', filter: true, sortable: true},
+                    {headerName: 'City', field: 'city', filter: true, sortable: true},
+                    {headerName: 'License Issued', field: 'numberOfLicenses'},
+                    {headerName: 'Product', field: 'productType'},
+                    {headerName: 'Expiration Date', field: 'expdate'},
+                    {headerName: 'Staff Name', field: 'contactName', filter: true, sortable: true},
+                    {headerName: 'Last Update', field: 'lastUpdate', sortable: true},
+                    {headerName: 'License Used', field: 'licenseUsed'},
+                    {headerName: 'Registered Users', field: 'registeredUsers'},
+                    {headerName: 'Users with Play Data', field: 'usersWithPlayData'},
+                    {headerName: 'Total Playtime', field: 'totalPlayTime'}
+                ];
+            }
+
+            this.defaultColDef = {
+                sort: 'desc',
+                unSortIcon: true,
+                sortingOrder: ['asc', 'desc'],
+                resizable: true,
+                floatingFilter: true,
+                filterParams: {
+                    filterOptions: ['contains'],
+                    resetButton: true,
+                    closeOnApply : true}
+            };
+        },
+        mounted() {
+            this.gridApi = this.gridOptions.api;
+        },
+        computed: {
+            ...mapGetters({
+                status : 'getStatus'
+            })
+        },
+        methods : {
+            ...mapActions({
+                postManage : 'postManage',
+                postDashboard : 'postDashboard'
+            }),
+            fetchAgGridList(){
+
+                if(this.status === 'user'){
+                    this.postDashboard()
+                        .then((data) => {
+                            console.log(`postDashboardResult : ${data.result}`);
+                            if(data.result) this.rowData = data.data.list;
+                        })
+                }else if(this.status === 'admin'){
+                    this.postManage()
+                        .then((data) => {
+                            console.log(`postManageResult : ${data.result}`);
+                            if(data.result) this.rowData = data.data.list;
+                        })
+                }
+
             },
-            toggleAlert: function() {
-                this.showAlert = !this.showAlert;
-                console.log(this.showAlert)
-            },
-            toggleConfirm: function() {
-                console.log(this.showConfirm)
-                this.showConfirm = !this.showConfirm;
+            eventDownload(){
+                this.gridApi.exportDataAsCsv({fileName : `KitKitSchool_${this.$moment().format('YYYYMMDD')}`});
             }
         }
     }
 </script>
 
 <style>
-    .content {
-        /*border: 1px solid lightseagreen;*/
+    .content.gridView {
+        padding: 40px 40px 80px;
+    }
+
+    .any {
+        position: relative;
+        margin-bottom: 45px;
+        height: 60px;
+    }
+
+    .any .search .form-control {
         position: absolute;
-        top: 80px;
-        left: 180px;
-        /*height: calc(100% - 160px);*/
-        width: calc(100% - 180px);
-        min-width: 1020px;
-        overflow-y: auto;
-    }
-    .grid {
-        height: 1000px;
-        /*border: 1px solid lightsalmon;*/
-        /*border-bottom: 10px solid rebeccapurple;*/
+        width: 360px;
     }
 
+    .any .search .btn.search {
+        margin-left: 375px;
+        width: 190px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    .any .btn.download {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 190px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    .btn.download .icon {
+        font-weight: normal;
+    }
+
+    .pages {
+        margin: 50px auto;
+    }
+
+    .pages .pagination {
+        width: 477px;
+        margin: 0 auto;
+    }
+
+    .ag-theme-alpine.ag-custom {
+        border-radius: 0;
+        height: 720px;
+    }
+    .ag-theme-alpine.ag-custom .ag-root-wrapper {
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .ag-theme-alpine .ag-header-container {
+        background-color: #e9e9e9;
+    }
+
+    .ag-theme-alpine .ag-header-cell-text {
+        font-size: 20px;
+        font-weight: normal;
+        color: #0c6290;
+    }
+
+    .ag-theme-alpine .ag-cell {
+        font-size: 20px;
+        line-height: 24px;
+        color: #878d99;
+        padding-top: 17px;
+        padding-bottom: 17px;
+    }
+
+    .ag-body-horizontal-scroll-viewport {
+        height: 16px;
+        max-height: 16px;
+        min-height: 16px;
+    }
+    .ag-layout-normal::-webkit-scrollbar {
+        background-color: #faf;
+    }
+
+    .ag-sort-order {
+        display: none;
+    }
 </style>
-

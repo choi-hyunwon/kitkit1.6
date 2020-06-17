@@ -1,17 +1,30 @@
 // pages
 import Login from './../views/pages/Login.vue'
 import Detail from './../views/pages/Detail.vue'
+import {store} from "../store/store";
+
+const requireAuth = () => (from, to, next) => {
+    if(store.state.global.access) return next();
+    next('/')
+};
 
 export const routes = [
     {
-        name: 'login',
+        name: 'index',
         path: '/',
+        redirect : '/login'
+    },
+    {
+        name: 'login',
+        path: '/login',
         component: Login
     },
     {
         name: 'detail',
-        path: '/:user/:detail',
-        component: Detail
+        path: '/:detail',
+        alias : '/detail',
+        component: Detail,
+        beforeEnter : requireAuth()
     }
 ];
 

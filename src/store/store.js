@@ -2,8 +2,6 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import { mutations } from './mutations';
 import { actions } from './actions';
-// import { kids } from './modules/kids/store';
-import constants from '../assets/data/constants';
 
 Vue.use(Vuex);
 
@@ -13,10 +11,6 @@ Vue.use(Vuex);
  * 컴포넌트 간 데이터 전달 및 이벤트 통신 등의 여러 컴포넌트의 공통 데이터 상태를 관리함
  */
 export const store = new Vuex.Store({
-    modules: {
-        /*kids*/
-    },
-
     /**
      * global로 사용하는 state
      * component 간 공유될 전역 data를 관리
@@ -24,32 +18,16 @@ export const store = new Vuex.Store({
      * this.$store.state.CONSTANTS;
      */
     state: {
-        CONSTANTS: constants[process.env.VUE_APP_BUILD_TYPE],
-
-        /**
-         * ERROR 상태
-         * ERROR 발생 시 errorTrigger 가 true로 변경되며
-         * 에러 팝업을 닫으면 errorTrigger가 false로 변경된다.
-         * 각 화면에서 errorTrigger가 false로 변경될 때를 감시하여 focus를 가져간다.
-         */
-        errorTrigger: false,
-
-        layer: {
-            /**
-             * popup : 팝업화면(Popup Layer) 정보
-             * <br> - {Boolean}    visibleYn        - 팝업 노출 여부
-             * <br> - {String}     view             - 호출한 화면
-             * <br> - {String}     componentName    - 팝업 이름
-             * <br> - {Object}     data             - 팝업 내용 (title, desc, button, actions...)
-             */
-            popup: {
-                visibleYn: false,
-                view: '',
-                componentName: '',
-                data: {}
-            },
-
-        }
+        init : {
+            status : '',
+            sessionID : '',
+            access : false
+        },
+        global: {
+            status : localStorage.getItem('status') !== null ? localStorage.getItem('status') : '',
+            sessionID : localStorage.getItem('sessionID') !== null ? localStorage.getItem('sessionID') : '',
+            access : localStorage.getItem('sessionID') !== null
+        },
     },
     /**
      * global로 사용하는 getters
@@ -59,14 +37,16 @@ export const store = new Vuex.Store({
      * this.$store.getters.CONSTANTS
      */
     getters: {
-        CONSTANTS: state => {
-            return state.CONSTANTS
+        getStatus: state => {
+            if(state.global.status === 9 || state.global.status === '9' ) return 'admin';
+            else if(state.global.status === 2 || state.global.status === '2') return 'user';
         },
-
-        getError: state => {
-            return state.layer.error;
+        getSessionID: state => {
+            return state.global.sessionID
+        },
+        getAccess: state => {
+            return state.global.access
         }
-
     },
     /**
      * global로 사용하는 Mutations

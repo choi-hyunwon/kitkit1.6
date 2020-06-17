@@ -7,15 +7,13 @@
 <script>
     export default {
         name: 'Header',
-        layout : 'detail',
-        components: {
-
-        },
-        computed: {
-            detail() {
-                return this.$route.params.detail;
+        props : {
+            detail : {
+                String,
+                default(){return ''}
             }
         }
+
     }
 </script>
 
@@ -28,6 +26,7 @@
         padding: 19px 40px;
         background-color: #fff;
         z-index: 100;
+        border-bottom: 1px solid #d2d2d2;
     }
 
     .detail .header.detail-header .title {
