@@ -262,7 +262,7 @@
                                                class="form-control"
                                                placeholder="Please Enter Staff Name"
                                                v-model="createInfo.contactName">
-                                        <span>{{ errors[0] }}</span>
+                                        <div class="invalid-feedback">{{ errors[0] }}</div>
                                     </ValidationProvider>
                                 </div>
                             </div>
