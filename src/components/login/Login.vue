@@ -65,7 +65,7 @@
                 account : '',
                 password: '',
                 tipData: '<span>Please send your account information (your name, email address, and organization) '
-                       + 'to <b class="email">kitkitsupport@enuma.com</b> and we will respond to you with the ID and Password.</span>'
+                       + 'to <a class="email" href="mailto:kitkitsupport@enuma.com">kitkitsupport@enuma.com</a> and we will respond to you with the ID and Password.</span>'
             }
         },
         props : {
@@ -90,6 +90,7 @@
     }
     .section .container-fluid {
         height: 100%;
+        min-height: 412px;
     }
     .section .row {
         height: 100%;
@@ -186,6 +187,12 @@
         content: "";
         border-color: transparent;
         border-style: solid;
+    }
+
+    @media (max-height: 600px) {
+        .section {
+            height: 440px;
+        }
     }
 </style>
 

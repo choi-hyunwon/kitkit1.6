@@ -1,12 +1,12 @@
 <template>
     <div class="detail">
         <Header :detail="detail"/>
-        <Footer/>
         <Aside/>
         <AgGrid v-if="detail === 'Manage' || detail === 'Dashboard'" />
         <Create v-if="detail === 'Create'" />
         <Download v-if="detail === 'Download'" />
         <Support v-if="detail === 'Support'" />
+        <Footer/>
     </div>
 </template>
 

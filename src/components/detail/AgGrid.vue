@@ -1,11 +1,36 @@
 <template>
     <div class="content gridView">
-        <div class="any">
-            <button @click="eventDownload" class="btn btn-primary btn-lg download">
+
+        <Alert/>
+
+        <!-- Dashboard / Manage 분기 필요 -->
+        <div class="userInfo">
+            <span class="text">
+                License Used (Number of Tablet Being Used) : <b>156</b>
+            </span>
+            <div class="vertalLine"></div>
+            <span class="text">
+                Registered Users : <b>245</b>
+            </span>
+        </div>
+
+        <div class="dataInfo">
+            <p class="text">
+                <span class="line1">Click on the user’s name to download the individual log data. </span>
+                <a class="detailPopup" href="#">What can I find in the individual log data?</a>
+            </p>
+            <button class="btn btn-primary download">
                 <font-awesome-icon class="icon" :icon="['far', 'arrow-alt-to-bottom']"/>
-                Download
+                Download Dashboard Data
             </button>
         </div>
+
+<!--        <div class="any">-->
+<!--            <button @click="eventDownload" class="btn btn-primary btn-lg download">-->
+<!--                <font-awesome-icon class="icon" :icon="['far', 'arrow-alt-to-bottom']"/>-->
+<!--                Download-->
+<!--            </button>-->
+<!--        </div>-->
         <ag-grid-vue class="ag-theme-alpine ag-custom"
                      :headerHeight="80"
                      :rowStyle="{background: 'white'}"
@@ -17,40 +42,6 @@
                      :rowData="rowData">
         </ag-grid-vue>
 
-        <div class="pages">
-            <ul class="pagination pagination-circle">
-                    <li class="page-item disabled">
-                        <a class="page-link page-arrow" aria-label="Previous">
-                            <span aria-hidden="true"><font-awesome-icon :icon="['fas', 'angle-double-left']"/></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li>
-                    <li class="page-item disabled">
-                        <a class="page-link page-arrow" aria-label="Previous">
-                            <span aria-hidden="true"><font-awesome-icon :icon="['fas', 'chevron-left']"/></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li>
-                    <li class="page-item active"><a class="page-link">1</a></li>
-                    <li class="page-item"><a class="page-link">2</a></li>
-                    <li class="page-item"><a class="page-link">3</a></li>
-                    <li class="page-item"><a class="page-link">4</a></li>
-                    <li class="page-item"><a class="page-link">5</a></li>
-                    <li class="page-item">
-                        <a class="page-link page-arrow" aria-label="Next">
-                            <span aria-hidden="true"><font-awesome-icon :icon="['fas', 'chevron-right']"/></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link page-arrow" aria-label="Next">
-                            <span aria-hidden="true"><font-awesome-icon :icon="['fas', 'angle-double-right']"/></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li>
-                </ul>
-        </div>
-
     </div>
 </template>
 
@@ -60,9 +51,12 @@
     import "ag-grid-community/dist/styles/ag-grid.css";
     import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 
+    import Alert from "../../components/popup/Alert";
+
     export default {
         name: 'AgGrid',
         components: {
+            Alert,
             AgGridVue
         },
         data() {
@@ -164,15 +158,6 @@
         font-weight: normal;
     }
 
-    .pages {
-        margin: 50px auto;
-    }
-
-    .pages .pagination {
-        width: 477px;
-        margin: 0 auto;
-    }
-
     .ag-theme-alpine.ag-custom {
         border-radius: 0;
         height: 720px;
@@ -212,5 +197,92 @@
 
     .ag-sort-order {
         display: none;
+    }
+
+
+
+    /* Dashboard *//* Dashboard *//* Dashboard *//* Dashboard */
+    .content.gridView {
+        padding: 30px 40px 80px;
+    }
+
+    .userInfo {
+
+    }
+
+    .userInfo .text {
+        font-family: Lato;
+        font-size: 28px;
+        line-height: 34px;
+        color: #333333;
+    }
+
+    .userInfo .vertalLine {
+        display: inline-block;
+        margin: 0 20px;
+        width: 1px;
+        height: 27px;
+        background-color: #aaa;
+    }
+
+    .dataInfo {
+        position: relative;
+        margin: 32px 0 56px;
+    }
+
+    .dataInfo .text {
+        margin-right: 400px;
+        font-family: Lato;
+        font-size: 24px;
+        line-height: 29px;
+        color: #333333;
+    }
+
+    .dataInfo .text .line1 {
+        padding-right: 6px;
+        display: inline-block;
+    }
+
+    .dataInfo .text .detailPopup {
+        color: #0c6290;
+        text-decoration: underline;
+    }
+
+    .dataInfo .btn.download {
+        position: absolute;
+        bottom: -16px;
+        right: 0;
+        padding: 16px 21px 15px;
+        width: 360px;
+        height: 60px;
+        font-family: Lato;
+        font-size: 23px;
+        font-weight: 500;
+        /*line-height: 1.13;*/
+    }
+
+    @media (max-width: 1807px) {
+        .dataInfo {
+            margin: 32px 0 40px;
+        }
+        .dataInfo .btn.download {
+            bottom: 0;
+        }
+    }
+
+    @media (max-width: 1721px) {
+        .dataInfo .text .line1 {
+            display: block;
+            margin-bottom: 4px;
+        }
+    }
+
+    @media (max-width: 1321px) {
+        .dataInfo {
+            height: 145px;
+        }
+        .dataInfo .text {
+            margin-right: 0;
+        }
     }
 </style>

@@ -214,7 +214,7 @@ a:hover {
 }
 .content {
   /*border: 1px solid lightseagreen;*/
-  position: absolute;
+  position: relative;
   top: 80px;
   left: 180px;
   /*height: calc(100% - 160px);*/
@@ -256,34 +256,6 @@ a:hover {
   border-radius: 8px;
 }
 /* // ag-grid scroll bar */
-
-/* datepicker */
-/*.input-group.date .btn.h-auto {*/
-/*  min-width: 0;*/
-/*  padding: 0;*/
-/*}*/
-/*.input-group.date .btn-calendar.add-on {*/
-
-/*}*/
-/*.input-group.date label.form-control {*/
-/*  padding: 0 10px;*/
-/*  line-height: 3.7rem;*/
-/*  height: 60px !important;*/
-/*  color: #0c6290 !important;*/
-/*}*/
-/*.input-group.date .dropdown-menu .btn, .input-group.date .dropdown-menu .btn-sm {*/
-/*  min-width: 0;*/
-/*}*/
-/*.input-group.date .b-calendar .b-calendar-grid-body .col[data-date] .btn {*/
-/*  text-align: center;*/
-/*}*/
-/*!*.input-group.date .b-calendar .b-calendar-header output {*!*/
-/*!*  display: none;*!*/
-/*!*}*!*/
-/*.input-group.date .b-calendar footer.b-calendar-grid-help {*/
-/*  display: none;*/
-/*}*/
-/* // datepicker */
 
 /* datepicker */
 .input-group.date.vdp-datepicker {

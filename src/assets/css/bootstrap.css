@@ -4933,6 +4933,13 @@ a.close.disabled {
   .modal-xl {
     max-width: 1200px; } }
 
+.modal-lg {
+  width: 900px;
+  max-width: 900px; }
+
+.modal-lg .modal-body {
+  padding: 40px 50px; }
+
 .tooltip {
   position: absolute;
   z-index: 1070;
