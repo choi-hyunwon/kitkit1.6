@@ -191,7 +191,9 @@
                                 <label class="col col-form-label">
                                     <span class="col-label-text">Expiration date *</span>
                                 </label>
-                                <div class="col col-form-input">
+                                <div @mouseover="datePickerOver"
+                                     @mouseout="datePickerOut"
+                                     class="col col-form-input">
 <!--                                    <ValidationProvider name="Expiration date" rules="required|max:20" v-slot="{ errors }">-->
 <!--                                        <input type="text"-->
 <!--                                               class="form-control"-->
@@ -201,18 +203,8 @@
 <!--                                               v-model="createInfo.expdate">-->
 <!--                                        <div class="invalid-feedback">{{ errors[0] }}</div>-->
 <!--                                    </ValidationProvider>-->
-
-<!--                                    <b-form-datepicker-->
-<!--                                            class="input-group date"-->
-<!--                                            calendar-width="312px"-->
-<!--                                            :hide-header="true"-->
-<!--                                    >-->
-<!--                                        <button slot="button-content" class="btn btn-outline-light btn-calendar add-on">-->
-<!--                                            <font-awesome-icon :icon="['far', 'calendar-alt']"/>-->
-<!--                                        </button>-->
-<!--                                    </b-form-datepicker>-->
-
-                                    <button class="btn btn-outline-light btn-calendar add-on">
+                                    <button :class="{'focus' : datePickerHover}"
+                                            class="btn btn-outline-light btn-calendar add-on">
                                         <font-awesome-icon :icon="['far', 'calendar-alt']"/>
                                     </button>
                                     <Datepicker
@@ -305,7 +297,8 @@
                     productType: 1,
                     expdate: '2021.12.31',
                     contactName : ''
-                }
+                },
+                datePickerHover: false
             }
         },
         created(){
@@ -328,7 +321,8 @@
                 slotProps.toggleConfirm();
             },
             createInfoReset (){
-                Object.assign(this.$data.createInfo, this.$options.data().createInfo);
+                Object.assign(this.
+                    $data.createInfo, this.$options.data().createInfo);
             },
             fetchCreate(){
                 this.postCreate(this.createInfo)
@@ -342,6 +336,15 @@
                         }
 
                     })
+            },
+            datePickerOver() {
+                this.datePickerHover = true;
+            },
+            datePickerOut() {
+                this.datePickerHover = false;
+            },
+            dateFormatter(date) {
+                return this.$moment(date).format('YYYY.MM.DD');
             }
         }
     }
@@ -388,16 +391,11 @@
         padding-left: 0;
         padding-right: 0;
     }
-    /*.createAccountForm .category .item .col-form-input span {*/
-    /*    font-size: 18px;*/
-    /*    font-weight: normal;*/
-    /*    font-stretch: normal;*/
-    /*    font-style: normal;*/
-    /*    line-height: 1.11;*/
-    /*    letter-spacing: normal;*/
-    /*    text-align: left;*/
-    /*    color:  #f56049;*/
-    /*}*/
+    .createAccountForm .category .list .item .col-form-input .btn-calendar.focus {
+        background-color: #f2f2f2;
+        border-color: #f2f2f2;
+    }
+
     .createAccountForm .buttonArea {
         text-align: center;
         margin-bottom: 60px;
