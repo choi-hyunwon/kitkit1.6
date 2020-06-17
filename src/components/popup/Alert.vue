@@ -53,9 +53,6 @@
                 showAlert: false
             }
         },
-        mounted() {
-            console.log('alert')
-        },
         methods: {
             toggleAlert: function() {
                 this.showAlert = !this.showAlert;
