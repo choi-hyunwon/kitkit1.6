@@ -21,7 +21,8 @@
                                                :class="{'is-invalid' : errors[0]}"
                                                placeholder="Please Enter ID"
                                                title="ID"
-                                               v-model="createInfo.account"/>
+                                               v-model="createInfo.account"
+                                               autocomplete="off"/>
                                         <div class="invalid-feedback">{{ errors[0] }}</div>
                                     </ValidationProvider>
                                 </div>
@@ -39,7 +40,8 @@
                                                :class="{'is-invalid' : errors[0]}"
                                                placeholder="Please Enter Password"
                                                title="Password"
-                                               v-model="createInfo.password"/>
+                                               v-model="createInfo.password"
+                                               autocomplete="off"/>
                                         <div class="invalid-feedback">{{ errors[0] }}</div>
                                     </ValidationProvider>
                                 </div>
@@ -191,28 +193,26 @@
                                 <label class="col col-form-label">
                                     <span class="col-label-text">Expiration date *</span>
                                 </label>
-                                <div @mouseover="datePickerOver"
-                                     @mouseout="datePickerOut"
-                                     class="col col-form-input">
-<!--                                    <ValidationProvider name="Expiration date" rules="required|max:20" v-slot="{ errors }">-->
-<!--                                        <input type="text"-->
-<!--                                               class="form-control"-->
-<!--                                               :class="{'is-invalid' : errors[0]}"-->
-<!--                                               placeholder="Please Enter Expiration date"-->
-<!--                                               title="Expiration date"-->
-<!--                                               v-model="createInfo.expdate">-->
-<!--                                        <div class="invalid-feedback">{{ errors[0] }}</div>-->
-<!--                                    </ValidationProvider>-->
-                                    <button :class="{'focus' : datePickerHover}"
-                                            class="btn btn-outline-light btn-calendar add-on">
-                                        <font-awesome-icon :icon="['far', 'calendar-alt']"/>
-                                    </button>
-                                    <Datepicker
-                                            wrapper-class="input-group date"
-                                            input-class="form-control"
-                                    />
+                                <ValidationProvider name="Expiration date" rules="required|max:20" v-slot="{ errors }">
+                                    <div @mouseover="datePickerOver"
+                                         @mouseout="datePickerOut"
+                                         class="col col-form-input">
 
-                                </div>
+                                        <button :class="{'focus' : datePickerHover}"
+                                                class="btn btn-outline-light btn-calendar add-on">
+                                            <font-awesome-icon :icon="['far', 'calendar-alt']"/>
+                                        </button>
+                                        <Datepicker
+                                                wrapper-class="input-group date"
+                                                input-class="form-control"
+                                                title="Expiration date"
+                                                :class="{'is-invalid' : errors[0]}"
+                                                v-model="createInfo.expdate"
+                                                :format="dateFormatter"/>
+                                    </div>
+                                    <div class="invalid-feedback">{{ errors[0] }}</div>
+                                </ValidationProvider>
+
                             </div>
                         </div>
                     </div>
@@ -249,6 +249,7 @@
                                     <ValidationProvider name="Staff Name" rules="required|alpha_num|max:20" v-slot="{ errors }">
                                         <input type="text"
                                                class="form-control"
+                                               :class="{'is-invalid' : errors[0]}"
                                                placeholder="Please Enter Staff Name"
                                                v-model="createInfo.contactName">
                                         <div class="invalid-feedback">{{ errors[0] }}</div>
@@ -295,7 +296,7 @@
                     city: '',
                     numberOfLicenses: '',
                     productType: 1,
-                    expdate: '2021.12.31',
+                    expdate : '' ,
                     contactName : ''
                 },
                 datePickerHover: false
@@ -305,6 +306,9 @@
             this.$EventBus.$on('eventConfirm', () => {
                 this.fetchCreate();
             });
+        },
+        mounted() {
+          this.createInfo.expdate = this.$moment().add(1 , 'year').endOf('year').format('YYYY.MM.DD');
         },
         methods : {
             ...mapActions({
@@ -322,6 +326,7 @@
             },
             createInfoReset (){
                 Object.assign(this.$data.createInfo, this.$options.data().createInfo);
+                this.createInfo.expdate = this.$moment().add(1 , 'year').endOf('year').format('YYYY.MM.DD');
             },
             fetchCreate(){
                 this.postCreate(this.createInfo)
@@ -338,7 +343,10 @@
                 this.datePickerHover = false;
             },
             dateFormatter(date) {
-                return this.$moment(date).format('YYYY.MM.DD');
+                let format = this.$moment(date).format('YYYY.MM.DD');
+                this.createInfo.expdate = format
+                return format ;
+
             }
         }
     }

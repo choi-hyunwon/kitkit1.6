@@ -9,8 +9,8 @@
                         <form @submit.prevent="eventSignin"  >
                             <h2 class="title">Welcome!</h2>
                             <div class="form-group">
-                                <input type="text" v-model="account"  class="form-control" placeholder="ID"/>
-                                <input type="password" v-model="password" class="form-control" placeholder="Password"/>
+                                <input type="text" v-model="account"  class="form-control" placeholder="ID" autocomplete="off"/>
+                                <input type="password" v-model="password" class="form-control" placeholder="Password" autocomplete="off"/>
                             </div>
                             <div class="accountError" v-if="signInError">
                                 <div class="errorIcon">
