@@ -1,12 +1,9 @@
 <template>
     <div class="content">
-
         <Confirm v-slot="slotProps">
         <ValidationObserver ref="form" v-slot="{ handleSubmit , reset , invalid}">
-
         <!-- Form -->
         <form class="createAccountForm" @submit.prevent="handleSubmit(showPopup(slotProps))"  @reset.prevent="reset">
-
             <!-- Account Information -->
             <div class="category accountInfo">
                 <div class="font-weight-bold subtitle">Account Information</div>
@@ -195,15 +192,34 @@
                                     <span class="col-label-text">Expiration date *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <ValidationProvider name="Expiration date" rules="required|max:20" v-slot="{ errors }">
-                                        <input type="text"
-                                               class="form-control"
-                                               :class="{'is-invalid' : errors[0]}"
-                                               placeholder="Please Enter Expiration date"
-                                               title="Expiration date"
-                                               v-model="createInfo.expdate">
-                                        <div class="invalid-feedback">{{ errors[0] }}</div>
-                                    </ValidationProvider>
+<!--                                    <ValidationProvider name="Expiration date" rules="required|max:20" v-slot="{ errors }">-->
+<!--                                        <input type="text"-->
+<!--                                               class="form-control"-->
+<!--                                               :class="{'is-invalid' : errors[0]}"-->
+<!--                                               placeholder="Please Enter Expiration date"-->
+<!--                                               title="Expiration date"-->
+<!--                                               v-model="createInfo.expdate">-->
+<!--                                        <div class="invalid-feedback">{{ errors[0] }}</div>-->
+<!--                                    </ValidationProvider>-->
+
+<!--                                    <b-form-datepicker-->
+<!--                                            class="input-group date"-->
+<!--                                            calendar-width="312px"-->
+<!--                                            :hide-header="true"-->
+<!--                                    >-->
+<!--                                        <button slot="button-content" class="btn btn-outline-light btn-calendar add-on">-->
+<!--                                            <font-awesome-icon :icon="['far', 'calendar-alt']"/>-->
+<!--                                        </button>-->
+<!--                                    </b-form-datepicker>-->
+
+                                    <button class="btn btn-outline-light btn-calendar add-on">
+                                        <font-awesome-icon :icon="['far', 'calendar-alt']"/>
+                                    </button>
+                                    <Datepicker
+                                            wrapper-class="input-group date"
+                                            input-class="form-control"
+                                    />
+
                                 </div>
                             </div>
                         </div>
@@ -254,7 +270,7 @@
             </div>
             <div class="buttonArea mx-auto">
                 <button @click="createInfoReset" type="reset" class="btn btn-lg btn-secondary" style="margin-right: 20px;">Reset</button>
-                    <button class="btn btn-lg btn-primary" :disabled="invalid" >Create Account</button>
+                <button class="btn btn-lg btn-primary" :disabled="invalid" >Create Account</button>
             </div>
         </form>
         </ValidationObserver>
@@ -265,11 +281,14 @@
 <script>
     import {mapActions} from 'vuex'
     import Confirm from "../../popup/Confirm";
+    import Datepicker from "vuejs-datepicker";
 
     export default {
         name: 'create',
         components: {
-           Confirm
+            Confirm,
+            // 'b-form-datepicker': BFormDatepicker
+            Datepicker
         },
         data (){
             return{
@@ -313,9 +332,15 @@
             },
             fetchCreate(){
                 this.postCreate(this.createInfo)
-                    .then((result) => {
-                        console.log(`postCreateResult : ${result}`);
-                        window.location.reload()
+                    .then((data) => {
+                        console.log(`postCreateResult : ${data.result}`);
+                        if(data.result){
+                            this.$router.push({path: '/Manage'});
+                        }else{
+                            alert(data.errorCode);
+                            this.$router.push({path: '/Create'});
+                        }
+
                     })
             }
         }
@@ -363,16 +388,16 @@
         padding-left: 0;
         padding-right: 0;
     }
-    .createAccountForm .category .item .col-form-input span {
-        font-size: 18px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.11;
-        letter-spacing: normal;
-        text-align: left;
-        color:  #f56049;
-    }
+    /*.createAccountForm .category .item .col-form-input span {*/
+    /*    font-size: 18px;*/
+    /*    font-weight: normal;*/
+    /*    font-stretch: normal;*/
+    /*    font-style: normal;*/
+    /*    line-height: 1.11;*/
+    /*    letter-spacing: normal;*/
+    /*    text-align: left;*/
+    /*    color:  #f56049;*/
+    /*}*/
     .createAccountForm .buttonArea {
         text-align: center;
         margin-bottom: 60px;

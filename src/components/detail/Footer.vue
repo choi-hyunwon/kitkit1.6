@@ -9,9 +9,9 @@
             </div>
             <div class="col text-right">
                 <div class="terms">
-                    <a href="https://enuma.com/tos/">Terms of Service | </a>
-                    <a href="http://kitkitschool.com/legal-kitkit/">Legal Privacy | </a>
-                    <a href="https://enuma.com/policy/">Policy</a>
+                    <a href="https://enuma.com/tos/" target="_blank">Terms of Service | </a>
+                    <a href="http://kitkitschool.com/legal-kitkit/" target="_blank">Legal Privacy | </a>
+                    <a href="https://enuma.com/policy/" target="_blank">Policy</a>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
 
 <style>
     .detail .footer.detail-footer {
-        position: fixed;
+        position: relative;
         bottom: 0;
         width: calc(100% - 180px);
         min-width: 1020px;

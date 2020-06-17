@@ -1,11 +1,38 @@
 <template>
     <div class="content gridView">
-        <div class="any">
+        <div v-if="status === 'user'" class="userInfo">
+            <span class="text">
+                License Used (Number of Tablet Being Used) : <b>{{account.licenseUsed}}</b>
+            </span>
+            <div class="vertalLine"></div>
+            <span class="text">
+                Registered Users : <b>{{account.registeredUsers}}</b>
+            </span>
+            <div class="vertalLine"></div>
+            <span class="text">
+                Last Update : <b>{{account.lastUpdate}}</b>
+            </span>
+        </div>
+        <div v-if="status === 'user'" class="dataInfo">
+            <p class="text">
+                <Alert v-slot="slotProps" >
+                    <span class="line1">Click on the user’s name to download the individual log data.</span>
+                    <a @click="slotProps.toggleAlert" class="detailPopup" href="#">What can I find in the individual log data?</a>
+                </Alert>
+            </p>
+            <button  @click="eventDownload"  class="btn btn-primary download">
+                <font-awesome-icon class="icon" :icon="['far', 'arrow-alt-to-bottom']"/>
+                Download Dashboard Data
+            </button>
+        </div>
+
+        <div v-if="status === 'admin'"  class="any">
             <button @click="eventDownload" class="btn btn-primary btn-lg download">
                 <font-awesome-icon class="icon" :icon="['far', 'arrow-alt-to-bottom']"/>
                 Download
             </button>
         </div>
+
         <ag-grid-vue class="ag-theme-alpine ag-custom"
                      :headerHeight="80"
                      :rowStyle="{background: 'white'}"
@@ -26,9 +53,12 @@
     import "ag-grid-community/dist/styles/ag-grid.css";
     import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 
+    import Alert from "../../components/popup/Alert";
+
     export default {
         name: 'AgGrid',
         components: {
+            Alert,
             AgGridVue
         },
         data() {
@@ -44,15 +74,15 @@
             this.gridOptions = {};
             if(this.status === 'user'){
                 this.columnDefs = [
-                    {headerName: '', field: 'userID'},
-                    {headerName: 'First name', field: 'firstName'},
-                    {headerName: 'Last name', field: 'lastName'},
-                    {headerName: 'Grade', field: 'grade'},
-                    {headerName: 'Class', field: 'class'},
-                    {headerName: 'TabletNumber', field: 'tabletNO'},
-                    {headerName: 'StartTime', field: 'startTime'},
-                    {headerName: 'End Time', field: 'endTime'},
-                    {headerName: 'Play Time (Total min.)', field: 'playTimeCount'},
+                    {headerName: 'TabletNumber', field: 'tabletNO', pinned: 'left', sortable: true},
+                    {headerName: 'Last Update', field: '', sortable: true},
+                    {headerName: 'First name', field: 'firstName', sortable: true},
+                    {headerName: 'Last name', field: 'lastName', sortable: true},
+                    {headerName: 'Grade', field: 'grade', sortable: true},
+                    {headerName: 'Class', field: 'class', sortable: true},
+                    {headerName: 'First Played', field: 'startTime', sortable: true},
+                    {headerName: 'Last Played', field: 'endTime', sortable: true},
+                    {headerName: 'Play Time (Total min.)', field: 'playTimeCount', sortable: true},
                     {headerName: 'Literacy Progress', groupId : 'progressLGroup',
                         children : [
                             {headerName: 'Egg', field: 'progressLEgg'},
@@ -118,19 +148,27 @@
         },
         mounted() {
             this.gridApi = this.gridOptions.api;
+            this.fetchAccountInfo();
         },
         computed: {
             ...mapGetters({
-                status : 'getStatus'
+                status : 'getStatus',
+                account : 'getAccount'
             })
         },
         methods : {
             ...mapActions({
                 postManage : 'postManage',
-                postDashboard : 'postDashboard'
+                postDashboard : 'postDashboard',
+                postAccountInfo : 'postAccountInfo'
             }),
+            fetchAccountInfo(){
+                this.postAccountInfo()
+                    .then((result) => {
+                        console.log(`postAccountInfoResult : ${result}`);
+                    })
+            },
             fetchAgGridList(){
-
                 if(this.status === 'user'){
                     this.postDashboard()
                         .then((data) => {
@@ -189,15 +227,6 @@
         font-weight: normal;
     }
 
-    .pages {
-        margin: 50px auto;
-    }
-
-    .pages .pagination {
-        width: 477px;
-        margin: 0 auto;
-    }
-
     .ag-theme-alpine.ag-custom {
         border-radius: 0;
         height: 720px;
@@ -237,5 +266,92 @@
 
     .ag-sort-order {
         display: none;
+    }
+
+
+
+    /* Dashboard *//* Dashboard *//* Dashboard *//* Dashboard */
+    .content.gridView {
+        padding: 30px 40px 80px;
+    }
+
+    .userInfo {
+
+    }
+
+    .userInfo .text {
+        font-family: Lato;
+        font-size: 28px;
+        line-height: 34px;
+        color: #333333;
+    }
+
+    .userInfo .vertalLine {
+        display: inline-block;
+        margin: 0 20px;
+        width: 1px;
+        height: 27px;
+        background-color: #aaa;
+    }
+
+    .dataInfo {
+        position: relative;
+        margin: 32px 0 56px;
+    }
+
+    .dataInfo .text {
+        margin-right: 400px;
+        font-family: Lato;
+        font-size: 24px;
+        line-height: 29px;
+        color: #333333;
+    }
+
+    .dataInfo .text .line1 {
+        padding-right: 6px;
+        display: inline-block;
+    }
+
+    .dataInfo .text .detailPopup {
+        color: #0c6290;
+        text-decoration: underline;
+    }
+
+    .dataInfo .btn.download {
+        position: absolute;
+        bottom: -16px;
+        right: 0;
+        padding: 16px 21px 15px;
+        width: 360px;
+        height: 60px;
+        font-family: Lato;
+        font-size: 23px;
+        font-weight: 500;
+        /*line-height: 1.13;*/
+    }
+
+    @media (max-width: 1807px) {
+        .dataInfo {
+            margin: 32px 0 40px;
+        }
+        .dataInfo .btn.download {
+            bottom: 0;
+        }
+    }
+
+    @media (max-width: 1721px) {
+        .dataInfo .text .line1 {
+            display: block;
+            margin-bottom: 4px;
+        }
+    }
+
+    @media (max-width: 1321px) {
+        .dataInfo {
+            height: 145px;
+        }
+        .dataInfo .text {
+            margin-right: 0;
+        }
     }
 </style>

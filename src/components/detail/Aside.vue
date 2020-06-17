@@ -4,7 +4,6 @@
             <router-link to="/">
                 <img width="116" height="62" src="https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng.png" class="logo attachment-full size-full" rcset="https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng.png 500w, https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng-300x156.png 300w" sizes="(max-width: 500px) 100vw, 500px" alt="kitkit school logo"/>
             </router-link>
-            <div class="account">willychoi</div>
             <button @click="eventSignOut" class="btn signout">
                 Sign out <font-awesome-icon :icon="['fal', 'sign-out-alt']"/>
             </button>
@@ -89,7 +88,7 @@
 
 <style>
     .doc-aside .header {
-        height: 188px;
+        height: 178px;
         border-bottom: 1px solid #dbab15;
     }
 
@@ -98,15 +97,8 @@
         width: 116px;
         height: 62px;
     }
-    .doc-aside .header .account {
-        margin: 11px auto;
-        font-size: 20px;
-        line-height: 24px;
-        letter-spacing: -1px;
-        color: #5a3428;
-    }
     .doc-aside .header .btn.signout {
-        margin-top: -35px;
+        margin-top: 25.9px;
         min-width: 120px;
         width: 120px;
         height: 30px;
@@ -118,8 +110,9 @@
     }
 
     .doc-aside .menu {
+        border-top: 1px solid #ffda69;
         padding: 0;
-        margin-top: 10px;
+        padding-top: 10px;
         text-align: center;
     }
 
@@ -128,7 +121,7 @@
         margin-left: 14px;
         width: 166px;
         height: 120px;
-        border-bottom: 1px solid #ffda69;
+        margin-top: -1px;
         border-top-left-radius: 4px;
         border-bottom-left-radius: 4px;
         font-size: 24px;
@@ -149,6 +142,18 @@
         z-index: 100;
         margin-top: 8.5px;
         line-height: 29px;
+    }
+
+    .doc-aside .menu .item .underline {
+        background-color: #ffda69;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        width: 150px;
+    }
+
+    .doc-aside .menu .item.active .underline {
+        background-color: #fff;
     }
 
 </style>
