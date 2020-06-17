@@ -3,39 +3,114 @@
 
         <!-- Guide -->
         <h2 style="margin-bottom: 30px;">Please first check these resources (manuals and tutorial videos):</h2>
-        <div class="resource row">
-            <div class="col item">
-                <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="99" width="229" alt="kitkit english text logo"/>
-                <!--<img class="logo attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="99" width="229" alt="kitkit swahili text logo"/>-->
+        <div class="resource">
+            <!-- TODO: English / Swahili 분기 필요-->
+            <!-- English -->
+<!--            <div class="row">-->
+<!--                <div class="col group">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col item">-->
+<!--                            <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="86" width="200" alt="kitkit english text logo"/>-->
+<!--                            &lt;!&ndash;<img class="logo attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="86" width="200" alt="kitkit swahili text logo"/>&ndash;&gt;-->
+<!--                        </div>-->
+<!--                        <div class="col item">-->
+<!--                            <a href="#" target="_blank">-->
+<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
+<!--                                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in English</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="col item">-->
+<!--                            <a href="#" target="_blank">-->
+<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
+<!--                                <p class="title">Download<br/>User Guide<br/><b>(PDF) in English</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col group">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col item">-->
+<!--                            <a href="#" target="_blank">-->
+<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
+<!--                                <p class="title">Download Learning<br/>Assessment and<br/>Dashboard Guide<br/><b>(PDF) in English</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="col item">-->
+<!--                            <a href="#" target="_blank">-->
+<!--                                <font-awesome-icon :icon="['fab', 'youtube']"/>-->
+<!--                                <p class="title">Watch<br/>Installation Guide<br/><b>Video</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="col item">-->
+<!--                            <a href="#" target="_blank">-->
+<!--                                <font-awesome-icon :icon="['fab', 'youtube']"/>-->
+<!--                                <p class="title">Watch<br/>User Guide<br/><b>Video</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <!-- Swahili -->
+            <div class="row">
+                <div class="col group">
+                    <div class="row">
+                        <div class="col item">
+                            <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="86" width="200" alt="kitkit swahili text logo"/>
+                        </div>
+                        <div class="col item">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['far', 'download']"/>
+                                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in Swahili</b></p>
+                            </a>
+                        </div>
+                        <div class="col item">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['far', 'download']"/>
+                                <p class="title">Download<br/>User Guide<br/><b>(PDF) in Swahili</b></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col group">
+                    <div class="row">
+                        <div class="col item">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['far', 'download']"/>
+                                <p class="title">Download Learning<br/>Assessment and<br/>Dashboard Guide<br/><b>(PDF) in Swahili</b></p>
+                            </a>
+                        </div>
+                        <div class="col item">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['fab', 'youtube']"/>
+                                <p class="title">Watch<br/>Installation Guide<br/><b>Video</b></p>
+                            </a>
+                        </div>
+                        <div class="col item">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['fab', 'youtube']"/>
+                                <p class="title">Watch<br/>User Guide<br/><b>Video</b></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col item">
-                <font-awesome-icon :icon="['fab', 'youtube']"/>
-                <p class="title">Watch<br/>Installation Guide<br/><b>Video</b></p>
-            </div>
-            <div class="col item">
-                <font-awesome-icon :icon="['far', 'download']"/>
-                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in English</b></p>
-            </div>
-            <div class="col item">
-                <font-awesome-icon :icon="['far', 'download']"/>
-                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in Swahili</b></p>
-            </div>
-            <div class="col item">
-                <font-awesome-icon :icon="['far', 'download']"/>
-                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in Swahili</b></p>
-            </div>
+
         </div>
         <!-- // Guide -->
 
         <!-- FAQ -->
         <h2>FAQ</h2>
         <div class="faq">
+            <!-- Download -->
             <h3 class="subtitle" style="margin-top: 30px;"><font-awesome-icon class="icon" :icon="['far', 'dot-circle']"/>Download</h3>
-            <div class="qna active">
+            <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
-                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                    <div class="text">Can I install Kitkit School to tablet devices with other OS? Does it need to be an Android?</div>
+                    <a href="#" @click="toggleActive">
+                        <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                        <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
+                        <div class="text">Can I install Kitkit School to tablet devices with other OS? Does it need to be an Android?</div>
+                    </a>
                 </div>
                 <p class="answer">
                     Kitkit School is designed to operate on Android tablet devices only.
@@ -43,9 +118,11 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
-                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                    <div class="text">Where do I check the device specification?</div>
+                    <a href="#" @click="toggleActive">
+                        <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                        <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
+                        <div class="text">Where do I check the device specification?</div>
+                    </a>
                 </div>
                 <p class="answer">
                     Go to the Settings app on the tablet to find your device information.<br/>
@@ -57,9 +134,11 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
-                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                    <div class="text">Do I need to download all files from the list for installation?</div>
+                    <a href="#" @click="toggleActive">
+                        <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                        <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
+                        <div class="text">Do I need to download all files from the list for installation?</div>
+                    </a>
                 </div>
                 <p class="answer">
                     You must download all files listed on our download page. Click “Download All” to download all files at once.<br/>
@@ -68,21 +147,26 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
-                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                    <div class="text">Can I directly download the installation package from the tablet device?</div>
+                    <a href="#" @click="toggleActive">
+                        <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                        <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
+                        <div class="text">Can I directly download the installation package from the tablet device?</div>
+                    </a>
                 </div>
                 <p class="answer">
                     If you have a stable internet connection, it is possible to download the installation files to your tablet device. However, if you are downloading to be installed for multiple devices, we recommend using a PC to download the files and then move them to the tablet devices.
                 </p>
             </div>
 
+            <!-- Installation -->
             <h3 class="subtitle"><font-awesome-icon class="icon" :icon="['far', 'dot-circle']"/>Installation</h3>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
-                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                    <div class="text">Can I install Kitkit School to multiple numbers of tablet devices?</div>
+                    <a href="#" @click="toggleActive">
+                        <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                        <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
+                        <div class="text">Can I install Kitkit School to multiple numbers of tablet devices?</div>
+                    </a>
                 </div>
                 <p class="answer">
                     During the sign-up process, you should have indicated the number of licenses. You can install Kitkit School as long as it does not exceed the number. In terms of users per device, you can add up to 100 users per device.
@@ -90,9 +174,11 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
-                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                    <div class="text">Installation is not completed.</div>
+                    <a href="#" @click="toggleActive">
+                        <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                        <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
+                        <div class="text">Installation is not completed.</div>
+                    </a>
                 </div>
                 <p class="answer">
                     First, please check your device specification. It must meet below minimum requirements:<br/>
@@ -107,21 +193,26 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
-                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                    <div class="text">I would like to modify the number of licenses I requested.</div>
+                    <a href="#" @click="toggleActive">
+                        <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                        <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
+                        <div class="text">I would like to modify the number of licenses I requested.</div>
+                    </a>
                 </div>
                 <p class="answer">
                     Please send an email to <a class="email" href="mailto:kitkitsupport@enuma.com">kitkitsupport@enuma.com</a> with your account information such as your name, ID, email address, and organization.
                 </p>
             </div>
 
+            <!-- Using Kitkit School -->
             <h3 class="subtitle"><font-awesome-icon class="icon" :icon="['far', 'dot-circle']"/>Using Kitkit School</h3>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
-                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                    <div class="text">Would I still be able to access other applications after installing Kitkit School?</div>
+                    <a href="#" @click="toggleActive">
+                        <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                        <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
+                        <div class="text">Would I still be able to access other applications after installing Kitkit School?</div>
+                    </a>
                 </div>
                 <p class="answer">
                     Yes. You can still use other applications other than Kitkit School.
@@ -129,9 +220,11 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
-                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                    <div class="text">Can I add multiple users to one device installed with Kitkit School?</div>
+                    <a href="#" @click="toggleActive">
+                        <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                        <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
+                        <div class="text">Can I add multiple users to one device installed with Kitkit School?</div>
+                    </a>
                 </div>
                 <p class="answer">
                     Yes. You can add up to 100 users to one tablet device. You can check how to add or remove users from the user guide manuals.
@@ -139,21 +232,27 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
-                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                    <div class="text">Can I transfer the user data from one device to another?</div>
+                    <a href="#" @click="toggleActive">
+                        <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                        <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
+                        <div class="text">Can I transfer the user data from one device to another?</div>
+                    </a>
                 </div>
                 <p class="answer">
                     No. The user data will be stored on the device being used and cannot be transferred.
                 </p>
             </div>
 
+            <!-- About Dashboard -->
+            <!-- TODO: 내용 누락 -->
             <h3 class="subtitle"><font-awesome-icon class="icon" :icon="['far', 'dot-circle']"/>About Dashboard</h3>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
-                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                    <div class="text">What is a dashboard?</div>
+                    <a href="#" @click="toggleActive">
+                        <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                        <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
+                        <div class="text">What is a dashboard?</div>
+                    </a>
                 </div>
                 <p class="answer">
                     ...
@@ -161,21 +260,26 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
-                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                    <div class="text">How do I upload the data?</div>
+                    <a href="#" @click="toggleActive">
+                        <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                        <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
+                        <div class="text">How do I upload the data?</div>
+                    </a>
                 </div>
                 <p class="answer">
                     ...
                 </p>
             </div>
 
+            <!-- Troubleshooting -->
             <h3 class="subtitle"><font-awesome-icon class="icon" :icon="['far', 'dot-circle']"/>Troubleshooting</h3>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
-                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                    <div class="text">Kitkit School app crashes or fails to launch on screen.</div>
+                    <a href="#" @click="toggleActive">
+                        <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                        <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
+                        <div class="text">Kitkit School app crashes or fails to launch on screen.</div>
+                    </a>
                 </div>
                 <p class="answer">
                     Please check if all files from the download page are fully installed on the tablet device. Go to the Settings app and find the “Applications” menu and find a list of all apps installed. You should be able to find “Kitkit School”, “Kikit School Learning App”, “Kitkit Book Viewer”, and “Kikit Book Data”. The issue may be temporary. Exit the app and relaunch the app. Try restarting the device by turning off and on.
@@ -183,9 +287,11 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
-                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                    <div class="text">Tablet screen turns off while using Kitkit School.</div>
+                    <a href="#" @click="toggleActive">
+                        <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                        <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
+                        <div class="text">Tablet screen turns off while using Kitkit School.</div>
+                    </a>
                 </div>
                 <p class="answer">
                     Usually the screen display time is set to 30 seconds or less by default. If the user is not active the screen will turn off after the default screen display time.<br/>
@@ -194,9 +300,11 @@
             </div>
             <div class="qna">
                 <div class="question">
-                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
-                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                    <div class="text">Can I reinstall Kitkit School?</div>
+                    <a href="#" @click="toggleActive">
+                        <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                        <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
+                        <div class="text">Can I reinstall Kitkit School?</div>
+                    </a>
                 </div>
                 <p class="answer">
                     You may have to reinstall Kitkit School apps if the above troubleshooting steps do not resolve the issue.<br/>
@@ -222,6 +330,17 @@
         name: 'support',
         components: {
 
+        },
+        data() {
+            return {
+                activeA1: false,
+            }
+        },
+        methods : {
+            toggleActive(e){
+                e.preventDefault();
+                e.target.parentNode.parentNode.parentNode.classList.toggle('active');
+            }
         }
     }
 </script>
@@ -236,19 +355,52 @@
         border-radius: 16px;
         border: solid 1px #c2c2c2;
         background-color: #f9f9f9;
-        min-width: 1000px;
+        min-width: 780px;
         padding: 50px 30px 20px;
         margin: 0 auto;
     }
-    .support .resource .item {
-        width: 20%;
-        min-width: 260px;
-        text-align: center;
-        margin-bottom: 30px;
+    .support .resource .group {
+        min-width: 840px;
     }
-    @media (max-width: 1670px){
+    .support .resource .group:last-child {
+        margin-top: 30px;
+    }
+    .support .resource .group .row {
+        width: 840px;
+        margin: 0 auto;
+    }
+    .support .resource .item {
+        width: 240px;
+        min-width: 240px;
+        max-width: 240px;
+        text-align: center;
+        margin: 0 20px 10px;
+    }
+    @media (min-width: 1880px){
+        .support .resource {
+            min-width: 780px;
+        }
+
+        .support .resource > .row {
+            margin: 0 auto;
+            width: 1560px;
+            max-width: 1560px;
+        }
+
         .support .resource .item {
-            min-width: 33%;
+            margin: 0 10px 10px;
+        }
+
+        .support .resource .group {
+            min-width: 780px;
+        }
+
+        .support .resource .group:last-child {
+            margin-top: 0;
+        }
+
+        .support .resource .group .row {
+            width: 780px;
         }
     }
     .support .resource .item .logo {
@@ -292,7 +444,15 @@
         border-top: 1px solid #dedede;
         padding: 22px 0 19px;
     }
-    .support .faq .qna.active .question {
+    .support .faq .qna .question > a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .support .faq .qna .question > a:hover {
+        color: #f6921e;
+    }
+    .support .faq .qna.active .question > a {
         color: #f6921e;
     }
     .support .faq .qna .question .icon {
