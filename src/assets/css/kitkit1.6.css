@@ -275,8 +275,14 @@ a:hover {
   border: 1px solid #666;
 }
 
+.input-group.date.vdp-datepicker {
+  z-index: 10;
+}
 .input-group.date.vdp-datepicker .form-control[readonly] {
-  background: #fff;
+  background: transparent;
+}
+.input-group.date.vdp-datepicker .form-control[readonly]:hover {
+  cursor: pointer;
 }
 
 .vdp-datepicker__calendar {

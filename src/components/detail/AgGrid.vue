@@ -8,10 +8,9 @@
             <span class="text">
                 Registered Users : <b>{{account.registeredUsers}}</b>
             </span>
-            <div class="vertalLine"></div>
-            <span class="text">
-                Last Update : <b>{{account.lastUpdate}}</b>
-            </span>
+            <div class="text updateTime">
+                <b>Last Update</b> : {{account.lastUpdate}}
+            </div>
         </div>
         <div v-if="status === 'user'" class="dataInfo">
             <p class="text">
@@ -26,7 +25,7 @@
             </button>
         </div>
 
-        <div v-if="status === 'admin'"  class="any">
+        <div v-if="status === 'admin'"  class="buttonArea">
             <button @click="eventDownload" class="btn btn-primary btn-lg download">
                 <font-awesome-icon class="icon" :icon="['far', 'arrow-alt-to-bottom']"/>
                 Download
@@ -216,25 +215,25 @@
         padding: 40px 40px 80px;
     }
 
-    .any {
+    .buttonArea {
         position: relative;
         margin-bottom: 45px;
         height: 60px;
     }
 
-    .any .search .form-control {
+    .buttonArea .search .form-control {
         position: absolute;
         width: 360px;
     }
 
-    .any .search .btn.search {
+    .buttonArea .search .btn.search {
         margin-left: 375px;
         width: 190px;
         height: 60px;
         font-size: 24px;
     }
 
-    .any .btn.download {
+    .buttonArea .btn.download {
         position: absolute;
         right: 0;
         top: 0;
@@ -250,6 +249,7 @@
     .ag-theme-alpine.ag-custom {
         border-radius: 0;
         height: 720px;
+        margin-bottom: 80px;
     }
     .ag-theme-alpine.ag-custom .ag-root-wrapper {
         border-radius: 0;
@@ -295,18 +295,25 @@
         padding: 30px 40px 80px;
     }
 
-    .userInfo {
-
+    .content.gridView .userInfo {
+        position: relative;
     }
 
-    .userInfo .text {
+    .content.gridView .userInfo .text {
         font-family: Lato;
         font-size: 28px;
         line-height: 34px;
         color: #333333;
     }
 
-    .userInfo .vertalLine {
+    .content.gridView .userInfo .text.updateTime {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 24px;
+    }
+
+    .content.gridView .userInfo .vertalLine {
         display: inline-block;
         margin: 0 20px;
         width: 1px;
@@ -314,12 +321,12 @@
         background-color: #aaa;
     }
 
-    .dataInfo {
+    .content.gridView .dataInfo {
         position: relative;
         margin: 32px 0 56px;
     }
 
-    .dataInfo .text {
+    .content.gridView .dataInfo .text {
         margin-right: 400px;
         font-family: Lato;
         font-size: 24px;
@@ -327,17 +334,17 @@
         color: #333333;
     }
 
-    .dataInfo .text .line1 {
+    .content.gridView .dataInfo .text .line1 {
         padding-right: 6px;
         display: inline-block;
     }
 
-    .dataInfo .text .detailPopup {
+    .content.gridView .dataInfo .text .detailPopup {
         color: #0c6290;
         text-decoration: underline;
     }
 
-    .dataInfo .btn.download {
+    .content.gridView .dataInfo .btn.download {
         position: absolute;
         bottom: -16px;
         right: 0;
@@ -351,26 +358,35 @@
     }
 
     @media (max-width: 1807px) {
-        .dataInfo {
+        .content.gridView .dataInfo {
             margin: 32px 0 40px;
         }
-        .dataInfo .btn.download {
+        .content.gridView .dataInfo .btn.download {
             bottom: 0;
         }
     }
 
     @media (max-width: 1721px) {
-        .dataInfo .text .line1 {
+        .content.gridView .userInfo {
+            height: 83px;
+        }
+        .content.gridView .userInfo .text.updateTime {
+            /*position: relative;*/
+            top: 54px;
+            left: 0;
+        }
+
+        .content.gridView .dataInfo .text .line1 {
             display: block;
             margin-bottom: 4px;
         }
     }
 
     @media (max-width: 1321px) {
-        .dataInfo {
+        .content.gridView .dataInfo {
             height: 145px;
         }
-        .dataInfo .text {
+        .content.gridView .dataInfo .text {
             margin-right: 0;
         }
     }
