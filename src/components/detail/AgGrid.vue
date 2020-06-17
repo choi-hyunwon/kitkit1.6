@@ -1,41 +1,37 @@
 <template>
     <div class="content gridView">
-
-        <Alert/>
-
-        <!-- Dashboard / Manage 분기 필요 -->
-
-        <!-- Dashboard -->
-        <div class="userInfo">
+        <div v-if="status === 'user'" class="userInfo">
             <span class="text">
-                License Used (Number of Tablet Being Used) : <b>156</b>
+                License Used (Number of Tablet Being Used) : <b>{{account.licenseUsed}}</b>
             </span>
             <div class="vertalLine"></div>
             <span class="text">
-                Registered Users : <b>245</b>
+                Registered Users : <b>{{account.registeredUsers}}</b>
+            </span>
+            <div class="vertalLine"></div>
+            <span class="text">
+                Last Update : <b>{{account.lastUpdate}}</b>
             </span>
         </div>
-
-        <div class="dataInfo">
+        <div v-if="status === 'user'" class="dataInfo">
             <p class="text">
-                <span class="line1">Click on the user’s name to download the individual log data. </span>
-                <a class="detailPopup" href="#">What can I find in the individual log data?</a>
+                <Alert v-slot="slotProps" >
+                    <span class="line1">Click on the user’s name to download the individual log data.</span>
+                    <a @click="slotProps.toggleAlert" class="detailPopup" href="#">What can I find in the individual log data?</a>
+                </Alert>
             </p>
-            <button class="btn btn-primary download">
+            <button  @click="eventDownload"  class="btn btn-primary download">
                 <font-awesome-icon class="icon" :icon="['far', 'arrow-alt-to-bottom']"/>
                 Download Dashboard Data
             </button>
         </div>
-        <!-- // Dashboard -->
 
-        <!-- Manage -->
-<!--        <div class="any">-->
-<!--            <button @click="eventDownload" class="btn btn-primary btn-lg download">-->
-<!--                <font-awesome-icon class="icon" :icon="['far', 'arrow-alt-to-bottom']"/>-->
-<!--                Download-->
-<!--            </button>-->
-<!--        </div>-->
-        <!-- // Manage -->
+        <div v-if="status === 'admin'"  class="any">
+            <button @click="eventDownload" class="btn btn-primary btn-lg download">
+                <font-awesome-icon class="icon" :icon="['far', 'arrow-alt-to-bottom']"/>
+                Download
+            </button>
+        </div>
 
         <ag-grid-vue class="ag-theme-alpine ag-custom"
                      :headerHeight="80"
@@ -78,15 +74,15 @@
             this.gridOptions = {};
             if(this.status === 'user'){
                 this.columnDefs = [
-                    {headerName: '', field: 'userID'},
-                    {headerName: 'First name', field: 'firstName'},
-                    {headerName: 'Last name', field: 'lastName'},
-                    {headerName: 'Grade', field: 'grade'},
-                    {headerName: 'Class', field: 'class'},
-                    {headerName: 'TabletNumber', field: 'tabletNO'},
-                    {headerName: 'StartTime', field: 'startTime'},
-                    {headerName: 'End Time', field: 'endTime'},
-                    {headerName: 'Play Time (Total min.)', field: 'playTimeCount'},
+                    {headerName: 'TabletNumber', field: 'tabletNO', pinned: 'left', sortable: true},
+                    {headerName: 'Last Update', field: '', sortable: true},
+                    {headerName: 'First name', field: 'firstName', sortable: true},
+                    {headerName: 'Last name', field: 'lastName', sortable: true},
+                    {headerName: 'Grade', field: 'grade', sortable: true},
+                    {headerName: 'Class', field: 'class', sortable: true},
+                    {headerName: 'First Played', field: 'startTime', sortable: true},
+                    {headerName: 'Last Played', field: 'endTime', sortable: true},
+                    {headerName: 'Play Time (Total min.)', field: 'playTimeCount', sortable: true},
                     {headerName: 'Literacy Progress', groupId : 'progressLGroup',
                         children : [
                             {headerName: 'Egg', field: 'progressLEgg'},
@@ -152,19 +148,27 @@
         },
         mounted() {
             this.gridApi = this.gridOptions.api;
+            this.fetchAccountInfo();
         },
         computed: {
             ...mapGetters({
-                status : 'getStatus'
+                status : 'getStatus',
+                account : 'getAccount'
             })
         },
         methods : {
             ...mapActions({
                 postManage : 'postManage',
-                postDashboard : 'postDashboard'
+                postDashboard : 'postDashboard',
+                postAccountInfo : 'postAccountInfo'
             }),
+            fetchAccountInfo(){
+                this.postAccountInfo()
+                    .then((result) => {
+                        console.log(`postAccountInfoResult : ${result}`);
+                    })
+            },
             fetchAgGridList(){
-
                 if(this.status === 'user'){
                     this.postDashboard()
                         .then((data) => {

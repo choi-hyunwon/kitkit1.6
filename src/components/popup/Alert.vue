@@ -1,6 +1,6 @@
 <template>
     <div>
-<!--        <slot :toggleAlert="toggleAlert"></slot>-->
+        <slot :toggleAlert="toggleAlert"></slot>
         <b-modal centered
                  hide-footer
                  size="lg"
@@ -52,6 +52,9 @@
             return {
                 showAlert: false
             }
+        },
+        mounted() {
+            console.log('alert')
         },
         methods: {
             toggleAlert: function() {

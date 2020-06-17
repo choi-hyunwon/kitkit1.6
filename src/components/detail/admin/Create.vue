@@ -1,12 +1,9 @@
 <template>
     <div class="content">
-
         <Confirm v-slot="slotProps">
         <ValidationObserver ref="form" v-slot="{ handleSubmit , reset , invalid}">
-
         <!-- Form -->
         <form class="createAccountForm" @submit.prevent="handleSubmit(showPopup(slotProps))"  @reset.prevent="reset">
-
             <!-- Account Information -->
             <div class="category accountInfo">
                 <div class="font-weight-bold subtitle">Account Information</div>
@@ -284,10 +281,6 @@
 <script>
     import {mapActions} from 'vuex'
     import Confirm from "../../popup/Confirm";
-
-    // bootstrap
-    // import { BFormDatepicker } from "bootstrap-vue";
-
     import Datepicker from "vuejs-datepicker";
 
     export default {
@@ -339,9 +332,15 @@
             },
             fetchCreate(){
                 this.postCreate(this.createInfo)
-                    .then((result) => {
-                        console.log(`postCreateResult : ${result}`);
-                        window.location.reload()
+                    .then((data) => {
+                        console.log(`postCreateResult : ${data.result}`);
+                        if(data.result){
+                            this.$router.push({path: '/Manage'});
+                        }else{
+                            alert(data.errorCode);
+                            this.$router.push({path: '/Create'});
+                        }
+
                     })
             }
         }
