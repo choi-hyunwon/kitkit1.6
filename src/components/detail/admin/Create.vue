@@ -327,13 +327,8 @@
                 this.postCreate(this.createInfo)
                     .then((data) => {
                         console.log(`postCreateResult : ${data.result}`);
-                        if(data.result){
-                            this.$router.push({path: '/Manage'});
-                        }else{
-                            alert(data.errorCode);
-                            this.$router.push({path: '/Create'});
-                        }
-
+                        if(data.result)this.$router.push({path: '/Manage'});
+                        else this.$router.push({path: '/Create'});
                     })
             },
             datePickerOver() {
