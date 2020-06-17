@@ -6,15 +6,12 @@
 
                     <!-- 로그인 card 영역 -->
                     <div class="card">
-                        <form @submit.prevent="eventSignin">
-
+                        <form @submit.prevent="eventSignin"  >
                             <h2 class="title">Welcome!</h2>
-
                             <div class="form-group">
                                 <input type="text" v-model="account"  class="form-control" placeholder="ID"/>
                                 <input type="password" v-model="password" class="form-control" placeholder="Password"/>
                             </div>
-
                             <div class="accountError" v-if="signInError">
                                 <div class="errorIcon">
                                     <font-awesome-icon :icon="['far', 'exclamation-triangle']"/>
@@ -23,11 +20,9 @@
                                     <span>We cannot find that username or password</span>
                                 </div>
                             </div>
-
-                            <button type="submit" class="btn btn-primary btn-lg signin">
+                            <button class="btn btn-primary btn-lg signin">
                                 Sign in
                             </button>
-
                             <!-- 도움말 툴팁 -->
                             <div class="help yale"
                                  v-b-tooltip="{

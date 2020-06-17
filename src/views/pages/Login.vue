@@ -36,7 +36,7 @@
         computed: {
             ...mapGetters({
                 status : 'getStatus',
-                access : 'getAccess',
+                access : 'getAccess'
             })
         },
         methods: {
@@ -54,6 +54,9 @@
                         }else this.signInError = true;
                     })
             }
+        },
+        beforeDestroy () {
+            this.$EventBus.$off('eventSignin')
         }
     }
 </script>

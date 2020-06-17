@@ -48,7 +48,7 @@
 </template>
 
 <script>
-    import {mapActions, mapGetters, mapMutations} from 'vuex'
+    import {mapActions, mapGetters} from 'vuex'
     import { AgGridVue } from 'ag-grid-vue';
     import "ag-grid-community/dist/styles/ag-grid.css";
     import "ag-grid-community/dist/styles/ag-theme-alpine.css";
@@ -67,7 +67,7 @@
                 gridApi: null,
                 columnDefs: null,
                 rowData: null,
-                defaultColDef: null,
+                defaultColDef: null
             }
         },
         beforeMount() {
@@ -148,7 +148,7 @@
         },
         mounted() {
             this.gridApi = this.gridOptions.api;
-            this.fetchAccountInfo();
+            if(this.status === 'user' && !this.account.access) this.fetchAccountInfo();
         },
         computed: {
             ...mapGetters({
@@ -157,9 +157,6 @@
             })
         },
         methods : {
-            ...mapMutations({
-                setSignOut : 'setSignOut'
-            }),
             ...mapActions({
                 postManage : 'postManage',
                 postDashboard : 'postDashboard',
@@ -169,7 +166,6 @@
                 this.postAccountInfo()
                     .then((data) => {
                         console.log(`postAccountInfoResult : ${data.result}`);
-                        if(!data.result && data.errorCode.split(':')[0] === 'CAD03') this.setSignOut();
                     })
             },
             fetchAgGridList(){
