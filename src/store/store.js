@@ -28,6 +28,11 @@ export const store = new Vuex.Store({
             sessionID : localStorage.getItem('sessionID') !== null ? localStorage.getItem('sessionID') : '',
             access : localStorage.getItem('sessionID') !== null
         },
+        account : {
+            lastUpdate: '',
+            licenseUsed: 0,
+            registeredUsers: 0
+        }
     },
     /**
      * global로 사용하는 getters
@@ -46,6 +51,9 @@ export const store = new Vuex.Store({
         },
         getAccess: state => {
             return state.global.access
+        },
+        getAccount : state => {
+            return state.account
         }
     },
     /**
