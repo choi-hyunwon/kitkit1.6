@@ -73,76 +73,225 @@
             this.gridOptions = {};
             if(this.status === 'user'){
                 this.columnDefs = [
-                    {headerName: 'TabletNumber', field: 'tabletNO', pinned: 'left', sortable: true},
-                    {headerName: 'Last Update', field: '', sortable: true},
-                    {headerName: 'First name', field: 'firstName', sortable: true},
-                    {headerName: 'Last name', field: 'lastName', sortable: true},
-                    {headerName: 'Grade', field: 'grade', sortable: true},
-                    {headerName: 'Class', field: 'class', sortable: true},
-                    {headerName: 'First Played', field: 'startTime', sortable: true},
-                    {headerName: 'Last Played', field: 'endTime', sortable: true},
-                    {headerName: 'Play Time (Total min.)', field: 'playTimeCount', sortable: true},
+                    {headerName: 'TabletNumber', field: 'tabletNO', pinned: 'left'},
+                    {headerName: 'Last Update', field: '', pinned: 'left',filter: 'agDateColumnFilter', filterParams: {
+                            comparator: (filterLocalDateAtMidnight, cellValue) => {
+                                var dateAsString = cellValue;
+                                if (dateAsString === null || dateAsString === '') return -1;
+                                var dateParts = dateAsString.split('.');
+                                var cellDate = new Date(
+                                    Number(dateParts[0]),
+                                    Number(dateParts[1]) - 1,
+                                    Number(dateParts[2])
+                                );
+                                if (filterLocalDateAtMidnight.getTime() === cellDate.getTime()) return 0;
+                                if (cellDate < filterLocalDateAtMidnight) return -1;
+                                if (cellDate > filterLocalDateAtMidnight) return 1;
+                            },
+                            browserDatePicker: true,
+                        }},
+                    {headerName: 'First name', field: 'firstName', pinned: 'left'},
+                    {headerName: 'Last name', field: 'lastName', pinned: 'left'},
+                    {headerName: 'Grade', field: 'grade',filter: 'agNumberColumnFilter'},
+                    {headerName: 'Class', field: 'class'},
+                    {headerName: 'First Played', field: 'startTime',filter: 'agDateColumnFilter', filterParams: {
+                            comparator: (filterLocalDateAtMidnight, cellValue) => {
+                                var dateAsString = cellValue;
+                                if (dateAsString === null || dateAsString === '') return -1;
+                                var dateParts = dateAsString.split('.');
+                                var cellDate = new Date(
+                                    Number(dateParts[0]),
+                                    Number(dateParts[1]) - 1,
+                                    Number(dateParts[2])
+                                );
+                                if (filterLocalDateAtMidnight.getTime() === cellDate.getTime()) return 0;
+                                if (cellDate < filterLocalDateAtMidnight) return -1;
+                                if (cellDate > filterLocalDateAtMidnight) return 1;
+                            },
+                            browserDatePicker: true,
+                        }},
+                    {headerName: 'Last Played', field: 'endTime',filter: 'agDateColumnFilter', filterParams: {
+                            comparator: (filterLocalDateAtMidnight, cellValue) => {
+                                var dateAsString = cellValue;
+                                if (dateAsString === null || dateAsString === '') return -1;
+                                var dateParts = dateAsString.split('.');
+                                var cellDate = new Date(
+                                    Number(dateParts[0]),
+                                    Number(dateParts[1]) - 1,
+                                    Number(dateParts[2])
+                                );
+                                if (filterLocalDateAtMidnight.getTime() === cellDate.getTime()) return 0;
+                                if (cellDate < filterLocalDateAtMidnight) return -1;
+                                if (cellDate > filterLocalDateAtMidnight) return 1;
+                            },
+                            browserDatePicker: true,
+                        }},
+                    {headerName: 'Play Time (Total min.)', field: 'playTimeCount',filter: 'agNumberColumnFilter'},
                     {headerName: 'Literacy Progress', groupId : 'progressLGroup',
                         children : [
-                            {headerName: 'Egg', field: 'progressLEgg'},
-                            {headerName: 'Day', field: 'progressLDay'}]},
+                            {headerName: 'Egg', field: 'progressLEgg',filter: 'agNumberColumnFilter'},
+                            {headerName: 'Day', field: 'progressLDay',filter: 'agNumberColumnFilter'}]},
                     {headerName: 'Math Progress', groupId : 'progressMGroup',
                         children : [
-                            {headerName: 'Egg', field: 'progressMEgg'},
-                            {headerName: 'Day', field: 'progressMDay'}]},
+                            {headerName: 'Egg', field: 'progressMEgg',filter: 'agNumberColumnFilter'},
+                            {headerName: 'Day', field: 'progressMDay',filter: 'agNumberColumnFilter'}]},
                     {headerName: 'Pre-test', groupId : 'PreTestGroup',
                         children : [
                             {headerName: 'Literacy', groupId : 'preTestLGroup',
                                 children : [
-                                    {headerName: 'Test Date', field: 'PretestLDate'},
-                                    {headerName: 'Score', field: 'PretestLScore'}]},
+                                    {headerName: 'Test Date', field: 'PretestLDate',filter: 'agDateColumnFilter', filterParams: {
+                                            comparator: (filterLocalDateAtMidnight, cellValue) => {
+                                                var dateAsString = cellValue;
+                                                if (dateAsString === null || dateAsString === '') return -1;
+                                                var dateParts = dateAsString.split('.');
+                                                var cellDate = new Date(
+                                                    Number(dateParts[0]),
+                                                    Number(dateParts[1]) - 1,
+                                                    Number(dateParts[2])
+                                                );
+                                                if (filterLocalDateAtMidnight.getTime() === cellDate.getTime()) return 0;
+                                                if (cellDate < filterLocalDateAtMidnight) return -1;
+                                                if (cellDate > filterLocalDateAtMidnight) return 1;
+                                            },
+                                            browserDatePicker: true,
+                                        }},
+                                    {headerName: 'Score', field: 'PretestLScore',filter: 'agNumberColumnFilter'}]},
                             {headerName: 'Math', groupId : 'preTestMGroup',
                                 children : [
-                                    {headerName: 'Test Date', field: 'PretestMDate'},
-                                    {headerName: 'Score', field: 'PretestMScore'}]}]},
+                                    {headerName: 'Test Date', field: 'PretestMDate',filter: 'agDateColumnFilter', filterParams: {
+                                            comparator: (filterLocalDateAtMidnight, cellValue) => {
+                                                var dateAsString = cellValue;
+                                                if (dateAsString === null || dateAsString === '') return -1;
+                                                var dateParts = dateAsString.split('.');
+                                                var cellDate = new Date(
+                                                    Number(dateParts[0]),
+                                                    Number(dateParts[1]) - 1,
+                                                    Number(dateParts[2])
+                                                );
+                                                if (filterLocalDateAtMidnight.getTime() === cellDate.getTime()) return 0;
+                                                if (cellDate < filterLocalDateAtMidnight) return -1;
+                                                if (cellDate > filterLocalDateAtMidnight) return 1;
+                                            },
+                                            browserDatePicker: true,
+                                        }},
+                                    {headerName: 'Score', field: 'PretestMScore',filter: 'agNumberColumnFilter'}]}]},
                     {headerName: 'Post test', groupId : 'PostTestGroup',
                         children : [
                             {headerName: 'Literacy', groupId : 'postTestLGroup',
                                 children : [
-                                    {headerName: 'TestDate', field: 'posttestLDate'},
-                                    {headerName: 'Score', field: 'posttestLScore'}]},
+                                    {headerName: 'TestDate', field: 'posttestLDate',filter: 'agDateColumnFilter', filterParams: {
+                                            comparator: (filterLocalDateAtMidnight, cellValue) => {
+                                                var dateAsString = cellValue;
+                                                if (dateAsString === null || dateAsString === '') return -1;
+                                                var dateParts = dateAsString.split('.');
+                                                var cellDate = new Date(
+                                                    Number(dateParts[0]),
+                                                    Number(dateParts[1]) - 1,
+                                                    Number(dateParts[2])
+                                                );
+                                                if (filterLocalDateAtMidnight.getTime() === cellDate.getTime()) return 0;
+                                                if (cellDate < filterLocalDateAtMidnight) return -1;
+                                                if (cellDate > filterLocalDateAtMidnight) return 1;
+                                            },
+                                            browserDatePicker: true,
+                                        }},
+                                    {headerName: 'Score', field: 'posttestLScore',filter: 'agNumberColumnFilter'}]},
                             {headerName: 'Math', groupId : 'postTestMGroup',
                                 children : [
-                                    {headerName: 'Test Date', field: 'posttestMDate'},
-                                    {headerName: 'Score', field: 'posttestMScore'}]}]},
+                                    {headerName: 'Test Date', field: 'posttestMDate',filter: 'agDateColumnFilter', filterParams: {
+                                            comparator: (filterLocalDateAtMidnight, cellValue) => {
+                                                var dateAsString = cellValue;
+                                                if (dateAsString === null || dateAsString === '') return -1;
+                                                var dateParts = dateAsString.split('.');
+                                                var cellDate = new Date(
+                                                    Number(dateParts[0]),
+                                                    Number(dateParts[1]) - 1,
+                                                    Number(dateParts[2])
+                                                );
+                                                if (filterLocalDateAtMidnight.getTime() === cellDate.getTime()) return 0;
+                                                if (cellDate < filterLocalDateAtMidnight) return -1;
+                                                if (cellDate > filterLocalDateAtMidnight) return 1;
+                                            },
+                                            browserDatePicker: true,
+                                        }},
+                                    {headerName: 'Score', field: 'posttestMScore',filter: 'agNumberColumnFilter'}]}]},
                 ];
             }else if (this.status === 'admin'){
                 this.columnDefs = [
-                    {headerName: 'Reg date', field: 'regdate', pinned: 'left', sortable: true},
-                    {headerName: 'ID', field: 'account', pinned: 'left', filter: true, sortable: true},
-                    {headerName: 'Name', field: 'sitename', filter: true, sortable: true},
-                    {headerName: 'Email', field: 'siteEMail', filter: true, sortable: true},
-                    {headerName: 'Organization', field: 'organization', filter: true, sortable: true},
+                    {headerName: 'Reg date', field: 'regdate', pinned: 'left',filter: 'agDateColumnFilter', filterParams: {
+                            comparator: (filterLocalDateAtMidnight, cellValue) => {
+                                var dateAsString = cellValue;
+                                if (dateAsString === null || dateAsString === '') return -1;
+                                var dateParts = dateAsString.split('.');
+                                var cellDate = new Date(
+                                     Number(dateParts[0]),
+                                    Number(dateParts[1]) - 1,
+                                     Number(dateParts[2])
+                                );
+                                if (filterLocalDateAtMidnight.getTime() === cellDate.getTime()) return 0;
+                                if (cellDate < filterLocalDateAtMidnight) return -1;
+                                if (cellDate > filterLocalDateAtMidnight) return 1;
+                            },
+                            browserDatePicker: true,
+                        }},
+                    {headerName: 'ID', field: 'account', pinned: 'left'},
+                    {headerName: 'Name', field: 'sitename'},
+                    {headerName: 'Email', field: 'siteEMail'},
+                    {headerName: 'Organization', field: 'organization'},
                     {headerName: 'Organization Type', field: 'organizationType'},
-                    {headerName: 'Country', field: 'country', filter: true, sortable: true},
-                    {headerName: 'City', field: 'city', filter: true, sortable: true},
-                    {headerName: 'License Issued', field: 'numberOfLicenses'},
+                    {headerName: 'Country', field: 'country'},
+                    {headerName: 'City', field: 'city'},
+                    {headerName: 'License Issued', field: 'numberOfLicenses' ,filter: 'agNumberColumnFilter'},
                     {headerName: 'Product', field: 'productType'},
-                    {headerName: 'Expiration Date', field: 'expdate'},
-                    {headerName: 'Staff Name', field: 'contactName', filter: true, sortable: true},
-                    {headerName: 'Last Update', field: 'lastUpdate', sortable: true},
-                    {headerName: 'License Used', field: 'licenseUsed'},
-                    {headerName: 'Registered Users', field: 'registeredUsers'},
-                    {headerName: 'Users with Play Data', field: 'usersWithPlayData'},
-                    {headerName: 'Total Playtime', field: 'totalPlayTime'}
+                    {headerName: 'Expiration Date', field: 'expdate',filter: 'agDateColumnFilter', filterParams: {
+                            comparator: (filterLocalDateAtMidnight, cellValue) => {
+                                var dateAsString = cellValue;
+                                if (dateAsString === null || dateAsString === '') return -1;
+                                var dateParts = dateAsString.split('.');
+                                var cellDate = new Date(
+                                    Number(dateParts[0]),
+                                    Number(dateParts[1]) - 1,
+                                    Number(dateParts[2])
+                                );
+                                if (filterLocalDateAtMidnight.getTime() === cellDate.getTime()) return 0;
+                                if (cellDate < filterLocalDateAtMidnight) return -1;
+                                if (cellDate > filterLocalDateAtMidnight) return 1;
+                            },
+                            browserDatePicker: true,
+                        }},
+                    {headerName: 'Staff Name', field: 'contactName'},
+                    {headerName: 'Last Update', field: 'lastUpdate',filter: 'agDateColumnFilter', filterParams: {
+                            comparator: (filterLocalDateAtMidnight, cellValue) => {
+                                var dateAsString = cellValue;
+                                if (dateAsString === null || dateAsString === '') return -1;
+                                var dateParts = dateAsString.split('.');
+                                var cellDate = new Date(
+                                    Number(dateParts[0]),
+                                    Number(dateParts[1]) - 1,
+                                    Number(dateParts[2])
+                                );
+                                if (filterLocalDateAtMidnight.getTime() === cellDate.getTime()) return 0;
+                                if (cellDate < filterLocalDateAtMidnight) return -1;
+                                if (cellDate > filterLocalDateAtMidnight) return 1;
+                            },
+                            browserDatePicker: true,
+                        }},
+                    {headerName: 'License Used', field: 'licenseUsed',filter: 'agNumberColumnFilter'},
+                    {headerName: 'Registered Users', field: 'registeredUsers',filter: 'agNumberColumnFilter'},
+                    {headerName: 'Users with Play Data', field: 'usersWithPlayData',filter: 'agNumberColumnFilter'},
+                    {headerName: 'Total Playtime', field: 'totalPlayTime',filter: 'agNumberColumnFilter'}
                 ];
             }
 
             this.defaultColDef = {
+                sortable: true,
                 sort: 'desc',
                 unSortIcon: true,
                 sortingOrder: ['asc', 'desc'],
                 resizable: true,
-                floatingFilter: true,
+                filter: true,
                 filterParams: {
-                    filterOptions: ['contains'],
-                    resetButton: true,
-                    closeOnApply : true}
+                    resetButton: true}
             };
         },
         mounted() {
@@ -152,7 +301,8 @@
         computed: {
             ...mapGetters({
                 status : 'getStatus',
-                account : 'getAccount'
+                account : 'getAccount',
+                loginID : 'getLoginID'
             })
         },
         methods : {
@@ -183,7 +333,7 @@
                 }
             },
             eventDownload(){
-                this.gridApi.exportDataAsCsv({fileName : `KitKitSchool_${this.$moment().format('YYYYMMDD')}`});
+                this.gridApi.exportDataAsCsv({fileName : `Kitkit_${this.loginID}_${this.$moment().format('YYYYMMDD')}`});
             },
             processManageData(data){
                 data.forEach((array) => {

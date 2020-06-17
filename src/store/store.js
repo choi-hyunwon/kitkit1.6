@@ -22,12 +22,14 @@ export const store = new Vuex.Store({
         init : {
             status : '',
             sessionID : '',
-            access : false
+            access : false,
+            loginID : ''
         },
         global: {
             status : localStorage.getItem('status') !== null ? localStorage.getItem('status') : '',
             sessionID : localStorage.getItem('sessionID') !== null ? localStorage.getItem('sessionID') : '',
-            access : false
+            access : false,
+            loginID : ''
         },
         accountInit : {
             lastUpdate: '',
@@ -35,7 +37,6 @@ export const store = new Vuex.Store({
             registeredUsers: 0,
             productType : '',
             access : false
-
         },
         account : {
             lastUpdate: '',
@@ -69,6 +70,9 @@ export const store = new Vuex.Store({
         },
         getState : state => {
             return state
+        },
+        getLoginID : state => {
+            return state.global.loginID
         }
     },
     /**

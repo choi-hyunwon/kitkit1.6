@@ -21,6 +21,16 @@ export const mutations = {
     },
 
     /**
+     * 로그인 아이디를 저장한다.
+     *
+     * @param state
+     * @param {String} loginID
+     */
+    setLoginID(state, loginID) {
+        state.global.loginID = loginID;
+    },
+
+    /**
      * 로그아웃 한다.
      *
      * @param state
