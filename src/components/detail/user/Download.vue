@@ -35,18 +35,36 @@
                 </div>
                 <div class="detail">
                     <div class="visualGuide row">
+                        <!-- TODO: Product Type 분기 -->
+                        <!-- English -->
                         <div class="item col">
-                            <font-awesome-icon :icon="['fab', 'youtube']"/>
-                            <p class="title">Watch<br/>Installation Guide<br/><b>Video</b></p>
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['fab', 'youtube']"/>
+                                <p class="title">Watch<br/>Installation Guide<br/><b>Video</b></p>
+                            </a>
                         </div>
                         <div class="item col">
-                            <font-awesome-icon :icon="['far', 'download']"/>
-                            <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in English</b></p>
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['far', 'download']"/>
+                                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in English</b></p>
+                            </a>
                         </div>
-                        <div class="item col">
-                            <font-awesome-icon :icon="['far', 'download']"/>
-                            <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in Swahili</b></p>
-                        </div>
+                        <!-- // English -->
+
+                        <!-- Swahili -->
+<!--                        <div class="item col">-->
+<!--                            <a href="#" target="_blank">-->
+<!--                                <font-awesome-icon :icon="['fab', 'youtube']"/>-->
+<!--                                <p class="title">Watch<br/>Installation Guide<br/><b>Video</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="item col">-->
+<!--                            <a href="#" target="_blank">-->
+<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
+<!--                                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in Swahili</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+                        <!-- // Swahili -->
                     </div>
                 </div>
             </li>
@@ -62,7 +80,11 @@
                     <div>
                         <div class="header">
                             <img width="116" height="62" src="https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng.png" class="logo attachment-full size-full" rcset="https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng.png 500w, https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng-300x156.png 300w" sizes="(max-width: 500px) 100vw, 500px" alt="kitkit school logo"/>
+
+                            <!-- TODO: Product Type 분기 -->
                             <h2 class="title">English & Math</h2>
+<!--                            <h2 class="title">Swahili & Math</h2>-->
+
                         </div>
                         <div class="packages">
                             <div class="all">
@@ -116,18 +138,35 @@
                 </div>
                 <div class="detail">
                     <div class="visualGuide row">
+                        <!-- TODO: Product Type 분기 -->
+                        <!-- English -->
                         <div class="item col">
-                            <font-awesome-icon :icon="['fab', 'youtube']"/>
-                            <p class="title">Watch<br/>User Guide<br/><b>Video</b></p>
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['fab', 'youtube']"/>
+                                <p class="title">Watch<br/>User Guide<br/><b>Video</b></p>
+                            </a>
                         </div>
                         <div class="item col">
-                            <font-awesome-icon :icon="['far', 'download']"/>
-                            <p class="title">Download<br/>User Guide<br/><b>(PDF) in English</b></p>
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['far', 'download']"/>
+                                <p class="title">Download<br/>User Guide<br/><b>(PDF) in English</b></p>
+                            </a>
                         </div>
-                        <div class="item col">
-                            <font-awesome-icon :icon="['far', 'download']"/>
-                            <p class="title">Download<br/>User Guide<br/><b>(PDF) in Swahili</b></p>
-                        </div>
+                        <!-- // English -->
+                        <!-- Swahili -->
+<!--                        <div class="item col">-->
+<!--                            <a href="#" target="_blank">-->
+<!--                                <font-awesome-icon :icon="['fab', 'youtube']"/>-->
+<!--                                <p class="title">Watch<br/>User Guide<br/><b>Video</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="item col">-->
+<!--                            <a href="#" target="_blank">-->
+<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
+<!--                                <p class="title">Download<br/>User Guide<br/><b>(PDF) in Swahili</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+                        <!-- // Swahili -->
                     </div>
                 </div>
             </li>
@@ -229,15 +268,24 @@
         line-height: 34px;
     }
     .content .guide .detail .visualGuide {
-        min-width: 780px;
-        max-width: 980px;
+        min-width: 720px;
+        width: 720px;
         margin: 0 auto;
         padding: 20px 0;
     }
     .content .guide .detail .visualGuide .item {
-        width: 260px;
+        width: 240px;
+        max-width: 240px;
+        margin: 0 60px;
         text-align: center;
     }
+
+    .content .guide .detail .visualGuide .item > a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
     .content .guide .detail .visualGuide .item svg {
         color: #0c6290;
         font-size: 80px;

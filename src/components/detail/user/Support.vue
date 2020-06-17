@@ -3,27 +3,99 @@
 
         <!-- Guide -->
         <h2 style="margin-bottom: 30px;">Please first check these resources (manuals and tutorial videos):</h2>
-        <div class="resource row">
-            <div class="col item">
-                <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="99" width="229" alt="kitkit english text logo"/>
-                <!--<img class="logo attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="99" width="229" alt="kitkit swahili text logo"/>-->
+        <div class="resource">
+            <!-- TODO: English / Swahili 분기 필요-->
+            <!-- English -->
+<!--            <div class="row">-->
+<!--                <div class="col group">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col item">-->
+<!--                            <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="86" width="200" alt="kitkit english text logo"/>-->
+<!--                            &lt;!&ndash;<img class="logo attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="86" width="200" alt="kitkit swahili text logo"/>&ndash;&gt;-->
+<!--                        </div>-->
+<!--                        <div class="col item">-->
+<!--                            <a href="#" target="_blank">-->
+<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
+<!--                                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in English</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="col item">-->
+<!--                            <a href="#" target="_blank">-->
+<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
+<!--                                <p class="title">Download<br/>User Guide<br/><b>(PDF) in English</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col group">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col item">-->
+<!--                            <a href="#" target="_blank">-->
+<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
+<!--                                <p class="title">Download Learning<br/>Assessment and<br/>Dashboard Guide<br/><b>(PDF) in English</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="col item">-->
+<!--                            <a href="#" target="_blank">-->
+<!--                                <font-awesome-icon :icon="['fab', 'youtube']"/>-->
+<!--                                <p class="title">Watch<br/>Installation Guide<br/><b>Video</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="col item">-->
+<!--                            <a href="#" target="_blank">-->
+<!--                                <font-awesome-icon :icon="['fab', 'youtube']"/>-->
+<!--                                <p class="title">Watch<br/>User Guide<br/><b>Video</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <!-- Swahili -->
+            <div class="row">
+                <div class="col group">
+                    <div class="row">
+                        <div class="col item">
+                            <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="86" width="200" alt="kitkit swahili text logo"/>
+                        </div>
+                        <div class="col item">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['far', 'download']"/>
+                                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in Swahili</b></p>
+                            </a>
+                        </div>
+                        <div class="col item">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['far', 'download']"/>
+                                <p class="title">Download<br/>User Guide<br/><b>(PDF) in Swahili</b></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col group">
+                    <div class="row">
+                        <div class="col item">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['far', 'download']"/>
+                                <p class="title">Download Learning<br/>Assessment and<br/>Dashboard Guide<br/><b>(PDF) in Swahili</b></p>
+                            </a>
+                        </div>
+                        <div class="col item">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['fab', 'youtube']"/>
+                                <p class="title">Watch<br/>Installation Guide<br/><b>Video</b></p>
+                            </a>
+                        </div>
+                        <div class="col item">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['fab', 'youtube']"/>
+                                <p class="title">Watch<br/>User Guide<br/><b>Video</b></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col item">
-                <font-awesome-icon :icon="['fab', 'youtube']"/>
-                <p class="title">Watch<br/>Installation Guide<br/><b>Video</b></p>
-            </div>
-            <div class="col item">
-                <font-awesome-icon :icon="['far', 'download']"/>
-                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in English</b></p>
-            </div>
-            <div class="col item">
-                <font-awesome-icon :icon="['far', 'download']"/>
-                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in Swahili</b></p>
-            </div>
-            <div class="col item">
-                <font-awesome-icon :icon="['far', 'download']"/>
-                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in Swahili</b></p>
-            </div>
+
         </div>
         <!-- // Guide -->
 
@@ -236,19 +308,52 @@
         border-radius: 16px;
         border: solid 1px #c2c2c2;
         background-color: #f9f9f9;
-        min-width: 1000px;
+        min-width: 780px;
         padding: 50px 30px 20px;
         margin: 0 auto;
     }
-    .support .resource .item {
-        width: 20%;
-        min-width: 260px;
-        text-align: center;
-        margin-bottom: 30px;
+    .support .resource .group {
+        min-width: 840px;
     }
-    @media (max-width: 1670px){
+    .support .resource .group:last-child {
+        margin-top: 30px;
+    }
+    .support .resource .group .row {
+        width: 840px;
+        margin: 0 auto;
+    }
+    .support .resource .item {
+        width: 240px;
+        min-width: 240px;
+        max-width: 240px;
+        text-align: center;
+        margin: 0 20px 10px;
+    }
+    @media (min-width: 1880px){
+        .support .resource {
+            min-width: 780px;
+        }
+
+        .support .resource > .row {
+            margin: 0 auto;
+            width: 1560px;
+            max-width: 1560px;
+        }
+
         .support .resource .item {
-            min-width: 33%;
+            margin: 0 10px 10px;
+        }
+
+        .support .resource .group {
+            min-width: 780px;
+        }
+
+        .support .resource .group:last-child {
+            margin-top: 0;
+        }
+
+        .support .resource .group .row {
+            width: 780px;
         }
     }
     .support .resource .item .logo {
