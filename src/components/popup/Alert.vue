@@ -50,7 +50,7 @@
         },
         data: function() {
             return {
-                showAlert: false
+                showAlert: true
             }
         },
         mounted() {
