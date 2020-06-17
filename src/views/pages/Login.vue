@@ -29,7 +29,7 @@
         },
         mounted(){
             if (this.access) {
-                if(this.status === 'admin') this.$router.push({path: '/Create'});
+                if(this.status === 'admin') this.$router.push({path: '/Manage'});
                 else this.$router.push({path: '/Dashboard'});
             }
         },

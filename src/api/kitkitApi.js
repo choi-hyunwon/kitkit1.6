@@ -18,7 +18,7 @@ export default class KitkitApi {
     }
 
     /**
-     * 로그인을 요청한다.
+     * 로그인 요청한다.
      *
      * <br> - {String}       account               - ID
      * <br> - {String}       password              - PW
@@ -35,7 +35,7 @@ export default class KitkitApi {
     }
 
     /**
-     * 사용자 등록을 요청한다.
+     * 계정 생성을 요청한다.
      *
      */
     postCreate(options) {
@@ -49,7 +49,7 @@ export default class KitkitApi {
     }
 
     /**
-     * 사용자 정보를 요청한다.
+     * 계정 관리 정보를 요청한다.
      *
      */
     postManage() {
@@ -75,4 +75,16 @@ export default class KitkitApi {
         })
     }
 
+    /**
+     * 계정 정보를 요청한다.
+     *
+     */
+    postAccountInfo() {
+        return this.request('/info', {
+            method: 'post',
+            data: qs.stringify({
+                sessionID : store.getters.getSessionID,
+            })
+        })
+    }
 }

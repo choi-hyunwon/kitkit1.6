@@ -6,7 +6,7 @@ const kitkitApi = new KitKitApi();
  */
 export const actions = {
     /**
-     * 로그인을 요청한다.
+     * 로그인 요청한다.
      *
      * @param commit
      * @param {Object} options
@@ -23,7 +23,7 @@ export const actions = {
     },
 
     /**
-     * 사용자 등록을 요청한다.
+     * 계정 생성을 요청한다.
      *
      * @param commit
      * @param {Object} options
@@ -31,12 +31,12 @@ export const actions = {
      */
     postCreate({commit},options) {
         return kitkitApi.postCreate(options).then(data => {
-            return data.result;
+            return data;
         })
     },
 
     /**
-     * 사용자 정보를 요청한다.
+     * 계정 관리 정보를 요청한다.
      *
      * @param commit
      *
@@ -56,6 +56,19 @@ export const actions = {
     postDashboard({commit}) {
         return kitkitApi.postDashboard().then(data => {
             return data;
+        })
+    },
+
+    /**
+     * 계정 정보를 요청한다.
+     *
+     * @param commit
+     *
+     */
+    postAccountInfo({commit}) {
+        return kitkitApi.postAccountInfo().then(data => {
+            if(data.result) commit('setAccountInfo', data.data);
+            return data.result;
         })
     },
 };
