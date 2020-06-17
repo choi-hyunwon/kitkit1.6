@@ -68,7 +68,7 @@ export const actions = {
     postAccountInfo({commit}) {
         return kitkitApi.postAccountInfo().then(data => {
             if(data.result) commit('setAccountInfo', data.data);
-            return data.result;
+            return data;
         })
     },
 };

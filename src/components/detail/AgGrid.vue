@@ -66,7 +66,7 @@
                 gridApi: null,
                 columnDefs: null,
                 rowData: null,
-                defaultColDef: null,
+                defaultColDef: null
             }
         },
         beforeMount() {
@@ -147,7 +147,7 @@
         },
         mounted() {
             this.gridApi = this.gridOptions.api;
-            this.fetchAccountInfo();
+            if(this.status === 'user' && !this.account.access) this.fetchAccountInfo();
         },
         computed: {
             ...mapGetters({
@@ -163,8 +163,8 @@
             }),
             fetchAccountInfo(){
                 this.postAccountInfo()
-                    .then((result) => {
-                        console.log(`postAccountInfoResult : ${result}`);
+                    .then((data) => {
+                        console.log(`postAccountInfoResult : ${data.result}`);
                     })
             },
             fetchAgGridList(){
