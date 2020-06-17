@@ -4,6 +4,8 @@
         <Alert/>
 
         <!-- Dashboard / Manage 분기 필요 -->
+
+        <!-- Dashboard -->
         <div class="userInfo">
             <span class="text">
                 License Used (Number of Tablet Being Used) : <b>156</b>
@@ -24,13 +26,17 @@
                 Download Dashboard Data
             </button>
         </div>
+        <!-- // Dashboard -->
 
+        <!-- Manage -->
 <!--        <div class="any">-->
 <!--            <button @click="eventDownload" class="btn btn-primary btn-lg download">-->
 <!--                <font-awesome-icon class="icon" :icon="['far', 'arrow-alt-to-bottom']"/>-->
 <!--                Download-->
 <!--            </button>-->
 <!--        </div>-->
+        <!-- // Manage -->
+
         <ag-grid-vue class="ag-theme-alpine ag-custom"
                      :headerHeight="80"
                      :rowStyle="{background: 'white'}"
