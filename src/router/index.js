@@ -21,10 +21,12 @@ export const routes = [
         component: Login
     },
     {
-        name: '404',
-        path: '/*',
-        component: E404
-    },
+        name: 'detail',
+        path: '/:detail',
+        alias : '/detail',
+        component: Detail,
+        beforeEnter : requireAuth()
+    }
 ];
 
 export default routes
