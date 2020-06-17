@@ -46,4 +46,16 @@ export const actions = {
             return data;
         })
     },
+
+    /**
+     * 대시보드 정보를 요청한다.
+     *
+     * @param commit
+     *
+     */
+    postDashboard({commit}) {
+        return kitkitApi.postDashboard().then(data => {
+            return data;
+        })
+    },
 };
