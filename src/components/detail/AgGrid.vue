@@ -8,10 +8,9 @@
             <span class="text">
                 Registered Users : <b>{{account.registeredUsers}}</b>
             </span>
-            <div class="vertalLine"></div>
-            <span class="text">
-                Last Update : <b>{{account.lastUpdate}}</b>
-            </span>
+            <div class="text updateTime">
+                <b>Last Update</b> : {{account.lastUpdate}}
+            </div>
         </div>
         <div v-if="status === 'user'" class="dataInfo">
             <p class="text">
@@ -250,6 +249,7 @@
     .ag-theme-alpine.ag-custom {
         border-radius: 0;
         height: 720px;
+        margin-bottom: 80px;
     }
     .ag-theme-alpine.ag-custom .ag-root-wrapper {
         border-radius: 0;
@@ -296,7 +296,7 @@
     }
 
     .userInfo {
-
+        position: relative;
     }
 
     .userInfo .text {
@@ -304,6 +304,13 @@
         font-size: 28px;
         line-height: 34px;
         color: #333333;
+    }
+
+    .userInfo .text.updateTime {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 24px;
     }
 
     .userInfo .vertalLine {
@@ -360,6 +367,15 @@
     }
 
     @media (max-width: 1721px) {
+        .userInfo {
+            height: 83px;
+        }
+        .userInfo .text.updateTime {
+            /*position: relative;*/
+            top: 54px;
+            left: 0;
+        }
+
         .dataInfo .text .line1 {
             display: block;
             margin-bottom: 4px;

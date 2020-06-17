@@ -50,7 +50,7 @@
         },
         data: function() {
             return {
-                showAlert: true
+                showAlert: false
             }
         },
         methods: {
