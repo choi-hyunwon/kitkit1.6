@@ -173,19 +173,39 @@
                     this.postDashboard()
                         .then((data) => {
                             console.log(`postDashboardResult : ${data.result}`);
-                            if(data.result) this.rowData = data.data.list;
+                            if(data.result) this.processDashboardData(data.data.list);
                         })
                 }else if(this.status === 'admin'){
                     this.postManage()
                         .then((data) => {
                             console.log(`postManageResult : ${data.result}`);
-                            if(data.result) this.rowData = data.data.list;
+                            if(data.result)this.processManageData(data.data.list);
                         })
                 }
-
             },
             eventDownload(){
                 this.gridApi.exportDataAsCsv({fileName : `KitKitSchool_${this.$moment().format('YYYYMMDD')}`});
+            },
+            processManageData(data){
+                data.forEach((array) => {
+                    if(array.productType === '1') array.productType = 'English and Math'
+                    else if(array.productType === '2')array.productType = 'Swahili and Math'
+                    else array.productType = ''
+                    array.expdate = array.expdate && this.$moment(array.expdate).format('YYYY.MM.DD')
+                    array.regdate = array.regdate && this.$moment(array.regdate).format('YYYY.MM.DD')
+                });
+                this.rowData = data;
+            },
+            processDashboardData(data){
+                data.forEach((array) => {
+                    array.startTime = array.startTime && this.$moment(array.startTime).format('YYYY.MM.DD')
+                    array.endTime = array.endTime && this.$moment(array.endTime).format('YYYY.MM.DD')
+                    array.PretestLDate =  array.PretestLDate && this.$moment(array.PretestLDate).format('YYYY.MM.DD')
+                    array.PretestMDate =  array.PretestMDate && this.$moment(array.PretestMDate).format('YYYY.MM.DD')
+                    array.posttestLDate =  array.posttestLDate && this.$moment(array.posttestLDate).format('YYYY.MM.DD')
+                    array.posttestMDate = array.posttestMDate && this.$moment(array.posttestMDate).format('YYYY.MM.DD')
+                });
+                this.rowData = data;
             }
         }
     }
