@@ -46,6 +46,10 @@ export const mutations = {
      *
      * @param state
      * @param {Object} accountInfo
+     * <br> - {String}       lastUpdate               - 마지막 업데이트 날짜
+     * <br> - {Number}       licenseUsed              - 사용중인 라이센스 개수
+     * <br> - {Number}       registeredUsers          - 등록된 사용자 수
+     *
      */
     setAccountInfo(state, accountInfo) {
         state.account = Object.assign({}, state.account, accountInfo, {access : true});

@@ -71,4 +71,18 @@ export const actions = {
             return data;
         })
     },
+
+    /**
+     * 개인 로그 데이터를 요청한다.
+     *
+     * @param commit
+     * @param {Object} options
+     * <br> - {String}        tabletNO              - 선택한 사용자의 테블릿넘버
+     *
+     */
+    postDashboardDetail({commit},options) {
+        return kitkitApi.postDashboardDetail(options).then(data => {
+            return data;
+        })
+    },
 };

@@ -13,9 +13,14 @@ export default class KitkitApi {
             ...config
         }).then(result => {
             if(!result.data.result){
-                if(result.data.errorCode.split(':')[0] === 'CAD03') {
-                    console.log('세션 만료, 로그인 필요')
-                    mutations.setSignOut(store.getters.getState);
+                if(result.data.errorCode.split(':')[0] === 'CAD03' ) {
+                    // TODO 방어로직 수정 필요
+                    if(result.config.url.indexOf('downloadCSV') === -1){
+                        console.log('세션 만료, 로그인 필요');
+                        mutations.setSignOut(store.getters.getState);
+                    }else {
+                        console.log('downloadCSV API 오류');
+                    }
                 }
             }
             return result.data
@@ -31,6 +36,7 @@ export default class KitkitApi {
      * <br> - {String}       account               - ID
      * <br> - {String}       password              - PW
      * <br> - {String}       deviceInfo            - 디바이스 정보
+     *
      */
     postSignIn(options) {
         return this.request('/signIn', {
@@ -59,6 +65,8 @@ export default class KitkitApi {
     /**
      * 계정 관리 정보를 요청한다.
      *
+     * <br> - {String}       sessionID        - 로그인 시 전달받은 sessionID
+     *
      */
     postManage() {
         return this.request('/list2', {
@@ -73,6 +81,8 @@ export default class KitkitApi {
     /**
      * 대시보드 정보를 요청한다.
      *
+     * <br> - {String}       sessionID        - 로그인 시 전달받은 sessionID
+     *
      */
     postDashboard() {
         return this.request('/listLog', {
@@ -86,12 +96,31 @@ export default class KitkitApi {
     /**
      * 계정 정보를 요청한다.
      *
+     * <br> - {String}       sessionID        - 로그인 시 전달받은 sessionID
+     *
      */
     postAccountInfo() {
         return this.request('/info', {
             method: 'post',
             data: qs.stringify({
                 sessionID : store.getters.getSessionID,
+            })
+        })
+    }
+
+    /**
+     * 개인 로그 데이터를 요청한다.
+     *
+     * <br> - {String}       sessionID        - 로그인 시 전달받은 sessionID
+     * <br> - {String}        tabletNO        - 선택한 사용자의 테블릿넘버
+     *
+     */
+    postDashboardDetail(options) {
+        return this.request('/downloadCSV', {
+            method: 'post',
+            data: qs.stringify({
+                sessionID : store.getters.getSessionID,
+                ...options
             })
         })
     }
