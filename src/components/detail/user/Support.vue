@@ -105,25 +105,29 @@
             <!-- Download -->
             <h3 class="subtitle" style="margin-top: 30px;"><font-awesome-icon class="icon" :icon="['far', 'dot-circle']"/>Download</h3>
             <div class="qna">
+                <a href="#" @click="toggleActive">
                 <div class="question">
-                    <a href="#" @click="toggleActive">
+
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                         <div class="text">Can I install Kitkit School to tablet devices with other OS? Does it need to be an Android?</div>
-                    </a>
+
                 </div>
+                    </a>
                 <p class="answer">
                     Kitkit School is designed to operate on Android tablet devices only.
                 </p>
             </div>
             <div class="qna">
+                <a href="#" @click="toggleActive">
                 <div class="question">
-                    <a href="#" @click="toggleActive">
+
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                         <div class="text">Where do I check the device specification?</div>
-                    </a>
+
                 </div>
+                    </a>
                 <p class="answer">
                     Go to the Settings app on the tablet to find your device information.<br/>
                     - For Android OS versions, go to About Tablet or System menu.<br/>
@@ -133,26 +137,30 @@
                 </p>
             </div>
             <div class="qna">
+                <a href="#" @click="toggleActive">
                 <div class="question">
-                    <a href="#" @click="toggleActive">
+
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                         <div class="text">Do I need to download all files from the list for installation?</div>
-                    </a>
+
                 </div>
+                    </a>
                 <p class="answer">
                     You must download all files listed on our download page. Click “Download All” to download all files at once.<br/>
                     “Installer” app can be deleted on the tablet after you have successfully installed Kitkit School.
                 </p>
             </div>
             <div class="qna">
+                <a href="#" @click="toggleActive">
                 <div class="question">
-                    <a href="#" @click="toggleActive">
+
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                         <div class="text">Can I directly download the installation package from the tablet device?</div>
-                    </a>
+
                 </div>
+                    </a>
                 <p class="answer">
                     If you have a stable internet connection, it is possible to download the installation files to your tablet device. However, if you are downloading to be installed for multiple devices, we recommend using a PC to download the files and then move them to the tablet devices.
                 </p>
@@ -161,25 +169,29 @@
             <!-- Installation -->
             <h3 class="subtitle"><font-awesome-icon class="icon" :icon="['far', 'dot-circle']"/>Installation</h3>
             <div class="qna">
+                <a href="#" @click="toggleActive">
                 <div class="question">
-                    <a href="#" @click="toggleActive">
+
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                         <div class="text">Can I install Kitkit School to multiple numbers of tablet devices?</div>
-                    </a>
+
                 </div>
+                    </a>
                 <p class="answer">
                     During the sign-up process, you should have indicated the number of licenses. You can install Kitkit School as long as it does not exceed the number. In terms of users per device, you can add up to 100 users per device.
                 </p>
             </div>
             <div class="qna">
+                <a href="#" @click="toggleActive">
                 <div class="question">
-                    <a href="#" @click="toggleActive">
+
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                         <div class="text">Installation is not completed.</div>
-                    </a>
+
                 </div>
+                    </a>
                 <p class="answer">
                     First, please check your device specification. It must meet below minimum requirements:<br/>
                     - Minimum OS version: Android <span class="yale">6.0</span><br/>
@@ -192,13 +204,15 @@
                 </p>
             </div>
             <div class="qna">
+                <a href="#" @click="toggleActive">
                 <div class="question">
-                    <a href="#" @click="toggleActive">
+
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                         <div class="text">I would like to modify the number of licenses I requested.</div>
-                    </a>
+
                 </div>
+                    </a>
                 <p class="answer">
                     Please send an email to <a class="email" href="mailto:kitkitsupport@enuma.com">kitkitsupport@enuma.com</a> with your account information such as your name, ID, email address, and organization.
                 </p>
@@ -207,37 +221,43 @@
             <!-- Using Kitkit School -->
             <h3 class="subtitle"><font-awesome-icon class="icon" :icon="['far', 'dot-circle']"/>Using Kitkit School</h3>
             <div class="qna">
+                <a href="#" @click="toggleActive">
                 <div class="question">
-                    <a href="#" @click="toggleActive">
+
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                         <div class="text">Would I still be able to access other applications after installing Kitkit School?</div>
-                    </a>
+
                 </div>
+                    </a>
                 <p class="answer">
                     Yes. You can still use other applications other than Kitkit School.
                 </p>
             </div>
             <div class="qna">
+                <a href="#" @click="toggleActive">
                 <div class="question">
-                    <a href="#" @click="toggleActive">
+
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                         <div class="text">Can I add multiple users to one device installed with Kitkit School?</div>
-                    </a>
+
                 </div>
+                    </a>
                 <p class="answer">
                     Yes. You can add up to 100 users to one tablet device. You can check how to add or remove users from the user guide manuals.
                 </p>
             </div>
             <div class="qna">
+                <a href="#" @click="toggleActive">
                 <div class="question">
-                    <a href="#" @click="toggleActive">
+
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                         <div class="text">Can I transfer the user data from one device to another?</div>
-                    </a>
+
                 </div>
+                    </a>
                 <p class="answer">
                     No. The user data will be stored on the device being used and cannot be transferred.
                 </p>
@@ -247,25 +267,29 @@
             <!-- TODO: 내용 누락 -->
             <h3 class="subtitle"><font-awesome-icon class="icon" :icon="['far', 'dot-circle']"/>About Dashboard</h3>
             <div class="qna">
+                <a href="#" @click="toggleActive">
                 <div class="question">
-                    <a href="#" @click="toggleActive">
+
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                         <div class="text">What is a dashboard?</div>
-                    </a>
+
                 </div>
+                    </a>
                 <p class="answer">
                     ...
                 </p>
             </div>
             <div class="qna">
+                <a href="#" @click="toggleActive">
                 <div class="question">
-                    <a href="#" @click="toggleActive">
+
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                         <div class="text">How do I upload the data?</div>
-                    </a>
+
                 </div>
+                    </a>
                 <p class="answer">
                     ...
                 </p>
@@ -274,38 +298,44 @@
             <!-- Troubleshooting -->
             <h3 class="subtitle"><font-awesome-icon class="icon" :icon="['far', 'dot-circle']"/>Troubleshooting</h3>
             <div class="qna">
+                <a href="#" @click="toggleActive">
                 <div class="question">
-                    <a href="#" @click="toggleActive">
+
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                         <div class="text">Kitkit School app crashes or fails to launch on screen.</div>
-                    </a>
+
                 </div>
+                    </a>
                 <p class="answer">
                     Please check if all files from the download page are fully installed on the tablet device. Go to the Settings app and find the “Applications” menu and find a list of all apps installed. You should be able to find “Kitkit School”, “Kikit School Learning App”, “Kitkit Book Viewer”, and “Kikit Book Data”. The issue may be temporary. Exit the app and relaunch the app. Try restarting the device by turning off and on.
                 </p>
             </div>
             <div class="qna">
+                <a href="#" @click="toggleActive">
                 <div class="question">
-                    <a href="#" @click="toggleActive">
+
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                         <div class="text">Tablet screen turns off while using Kitkit School.</div>
-                    </a>
+
                 </div>
+                    </a>
                 <p class="answer">
                     Usually the screen display time is set to 30 seconds or less by default. If the user is not active the screen will turn off after the default screen display time.<br/>
                     Kitkit school is a learning app and users may not touch the screen while exploring some contents for a longer time. It is recommended that you change the screen display time to over 10 minutes. Go to the Settings app and find a display setting menu to change.
                 </p>
             </div>
             <div class="qna">
+                <a href="#" @click="toggleActive">
                 <div class="question">
-                    <a href="#" @click="toggleActive">
+
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                         <div class="text">Can I reinstall Kitkit School?</div>
-                    </a>
+
                 </div>
+                    </a>
                 <p class="answer last">
                     You may have to reinstall Kitkit School apps if the above troubleshooting steps do not resolve the issue.<br/>
                     Before installing Kitkit School again, please remove all existing applications.<br/>
@@ -339,7 +369,10 @@
         methods : {
             toggleActive(e){
                 e.preventDefault();
-                e.target.parentNode.parentNode.parentNode.classList.toggle('active');
+                // toggle div.qna with 'active' class
+                e.target.className === 'question'
+                    ? e.target.parentNode.parentNode.classList.toggle('active')
+                    : e.target.parentNode.parentNode.parentNode.classList.toggle('active')
             }
         }
     }
@@ -446,13 +479,13 @@
         border-top: 1px solid #dedede;
         padding: 22px 0 19px;
     }
-    .support .faq .qna .question > a {
+    .support .faq .qna > a {
         display: block;
         width: 100%;
         height: 100%;
         color: #333333;
     }
-    .support .faq .qna.active .question > a {
+    .support .faq .qna.active > a {
         color: #f6921e;
     }
     .support .faq .qna .question .icon {
