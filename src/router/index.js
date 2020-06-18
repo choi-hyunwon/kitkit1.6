@@ -5,8 +5,10 @@ import {store} from "../store/store";
 import E404 from './../components/error/404'
 
 const requireAuth = () => (from, to, next) => {
-    if(store.state.global.access) return next();
-    next('/')
+    let detailList = ['Dashboard', 'Manage', 'Dashboard', 'Create', 'Download' ,'Support'];
+    if(detailList.indexOf(from.params.detail) === -1) next('/error');
+    else if(store.state.global.access) return next();
+    else next('/')
 };
 
 export const routes = [
@@ -19,6 +21,16 @@ export const routes = [
         name: 'login',
         path: '/login',
         component: Login
+    },
+    {
+        name: 'error',
+        path: '/error',
+        redirect : '/E404'
+    },
+    {
+        name: 'E404',
+        path: '/E404',
+        component: E404,
     },
     {
         name: 'detail',

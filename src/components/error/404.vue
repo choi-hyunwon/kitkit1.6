@@ -10,7 +10,7 @@
 
 <script>
     export default {
-        name: '404',
+        name: 'E404',
         components: {
 
         }
