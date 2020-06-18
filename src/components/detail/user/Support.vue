@@ -450,9 +450,7 @@
         display: block;
         width: 100%;
         height: 100%;
-    }
-    .support .faq .qna .question > a:hover {
-        color: #f6921e;
+        color: #333333;
     }
     .support .faq .qna.active .question > a {
         color: #f6921e;
