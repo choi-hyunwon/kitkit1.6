@@ -24,14 +24,12 @@
                 Download Dashboard Data
             </button>
         </div>
-
         <div v-if="status === 'admin'"  class="buttonArea">
             <button @click="eventDownload" class="btn btn-primary btn-lg download">
                 <font-awesome-icon class="icon" :icon="['far', 'arrow-alt-to-bottom']"/>
                 Download
             </button>
         </div>
-
         <ag-grid-vue class="ag-theme-alpine ag-custom"
                      :headerHeight="80"
                      :rowStyle="{background: 'white'}"
@@ -40,9 +38,10 @@
                      :gridOptions="gridOptions"
                      :columnDefs="columnDefs"
                      :defaultColDef="defaultColDef"
-                     :rowData="rowData">
+                     :rowData="rowData"
+                     :rowSelection="rowSelection"
+                     @selection-changed="fetchDashboardDetail">
         </ag-grid-vue>
-
     </div>
 </template>
 
@@ -66,7 +65,8 @@
                 gridApi: null,
                 columnDefs: null,
                 rowData: null,
-                defaultColDef: null
+                defaultColDef: null,
+                rowSelection: null
             }
         },
         beforeMount() {
@@ -282,7 +282,6 @@
                     {headerName: 'Total Playtime', field: 'totalPlayTime',filter: 'agNumberColumnFilter'}
                 ];
             }
-
             this.defaultColDef = {
                 sortable: true,
                 sort: 'desc',
@@ -293,6 +292,7 @@
                 filterParams: {
                     resetButton: true}
             };
+            this.rowSelection = 'single';
         },
         mounted() {
             this.gridApi = this.gridOptions.api;
@@ -309,7 +309,8 @@
             ...mapActions({
                 postManage : 'postManage',
                 postDashboard : 'postDashboard',
-                postAccountInfo : 'postAccountInfo'
+                postAccountInfo : 'postAccountInfo',
+                postDashboardDetail : 'postDashboardDetail'
             }),
             fetchAccountInfo(){
                 this.postAccountInfo()
@@ -337,25 +338,37 @@
             },
             processManageData(data){
                 data.forEach((array) => {
-                    if(array.productType === '1') array.productType = 'English and Math'
-                    else if(array.productType === '2')array.productType = 'Swahili and Math'
-                    else array.productType = ''
-                    array.expdate = array.expdate && this.$moment(array.expdate).format('YYYY.MM.DD')
-                    array.regdate = array.regdate && this.$moment(array.regdate).format('YYYY.MM.DD')
+                    if(array.productType === '1') array.productType = 'English and Math';
+                    else if(array.productType === '2')array.productType = 'Swahili and Math';
+                    else array.productType = '';
+                    array.expdate = array.expdate && this.$moment(new Date(array.expdate)).format('YYYY.MM.DD');
+                    array.regdate = array.regdate && this.$moment(new Date(array.regdate)).format('YYYY.MM.DD');
                 });
                 this.rowData = data;
             },
             processDashboardData(data){
                 data.forEach((array) => {
-                    array.startTime = array.startTime && this.$moment(array.startTime).format('YYYY.MM.DD')
-                    array.endTime = array.endTime && this.$moment(array.endTime).format('YYYY.MM.DD')
-                    array.PretestLDate =  array.PretestLDate && this.$moment(array.PretestLDate).format('YYYY.MM.DD')
-                    array.PretestMDate =  array.PretestMDate && this.$moment(array.PretestMDate).format('YYYY.MM.DD')
-                    array.posttestLDate =  array.posttestLDate && this.$moment(array.posttestLDate).format('YYYY.MM.DD')
-                    array.posttestMDate = array.posttestMDate && this.$moment(array.posttestMDate).format('YYYY.MM.DD')
+                    array.startTime = array.startTime && this.$moment(new Date(array.startTime)).format('YYYY.MM.DD');
+                    array.endTime = array.endTime && this.$moment(new Date(array.endTime)).format('YYYY.MM.DD');
+                    array.PretestLDate =  array.PretestLDate && this.$moment(new Date(array.PretestLDate)).format('YYYY.MM.DD');
+                    array.PretestMDate =  array.PretestMDate && this.$moment(new Date(array.PretestMDate)).format('YYYY.MM.DD');
+                    array.posttestLDate =  array.posttestLDate && this.$moment(new Date(array.posttestLDate)).format('YYYY.MM.DD');
+                    array.posttestMDate = array.posttestMDate && this.$moment(new Date(array.posttestMDate)).format('YYYY.MM.DD');
                 });
                 this.rowData = data;
-            }
+            },
+            fetchDashboardDetail() {
+                if(this.status === 'user'){
+                    let selectedRows = this.gridApi.getSelectedRows();
+                    let tabletNO = selectedRows.length === 1 ? selectedRows[0].tabletNO : '';
+                    if(tabletNO !== ''){
+                        this.postDashboardDetail({tabletNO : tabletNO })
+                            .then((data) => {
+                                console.log(`postDashboardDetail : ${data.result}`);
+                            })
+                    }
+                }
+            },
         }
     }
 </script>
