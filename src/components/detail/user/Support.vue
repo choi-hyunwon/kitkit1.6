@@ -32,7 +32,7 @@
 <!--                        <div class="col item">-->
 <!--                            <a href="#" target="_blank">-->
 <!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
-<!--                                <p class="title">Download Learning<br/>Assessment and<br/>Dashboard Guide<br/><b>(PDF) in English</b></p>-->
+<!--                                <p class="title" style="margin-top: 20px;">Download Learning<br/>Assessment and<br/>Dashboard Guide<br/><b>(PDF) in English</b></p>-->
 <!--                            </a>-->
 <!--                        </div>-->
 <!--                        <div class="col item">-->
@@ -56,7 +56,7 @@
                 <div class="col group">
                     <div class="row">
                         <div class="col item">
-                            <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="86" width="200" alt="kitkit swahili text logo"/>
+                            <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/>
                         </div>
                         <div class="col item">
                             <a href="#" target="_blank">
@@ -77,7 +77,7 @@
                         <div class="col item">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title">Download Learning<br/>Assessment and<br/>Dashboard Guide<br/><b>(PDF) in Swahili</b></p>
+                                <p class="title" style="margin-top: 20px;">Download Learning<br/>Assessment and<br/>Dashboard Guide<br/><b>(PDF) in Swahili</b></p>
                             </a>
                         </div>
                         <div class="col item">
@@ -306,7 +306,7 @@
                         <div class="text">Can I reinstall Kitkit School?</div>
                     </a>
                 </div>
-                <p class="answer">
+                <p class="answer last">
                     You may have to reinstall Kitkit School apps if the above troubleshooting steps do not resolve the issue.<br/>
                     Before installing Kitkit School again, please remove all existing applications.<br/>
                     Go to the Settings app and find the “Applications” menu and find a list of all apps installed. You should be able to find “Kitkit School”, “Kikit School Learning App”, “Kitkit Book Viewer”, and “Kikit Book Data”. Click each one of them and tap “Uninstall”, and remove all apps.<br/>
@@ -317,7 +317,7 @@
         <!-- // FAQ -->
 
         <!-- Contact Us -->
-        <h2 style="margin-top: 20px;">Contact Us</h2>
+        <h2 style="margin-top: 32px;">Contact Us</h2>
         <div class="contactInfo">
             Please send us an email with a description of the issue, in addition to your account information (your id, name, email address, and organization) to <a class="email" href="mailto:kitkitsupport@enuma.com">kitkitsupport@enuma.com</a>
         </div>
@@ -356,10 +356,11 @@
         border: solid 1px #c2c2c2;
         background-color: #f9f9f9;
         min-width: 780px;
-        padding: 50px 30px 20px;
+        padding: 50px 10px 20px;
         margin: 0 auto;
     }
     .support .resource .group {
+        height: 231px;
         min-width: 840px;
     }
     .support .resource .group:last-child {
@@ -438,6 +439,7 @@
     .support .faq .qna {
         padding: 0 20px 0 40px;
         font-size: 24px;
+        font-weight: bold;
     }
     .support .faq .qna .question {
         position: relative;
@@ -481,6 +483,9 @@
         line-height: 50px;
         display: none;
     }
+    .support .faq .qna .answer.last {
+        padding-bottom: 6px;
+    }
     .support .faq .qna.active .answer {
         display: block;
     }
@@ -505,4 +510,14 @@
         text-decoration: underline;
     }
     /* // Contact */
+
+
+    @media (max-width: 1879px) {
+        .support .resource {
+            padding-bottom: 30px;
+        }
+        .support .resource .group:last-child {
+            margin-top: 80px;
+        }
+    }
 </style>
