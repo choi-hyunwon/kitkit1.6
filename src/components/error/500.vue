@@ -10,7 +10,7 @@
 
 <script>
     export default {
-        name: '500',
+        name: 'E500',
         components: {
 
         }
