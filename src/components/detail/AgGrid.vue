@@ -357,10 +357,16 @@
         background-color: #e9e9e9;
     }
 
-    .ag-theme-alpine .ag-header-cell-text {
+    .ag-theme-alpine .ag-header-cell-label, .ag-header-group-cell-label {
+        justify-content: center;
+    }
+
+    .ag-theme-alpine .ag-header-cell-text, .ag-header-group-text {
         font-size: 20px;
         font-weight: normal;
         color: #0c6290;
+        white-space: normal;
+        text-align: center;
     }
 
     .ag-theme-alpine .ag-cell {
@@ -383,12 +389,6 @@
     .ag-sort-order {
         display: none;
     }
-
-    .ag-header-cell-text {
-        white-space: normal;
-        text-align: center;
-    }
-
 
 
     /* Dashboard *//* Dashboard *//* Dashboard *//* Dashboard */
