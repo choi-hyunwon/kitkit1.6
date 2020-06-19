@@ -13,13 +13,10 @@ export default class KitkitApi {
             ...config
         }).then(result => {
             if(!result.data.result){
-                if(result.data.errorCode.split(':')[0] === 'CAD03' ) {
-                    // TODO 방어로직 수정 필요
-                    if(result.config.url.indexOf('downloadCSV') === -1){
+                if(result.data.errorCode !== undefined) {
+                    if(result.data.errorCode.split(':')[0] === 'CAD03' ) {
                         console.log('세션 만료, 로그인 필요');
                         mutations.setSignOut(store.getters.getState);
-                    }else {
-                        console.log('downloadCSV API 오류');
                     }
                 }
             }
@@ -112,7 +109,7 @@ export default class KitkitApi {
      * 개인 로그 데이터를 요청한다.
      *
      * <br> - {String}       sessionID        - 로그인 시 전달받은 sessionID
-     * <br> - {String}        tabletNO        - 선택한 사용자의 테블릿넘버
+     * <br> - {String}        userID          - 선택한 사용자의 ID
      *
      */
     postDashboardDetail(options) {
