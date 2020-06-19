@@ -333,7 +333,10 @@
                     .then((data) => {
                         console.log(`postCreateResult : ${data.result}`);
                         if(data.result)this.$router.push({path: '/Manage'});
-                        else this.$router.push({path: '/Create'});
+                        else {
+                            alert(data.errorCode);
+                            this.$router.push({path: '/Create'});
+                        }
                     })
             },
             datePickerOver() {
@@ -344,10 +347,12 @@
             },
             dateFormatter(date) {
                 let format = this.$moment(date).format('YYYY.MM.DD');
-                this.createInfo.expdate = format
+                this.createInfo.expdate = format;
                 return format ;
-
             }
+        },
+        beforeDestroy () {
+            this.$EventBus.$off('eventConfirm')
         }
     }
 </script>
