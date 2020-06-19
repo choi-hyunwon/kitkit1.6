@@ -236,10 +236,6 @@
             },
         }
     }
-
-    window.filterParams = function filterParams(params) {
-        return '(' + params.value + ')';
-    };
 </script>
 
 <style>
