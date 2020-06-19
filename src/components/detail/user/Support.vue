@@ -308,7 +308,7 @@
                 </div>
                     </a>
                 <p class="answer">
-                    Please check if all files from the download page are fully installed on the tablet device. Go to the Settings app and find the “Applications” menu and find a list of all apps installed. You should be able to find “Kitkit School”, “Kikit School Learning App”, “Kitkit Book Viewer”, and “Kikit Book Data”. The issue may be temporary. Exit the app and relaunch the app. Try restarting the device by turning off and on.
+                    Please check if all files from the download page are fully installed on the tablet device. Go to the Settings app and find the “Applications” menu and find a list of all apps installed. You should be able to find “Kitkit School”, “Kikit School Learning App”, “Kitkit Book Viewer”, and “Kikit Book Data”.<br/>The issue may be temporary. Exit the app and relaunch the app. Try restarting the device by turning off and on.
                 </p>
             </div>
             <div class="qna">

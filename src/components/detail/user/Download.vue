@@ -21,7 +21,7 @@
                                 - RAM: <span class="yale">1.8GB</span>
                             </p>
                         </li>
-                        <li class="item">You check your device spec in the Settings app, under About Tablet and Storage menu</li>
+                        <li class="item">You "can" check your device spec in the Settings app, under About Tablet and Storage menu.</li>
                     </ul>
                 </div>
             </li>
