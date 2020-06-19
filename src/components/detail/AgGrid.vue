@@ -77,6 +77,7 @@
                     {headerName: 'Last Update', field: '', pinned: 'left',filter: 'agDateColumnFilter'},
                     {headerName: 'First name', field: 'firstName', pinned: 'left'},
                     {headerName: 'Last name', field: 'lastName', pinned: 'left'},
+                    {headerName: 'ID', field: 'userID', hide: "true"},
                     {headerName: 'Grade', field: 'grade',filter: 'agNumberColumnFilter'},
                     {headerName: 'Class', field: 'class'},
                     {headerName: 'First Played', field: 'startTime',filter: 'agDateColumnFilter'},
@@ -157,7 +158,6 @@
                 }
             };
             this.rowSelection = 'single';
-
         },
         mounted() {
             this.gridApi = this.gridOptions.api;
@@ -225,11 +225,12 @@
             fetchDashboardDetail() {
                 if(this.status === 'user'){
                     let selectedRows = this.gridApi.getSelectedRows();
-                    let tabletNO = selectedRows.length === 1 ? selectedRows[0].tabletNO : '';
-                    if(tabletNO !== ''){
-                        this.postDashboardDetail({tabletNO : tabletNO })
+                    let userID = selectedRows.length === 1 ? selectedRows[0].userID : '';
+                    if(userID !== ''){
+                        this.postDashboardDetail({userID : userID })
                             .then((data) => {
-                                console.log(`postDashboardDetail : ${data.result}`);
+                                if(data.result !== undefined && !data.result) console.log(`postDashboardDetail : ${data.result}`);
+                                else console.log('csv 파일 다운로드');
                             })
                     }
                 }
