@@ -73,8 +73,40 @@
             this.gridOptions = {};
             if(this.status === 'user'){
                 this.columnDefs = [
-                    {headerName: 'TabletNumber', field: 'tabletNO', pinned: 'left', sort: 'asc'},
-                    {headerName: 'Last Update', field: '', pinned: 'left',filter: 'agDateColumnFilter'},
+                    {headerName: 'TabletNumber', field: 'tabletNO', pinned: 'left', sort : 'asc',
+                        comparator :
+                            (a, b) => {if((a === "" && b !== "") ||(a === "" && b === "") ) return -1; else if (a !== "" && b !== "") {
+                                let aNum = Number(a.split('t')[1]);
+                                let bNum = Number(b.split('t')[1]);
+                                if(aNum > bNum)return  1;
+                                else if (aNum === bNum) return  0;
+                                else if (aNum < bNum) return  -1;
+                            }
+                    }},
+                    {headerName: 'Last Update', field: 'lastUpdate', pinned: 'left',filter: 'agDateColumnFilter',
+                        filterParams: {
+                            comparator: (filterLocalDateAtMidnight, cellValue) => {
+                                var dateAsString = cellValue;
+                                if (dateAsString === null || dateAsString === '') return -1;
+                                var date = dateAsString.split(' ')[0];
+                                var time = dateAsString.split(' ')[1];
+                                var dateParts = date.split('.');
+                                var timeParts = time.split(':');
+                                var cellDate = new Date(
+                                    Number(dateParts[0]),
+                                    Number(dateParts[1]) - 1,
+                                    Number(dateParts[2]),
+                                    Number(timeParts[0]),
+                                    Number(timeParts[1]),
+                                    Number(timeParts[2])
+                                );
+                                if (filterLocalDateAtMidnight.getDate() === cellDate.getDate()) return 0;
+                                if (cellDate < filterLocalDateAtMidnight) return -1;
+                                if (cellDate > filterLocalDateAtMidnight) return 1;
+                            },
+                            browserDatePicker: true,
+                            resetButton: true
+                        }},
                     {headerName: 'First name', field: 'firstName', pinned: 'left'},
                     {headerName: 'Last name', field: 'lastName', pinned: 'left'},
                     {headerName: 'ID', field: 'userID', hide: "true"},
@@ -114,7 +146,7 @@
                 ];
             }else if (this.status === 'admin'){
                 this.columnDefs = [
-                    {headerName: 'Reg date', field: 'regdate', pinned: 'left',filter: 'agDateColumnFilter',sort: 'desc'},
+                    {headerName: 'Created  Date', field: 'regdate', pinned: 'left',filter: 'agDateColumnFilter',sort: 'desc'},
                     {headerName: 'ID', field: 'account', pinned: 'left'},
                     {headerName: 'Name', field: 'sitename'},
                     {headerName: 'Email', field: 'siteEMail'},
@@ -126,7 +158,30 @@
                     {headerName: 'Product', field: 'productType'},
                     {headerName: 'Expiration Date', field: 'expdate',filter: 'agDateColumnFilter'},
                     {headerName: 'Staff Name', field: 'contactName'},
-                    {headerName: 'Last Update', field: 'lastUpdate',filter: 'agDateColumnFilter'},
+                    {headerName: 'Last Update', field: 'lastUpdate',filter: 'agDateColumnFilter',
+                        filterParams: {
+                            comparator: (filterLocalDateAtMidnight, cellValue) => {
+                                var dateAsString = cellValue;
+                                if (dateAsString === null || dateAsString === '') return -1;
+                                var date = dateAsString.split(' ')[0];
+                                var time = dateAsString.split(' ')[1];
+                                var dateParts = date.split('.');
+                                var timeParts = time.split(':');
+                                var cellDate = new Date(
+                                    Number(dateParts[0]),
+                                    Number(dateParts[1]) - 1,
+                                    Number(dateParts[2]),
+                                    Number(timeParts[0]),
+                                    Number(timeParts[1]),
+                                    Number(timeParts[2])
+                                );
+                                if (filterLocalDateAtMidnight.getDate() === cellDate.getDate()) return 0;
+                                if (cellDate < filterLocalDateAtMidnight) return -1;
+                                if (cellDate > filterLocalDateAtMidnight) return 1;
+                            },
+                            browserDatePicker: true,
+                            resetButton: true
+                        }},
                     {headerName: 'License Used', field: 'licenseUsed',filter: 'agNumberColumnFilter'},
                     {headerName: 'Registered Users', field: 'registeredUsers',filter: 'agNumberColumnFilter'},
                     {headerName: 'Users with Play Data', field: 'usersWithPlayData',filter: 'agNumberColumnFilter'},
@@ -141,10 +196,10 @@
                 filter: true,
                 filterParams: {
                     comparator: (filterLocalDateAtMidnight, cellValue) => {
-                        var dateAsString = cellValue;
+                        let dateAsString = cellValue;
                         if (dateAsString === null || dateAsString === '') return -1;
-                        var dateParts = dateAsString.split('.');
-                        var cellDate = new Date(
+                        let dateParts = dateAsString.split('.');
+                        let cellDate = new Date(
                             Number(dateParts[0]),
                             Number(dateParts[1]) - 1,
                             Number(dateParts[2])
@@ -208,6 +263,7 @@
                     else array.productType = '';
                     array.expdate = array.expdate && this.$moment(new Date(array.expdate)).format('YYYY.MM.DD');
                     array.regdate = array.regdate && this.$moment(new Date(array.regdate)).format('YYYY.MM.DD');
+                    array.lastUpdate= array.lastUpdate && this.$moment(new Date(array.lastUpdate)).format('YYYY.MM.DD HH:MM:DD');
                 });
                 this.rowData = data;
             },
@@ -219,6 +275,7 @@
                     array.PretestMDate =  array.PretestMDate && this.$moment(new Date(array.PretestMDate)).format('YYYY.MM.DD');
                     array.posttestLDate =  array.posttestLDate && this.$moment(new Date(array.posttestLDate)).format('YYYY.MM.DD');
                     array.posttestMDate = array.posttestMDate && this.$moment(new Date(array.posttestMDate)).format('YYYY.MM.DD');
+                    array.lastUpdate= array.lastUpdate && this.$moment(new Date(array.lastUpdate)).format('YYYY.MM.DD HH:MM:DD');
                 });
                 this.rowData = data;
             },
@@ -229,12 +286,12 @@
                     if(userID !== ''){
                         this.postDashboardDetail({userID : userID })
                             .then((data) => {
-                                if(data.result !== undefined && !data.result) console.log(`postDashboardDetail : ${data.result}`);
-                                else console.log('csv 파일 다운로드');
+                                if(data.result !== undefined && !data.result && data.errorCode.split(':')[0] !== 'CAD03') alert(data.errorCode);
+                                else if (data.errorCode.split(':')[0] !== 'CAD03') console.log('csv 파일 다운로드');
                             })
                     }
                 }
-            },
+            }
         }
     }
 </script>
