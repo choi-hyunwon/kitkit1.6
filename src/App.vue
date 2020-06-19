@@ -15,20 +15,8 @@
         },
         mounted (){
           if (this.access) {
-
-            // TODO 삭제
-
-            if(this.detail === 'index.html') {
-              if(this.status === 'admin') this.$router.push({path: `/Manage`});
-              else this.$router.push({path:  `/Dashboard`});
-            }else {
-              if(this.status === 'admin') this.$router.push({path: `/${this.detail}`});
-              else this.$router.push({path:  `/${this.detail}`});
-            }
-
-            /*if(this.status === 'admin') this.$router.push({path: `/${this.detail}`});
-            else this.$router.push({path:  `/${this.detail}`});*/
-
+            if(this.status === 'admin') this.$router.push({path: `/${this.detail}`});
+            else this.$router.push({path:  `/${this.detail}`});
           }else this.$router.push({path: '/login'})
         },
         computed: {
