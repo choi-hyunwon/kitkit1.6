@@ -15,7 +15,7 @@ export default class KitkitApi {
             if(!result.data.result){
                 if(result.data.errorCode !== undefined) {
                     if(result.data.errorCode.split(':')[0] === 'CAD03' ) {
-                        console.log('세션 만료, 로그인 필요');
+                        alert(result.data.errorCode);
                         mutations.setSignOut(store.getters.getState);
                     }
                 }
