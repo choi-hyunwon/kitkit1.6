@@ -196,11 +196,11 @@
                     First, please check your device specification. It must meet below minimum requirements:<br/>
                     - Minimum OS version: Android <span class="yale">6.0</span><br/>
                     - Storage: <span class="yale">16GB</span> with <span class="yale">6GB</span> available space<br/>
-                    - RAM: <span class="yale">2GB</span><br/>
-                    Check if you have downloaded all files listed on the page and are moved to your tablet device. When you have all files, the installer app will show<br/>
+                    - RAM: <span class="yale">1.8GB</span><br/>
+                    Check if you have downloaded all files listed on the page and are moved to your tablet device. When you have all files, the installer app will show
                     a yellow icon next to each file name.<br/>
-                    Check if you have an error message. Depending on the device, the installation may not be successful due to a lack of storage or RAM memory. If<br/>
-                    there is not enough space, free up space, or find another device that meets the minimum requirements.
+                    Check if you have an error message. Depending on the device, the installation may not be successful due to a lack of storage or RAM memory.
+                    If there is not enough space, free up space, or find another device that meets the minimum requirements.
                 </p>
             </div>
             <div class="qna">

@@ -94,7 +94,7 @@
                             </div>
                             <ul class="list">
                                 <li class="item">
-                                    <span>Kitkit School Insvtaller : <b>12.56MB</b></span>
+                                    <span>Kitkit School Installer : <b>12.56MB</b></span>
                                     <button class="btn btn-primary">Download</button>
                                 </li>
                                 <li class="item">
