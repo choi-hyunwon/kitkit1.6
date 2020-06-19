@@ -19,12 +19,12 @@
                     <a @click="slotProps.toggleAlert" class="detailPopup" href="#">What can I find in the individual log data?</a>
                 </Alert>
             </p>
-            <button  @click="eventDownload"  class="btn btn-primary download">
+            <button  @click="eventDownload"  class="btn btn-primary download" :class="{disabled : downloadDisabled}">
                 <font-awesome-icon class="icon" :icon="['far', 'arrow-alt-to-bottom']"/>
                 Download Dashboard Data
             </button>
         </div>
-        <div v-if="status === 'admin'"  class="buttonArea">
+        <div v-if="status === 'admin'"  class="buttonArea"  :class="{disabled : downloadDisabled}">
             <button @click="eventDownload" class="btn btn-primary btn-lg download">
                 <font-awesome-icon class="icon" :icon="['far', 'arrow-alt-to-bottom']"/>
                 Download
@@ -66,7 +66,8 @@
                 columnDefs: null,
                 rowData: null,
                 defaultColDef: null,
-                rowSelection: null
+                rowSelection: null,
+                length : 0
             }
         },
         beforeMount() {
@@ -74,25 +75,29 @@
             if(this.status === 'user'){
                 this.columnDefs = [
                     {headerName: 'TabletNumber', field: 'tabletNO', pinned: 'left', sort : 'asc',
-                        comparator :
-                            (a, b) => {if((a === "" && b !== "") ||(a === "" && b === "") ) return -1; else if (a !== "" && b !== "") {
+                        comparator : (a, b) => {
+                            if(a === "" && b !== "") return -1;
+                            else if(a!== "" && b === "") return 1;
+                            else if (a === "" && b === "") return -1;
+                            else if (a !== "" && b !== "") {
                                 let aNum = Number(a.split('t')[1]);
                                 let bNum = Number(b.split('t')[1]);
                                 if(aNum > bNum)return  1;
-                                else if (aNum === bNum) return  0;
+                                else if (aNum === bNum) return  -1 ;
                                 else if (aNum < bNum) return  -1;
                             }
-                    }},
+                        }
+                    },
                     {headerName: 'Last Update', field: 'lastUpdate', pinned: 'left',filter: 'agDateColumnFilter',
                         filterParams: {
                             comparator: (filterLocalDateAtMidnight, cellValue) => {
-                                var dateAsString = cellValue;
+                                let dateAsString = cellValue;
                                 if (dateAsString === null || dateAsString === '') return -1;
-                                var date = dateAsString.split(' ')[0];
-                                var time = dateAsString.split(' ')[1];
-                                var dateParts = date.split('.');
-                                var timeParts = time.split(':');
-                                var cellDate = new Date(
+                                let date = dateAsString.split(' ')[0];
+                                let time = dateAsString.split(' ')[1];
+                                let dateParts = date.split('.');
+                                let timeParts = time.split(':');
+                                let cellDate = new Date(
                                     Number(dateParts[0]),
                                     Number(dateParts[1]) - 1,
                                     Number(dateParts[2]),
@@ -161,13 +166,13 @@
                     {headerName: 'Last Update', field: 'lastUpdate',filter: 'agDateColumnFilter',
                         filterParams: {
                             comparator: (filterLocalDateAtMidnight, cellValue) => {
-                                var dateAsString = cellValue;
+                                let dateAsString = cellValue;
                                 if (dateAsString === null || dateAsString === '') return -1;
-                                var date = dateAsString.split(' ')[0];
-                                var time = dateAsString.split(' ')[1];
-                                var dateParts = date.split('.');
-                                var timeParts = time.split(':');
-                                var cellDate = new Date(
+                                let date = dateAsString.split(' ')[0];
+                                let time = dateAsString.split(' ')[1];
+                                let dateParts = date.split('.');
+                                let timeParts = time.split(':');
+                                let cellDate = new Date(
                                     Number(dateParts[0]),
                                     Number(dateParts[1]) - 1,
                                     Number(dateParts[2]),
@@ -223,7 +228,10 @@
                 status : 'getStatus',
                 account : 'getAccount',
                 loginID : 'getLoginID'
-            })
+            }),
+            downloadDisabled () {
+                return this.length === 0
+            }
         },
         methods : {
             ...mapActions({
@@ -266,6 +274,7 @@
                     array.lastUpdate= array.lastUpdate && this.$moment(new Date(array.lastUpdate)).format('YYYY.MM.DD HH:MM:DD');
                 });
                 this.rowData = data;
+                this.length = this.rowData.length;
             },
             processDashboardData(data){
                 data.forEach((array) => {
@@ -278,6 +287,7 @@
                     array.lastUpdate= array.lastUpdate && this.$moment(new Date(array.lastUpdate)).format('YYYY.MM.DD HH:MM:DD');
                 });
                 this.rowData = data;
+                this.length = this.rowData.length;
             },
             fetchDashboardDetail() {
                 if(this.status === 'user'){
