@@ -73,6 +73,9 @@ export const store = new Vuex.Store({
         },
         getLoginID : state => {
             return state.global.loginID
+        },
+        getProductType : state => {
+            return state.account.productType
         }
     },
     /**

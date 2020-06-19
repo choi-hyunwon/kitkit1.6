@@ -316,6 +316,11 @@
         display: none;
     }
 
+    .ag-header-cell-text {
+        white-space: normal;
+        text-align: center;
+    }
+
 
 
     /* Dashboard *//* Dashboard *//* Dashboard *//* Dashboard */

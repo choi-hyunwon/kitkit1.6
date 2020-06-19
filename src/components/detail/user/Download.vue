@@ -34,9 +34,11 @@
                     <div class="text">Please look through the guides (PDF and video tutorials) before downloading the install package.</div>
                 </div>
                 <div class="detail">
-                    <div class="visualGuide row">
-                        <!-- TODO: Product Type 분기 -->
-                        <!-- English -->
+                    <!-- English -->
+                    <div v-if="productType === 1" class="visualGuide row">
+                        <div class="col item">
+                            <img class="logo logo-eng attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="86" width="200" alt="kitkit english text logo"/>
+                        </div>
                         <div class="item col">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
@@ -49,23 +51,29 @@
                                 <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in English</b></p>
                             </a>
                         </div>
-                        <!-- // English -->
-
-                        <!-- Swahili -->
-<!--                        <div class="item col">-->
-<!--                            <a href="#" target="_blank">-->
-<!--                                <font-awesome-icon :icon="['fab', 'youtube']"/>-->
-<!--                                <p class="title">Watch<br/>Installation Guide<br/><b>Video</b></p>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                        <div class="item col">-->
-<!--                            <a href="#" target="_blank">-->
-<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
-<!--                                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in Swahili</b></p>-->
-<!--                            </a>-->
-<!--                        </div>-->
-                        <!-- // Swahili -->
                     </div>
+                    <!-- // English -->
+
+                    <!-- Swahili -->
+                    <div v-if="productType === 2" class="visualGuide row">
+                        <div class="col item">
+                            <img class="logo logo-swh attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/>
+                        </div>
+                        <div class="item col">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['fab', 'youtube']"/>
+                                <p class="title">Watch<br/>Installation Guide<br/><b>Video</b></p>
+                            </a>
+                        </div>
+                        <div class="item col">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['far', 'download']"/>
+                                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in Swahili</b></p>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- // Swahili -->
+
                 </div>
             </li>
             <!-- // 2. -->
@@ -81,9 +89,8 @@
                         <div class="header">
                             <img width="116" height="62" src="https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng.png" class="logo attachment-full size-full" rcset="https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng.png 500w, https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng-300x156.png 300w" sizes="(max-width: 500px) 100vw, 500px" alt="kitkit school logo"/>
 
-                            <!-- TODO: Product Type 분기 -->
-                            <h2 class="title">English & Math</h2>
-<!--                            <h2 class="title">Swahili & Math</h2>-->
+                            <h2 v-if="productType===1" class="title">English & Math</h2>
+                            <h2 v-if="productType===2" class="title">Swahili & Math</h2>
 
                         </div>
                         <div class="packages">
@@ -137,9 +144,12 @@
                     <div class="text">If you have successfully installed Kitkit School, please refer to user guide manuals and video tutorials to start playing Kitkit School.</div>
                 </div>
                 <div class="detail">
-                    <div class="visualGuide row">
-                        <!-- TODO: Product Type 분기 -->
-                        <!-- English -->
+
+                    <!-- English -->
+                    <div v-if="productType === 1" class="visualGuide row">
+                        <div class="col item">
+                            <img class="logo logo-eng attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="86" width="200" alt="kitkit english text logo"/>
+                        </div>
                         <div class="item col">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
@@ -152,22 +162,29 @@
                                 <p class="title">Download<br/>User Guide<br/><b>(PDF) in English</b></p>
                             </a>
                         </div>
-                        <!-- // English -->
-                        <!-- Swahili -->
-<!--                        <div class="item col">-->
-<!--                            <a href="#" target="_blank">-->
-<!--                                <font-awesome-icon :icon="['fab', 'youtube']"/>-->
-<!--                                <p class="title">Watch<br/>User Guide<br/><b>Video</b></p>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                        <div class="item col">-->
-<!--                            <a href="#" target="_blank">-->
-<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
-<!--                                <p class="title">Download<br/>User Guide<br/><b>(PDF) in Swahili</b></p>-->
-<!--                            </a>-->
-<!--                        </div>-->
-                        <!-- // Swahili -->
                     </div>
+                    <!-- // English -->
+
+                    <!-- Swahili -->
+                    <div v-if="productType === 2" class="visualGuide row">
+                        <div class="col item">
+                            <img class="logo logo-swh attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/>
+                        </div>
+                        <div class="item col">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['fab', 'youtube']"/>
+                                <p class="title">Watch<br/>User Guide<br/><b>Video</b></p>
+                            </a>
+                        </div>
+                        <div class="item col">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['far', 'download']"/>
+                                <p class="title">Download<br/>User Guide<br/><b>(PDF) in Swahili</b></p>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- // Swahili -->
+
                 </div>
             </li>
             <!-- // 5. -->
@@ -186,10 +203,17 @@
 </template>
 
 <script>
+    import {mapGetters} from 'vuex'
+
     export default {
         name: 'download',
         components: {
 
+        },
+        computed: {
+            ...mapGetters({
+                productType : 'getProductType'
+            })
         }
     }
 </script>
@@ -267,8 +291,8 @@
         line-height: 34px;
     }
     .content .guide .detail .visualGuide {
-        min-width: 720px;
-        width: 720px;
+        min-width: 960px;
+        width: 960px;
         margin: 0 auto;
         padding: 20px 0;
     }
@@ -277,6 +301,22 @@
         max-width: 240px;
         margin: 0 60px;
         text-align: center;
+    }
+
+    .content .guide .detail .visualGuide .item:first-child {
+        margin-left: 0;
+    }
+
+    .content .guide .detail .visualGuide .item:last-child {
+        margin-right: 0;
+    }
+
+    .content .guide .detail .visualGuide .item .logo-eng {
+        margin-top: 58px;
+    }
+
+    .content .guide .detail .visualGuide .item .logo-swh {
+        margin-top: 65px;
     }
 
     .content .guide .detail .visualGuide .item > a {
@@ -337,5 +377,16 @@
         height: 45px;
     }
     /* // Detail */
+
+    @media (max-width: 1420px) {
+        .content .guide .detail .visualGuide {
+            min-width: 800px;
+            width: 800px;
+        }
+
+        .content .guide .detail .visualGuide .item {
+            margin: 0 20px;
+        }
+    }
 </style>
 
