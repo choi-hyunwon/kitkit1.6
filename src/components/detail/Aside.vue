@@ -119,7 +119,7 @@
     .doc-aside .menu .item {
         padding: 27px 16px 23.5px 0;
         margin-left: 10px;
-        width: 170px;
+        width: 171px;
         height: 120px;
         margin-top: -1px;
         border-top-left-radius: 8px;

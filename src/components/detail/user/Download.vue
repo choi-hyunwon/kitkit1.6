@@ -21,7 +21,7 @@
                                 - RAM: <span class="yale">1.8GB</span>
                             </p>
                         </li>
-                        <li class="item">You check your device spec in the Settings app, under About Tablet and Storage menu</li>
+                        <li class="item">You "can" check your device spec in the Settings app, under About Tablet and Storage menu.</li>
                     </ul>
                 </div>
             </li>
@@ -94,7 +94,7 @@
                             </div>
                             <ul class="list">
                                 <li class="item">
-                                    <span>Kitkit School Insvtaller : <b>12.56MB</b></span>
+                                    <span>Kitkit School Installer : <b>12.56MB</b></span>
                                     <button class="btn btn-primary">Download</button>
                                 </li>
                                 <li class="item">
