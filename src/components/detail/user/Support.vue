@@ -6,53 +6,52 @@
         <div class="resource">
             <!-- TODO: English / Swahili 분기 필요-->
             <!-- English -->
-<!--            <div class="row">-->
-<!--                <div class="col group">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col item">-->
-<!--                            <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="86" width="200" alt="kitkit english text logo"/>-->
-<!--                            &lt;!&ndash;<img class="logo attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="86" width="200" alt="kitkit swahili text logo"/>&ndash;&gt;-->
-<!--                        </div>-->
-<!--                        <div class="col item">-->
-<!--                            <a href="#" target="_blank">-->
-<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
-<!--                                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in English</b></p>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                        <div class="col item">-->
-<!--                            <a href="#" target="_blank">-->
-<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
-<!--                                <p class="title">Download<br/>User Guide<br/><b>(PDF) in English</b></p>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col group">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col item">-->
-<!--                            <a href="#" target="_blank">-->
-<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
-<!--                                <p class="title" style="margin-top: 20px;">Download Learning<br/>Assessment and<br/>Dashboard Guide<br/><b>(PDF) in English</b></p>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                        <div class="col item">-->
-<!--                            <a href="#" target="_blank">-->
-<!--                                <font-awesome-icon :icon="['fab', 'youtube']"/>-->
-<!--                                <p class="title">Watch<br/>Installation Guide<br/><b>Video</b></p>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                        <div class="col item">-->
-<!--                            <a href="#" target="_blank">-->
-<!--                                <font-awesome-icon :icon="['fab', 'youtube']"/>-->
-<!--                                <p class="title">Watch<br/>User Guide<br/><b>Video</b></p>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
+            <div v-if="productType===1" class="row">
+                <div class="col group">
+                    <div class="row">
+                        <div class="col item">
+                            <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="86" width="200" alt="kitkit english text logo"/>
+                        </div>
+                        <div class="col item">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['far', 'download']"/>
+                                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in English</b></p>
+                            </a>
+                        </div>
+                        <div class="col item">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['far', 'download']"/>
+                                <p class="title">Download<br/>User Guide<br/><b>(PDF) in English</b></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col group">
+                    <div class="row">
+                        <div class="col item">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['far', 'download']"/>
+                                <p class="title" style="margin-top: 20px;">Download Learning<br/>Assessment and<br/>Dashboard Guide<br/><b>(PDF) in English</b></p>
+                            </a>
+                        </div>
+                        <div class="col item">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['fab', 'youtube']"/>
+                                <p class="title">Watch<br/>Installation Guide<br/><b>Video</b></p>
+                            </a>
+                        </div>
+                        <div class="col item">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['fab', 'youtube']"/>
+                                <p class="title">Watch<br/>User Guide<br/><b>Video</b></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Swahili -->
-            <div class="row">
+            <div v-if="productType===2" class="row">
                 <div class="col group">
                     <div class="row">
                         <div class="col item">
@@ -356,6 +355,8 @@
 </template>
 
 <script>
+    import {mapGetters} from "vuex";
+
     export default {
         name: 'support',
         components: {
@@ -365,6 +366,11 @@
             return {
                 activeA1: false,
             }
+        },
+        computed: {
+            ...mapGetters({
+                productType : 'getProductType'
+            })
         },
         methods : {
             toggleActive(e){
