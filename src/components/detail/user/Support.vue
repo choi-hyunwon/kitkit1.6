@@ -2,7 +2,7 @@
     <div class="content support">
 
         <!-- Guide -->
-        <h2 style="margin-bottom: 30px;">Please first check these resources (manuals and tutorial videos):</h2>
+        <h2 class="title" style="margin-bottom: 30px;">Please first check these resources (manuals and tutorial videos):</h2>
         <div class="resource">
             <!-- TODO: English / Swahili 분기 필요-->
             <!-- English -->
@@ -99,7 +99,7 @@
         <!-- // Guide -->
 
         <!-- FAQ -->
-        <h2>FAQ</h2>
+        <h2 class="title">FAQ</h2>
         <div class="faq">
             <!-- Download -->
             <h3 class="subtitle" style="margin-top: 30px;"><font-awesome-icon class="icon" :icon="['far', 'dot-circle']"/>Download</h3>
@@ -346,7 +346,7 @@
         <!-- // FAQ -->
 
         <!-- Contact Us -->
-        <h2 style="margin-top: 32px;">Contact Us</h2>
+        <h2 class="title" style="margin-top: 32px;">Contact Us</h2>
         <div class="contactInfo">
             Please send us an email with a description of the issue, in addition to your account information (your id, name, email address, and organization) to <a class="email" href="mailto:kitkitsupport@enuma.com">kitkitsupport@enuma.com</a>
         </div>
@@ -385,8 +385,10 @@
 </script>
 
 <style>
-    .content.support h2 {
+    .content.support h2.title {
         margin-top: 30px;
+        line-height: 1.39;
+        font-family: 'Ubuntu-Regular';
     }
 
     /* Guide Resource */
@@ -519,6 +521,8 @@
         padding: 12px 0 18px;
         line-height: 50px;
         display: none;
+        font-size: 20px;
+        font-weight: 300;
     }
     .support .faq .qna .answer.last {
         padding-bottom: 6px;

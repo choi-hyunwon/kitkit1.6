@@ -4,7 +4,7 @@
         <ul class="guide">
 
             <!-- 1. -->
-            <li>
+            <li class="precedence">
                 <div class="summary">
                     <div class="num">1.</div>
                     <div class="text">Before downloading, please prepare a PC and a tablet device and check the minimum device specification</div>
@@ -79,7 +79,7 @@
             <!-- // 2. -->
 
             <!-- 3. -->
-            <li>
+            <li class="packageList">
                 <div class="summary">
                     <div class="num">3.</div>
                     <div class="text">Download the install package (all files) to your PC or SD Card.</div>
@@ -235,8 +235,10 @@
     }
     .content .guide .summary .num {
         position: absolute;
+        line-height: 1.39;
     }
     .content .guide .summary .text {
+        line-height: 1.39;
         margin-left: 43px;
     }
     /* // Summary */
@@ -277,12 +279,20 @@
     .content .guide .detail .list .item::before {
         content: '';
         position: absolute;
-        top: 12px;
-        left: 0;
         width: 6px;
         height: 6px;
         border-radius: 3px;
         background-color: #333;
+    }
+
+    .content .guide .precedence .detail .list .item::before {
+        top: 12px;
+        left: 0;
+    }
+
+    .content .guide .packageList .detail .list .item::before {
+        top: 21px;
+        left: 0;
     }
 
     .content .guide .detail .item .spec {
