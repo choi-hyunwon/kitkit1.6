@@ -3,10 +3,9 @@
 
         <!-- Guide -->
         <h2 class="title" style="margin-bottom: 30px;">Please first check these resources (manuals and tutorial videos):</h2>
+        <!-- English -->
         <div class="resource">
-            <!-- TODO: English / Swahili 분기 필요-->
-            <!-- English -->
-            <div v-if="productType===1" class="row">
+            <div class="row">
                 <div class="col group">
                     <div class="row">
                         <div class="col item">
@@ -31,7 +30,7 @@
                         <div class="col item">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title" style="margin-top: 20px;">Download Learning<br/>Assessment and<br/>Dashboard Guide<br/><b>(PDF) in English</b></p>
+                                <p class="title">Download Learning<br/>Assessment Guide<br/><b>(PDF) in English</b></p>
                             </a>
                         </div>
                         <div class="col item">
@@ -49,9 +48,10 @@
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div v-if="productType===2" class="resource" style="margin-top: 30px">
             <!-- Swahili -->
-            <div v-if="productType===2" class="row">
+            <div class="row">
                 <div class="col group">
                     <div class="row">
                         <div class="col item">
@@ -76,7 +76,7 @@
                         <div class="col item">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title" style="margin-top: 20px;">Download Learning<br/>Assessment and<br/>Dashboard Guide<br/><b>(PDF) in Swahili</b></p>
+                                <p class="title">Download Learning<br/>Assessment Guide<br/><b>(PDF) in Swahili</b></p>
                             </a>
                         </div>
                         <div class="col item">
@@ -94,7 +94,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <!-- // Guide -->
 

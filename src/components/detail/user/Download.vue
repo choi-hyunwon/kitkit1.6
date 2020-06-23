@@ -55,17 +55,29 @@
                     <!-- // English -->
 
                     <!-- Swahili -->
-                    <div v-if="productType === 2" class="visualGuide row">
-                        <div class="col item">
-                            <img class="logo logo-swh attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/>
-                        </div>
-                        <div class="item col">
+                    <div v-if="productType === 2" class="visualGuide row swahili">
+<!--                        <div class="col item">-->
+<!--                            <img class="logo logo-swh attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/>-->
+<!--                        </div>-->
+                        <div class="item col item-01">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
-                                <p class="title">Watch<br/>Installation Guide<br/><b>Video</b></p>
+                                <p class="title">Watch<br/>Installation Guide<br/><b>Video in English</b></p>
                             </a>
                         </div>
-                        <div class="item col">
+                        <div class="item col item-02">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['far', 'download']"/>
+                                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in English</b></p>
+                            </a>
+                        </div>
+                        <div class="item col item-03">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['fab', 'youtube']"/>
+                                <p class="title">Watch<br/>Installation Guide<br/><b>Video in Swahili</b></p>
+                            </a>
+                        </div>
+                        <div class="item col item-04">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
                                 <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in Swahili</b></p>
@@ -166,17 +178,30 @@
                     <!-- // English -->
 
                     <!-- Swahili -->
-                    <div v-if="productType === 2" class="visualGuide row">
-                        <div class="col item">
-                            <img class="logo logo-swh attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/>
-                        </div>
-                        <div class="item col">
+                    <div v-if="productType === 2" class="visualGuide row swahili">
+<!--                        <div class="col item">-->
+<!--                            <img class="logo logo-swh attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/>-->
+<!--                        </div>-->
+
+                        <div class="item col item-01">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
-                                <p class="title">Watch<br/>User Guide<br/><b>Video</b></p>
+                                <p class="title">Watch<br/>User Guide<br/><b>Video in English</b></p>
                             </a>
                         </div>
-                        <div class="item col">
+                        <div class="item col item-02">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['far', 'download']"/>
+                                <p class="title">Download<br/>User Guide<br/><b>(PDF) in English</b></p>
+                            </a>
+                        </div>
+                        <div class="item col item-03">
+                            <a href="#" target="_blank">
+                                <font-awesome-icon :icon="['fab', 'youtube']"/>
+                                <p class="title">Watch<br/>User Guide<br/><b>Video in Swahili</b></p>
+                            </a>
+                        </div>
+                        <div class="item col item-04">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
                                 <p class="title">Download<br/>User Guide<br/><b>(PDF) in Swahili</b></p>
@@ -233,6 +258,7 @@
 <style>
     .content .guide {
         padding-top: 30px;
+        padding-left: 0;
     }
 
 
@@ -318,6 +344,7 @@
         margin: 0 auto;
         padding: 20px 0;
     }
+
     .content .guide .detail .visualGuide .item {
         width: 240px;
         max-width: 240px;
@@ -359,6 +386,55 @@
         letter-spacing: normal;
         color: #333333;
     }
+
+
+
+
+    /**/
+
+    .content .guide .detail .visualGuide.swahili {
+        min-width: 1320px;
+        width: 1320px;
+    }
+
+    @media (max-width: 1680px) {
+        .content .guide .detail .visualGuide.swahili {
+            min-width: 1120px;
+            width: 1120px;
+        }
+        .content .guide .detail .visualGuide.swahili .item {
+            margin: 0 20px;
+        }
+    }
+
+    @media (max-width: 1440px) {
+        .content .guide .detail .visualGuide.swahili {
+            min-width: 720px;
+            width: 720px;
+        }
+
+        .content .guide .detail .visualGuide.swahili .item.item-01 {
+            margin: 0 60px 0 100px;
+        }
+
+        .content .guide .detail .visualGuide.swahili .item.item-02 {
+            margin: 0 100px 0 60px;
+        }
+
+        .content .guide .detail .visualGuide.swahili .item.item-03 {
+            margin: 50px 60px 0 100px;
+        }
+
+        .content .guide .detail .visualGuide.swahili .item.item-04 {
+            margin: 50px 100px 0 60px;
+        }
+    }
+
+    /**/
+
+
+
+
 
     .content .guide .detail .packages {
         width: 740px;
@@ -405,7 +481,6 @@
             min-width: 800px;
             width: 800px;
         }
-
         .content .guide .detail .visualGuide .item {
             margin: 0 20px;
         }
