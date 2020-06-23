@@ -10,8 +10,8 @@
                 </div>
                 <div class="col text-right">
                     <div class="terms">
-                        <a href="https://enuma.com/tos/" target="_blank">Terms of Service | </a>
-                        <a href="http://kitkitschool.com/legal-kitkit/" target="_blank">Legal Privacy | </a>
+                        <a class="terms-of-service" href="https://enuma.com/tos/" target="_blank">Terms of Service</a>
+                        <a class="legal-privacy" href="http://kitkitschool.com/legal-kitkit/" target="_blank">Legal Privacy</a>
                         <a href="https://enuma.com/policy/" target="_blank">Policy</a>
                     </div>
                 </div>
@@ -46,6 +46,38 @@
         color: #999;
         font-size: 16px;
         line-height: 27px;
+    }
+    .footer .container-fluid .terms a {
+        position: relative;
+        padding-left: 11px;
+    }
+    .footer .container-fluid .terms .terms-of-service {
+        padding-right: 11px;
+        padding-left: 0;
+    }
+
+    .footer .container-fluid .terms .terms-of-service:after {
+        position: absolute;
+        top: 1px;
+        right: 0;
+        content: '';
+        width: 1px;
+        height: 20px;
+        background-color: #999;
+    }
+
+    .footer .container-fluid .terms .legal-privacy {
+        padding-right: 11px;
+    }
+
+    .footer .container-fluid .terms .legal-privacy:after {
+        position: absolute;
+        top: 1px;
+        right: 0;
+        content: '';
+        width: 1px;
+        height: 20px;
+        background-color: #999;
     }
 </style>
 
