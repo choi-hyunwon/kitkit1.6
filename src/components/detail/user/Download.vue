@@ -203,17 +203,29 @@
 </template>
 
 <script>
-    import {mapGetters} from 'vuex'
+    import {mapActions, mapGetters} from 'vuex'
 
     export default {
         name: 'download',
-        components: {
-
+        mounted(){
+            if(!this.account.access)this.fetchAccountInfo();
         },
         computed: {
             ...mapGetters({
+                account : 'getAccount',
                 productType : 'getProductType'
             })
+        },
+        methods : {
+            ...mapActions({
+                postAccountInfo : 'postAccountInfo'
+            }),
+            fetchAccountInfo(){
+                this.postAccountInfo()
+                    .then((data) => {
+                        console.log(`postAccountInfoResult : ${data.result}`);
+                    })
+            },
         }
     }
 </script>

@@ -221,7 +221,6 @@
         },
         mounted() {
             this.gridApi = this.gridOptions.api;
-            if(this.status === 'user' && !this.account.access) this.fetchAccountInfo();
         },
         computed: {
             ...mapGetters({
@@ -237,15 +236,8 @@
             ...mapActions({
                 postManage : 'postManage',
                 postDashboard : 'postDashboard',
-                postAccountInfo : 'postAccountInfo',
                 postDashboardDetail : 'postDashboardDetail'
             }),
-            fetchAccountInfo(){
-                this.postAccountInfo()
-                    .then((data) => {
-                        console.log(`postAccountInfoResult : ${data.result}`);
-                    })
-            },
             fetchAgGridList(){
                 if(this.status === 'user'){
                     this.postDashboard()
