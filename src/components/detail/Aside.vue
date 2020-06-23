@@ -45,11 +45,11 @@
                     icon : 'user-check'
                 }],
                 userMenu : [{
-                    title : 'Dashboard',
-                    icon : 'desktop'
-                },{
                     title : 'Download',
                     icon : 'download'
+                },{
+                    title : 'Dashboard',
+                    icon : 'desktop'
                 },{
                     title : 'Support',
                     icon : 'info-circle'
