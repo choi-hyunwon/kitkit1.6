@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col text-left">
-                    <img src="~@/assets/img/common/enuma-logo.png" alt="enuma logo"/>
+                    <img src="~@/assets/img/common/enuma-logo.png" alt="enuma logo" width="89" height="26"/>
                 </div>
                 <div class="col text-center">
                     <div class="copyright">©2020 Enuma, Inc. All Rights Reserved.</div>
