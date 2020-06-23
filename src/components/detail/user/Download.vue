@@ -271,6 +271,9 @@
         font-weight: bold;
         font-family: Ubuntu-Regular;
     }
+    .content .guide .summary:first-child {
+        padding-top: 0;
+    }
     .content .guide .summary .num {
         position: absolute;
         line-height: 1.39;
