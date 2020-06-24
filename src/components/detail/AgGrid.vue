@@ -392,6 +392,10 @@
         display: none;
     }
 
+    .ag-theme-alpine .ag-cell a:hover {
+        color: #0c6290;
+    }
+
 
     /* Dashboard *//* Dashboard *//* Dashboard *//* Dashboard */
     .content.gridView {
