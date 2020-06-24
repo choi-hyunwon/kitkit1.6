@@ -72,6 +72,8 @@
         },
         beforeMount() {
             this.gridOptions = {};
+            let sessionID = this.sessionID;
+
             if(this.status === 'user'){
                 this.columnDefs = [
                     {headerName: 'TabletNumber', field: 'tabletNO', pinned: 'left', sort : 'asc',
@@ -112,7 +114,11 @@
                             browserDatePicker: true,
                             resetButton: true
                         }},
-                    {headerName: 'First name', field: 'firstName', pinned: 'left'},
+                    {headerName: 'First name', field: 'firstName', pinned: 'left',
+                        cellRenderer: function(params) {
+                            return '<a href="https://api.kitkitschool.com/account/downloadCSV?sessionId=' + sessionID + '&userID=' + params.data.userID + '" target="_blank">'+ params.value+'</a>'
+                        }
+                    },
                     {headerName: 'Last name', field: 'lastName', pinned: 'left'},
                     {headerName: 'ID', field: 'userID', hide: "true"},
                     {headerName: 'Grade', field: 'grade',filter: 'agNumberColumnFilter'},
@@ -226,7 +232,9 @@
             ...mapGetters({
                 status : 'getStatus',
                 account : 'getAccount',
-                loginID : 'getLoginID'
+                loginID : 'getLoginID',
+                sessionID : 'getSessionID'
+
             }),
             downloadDisabled () {
                 return this.length === 0
@@ -277,6 +285,8 @@
                     array.posttestLDate =  array.posttestLDate && this.$moment(new Date(array.posttestLDate)).format('YYYY.MM.DD');
                     array.posttestMDate = array.posttestMDate && this.$moment(new Date(array.posttestMDate)).format('YYYY.MM.DD');
                     array.lastUpdate= array.lastUpdate && this.$moment(new Date(array.lastUpdate)).format('YYYY.MM.DD HH:MM:DD');
+
+
                 });
                 this.rowData = data;
                 this.length = this.rowData.length;
