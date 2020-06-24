@@ -42,13 +42,13 @@
                         <div class="item col">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
-                                <p class="title">Watch<br/>Installation Guide<br/><b>Video</b></p>
+                                <p class="title">English<br/>Installation<br/><b>Guide Video</b></p>
                             </a>
                         </div>
                         <div class="item col">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in English</b></p>
+                                <p class="title">English<br/>Installation<br/><b>Guide (PDF)</b></p>
                             </a>
                         </div>
                     </div>
@@ -62,25 +62,25 @@
                         <div class="item col item-01">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
-                                <p class="title">Watch<br/>Installation Guide<br/><b>Video in English</b></p>
+                                <p class="title">English<br/>Installation<br/><b>Guide Video</b></p>
                             </a>
                         </div>
                         <div class="item col item-02">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in English</b></p>
+                                <p class="title">English<br/>Installation<br/><b>Guide (PDF)</b></p>
                             </a>
                         </div>
                         <div class="item col item-03">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
-                                <p class="title">Watch<br/>Installation Guide<br/><b>Video in Swahili</b></p>
+                                <p class="title">Swahili<br/>Installation<br/><b>Guide Video</b></p>
                             </a>
                         </div>
                         <div class="item col item-04">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in Swahili</b></p>
+                                <p class="title">Swahili<br/>Installation<br/><b>Guide (PDF)</b></p>
                             </a>
                         </div>
                     </div>
@@ -158,27 +158,27 @@
                 <div class="detail">
 
                     <!-- English -->
-                    <div v-if="productType === 1" class="visualGuide row">
+                    <div v-if="productType === 1" class="visualGuide userGuide row">
                         <div class="col item">
                             <img class="logo logo-eng attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="86" width="200" alt="kitkit english text logo"/>
                         </div>
                         <div class="item col">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
-                                <p class="title">Watch<br/>User Guide<br/><b>Video</b></p>
+                                <p class="title">English User<br/><b>Guide Video</b></p>
                             </a>
                         </div>
                         <div class="item col">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title">Download<br/>User Guide<br/><b>(PDF) in English</b></p>
+                                <p class="title">English User<br/><b>Guide (PDF)</b></p>
                             </a>
                         </div>
                     </div>
                     <!-- // English -->
 
                     <!-- Swahili -->
-                    <div v-if="productType === 2" class="visualGuide row swahili">
+                    <div v-if="productType === 2" class="visualGuide userGuide row swahili">
 <!--                        <div class="col item">-->
 <!--                            <img class="logo logo-swh attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/>-->
 <!--                        </div>-->
@@ -186,25 +186,25 @@
                         <div class="item col item-01">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
-                                <p class="title">Watch<br/>User Guide<br/><b>Video in English</b></p>
+                                <p class="title">English User<br/><b>Guide Video</b></p>
                             </a>
                         </div>
                         <div class="item col item-02">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title">Download<br/>User Guide<br/><b>(PDF) in English</b></p>
+                                <p class="title">English User<br/><b>Guide (PDF)</b></p>
                             </a>
                         </div>
                         <div class="item col item-03">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
-                                <p class="title">Watch<br/>User Guide<br/><b>Video in Swahili</b></p>
+                                <p class="title">Swahili User<br/><b>Guide Video</b></p>
                             </a>
                         </div>
                         <div class="item col item-04">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title">Download<br/>User Guide<br/><b>(PDF) in Swahili</b></p>
+                                <p class="title">Swahili User<br/><b>Guide (PDF)</b></p>
                             </a>
                         </div>
                     </div>
@@ -341,11 +341,16 @@
         padding-top: 12px;
         line-height: 34px;
     }
+
     .content .guide .detail .visualGuide {
         min-width: 960px;
         width: 960px;
         margin: 0 auto;
         padding: 20px 0;
+    }
+
+    .content .guide .detail .visualGuide.userGuide {
+        padding: 37px 0;
     }
 
     .content .guide .detail .visualGuide .item {

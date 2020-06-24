@@ -14,13 +14,13 @@
                         <div class="col item">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in English</b></p>
+                                <p class="title">English<br/>Installation<br/><b>Guide (PDF)</b></p>
                             </a>
                         </div>
                         <div class="col item">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title">Download<br/>User Guide<br/><b>(PDF) in English</b></p>
+                                <p class="title" style="padding-top: 14px;">English User<br/><b>Guide (PDF)</b></p>
                             </a>
                         </div>
                     </div>
@@ -30,19 +30,19 @@
                         <div class="col item">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title">Download Learning<br/>Assessment Guide<br/><b>(PDF) in English</b></p>
+                                <p class="title">English Learning<br/>Assessment<br/><b>Guide (PDF)</b></p>
                             </a>
                         </div>
                         <div class="col item">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
-                                <p class="title">Watch<br/>Installation Guide<br/><b>Video</b></p>
+                                <p class="title">English<br/>Installation<br/><b>Guide Video</b></p>
                             </a>
                         </div>
                         <div class="col item">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
-                                <p class="title">Watch<br/>User Guide<br/><b>Video</b></p>
+                                <p class="title" style="padding-top: 14px;">English User<br/><b>Guide Video</b></p>
                             </a>
                         </div>
                     </div>
@@ -60,13 +60,13 @@
                         <div class="col item">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title">Download<br/>Installation Guide<br/><b>(PDF) in Swahili</b></p>
+                                <p class="title">Swahili<br/>Installation<br/><b>Guide (PDF)</b></p>
                             </a>
                         </div>
                         <div class="col item">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title">Download<br/>User Guide<br/><b>(PDF) in Swahili</b></p>
+                                <p class="title" style="padding-top: 14px;">Swahili User<br/><b>Guide (PDF)</b></p>
                             </a>
                         </div>
                     </div>
@@ -76,19 +76,19 @@
                         <div class="col item">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title">Download Learning<br/>Assessment Guide<br/><b>(PDF) in Swahili</b></p>
+                                <p class="title">Swahili Learning<br/>Assessment<br/><b>Guide (PDF)</b></p>
                             </a>
                         </div>
                         <div class="col item">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
-                                <p class="title">Watch<br/>Installation Guide<br/><b>Video</b></p>
+                                <p class="title">Swahili<br/>Installation<br/><b>Guide Video</b></p>
                             </a>
                         </div>
                         <div class="col item">
                             <a href="#" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
-                                <p class="title">Watch<br/>User Guide<br/><b>Video</b></p>
+                                <p class="title" style="padding-top: 14px;">Swahili User<br/><b>Guide Video</b></p>
                             </a>
                         </div>
                     </div>
