@@ -101,6 +101,7 @@
         position: relative;
     }
     .section .card .title {
+        font-family: 'Lato-bold';
         padding-bottom: 10px;
         font-size: 36px;
         text-align: center;

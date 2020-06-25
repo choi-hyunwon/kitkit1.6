@@ -98,6 +98,15 @@
 }
 
 @font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../font/Ubuntu/Ubuntu.ttf),
+  url(../font/Ubuntu/Ubuntu.woff),
+  url(../font/Ubuntu/Ubuntu.woff2);
+}
+
+@font-face {
   font-family: 'Ubuntu-Regular';
   font-style: normal;
   font-weight: 400;

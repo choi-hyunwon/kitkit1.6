@@ -407,7 +407,7 @@
     }
 
     .content.gridView .userInfo .text {
-        font-family: Lato;
+        font-family: 'Lato-Regular';
         font-size: 28px;
         line-height: 34px;
         color: #333333;
@@ -435,7 +435,7 @@
 
     .content.gridView .dataInfo .text {
         margin-right: 400px;
-        font-family: Lato;
+        font-family: 'Lato-Regular';
         font-size: 24px;
         line-height: 29px;
         color: #333333;
@@ -458,7 +458,7 @@
         padding: 16px 21px 15px;
         width: 360px;
         height: 60px;
-        font-family: Lato;
+        font-family: 'Lato-Regular';
         font-size: 23px;
         font-weight: 500;
         /*line-height: 1.13;*/
