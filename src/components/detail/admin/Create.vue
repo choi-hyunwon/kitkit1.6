@@ -55,7 +55,7 @@
                                     <span class="col-label-text">Name *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <ValidationProvider name="Name" rules="required|alpha_num_spaces|max:40" v-slot="{ errors }">
+                                    <ValidationProvider name="Name" :rules="{required: true, regex: alpha_num_spaces, max: 40}" v-slot="{ errors }">
                                         <input type="text"
                                                class="form-control"
                                                :class="{'is-invalid' : errors[0]}"
@@ -93,7 +93,7 @@
                                     <span class="col-label-text">Organization *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <ValidationProvider name="Organization" rules="required|alpha_num|max:40" v-slot="{ errors }">
+                                    <ValidationProvider name="Organization" :rules="{required: true, regex: alpha_num_spaces, max: 40}" v-slot="{ errors }">
                                         <input type="text"
                                                class="form-control"
                                                :class="{'is-invalid' : errors[0]}"
@@ -111,7 +111,7 @@
                                     <span class="col-label-text">Organization Type *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <ValidationProvider name="Organization Type" rules="required|alpha_num|max:40" v-slot="{ errors }">
+                                    <ValidationProvider name="Organization Type" :rules="{required: true, regex: alpha_num_spaces, max: 40}" v-slot="{ errors }">
                                         <input type="text"
                                                class="form-control"
                                                :class="{'is-invalid' : errors[0]}"
@@ -138,7 +138,7 @@
                                     <span class="col-label-text">Country *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <ValidationProvider name="Country" rules="required|alpha_num|max:40" v-slot="{ errors }">
+                                    <ValidationProvider name="Country" :rules="{required: true, regex: alpha_num_spaces, max: 40}" v-slot="{ errors }">
                                         <input type="text"
                                                class="form-control"
                                                :class="{'is-invalid' : errors[0]}"
@@ -156,7 +156,7 @@
                                     <span class="col-label-text">City/Province *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <ValidationProvider name="City/Province" rules="required|alpha_num|max:40" v-slot="{ errors }">
+                                    <ValidationProvider name="City/Province" :rules="{required: true, regex: alpha_num_spaces, max: 40}" v-slot="{ errors }">
                                         <input type="text"
                                                class="form-control"
                                                :class="{'is-invalid' : errors[0]}"
@@ -246,7 +246,7 @@
                                     <span class="col-label-text">Staff Name *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <ValidationProvider name="Staff Name" rules="required|alpha_num|max:40" v-slot="{ errors }">
+                                    <ValidationProvider name="Staff Name" :rules="{required: true, regex: alpha_num_spaces, max: 40}" v-slot="{ errors }">
                                         <input type="text"
                                                class="form-control"
                                                :class="{'is-invalid' : errors[0]}"
@@ -299,7 +299,8 @@
                     expdate : '' ,
                     contactName : ''
                 },
-                datePickerHover: false
+                datePickerHover: false,
+                alpha_num_spaces: /^[a-zA-Z0-9\s]+$/
             }
         },
         created(){

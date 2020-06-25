@@ -154,19 +154,19 @@
                 ];
             }else if (this.status === 'admin'){
                 this.columnDefs = [
-                    {headerName: 'Created  Date', field: 'regdate', pinned: 'left',filter: 'agDateColumnFilter',sort: 'desc'},
-                    {headerName: 'ID', field: 'account', pinned: 'left'},
-                    {headerName: 'Name', field: 'sitename'},
+                    {headerName: 'Created Date', field: 'regdate', pinned: 'left',filter: 'agDateColumnFilter',sort: 'desc', width: 145},
+                    {headerName: 'ID', field: 'account', pinned: 'left', width: 145},
+                    {headerName: 'Name', field: 'sitename', width: 145},
                     {headerName: 'Email', field: 'siteEMail'},
-                    {headerName: 'Organization', field: 'organization'},
-                    {headerName: 'Organization Type', field: 'organizationType'},
-                    {headerName: 'Country', field: 'country'},
-                    {headerName: 'City', field: 'city'},
-                    {headerName: 'License Issued', field: 'numberOfLicenses' ,filter: 'agNumberColumnFilter'},
-                    {headerName: 'Product', field: 'productType'},
-                    {headerName: 'Expiration Date', field: 'expdate',filter: 'agDateColumnFilter'},
-                    {headerName: 'Staff Name', field: 'contactName'},
-                    {headerName: 'Last Update', field: 'lastUpdate',filter: 'agDateColumnFilter',
+                    {headerName: 'Organization', field: 'organization', width: 190},
+                    {headerName: 'Organization Type', field: 'organizationType', width: 190},
+                    {headerName: 'Country', field: 'country', width: 145},
+                    {headerName: 'City', field: 'city', width: 110},
+                    {headerName: 'License Issued', field: 'numberOfLicenses' ,filter: 'agNumberColumnFilter', width: 140},
+                    {headerName: 'Product', field: 'productType', width: 190},
+                    {headerName: 'Expiration Date', field: 'expdate',filter: 'agDateColumnFilter', width: 165},
+                    {headerName: 'Staff Name', field: 'contactName', width: 130},
+                    {headerName: 'Last Update', field: 'lastUpdate',filter: 'agDateColumnFilter', width: 145,
                         filterParams: {
                             comparator: (filterLocalDateAtMidnight, cellValue) => {
                                 let dateAsString = cellValue;
@@ -190,10 +190,10 @@
                             browserDatePicker: true,
                             resetButton: true
                         }},
-                    {headerName: 'License Used', field: 'licenseUsed',filter: 'agNumberColumnFilter'},
-                    {headerName: 'Registered Users', field: 'registeredUsers',filter: 'agNumberColumnFilter'},
-                    {headerName: 'Users with Play Data', field: 'usersWithPlayData',filter: 'agNumberColumnFilter'},
-                    {headerName: 'Total Playtime', field: 'totalPlayTime',filter: 'agNumberColumnFilter'}
+                    {headerName: 'License Used', field: 'licenseUsed',filter: 'agNumberColumnFilter', width: 140},
+                    {headerName: 'Registered Users', field: 'registeredUsers',filter: 'agNumberColumnFilter', width: 170},
+                    {headerName: 'Users with Play Data', field: 'usersWithPlayData',filter: 'agNumberColumnFilter', width: 170},
+                    {headerName: 'Total Playtime', field: 'totalPlayTime',filter: 'agNumberColumnFilter', width: 160}
                 ];
             }
             this.defaultColDef = {
