@@ -297,7 +297,13 @@ a:hover {
 .vdp-datepicker__calendar {
   width: 330px;
   top: 64px;
+  left: 0;
 }
+
+/* IE10+ */
+/*@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {*/
+
+/*}*/
 
 .vdp-datepicker__calendar::before {
   content: "";

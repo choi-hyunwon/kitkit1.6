@@ -76,7 +76,7 @@
 
             if(this.status === 'user'){
                 this.columnDefs = [
-                    {headerName: 'TabletNumber', field: 'tabletNO', pinned: 'left', sort : 'asc',
+                    {headerName: 'Tablet No.', field: 'tabletNO', pinned: 'left', sort : 'asc',
                         comparator : (a, b) => {
                             if(a === "" && b !== "") return -1;
                             else if(a!== "" && b === "") return 1;
@@ -90,7 +90,13 @@
                             }
                         }
                     },
-                    {headerName: 'Last Update', field: 'lastUpdate', pinned: 'left',filter: 'agDateColumnFilter',
+                    {headerName: 'First Name', field: 'firstName', pinned: 'left',
+                        cellRenderer: function(params) {
+                            return '<a href="https://api.kitkitschool.com/account/downloadCSV?sessionId=' + sessionID + '&userID=' + params.data.userID + '" target="_blank">'+ params.value+'</a>'
+                        }
+                    },
+                    {headerName: 'Last Name', field: 'lastName'},
+                    {headerName: 'Last Update', field: 'lastUpdate',filter: 'agDateColumnFilter',
                         filterParams: {
                             comparator: (filterLocalDateAtMidnight, cellValue) => {
                                 let dateAsString = cellValue;
@@ -113,47 +119,38 @@
                             },
                             browserDatePicker: true,
                             resetButton: true
-                        }},
-                    {headerName: 'First name', field: 'firstName', pinned: 'left',
-                        cellRenderer: function(params) {
-                            return '<a href="https://api.kitkitschool.com/account/downloadCSV?sessionId=' + sessionID + '&userID=' + params.data.userID + '" target="_blank">'+ params.value+'</a>'
                         }
                     },
-                    {headerName: 'Last name', field: 'lastName', pinned: 'left'},
                     {headerName: 'ID', field: 'userID', hide: "true"},
                     {headerName: 'Grade', field: 'grade',filter: 'agNumberColumnFilter'},
                     {headerName: 'Class', field: 'class'},
                     {headerName: 'First Played', field: 'startTime',filter: 'agDateColumnFilter'},
                     {headerName: 'Last Played', field: 'endTime',filter: 'agDateColumnFilter'},
                     {headerName: 'Play Time (Total min.)', field: 'playTimeCount',filter: 'agNumberColumnFilter'},
-                    {headerName: 'Literacy Progress', groupId : 'progressLGroup',
+                    {headerName: 'Literacy Course', groupId : 'progressLGroup',
                         children : [
                             {headerName: 'Egg', field: 'progressLEgg',filter: 'agNumberColumnFilter'},
                             {headerName: 'Day', field: 'progressLDay',filter: 'agNumberColumnFilter'}]},
-                    {headerName: 'Math Progress', groupId : 'progressMGroup',
+                    {headerName: 'Math Course', groupId : 'progressMGroup',
                         children : [
                             {headerName: 'Egg', field: 'progressMEgg',filter: 'agNumberColumnFilter'},
                             {headerName: 'Day', field: 'progressMDay',filter: 'agNumberColumnFilter'}]},
-                    {headerName: 'Pre-test', groupId : 'PreTestGroup',
+                    {headerName: 'Pre-test Literacy', groupId : 'preTestLGroup',
                         children : [
-                            {headerName: 'Literacy', groupId : 'preTestLGroup',
-                                children : [
-                                    {headerName: 'Test Date', field: 'PretestLDate',filter: 'agDateColumnFilter'},
-                                    {headerName: 'Score', field: 'PretestLScore',filter: 'agNumberColumnFilter'}]},
-                            {headerName: 'Math', groupId : 'preTestMGroup',
-                                children : [
-                                    {headerName: 'Test Date', field: 'PretestMDate',filter: 'agDateColumnFilter'},
-                                    {headerName: 'Score', field: 'PretestMScore',filter: 'agNumberColumnFilter'}]}]},
-                    {headerName: 'Post test', groupId : 'PostTestGroup',
+                            {headerName: 'Test Date', field: 'PretestLDate',filter: 'agDateColumnFilter'},
+                            {headerName: 'Score', field: 'PretestLScore',filter: 'agNumberColumnFilter'}]},
+                    {headerName: 'Pre-test Math', groupId : 'preTestMGroup',
                         children : [
-                            {headerName: 'Literacy', groupId : 'postTestLGroup',
-                                children : [
-                                    {headerName: 'TestDate', field: 'posttestLDate',filter: 'agDateColumnFilter'},
-                                    {headerName: 'Score', field: 'posttestLScore',filter: 'agNumberColumnFilter'}]},
-                            {headerName: 'Math', groupId : 'postTestMGroup',
-                                children : [
-                                    {headerName: 'Test Date', field: 'posttestMDate',filter: 'agDateColumnFilter'},
-                                    {headerName: 'Score', field: 'posttestMScore',filter: 'agNumberColumnFilter'}]}]},
+                            {headerName: 'Test Date', field: 'PretestMDate',filter: 'agDateColumnFilter'},
+                            {headerName: 'Score', field: 'PretestMScore',filter: 'agNumberColumnFilter'}]},
+                    {headerName: 'Post-test Literacy', groupId : 'postTestLGroup',
+                        children : [
+                            {headerName: 'Test Date', field: 'posttestLDate',filter: 'agDateColumnFilter'},
+                            {headerName: 'Score', field: 'posttestLScore',filter: 'agNumberColumnFilter'}]},
+                    {headerName: 'Post-test Math', groupId : 'postTestMGroup',
+                        children : [
+                            {headerName: 'Test Date', field: 'posttestMDate',filter: 'agDateColumnFilter'},
+                            {headerName: 'Score', field: 'posttestMScore',filter: 'agNumberColumnFilter'}]},
                 ];
             }else if (this.status === 'admin'){
                 this.columnDefs = [

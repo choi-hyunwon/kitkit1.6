@@ -40,13 +40,13 @@
                             <img class="logo logo-eng attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="86" width="200" alt="kitkit english text logo"/>
                         </div>
                         <div class="item col">
-                            <a href="#" target="_blank">
+                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title">English<br/>Installation<br/><b>Guide Video</b></p>
                             </a>
                         </div>
                         <div class="item col">
-                            <a href="#" target="_blank">
+                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_EN.pdf" target="_blank" download>
                                 <font-awesome-icon :icon="['far', 'download']"/>
                                 <p class="title">English<br/>Installation<br/><b>Guide (PDF)</b></p>
                             </a>
@@ -60,25 +60,25 @@
 <!--                            <img class="logo logo-swh attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/>-->
 <!--                        </div>-->
                         <div class="item col item-01">
-                            <a href="#" target="_blank">
+                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title">English<br/>Installation<br/><b>Guide Video</b></p>
                             </a>
                         </div>
                         <div class="item col item-02">
-                            <a href="#" target="_blank">
+                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_EN.pdf" target="_blank" download>
                                 <font-awesome-icon :icon="['far', 'download']"/>
                                 <p class="title">English<br/>Installation<br/><b>Guide (PDF)</b></p>
                             </a>
                         </div>
                         <div class="item col item-03">
-                            <a href="#" target="_blank">
+                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title">Swahili<br/>Installation<br/><b>Guide Video</b></p>
                             </a>
                         </div>
                         <div class="item col item-04">
-                            <a href="#" target="_blank">
+                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_Swahili.pdf" target="_blank" download>
                                 <font-awesome-icon :icon="['far', 'download']"/>
                                 <p class="title">Swahili<br/>Installation<br/><b>Guide (PDF)</b></p>
                             </a>
@@ -105,32 +105,61 @@
                             <h2 v-if="productType===2" class="title">Swahili & Math</h2>
 
                         </div>
-                        <div class="packages">
+                        <div v-if="productType===1" class="packages">
                             <div class="all">
-                                <button class="btn btn-primary btn-lg">
+                                <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/kitkitschool_EN.zip" download class="btn btn-primary btn-lg">
                                     Download All <b style="color:#5a3428">1,23GB</b>
-                                </button>
+                                </a>
                             </div>
                             <ul class="list">
                                 <li class="item">
                                     <span>Kitkit School Installer : <b>12.56MB</b></span>
-                                    <button class="btn btn-primary">Download</button>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkit_Installer_EN.apk" download class="btn btn-primary">Download</a>
                                 </li>
                                 <li class="item">
                                     <span>Kitkit School Learning App : <b>200MB</b></span>
-                                    <button class="btn btn-primary">Download</button>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkit_Learning_App_EN.apk" download class="btn btn-primary">Download</a>
                                 </li>
                                 <li class="item">
                                     <span>Book Viewer : <b>1.2GB</b></span>
-                                    <button class="btn btn-primary">Download</button>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkit_Book_Viewer_EN.apk" download class="btn btn-primary">Download</a>
                                 </li>
                                 <li class="item">
                                     <span>Book Data : <b>18MB</b></span>
-                                    <button class="btn btn-primary">Download</button>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkit_Book_Data_EN.apk" download class="btn btn-primary">Download</a>
                                 </li>
                                 <li class="item">
                                     <span>Kitkit School : <b>72MB</b></span>
-                                    <button class="btn btn-primary">Download</button>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkit_School_EN.apk" download class="btn btn-primary">Download</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div v-if="productType===2" class="packages">
+                            <div class="all">
+                                <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/kitkitschool_SW.zip" download class="btn btn-primary btn-lg">
+                                    Download All <b style="color:#5a3428">1,23GB</b>
+                                </a>
+                            </div>
+                            <ul class="list">
+                                <li class="item">
+                                    <span>Kitkit School Installer : <b>12.56MB</b></span>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkit_Installer_SW.apk" download class="btn btn-primary">Download</a>
+                                </li>
+                                <li class="item">
+                                    <span>Kitkit School Learning App : <b>200MB</b></span>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkit_Learning_App_SW.apk" download class="btn btn-primary">Download</a>
+                                </li>
+                                <li class="item">
+                                    <span>Book Viewer : <b>1.2GB</b></span>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkit_Book_Viewer_SW.apk" download class="btn btn-primary">Download</a>
+                                </li>
+                                <li class="item">
+                                    <span>Book Data : <b>18MB</b></span>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkit_Book_Data_SW.apk" download class="btn btn-primary">Download</a>
+                                </li>
+                                <li class="item">
+                                    <span>Kitkit School : <b>72MB</b></span>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkit_School_SW.apk" download class="btn btn-primary">Download</a>
                                 </li>
                             </ul>
                         </div>
@@ -163,13 +192,13 @@
                             <img class="logo logo-eng attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="86" width="200" alt="kitkit english text logo"/>
                         </div>
                         <div class="item col">
-                            <a href="#" target="_blank">
+                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title">English User<br/><b>Guide Video</b></p>
                             </a>
                         </div>
                         <div class="item col">
-                            <a href="#" target="_blank">
+                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_User_Guide_EN.pdf" target="_blank" download>
                                 <font-awesome-icon :icon="['far', 'download']"/>
                                 <p class="title">English User<br/><b>Guide (PDF)</b></p>
                             </a>
@@ -184,25 +213,25 @@
 <!--                        </div>-->
 
                         <div class="item col item-01">
-                            <a href="#" target="_blank">
+                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title">English User<br/><b>Guide Video</b></p>
                             </a>
                         </div>
                         <div class="item col item-02">
-                            <a href="#" target="_blank">
+                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_User_Guide_EN.pdf" target="_blank" download>
                                 <font-awesome-icon :icon="['far', 'download']"/>
                                 <p class="title">English User<br/><b>Guide (PDF)</b></p>
                             </a>
                         </div>
                         <div class="item col item-03">
-                            <a href="#" target="_blank">
+                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title">Swahili User<br/><b>Guide Video</b></p>
                             </a>
                         </div>
                         <div class="item col item-04">
-                            <a href="#" target="_blank">
+                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_User_Guide_Swahili.pdf" target="_blank" download>
                                 <font-awesome-icon :icon="['far', 'download']"/>
                                 <p class="title">Swahili User<br/><b>Guide (PDF)</b></p>
                             </a>
@@ -229,6 +258,8 @@
 
 <script>
     import {mapActions, mapGetters} from 'vuex'
+
+    import axios from 'axios'
 
     export default {
         name: 'download',
@@ -462,6 +493,7 @@
         width: 340px;
         height: 60px;
         font-size: 24px;
+        line-height: 41px;
     }
     .content .guide .detail .packages .list {
         padding: 20px 50px 50px;
@@ -481,6 +513,7 @@
         top: 0;
         width: 160px;
         height: 45px;
+        line-height: 32px;
     }
     /* // Detail */
 
