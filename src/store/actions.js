@@ -85,19 +85,4 @@ export const actions = {
             return data;
         })
     },
-
-    /**
-     * 파일 다운로드를 요청한다.
-     *
-     * @param commit
-     * @param {Object} options
-     * <br> - {String}       url                   - url
-     * <br> - {String}       label                 - label
-     *
-     */
-    // getDownloadPdf({commit}, options) {
-    //     return kitkitApi.getDownloadPdf(options).then(data => {
-    //         return data;
-    //     })
-    // },
 };
