@@ -16,7 +16,9 @@
   font-family: 'Lato-Bold';
   font-style: normal;
   font-weight: 700;
-  src: url(../fonts/Lato/Lato-Bold.ttf);
+  src: url(../fonts/Lato/Lato-Bold.ttf),
+       url(../fonts/Lato/Lato-Bold.woff),
+       url(../fonts/Lato/Lato-Bold.woff2);
 }
 
 @font-face {

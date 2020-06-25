@@ -104,7 +104,7 @@
         height: 30px;
         background-color: #be8720;
         color: #fff;
-        font-family: 'Lato';
+        font-family: 'Lato-Regular';
         font-weight: normal;
         line-height: 0;
     }

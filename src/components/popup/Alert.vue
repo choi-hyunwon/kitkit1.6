@@ -67,7 +67,7 @@
     }
 
     .individualData .subtitle {
-        font-family: Lato;
+        font-family: 'Lato-Regular';
         position: relative;
         font-size: 24px;
         font-weight: bold;
@@ -87,7 +87,7 @@
     }
 
     .individualData .detail {
-        font-family: Lato;
+        font-family: 'Lato-Regular';
         margin-top: 20px;
         font-size: 24px;
         font-weight: bold;

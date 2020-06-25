@@ -53,7 +53,7 @@
     }
 
     .errorPage.page500 .error .detail {
-        font-family: Lato;
+        font-family: 'Lato-Regular';
         font-size: 23px;
         font-weight: normal;
         line-height: 29px;

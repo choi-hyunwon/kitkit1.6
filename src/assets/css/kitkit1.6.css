@@ -98,6 +98,15 @@
 }
 
 @font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../font/Ubuntu/Ubuntu.ttf),
+  url(../font/Ubuntu/Ubuntu.woff),
+  url(../font/Ubuntu/Ubuntu.woff2);
+}
+
+@font-face {
   font-family: 'Ubuntu-Regular';
   font-style: normal;
   font-weight: 400;
@@ -288,7 +297,13 @@ a:hover {
 .vdp-datepicker__calendar {
   width: 330px;
   top: 64px;
+  left: 0;
 }
+
+/* IE10+ */
+/*@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {*/
+
+/*}*/
 
 .vdp-datepicker__calendar::before {
   content: "";
