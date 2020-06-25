@@ -227,6 +227,7 @@
         },
         mounted() {
             this.gridApi = this.gridOptions.api;
+            if(this.status === 'user') this.fetchAccountInfo();
         },
         computed: {
             ...mapGetters({
@@ -234,7 +235,6 @@
                 account : 'getAccount',
                 loginID : 'getLoginID',
                 sessionID : 'getSessionID'
-
             }),
             downloadDisabled () {
                 return this.length === 0
@@ -244,8 +244,15 @@
             ...mapActions({
                 postManage : 'postManage',
                 postDashboard : 'postDashboard',
-                postDashboardDetail : 'postDashboardDetail'
+                postDashboardDetail : 'postDashboardDetail',
+                postAccountInfo : 'postAccountInfo'
             }),
+            fetchAccountInfo(){
+                this.postAccountInfo()
+                    .then((data) => {
+                        console.log(`postAccountInfoResult : ${data.result}`);
+                    })
+            },
             fetchAgGridList(){
                 if(this.status === 'user'){
                     this.postDashboard()
