@@ -257,31 +257,16 @@
 </template>
 
 <script>
-    import {mapActions, mapGetters} from 'vuex'
+    import {mapGetters} from 'vuex'
 
     import axios from 'axios'
 
     export default {
         name: 'download',
-        mounted(){
-            if(!this.account.access)this.fetchAccountInfo();
-        },
         computed: {
             ...mapGetters({
-                account : 'getAccount',
                 productType : 'getProductType'
             })
-        },
-        methods : {
-            ...mapActions({
-                postAccountInfo : 'postAccountInfo'
-            }),
-            fetchAccountInfo(){
-                this.postAccountInfo()
-                    .then((data) => {
-                        console.log(`postAccountInfoResult : ${data.result}`);
-                    })
-            },
         }
     }
 </script>
