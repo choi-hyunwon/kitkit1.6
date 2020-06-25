@@ -92,7 +92,7 @@
                     },
                     {headerName: 'First Name', field: 'firstName', pinned: 'left', width: 130,
                         cellRenderer: function(params) {
-                            return '<a href="https://api.kitkitschool.com/account/downloadCSV?sessionId=' + sessionID + '&userID=' + params.data.userID + '" target="_blank">'+ params.value+'</a>'
+                            return '<a href="https://api.kitkitschool.com/account/downloadCSV?sessionID=' + sessionID + '&userID=' + params.data.userID + '" target="_blank">'+ params.value+'</a>'
                         }
                     },
                     {headerName: 'Last Name', field: 'lastName', width: 130},
@@ -135,19 +135,19 @@
                         children : [
                             {headerName: 'Egg', field: 'progressMEgg',filter: 'agNumberColumnFilter', width: 110},
                             {headerName: 'Day', field: 'progressMDay',filter: 'agNumberColumnFilter', width: 110}]},
-                    {headerName: 'Pre-test Literacy', groupId : 'preTestLGroup',
+                    {headerName: 'Pre-Test Literacy', groupId : 'preTestLGroup',
                         children : [
                             {headerName: 'Test Date', field: 'PretestLDate',filter: 'agDateColumnFilter', width: 120},
                             {headerName: 'Score', field: 'PretestLScore',filter: 'agNumberColumnFilter', width: 125}]},
-                    {headerName: 'Pre-test Math', groupId : 'preTestMGroup',
+                    {headerName: 'Pre-Test Math', groupId : 'preTestMGroup',
                         children : [
                             {headerName: 'Test Date', field: 'PretestMDate',filter: 'agDateColumnFilter', width: 120},
                             {headerName: 'Score', field: 'PretestMScore',filter: 'agNumberColumnFilter', width: 125}]},
-                    {headerName: 'Post-test Literacy', groupId : 'postTestLGroup',
+                    {headerName: 'Post-Test Literacy', groupId : 'postTestLGroup',
                         children : [
                             {headerName: 'Test Date', field: 'posttestLDate',filter: 'agDateColumnFilter', width: 120},
                             {headerName: 'Score', field: 'posttestLScore',filter: 'agNumberColumnFilter', width: 125}]},
-                    {headerName: 'Post-test Math', groupId : 'postTestMGroup',
+                    {headerName: 'Post-Test Math', groupId : 'postTestMGroup',
                         children : [
                             {headerName: 'Test Date', field: 'posttestMDate',filter: 'agDateColumnFilter', width: 120},
                             {headerName: 'Score', field: 'posttestMScore',filter: 'agNumberColumnFilter', width: 125}]},
@@ -296,7 +296,7 @@
                         this.postDashboardDetail({userID : userID })
                             .then((data) => {
                                 if(data.result !== undefined && !data.result && data.errorCode.split(':')[0] !== 'CAD03') alert(data.errorCode);
-                                else if (data.errorCode.split(':')[0] !== 'CAD03') console.log('csv 파일 다운로드');
+                                else console.log('csv 파일 다운로드');
                             })
                     }
                 }

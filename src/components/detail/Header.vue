@@ -1,6 +1,6 @@
 <template>
     <header class="header detail-header">
-        <h1 class="title">{{detail}}</h1>
+        <h1 class="title">{{detail.toUpperCase()}}</h1>
     </header>
 </template>
 
@@ -34,6 +34,9 @@
         line-height: 42px;
         color: #333;
         padding-left: 0;
+        font-family: 'Ubuntu-Medium';
+        font-weight: 500;
+        letter-spacing: -1.9px;
     }
 </style>
 
