@@ -12,13 +12,13 @@
                             <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="86" width="200" alt="kitkit english text logo"/>
                         </div>
                         <div class="col item">
-                            <a href="#" target="_blank">
+                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_EN.pdf" download target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
                                 <p class="title">English<br/>Installation<br/><b>Guide (PDF)</b></p>
                             </a>
                         </div>
                         <div class="col item">
-                            <a href="#" target="_blank">
+                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_User_Guide_EN.pdf" download target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
                                 <p class="title" style="padding-top: 14px;">English User<br/><b>Guide (PDF)</b></p>
                             </a>
@@ -28,19 +28,19 @@
                 <div class="col group">
                     <div class="row">
                         <div class="col item">
-                            <a href="#" target="_blank">
+                            <a href="#" download target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
                                 <p class="title">English Learning<br/>Assessment<br/><b>Guide (PDF)</b></p>
                             </a>
                         </div>
                         <div class="col item">
-                            <a href="#" target="_blank">
+                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title">English<br/>Installation<br/><b>Guide Video</b></p>
                             </a>
                         </div>
                         <div class="col item">
-                            <a href="#" target="_blank">
+                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title" style="padding-top: 14px;">English User<br/><b>Guide Video</b></p>
                             </a>
@@ -58,13 +58,13 @@
                             <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/>
                         </div>
                         <div class="col item">
-                            <a href="#" target="_blank">
+                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_Swahili.pdf" download target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
                                 <p class="title">Swahili<br/>Installation<br/><b>Guide (PDF)</b></p>
                             </a>
                         </div>
                         <div class="col item">
-                            <a href="#" target="_blank">
+                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_User_Guide_Swahili.pdf" download target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
                                 <p class="title" style="padding-top: 14px;">Swahili User<br/><b>Guide (PDF)</b></p>
                             </a>
@@ -74,19 +74,19 @@
                 <div class="col group">
                     <div class="row">
                         <div class="col item">
-                            <a href="#" target="_blank">
+                            <a href="#" download target="_blank">
                                 <font-awesome-icon :icon="['far', 'download']"/>
                                 <p class="title">Swahili Learning<br/>Assessment<br/><b>Guide (PDF)</b></p>
                             </a>
                         </div>
                         <div class="col item">
-                            <a href="#" target="_blank">
+                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title">Swahili<br/>Installation<br/><b>Guide Video</b></p>
                             </a>
                         </div>
                         <div class="col item">
-                            <a href="#" target="_blank">
+                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title" style="padding-top: 14px;">Swahili User<br/><b>Guide Video</b></p>
                             </a>
