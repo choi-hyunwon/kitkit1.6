@@ -124,8 +124,8 @@
                     {headerName: 'ID', field: 'userID', hide: "true"},
                     {headerName: 'Grade', field: 'grade',filter: 'agNumberColumnFilter', width: 130},
                     {headerName: 'Class', field: 'class', width: 130},
-                    {headerName: 'First Played', field: 'startTime',filter: 'agDateColumnFilter', width: 140},
-                    {headerName: 'Last Played', field: 'endTime',filter: 'agDateColumnFilter', width: 140},
+                    {headerName: 'First Played', field: 'startTime',filter: 'agDateColumnFilter', width: 155},
+                    {headerName: 'Last Played', field: 'endTime',filter: 'agDateColumnFilter', width: 155},
                     {headerName: 'Play Time (Total min.)', field: 'playTimeCount',filter: 'agNumberColumnFilter', width: 175},
                     {headerName: 'Literacy Course', groupId : 'progressLGroup',
                         children : [
@@ -137,24 +137,24 @@
                             {headerName: 'Day', field: 'progressMDay',filter: 'agNumberColumnFilter', width: 110}]},
                     {headerName: 'Pre-Test Literacy', groupId : 'preTestLGroup',
                         children : [
-                            {headerName: 'Test Date', field: 'PretestLDate',filter: 'agDateColumnFilter', width: 120},
+                            {headerName: 'Test Date', field: 'PretestLDate',filter: 'agDateColumnFilter', width: 155},
                             {headerName: 'Score', field: 'PretestLScore',filter: 'agNumberColumnFilter', width: 125}]},
                     {headerName: 'Pre-Test Math', groupId : 'preTestMGroup',
                         children : [
-                            {headerName: 'Test Date', field: 'PretestMDate',filter: 'agDateColumnFilter', width: 120},
+                            {headerName: 'Test Date', field: 'PretestMDate',filter: 'agDateColumnFilter', width: 155},
                             {headerName: 'Score', field: 'PretestMScore',filter: 'agNumberColumnFilter', width: 125}]},
                     {headerName: 'Post-Test Literacy', groupId : 'postTestLGroup',
                         children : [
-                            {headerName: 'Test Date', field: 'posttestLDate',filter: 'agDateColumnFilter', width: 120},
+                            {headerName: 'Test Date', field: 'posttestLDate',filter: 'agDateColumnFilter', width: 155},
                             {headerName: 'Score', field: 'posttestLScore',filter: 'agNumberColumnFilter', width: 125}]},
                     {headerName: 'Post-Test Math', groupId : 'postTestMGroup',
                         children : [
-                            {headerName: 'Test Date', field: 'posttestMDate',filter: 'agDateColumnFilter', width: 120},
+                            {headerName: 'Test Date', field: 'posttestMDate',filter: 'agDateColumnFilter', width: 155},
                             {headerName: 'Score', field: 'posttestMScore',filter: 'agNumberColumnFilter', width: 125}]},
                 ];
             }else if (this.status === 'admin'){
                 this.columnDefs = [
-                    {headerName: 'Created Date', field: 'regdate', pinned: 'left',filter: 'agDateColumnFilter',sort: 'desc', width: 145},
+                    {headerName: 'Created Date', field: 'regdate', pinned: 'left',filter: 'agDateColumnFilter',sort: 'desc', width: 155},
                     {headerName: 'ID', field: 'account', pinned: 'left', width: 145},
                     {headerName: 'Name', field: 'sitename', width: 145},
                     {headerName: 'Email', field: 'siteEMail'},
