@@ -5,50 +5,87 @@
         <h2 class="title" style="margin-bottom: 30px;">Please first check these resources (manuals and tutorial videos):</h2>
         <!-- English -->
         <div class="resource">
-            <div class="row">
-                <div class="col group">
-                    <div class="row">
-                        <div class="col item">
-                            <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="86" width="200" alt="kitkit english text logo"/>
-                        </div>
-                        <div class="col item">
-                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_EN.pdf" download target="_blank">
-                                <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title">English<br/>Installation<br/><b>Guide (PDF)</b></p>
-                            </a>
-                        </div>
-                        <div class="col item">
-                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_User_Guide_EN.pdf" download target="_blank">
-                                <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title" style="padding-top: 14px;">English User<br/><b>Guide (PDF)</b></p>
-                            </a>
-                        </div>
+            <div class="logo-item"><img class="logo attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="86" width="200" alt="kitkit english text logo"/></div>
+            <div>
+                <div class="list clearfix">
+                    <div class="item">
+                        <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_EN.pdf" download target="_blank">
+                            <font-awesome-icon :icon="['far', 'download']"/>
+                            <p class="title">English<br/>Installation<br/><b>Guide (PDF)</b></p>
+                        </a>
                     </div>
-                </div>
-                <div class="col group">
-                    <div class="row">
-                        <div class="col item">
-                            <a href="#" download target="_blank">
-                                <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title">English Learning<br/>Assessment<br/><b>Guide (PDF)</b></p>
-                            </a>
-                        </div>
-                        <div class="col item">
-                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
-                                <font-awesome-icon :icon="['fab', 'youtube']"/>
-                                <p class="title">English<br/>Installation<br/><b>Guide Video</b></p>
-                            </a>
-                        </div>
-                        <div class="col item">
-                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
-                                <font-awesome-icon :icon="['fab', 'youtube']"/>
-                                <p class="title" style="padding-top: 14px;">English User<br/><b>Guide Video</b></p>
-                            </a>
-                        </div>
+                    <div class="item">
+                        <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_EN.pdf" download target="_blank">
+                            <font-awesome-icon :icon="['far', 'download']"/>
+                            <p class="title">English<br/>Installation<br/><b>Guide (PDF)</b></p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_EN.pdf" download target="_blank">
+                            <font-awesome-icon :icon="['far', 'download']"/>
+                            <p class="title">English<br/>Installation<br/><b>Guide (PDF)</b></p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_EN.pdf" download target="_blank">
+                            <font-awesome-icon :icon="['far', 'download']"/>
+                            <p class="title">English<br/>Installation<br/><b>Guide (PDF)</b></p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_EN.pdf" download target="_blank">
+                            <font-awesome-icon :icon="['far', 'download']"/>
+                            <p class="title">English<br/>Installation<br/><b>Guide (PDF)</b></p>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
+<!--        <div class="resource">-->
+<!--            <div class="row">-->
+<!--                <div class="col group">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col item">-->
+<!--                            <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="86" width="200" alt="kitkit english text logo"/>-->
+<!--                        </div>-->
+<!--                        <div class="col item">-->
+<!--                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_EN.pdf" download target="_blank">-->
+<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
+<!--                                <p class="title">English<br/>Installation<br/><b>Guide (PDF)</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="col item">-->
+<!--                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_User_Guide_EN.pdf" download target="_blank">-->
+<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
+<!--                                <p class="title" style="padding-top: 14px;">English User<br/><b>Guide (PDF)</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col group">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col item">-->
+<!--                            <a href="#" download target="_blank">-->
+<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
+<!--                                <p class="title">English Learning<br/>Assessment<br/><b>Guide (PDF)</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="col item">-->
+<!--                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">-->
+<!--                                <font-awesome-icon :icon="['fab', 'youtube']"/>-->
+<!--                                <p class="title">English<br/>Installation<br/><b>Guide Video</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="col item">-->
+<!--                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">-->
+<!--                                <font-awesome-icon :icon="['fab', 'youtube']"/>-->
+<!--                                <p class="title" style="padding-top: 14px;">English User<br/><b>Guide Video</b></p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
         <div v-if="productType===2" class="resource" style="margin-top: 30px">
             <!-- Swahili -->
             <div class="row">
@@ -413,57 +450,13 @@
         border-radius: 16px;
         border: solid 1px #c2c2c2;
         background-color: #f9f9f9;
-        min-width: 780px;
         padding: 50px 10px 20px;
         margin: 0 auto;
     }
-    .support .resource .group {
-        height: 231px;
-        min-width: 840px;
-    }
-    .support .resource .group:last-child {
-        margin-top: 30px;
-    }
-    .support .resource .group .row {
-        width: 840px;
-        margin: 0 auto;
-    }
     .support .resource .item {
-        width: 240px;
-        min-width: 240px;
-        max-width: 240px;
+        min-width: 210px;
         text-align: center;
         margin: 0 20px 10px;
-    }
-    @media (min-width: 1880px){
-        .support .resource {
-            min-width: 780px;
-        }
-
-        .support .resource > .row {
-            margin: 0 auto;
-            width: 1560px;
-            max-width: 1560px;
-        }
-
-        .support .resource .item {
-            margin: 0 10px 10px;
-        }
-
-        .support .resource .group {
-            min-width: 780px;
-        }
-
-        .support .resource .group:last-child {
-            margin-top: 0;
-        }
-
-        .support .resource .group .row {
-            width: 780px;
-        }
-    }
-    .support .resource .item .logo {
-        margin-top: 58px;
     }
     .support .resource .item svg {
         color: #0c6290;
@@ -477,8 +470,83 @@
         letter-spacing: normal;
         color: #333333;
     }
-    /* // Guide Resource */
 
+    /**/
+    .support .resource {
+        position: relative;
+        padding-top: 19px;
+        padding-bottom: 26px;
+    }
+    .support .resource .logo-item {
+        position: absolute;
+        top: 112px;
+        left: 70px;
+    }
+    .support .resource .logo-item:after {
+        position: absolute;
+        top: -54px;
+        right: -44px;
+        content: '';
+        width: 1px;
+        height: 200px;
+        background-color: #d2d2d2;
+    }
+    .support .resource .list {
+        padding-left: 310px;
+        margin: 0 auto;
+        max-width: 1590px;
+    }
+    .support .resource .list .item {
+        float: left;
+        padding-top: 37px;
+    }
+
+    @media (max-width: 1881px) {
+        .support .resource .logo-item {
+            /*top: 221px;*/
+            left: 91px;
+        }
+        .support .resource .list {
+            padding-left: 270px;
+            max-width: 1020px;
+        }
+        .support .resource .list .item {
+            min-width: 210px;
+        }
+        .support .resource .logo-item:after {
+            right: -74px;
+        }
+    }
+
+    @media (max-width: 1500px) {
+        .support .resource .logo-item:after {
+            right: -54px;
+        }
+    }
+
+    @media (max-width: 1420px) {
+        .support .resource .logo-item:after {
+            right: -38px;
+        }
+    }
+
+    @media (max-width: 1341px) {
+        .support .resource .logo-item {
+            left: 51px;
+        }
+        .support .resource .list {
+            max-width: 870px;
+        }
+        .support .resource .list .item {
+            min-width: 160px;
+        }
+        .support .resource .logo-item:after {
+            right: -41px;
+        }
+    }
+
+    /**/
+    /* // Guide Resource */
 
 
     /* FAQ */
@@ -570,12 +638,12 @@
     /* // Contact */
 
 
-    @media (max-width: 1879px) {
-        .support .resource {
-            padding-bottom: 30px;
-        }
-        .support .resource .group:last-child {
-            margin-top: 80px;
-        }
-    }
+    /*@media (max-width: 1879px) {*/
+    /*    .support .resource {*/
+    /*        padding-bottom: 30px;*/
+    /*    }*/
+    /*    .support .resource .group:last-child {*/
+    /*        margin-top: 80px;*/
+    /*    }*/
+    /*}*/
 </style>

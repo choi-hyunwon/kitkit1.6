@@ -275,7 +275,7 @@
                     else array.productType = '';
                     array.expdate = array.expdate && this.$moment(new Date(array.expdate)).format('YYYY.MM.DD');
                     array.regdate = array.regdate && this.$moment(new Date(array.regdate)).format('YYYY.MM.DD');
-                    array.lastUpdate= array.lastUpdate && this.$moment(new Date(array.lastUpdate)).format('YYYY.MM.DD HH:MM:DD');
+                    array.lastUpdate= array.lastUpdate && this.$moment(new Date(array.lastUpdate)).format('YYYY.MM.DD HH:mm:ss');
                 });
                 this.rowData = data;
                 this.length = this.rowData.length;
@@ -288,7 +288,7 @@
                     array.PretestMDate =  array.PretestMDate && this.$moment(new Date(array.PretestMDate)).format('YYYY.MM.DD');
                     array.posttestLDate =  array.posttestLDate && this.$moment(new Date(array.posttestLDate)).format('YYYY.MM.DD');
                     array.posttestMDate = array.posttestMDate && this.$moment(new Date(array.posttestMDate)).format('YYYY.MM.DD');
-                    array.lastUpdate= array.lastUpdate && this.$moment(new Date(array.lastUpdate)).format('YYYY.MM.DD HH:MM:DD');
+                    array.lastUpdate= array.lastUpdate && this.$moment(new Date(array.lastUpdate)).format('YYYY.MM.DD HH:mm:ss');
 
 
                 });
@@ -381,6 +381,7 @@
         color: #878d99;
         padding-top: 17px;
         padding-bottom: 17px;
+        text-align: center;
     }
 
     .ag-body-horizontal-scroll-viewport {
