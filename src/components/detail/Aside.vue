@@ -104,7 +104,7 @@
         height: 30px;
         background-color: #be8720;
         color: #fff;
-        font-family: 'Lato-Regular';
+        font-family: 'Lato';
         font-weight: normal;
         line-height: 0;
     }
@@ -129,10 +129,6 @@
         font-weight: bold;
         position: relative;
     }
-    .doc-aside .menu .item.active {
-        background-color: #fff;
-        color: #5a3428;
-    }
 
     .doc-aside .menu .item .icon {
         z-index: 100;
@@ -142,6 +138,18 @@
         z-index: 100;
         margin-top: 8.5px;
         line-height: 29px;
+        font-family: 'Lato';
+        font-weight: 400;
+    }
+
+    .doc-aside .menu .item.active {
+        background-color: #fff;
+        color: #5a3428;
+    }
+
+    .doc-aside .menu .item.active .text {
+        font-family: 'Lato';
+        font-weight: 900;
     }
 
     .doc-aside .menu .item .underline {

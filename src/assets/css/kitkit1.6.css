@@ -249,6 +249,10 @@ a:hover {
 }
 
 /* ag-grid scroll bar */
+.ag-root {
+
+}
+
 .ag-root ::-webkit-scrollbar {
   height: 16px;
 }
@@ -263,6 +267,10 @@ a:hover {
 .ag-root ::-webkit-scrollbar-thumb {
   background: #c1c1c1;
   border-radius: 8px;
+}
+.ag-center-cols-clipper {
+  position: relative;
+  overflow: hidden !important;
 }
 /* // ag-grid scroll bar */
 

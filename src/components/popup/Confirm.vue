@@ -93,10 +93,14 @@
         font-size: 20px;
         line-height: 24px;
         color: #333;
+        font-weight: 500;
     }
     .accountCheck .info .infoValue {
         font-size: 24px;
         line-height: 24px;
         color: #0c6290;
+        font-family: 'Lato';
+        font-weight: bold;
+        letter-spacing: -0.9px;
     }
 </style>

@@ -135,6 +135,7 @@
         width: 100%;
         margin-bottom: 20px;
         line-height: 14px;
+        font-size: 22px;
     }
     .section .card .help .text {
         margin-left: 10px;

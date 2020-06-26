@@ -368,7 +368,11 @@
         padding: 30px 0;
     }
     .createAccountForm .category .subtitle{
+        font-size: 36px;
         margin-bottom: 30px;
+        font-family: Ubuntu;
+        letter-spacing: -1.9px;
+        font-weight: 500;
     }
     .createAccountForm .category .list {
         padding: 0 60px;

@@ -65,7 +65,7 @@
                 gridApi: null,
                 columnDefs: null,
                 rowData: null,
-                defaultColDef: null,
+                defaultColDef: {resizable: true},
                 rowSelection: null,
                 length : 0
             }
@@ -420,7 +420,8 @@
     }
 
     .content.gridView .userInfo .text {
-        font-family: 'Lato-Regular';
+        font-family: 'Lato';
+        letter-spacing: -0.9px;
         font-size: 28px;
         line-height: 34px;
         color: #333333;
