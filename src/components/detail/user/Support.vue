@@ -262,34 +262,52 @@
             </div>
 
             <!-- About Dashboard -->
-            <!-- TODO: 내용 누락 -->
             <h3 class="subtitle"><font-awesome-icon class="icon" :icon="['far', 'dot-circle']"/>About Dashboard</h3>
             <div class="qna">
                 <a href="#" @click="toggleActive">
-                <div class="question">
-
+                    <div class="question">
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
                         <div class="text">What is a dashboard?</div>
-
-                </div>
-                    </a>
+                    </div>
+                </a>
                 <p class="answer">
-                    ...
+                    “Dashboard” is where you can view or download the data related to the learners' progress such as the current game level they are working on, scores on learning assessments, and detailed logs of daily user activities.<br/>
+                    In order to use the Dashboard functionality, the data from the tablet needs to be uploaded to our server. Please refer to the section on “How do I upload the data?” for more information. When the data has been uploaded to our server, you can see how the registered users on the tablet have been using the Kitkit School.<br/>
+                    Data is available by individual users. In order to ensure the accuracy of data, please make sure you have selected the right user profile when playing Kitkit School. For more information on how to create a user profile, please refer to our Kitkit School User Guide.<br/>
+                    It may take up to 24 hours for you to be able to view the uploaded data on the dashboard as our server processes all uploaded data once a day.
+                </p>
+            </div>
+            <div class="qna">
+                <a href="#" @click="toggleActive">
+                    <div class="question">
+                        <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                        <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
+                        <div class="text">What types of data are available on the dashboard?</div>
+                    </div>
+                </a>
+                <p class="answer">
+                    Once the data from the tablets are uploaded to our server, you will be able to find the user information, total playtime (in minutes), the latest courses that the users have played in literacy and math, and the test scores from pre- and post-tests.<br/>
+                    You can download the data as shown on the dashboard by clicking the “Download Dashboard Data” button. You can also download user-specific “Individual Log Data” by clicking the first name of the user. The downloaded data will be saved to your computer as a CSV file.
                 </p>
             </div>
             <div class="qna">
                 <a href="#" @click="toggleActive">
                 <div class="question">
-
-                        <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
-                        <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                        <div class="text">How do I upload the data?</div>
-
+                    <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
+                    <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
+                    <div class="text">How do I upload the data?</div>
                 </div>
                     </a>
                 <p class="answer">
-                    ...
+                    Kitkit School automatically uploads the data to our server when the tablet device is connected to the internet. If you are using Kitkit School in an offline environment, you can bring your tablet devices to a location where you can establish a secure internet connection for the tablets. Once your tablets are connected to the internet securely, they will automatically upload the data to our server.<br/>
+                    It may take up to 24 hours for you to be able to view the uploaded data on the dashboard as our server processes all uploaded data once a day.<br/>
+                    If automatic data upload does not work, you can manually upload the data by following the below steps:<br/>
+                    - Go to the “Teacher Menu” and enter 2021 as a password.<br/>
+                    - Press the “Settings” button.<br/>
+                    - Press the “Administration” button. When asked to enter a password, enter 5241.<br/>
+                    - Press the “Upload Log Data” button.<br/>
+                    It is recommended that you regularly update your data to our server.
                 </p>
             </div>
 
