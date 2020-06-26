@@ -35,14 +35,14 @@ export const store = new Vuex.Store({
             lastUpdate: '',
             licenseUsed: 0,
             registeredUsers: 0,
-            productType : '',
+            productType : 1,
             access : false
         },
         account : {
             lastUpdate: '',
             licenseUsed: 0,
             registeredUsers: 0,
-            productType : '',
+            productType : 1,
             access : false
         }
     },
