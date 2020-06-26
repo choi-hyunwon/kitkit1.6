@@ -275,7 +275,7 @@
                     “Dashboard” is where you can view or download the data related to the learners' progress such as the current game level they are working on, scores on learning assessments, and detailed logs of daily user activities.<br/>
                     In order to use the Dashboard functionality, the data from the tablet needs to be uploaded to our server. Please refer to the section on “How do I upload the data?” for more information. When the data has been uploaded to our server, you can see how the registered users on the tablet have been using the Kitkit School.<br/>
                     Data is available by individual users. In order to ensure the accuracy of data, please make sure you have selected the right user profile when playing Kitkit School. For more information on how to create a user profile, please refer to our Kitkit School User Guide.<br/>
-                    It may take up to 24 hours for you to be able to view the uploaded data on the dashboard as our server processes all uploaded data once a day.
+                    The dashboard may not display the data immediately after the data upload. It may take up to 2 hours for our server to process all uploaded data.
                 </p>
             </div>
             <div class="qna">
