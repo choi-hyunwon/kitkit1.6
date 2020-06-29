@@ -52,7 +52,7 @@
                     <!-- // English -->
 
                     <!-- Swahili -->
-                    <div v-if="productType === 1" class="visualGuide row swahili">
+                    <div v-if="productType === 2" class="visualGuide row swahili">
 <!--                        <div class="col item">-->
 <!--                            <img class="logo logo-swh attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/>-->
 <!--                        </div>-->
@@ -104,7 +104,7 @@
                         </div>
 
                         <!-- English -->
-                        <div v-if="productType===1" class="packages">
+                        <div v-if="productType === 1" class="packages">
                             <div class="all">
                                 <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkitschool_EN.zip" download class="btn btn-primary btn-lg">
                                     Download All <b style="color:#5a3428; margin-left: 8px; font-family: 'Lato'">2.24GB</b>
@@ -135,7 +135,7 @@
                         </div>
 
                         <!-- Swahili -->
-                        <div v-if="productType===1" class="packages">
+                        <div v-if="productType === 2" class="packages">
                             <div class="all">
                                 <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkitschool_SW.zip" download class="btn btn-primary btn-lg">
                                     Download All <b style="color:#5a3428; margin-left: 8px; font-family: 'Lato'">2.27GB</b>
@@ -205,7 +205,7 @@
                     <!-- // English -->
 
                     <!-- Swahili -->
-                    <div v-if="productType === 1" class="visualGuide userGuide row swahili">
+                    <div v-if="productType === 2" class="visualGuide userGuide row swahili">
 <!--                        <div class="col item">-->
 <!--                            <img class="logo logo-swh attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/>-->
 <!--                        </div>-->

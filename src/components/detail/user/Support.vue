@@ -44,7 +44,7 @@
         </div>
 
         <!-- Swahili -->
-        <div v-if="productType===1" class="resource" style="margin-top: 30px">
+        <div v-if="productType === 2" class="resource" style="margin-top: 30px">
             <div class="logo-item"><img class="logo attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/></div>
             <div>
                 <div class="list clearfix">
@@ -80,49 +80,7 @@
                     </div>
                 </div>
             </div>
-<!--            <div class="row">-->
-<!--                <div class="col group">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col item">-->
-<!--                            <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/>-->
-<!--                        </div>-->
-<!--                        <div class="col item">-->
-<!--                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_Swahili.pdf" download target="_blank">-->
-<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
-<!--                                <p class="title">Swahili<br/>Installation<br/><b>Guide (PDF)</b></p>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                        <div class="col item">-->
-<!--                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_User_Guide_Swahili.pdf" download target="_blank">-->
-<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
-<!--                                <p class="title" style="padding-top: 14px;">Swahili User<br/><b>Guide (PDF)</b></p>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col group">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col item">-->
-<!--                            <a href="#" download target="_blank">-->
-<!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
-<!--                                <p class="title">Swahili Learning<br/>Assessment<br/><b>Guide (PDF)</b></p>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                        <div class="col item">-->
-<!--                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">-->
-<!--                                <font-awesome-icon :icon="['fab', 'youtube']"/>-->
-<!--                                <p class="title">Swahili<br/>Installation<br/><b>Guide Video</b></p>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                        <div class="col item">-->
-<!--                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">-->
-<!--                                <font-awesome-icon :icon="['fab', 'youtube']"/>-->
-<!--                                <p class="title" style="padding-top: 14px;">Swahili User<br/><b>Guide Video</b></p>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
+
         </div>
         <!-- // Guide -->
 
