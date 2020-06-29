@@ -36,9 +36,6 @@
                 <div class="detail">
                     <!-- English -->
                     <div v-if="productType === 1" class="visualGuide row">
-                        <div class="col item">
-                            <img class="logo logo-eng attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="86" width="200" alt="kitkit english text logo"/>
-                        </div>
                         <div class="item col">
                             <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
@@ -55,7 +52,7 @@
                     <!-- // English -->
 
                     <!-- Swahili -->
-                    <div v-if="productType === 2" class="visualGuide row swahili">
+                    <div v-if="productType === 1" class="visualGuide row swahili">
 <!--                        <div class="col item">-->
 <!--                            <img class="logo logo-swh attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/>-->
 <!--                        </div>-->
@@ -72,7 +69,7 @@
                             </a>
                         </div>
                         <div class="item col item-03">
-                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
+                            <a href="https://youtu.be/gahWmu22_2A" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title">Swahili<br/>Installation<br/><b>Guide Video</b></p>
                             </a>
@@ -105,9 +102,11 @@
                             <h2 v-if="productType===2" class="title">Swahili & Math</h2>
 
                         </div>
+
+                        <!-- English -->
                         <div v-if="productType===1" class="packages">
                             <div class="all">
-                                <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/kitkitschool_EN.zip" download class="btn btn-primary btn-lg">
+                                <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkitschool_EN.zip" download class="btn btn-primary btn-lg">
                                     Download All <b style="color:#5a3428; margin-left: 8px; font-family: 'Lato'">2.24GB</b>
                                 </a>
                             </div>
@@ -117,11 +116,11 @@
                                     <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkit_Installer_EN.apk" download class="btn btn-primary">Download</a>
                                 </li>
                                 <li class="item">
-                                    <span>Kitkit School Learning App : <b>848.7MB</b></span>
+                                    <span>Kitkit School Learning App : <b>849.7MB</b></span>
                                     <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkit_Learning_App_EN.apk" download class="btn btn-primary">Download</a>
                                 </li>
                                 <li class="item">
-                                    <span>Book Viewer : <b>29.8MB</b></span>
+                                    <span>Book Viewer : <b>30.7MB</b></span>
                                     <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkit_Book_Viewer_EN.apk" download class="btn btn-primary">Download</a>
                                 </li>
                                 <li class="item">
@@ -134,9 +133,11 @@
                                 </li>
                             </ul>
                         </div>
-                        <div v-if="productType===2" class="packages">
+
+                        <!-- Swahili -->
+                        <div v-if="productType===1" class="packages">
                             <div class="all">
-                                <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/kitkitschool_SW.zip" download class="btn btn-primary btn-lg">
+                                <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkitschool_SW.zip" download class="btn btn-primary btn-lg">
                                     Download All <b style="color:#5a3428; margin-left: 8px; font-family: 'Lato'">2.27GB</b>
                                 </a>
                             </div>
@@ -146,11 +147,11 @@
                                     <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkit_Installer_SW.apk" download class="btn btn-primary">Download</a>
                                 </li>
                                 <li class="item">
-                                    <span>Kitkit School Learning App : <b>732MB</b></span>
+                                    <span>Kitkit School Learning App : <b>733MB</b></span>
                                     <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkit_Learning_App_SW.apk" download class="btn btn-primary">Download</a>
                                 </li>
                                 <li class="item">
-                                    <span>Book Viewer : <b>29.8MB</b></span>
+                                    <span>Book Viewer : <b>30.7MB</b></span>
                                     <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkit_Book_Viewer_SW.apk" download class="btn btn-primary">Download</a>
                                 </li>
                                 <li class="item">
@@ -188,11 +189,8 @@
 
                     <!-- English -->
                     <div v-if="productType === 1" class="visualGuide userGuide row">
-                        <div class="col item">
-                            <img class="logo logo-eng attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="86" width="200" alt="kitkit english text logo"/>
-                        </div>
                         <div class="item col">
-                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
+                            <a href="https://youtu.be/ITfhUl8Qs8Q" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title">English User<br/><b>Guide Video</b></p>
                             </a>
@@ -207,13 +205,13 @@
                     <!-- // English -->
 
                     <!-- Swahili -->
-                    <div v-if="productType === 2" class="visualGuide userGuide row swahili">
+                    <div v-if="productType === 1" class="visualGuide userGuide row swahili">
 <!--                        <div class="col item">-->
 <!--                            <img class="logo logo-swh attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/>-->
 <!--                        </div>-->
 
                         <div class="item col item-01">
-                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
+                            <a href="https://youtu.be/ITfhUl8Qs8Q" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title">English User<br/><b>Guide Video</b></p>
                             </a>
@@ -225,7 +223,7 @@
                             </a>
                         </div>
                         <div class="item col item-03">
-                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
+                            <a href="https://youtu.be/CXrBG7shlRI" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title">Swahili User<br/><b>Guide Video</b></p>
                             </a>
@@ -379,8 +377,8 @@
     }
 
     .content .guide .detail .visualGuide {
-        min-width: 960px;
-        width: 960px;
+        min-width: 600px;
+        width: 600px;
         margin: 0 auto;
         padding: 20px 0;
     }
@@ -402,6 +400,23 @@
 
     .content .guide .detail .visualGuide .item:last-child {
         margin-right: 0;
+    }
+
+    @media (max-width: 1420px) {
+        .content .guide .detail .visualGuide {
+            min-width: 720px;
+        }
+
+        .content .guide .detail .visualGuide .item.col {
+            min-width: 170px;
+            width: 170px;
+        }
+        .content .guide .detail .visualGuide .item:first-child {
+            margin: 0 60px 0 100px;
+        }
+        .content .guide .detail .visualGuide .item:last-child {
+            margin: 0 100px 0 60px;
+        }
     }
 
     .content .guide .detail .visualGuide .item .logo-eng {
@@ -527,15 +542,5 @@
         font-weight: 400;
     }
     /* // Detail */
-
-    @media (max-width: 1420px) {
-        .content .guide .detail .visualGuide {
-            min-width: 800px;
-            width: 800px;
-        }
-        .content .guide .detail .visualGuide .item {
-            margin: 0 20px;
-        }
-    }
 </style>
 

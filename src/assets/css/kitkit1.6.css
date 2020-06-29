@@ -274,6 +274,11 @@ a:hover {
 }
 /* // ag-grid scroll bar */
 
+/* header with no value */
+.ag-theme-alpine .ag-header-group-cell.ag-header-group-cell-no-group .ag-header-cell-resize::after {
+  content: none;
+}
+
 /* datepicker */
 .input-group.date.vdp-datepicker {
 

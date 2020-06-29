@@ -3,6 +3,7 @@
 
         <!-- Guide -->
         <h2 class="title" style="margin-bottom: 30px;">Please first check these resources (manuals and tutorial videos):</h2>
+
         <!-- English -->
         <div class="resource">
             <div class="logo-item"><img class="logo attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="86" width="200" alt="kitkit english text logo"/></div>
@@ -15,49 +16,86 @@
                         </a>
                     </div>
                     <div class="item">
-                        <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_EN.pdf" download target="_blank">
+                        <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_User_Guide_EN.pdf" download target="_blank">
                             <font-awesome-icon :icon="['far', 'download']"/>
-                            <p class="title">English<br/>Installation<br/><b>Guide (PDF)</b></p>
+                            <p class="title" style="margin-top: 46px;">English User<br/><b>Guide (PDF)</b></p>
                         </a>
                     </div>
                     <div class="item">
-                        <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_EN.pdf" download target="_blank">
+                        <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Learning_Assessment_Guide_EN.pdf" download target="_blank">
                             <font-awesome-icon :icon="['far', 'download']"/>
-                            <p class="title">English<br/>Installation<br/><b>Guide (PDF)</b></p>
+                            <p class="title">English Learning<br/>Assessment<br/><b>Guide (PDF)</b></p>
                         </a>
                     </div>
                     <div class="item">
-                        <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_EN.pdf" download target="_blank">
-                            <font-awesome-icon :icon="['far', 'download']"/>
-                            <p class="title">English<br/>Installation<br/><b>Guide (PDF)</b></p>
+                        <a href="https://youtu.be/ZaB3FE2eRJk" download target="_blank">
+                            <font-awesome-icon :icon="['fab', 'youtube']"/>
+                            <p class="title">English<br/>Installation<br/><b>Guide Video</b></p>
                         </a>
                     </div>
                     <div class="item">
-                        <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_EN.pdf" download target="_blank">
-                            <font-awesome-icon :icon="['far', 'download']"/>
-                            <p class="title">English<br/>Installation<br/><b>Guide (PDF)</b></p>
+                        <a href="https://youtu.be/ITfhUl8Qs8Q" download target="_blank">
+                            <font-awesome-icon :icon="['fab', 'youtube']"/>
+                            <p class="title" style="margin-top: 46px;">English User<br/><b>Guide Video</b></p>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-<!--        <div class="resource">-->
+
+        <!-- Swahili -->
+        <div v-if="productType===1" class="resource" style="margin-top: 30px">
+            <div class="logo-item"><img class="logo attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/></div>
+            <div>
+                <div class="list clearfix">
+                    <div class="item">
+                        <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_Swahili.pdf" download target="_blank">
+                            <font-awesome-icon :icon="['far', 'download']"/>
+                            <p class="title">Swahili<br/>Installation<br/><b>Guide (PDF)</b></p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_User_Guide_Swahili.pdf" download target="_blank">
+                            <font-awesome-icon :icon="['far', 'download']"/>
+                            <p class="title" style="margin-top: 46px;">Swahili User<br/><b>Guide (PDF)</b></p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Learning_Assessment_Guide_Swahili.pdf" download target="_blank">
+                            <font-awesome-icon :icon="['far', 'download']"/>
+                            <p class="title">Swahili Learning<br/>Assessment<br/><b>Guide (PDF)</b></p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://youtu.be/gahWmu22_2A" download target="_blank">
+                            <font-awesome-icon :icon="['fab', 'youtube']"/>
+                            <p class="title">Swahili<br/>Installation<br/><b>Guide Video</b></p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://youtu.be/CXrBG7shlRI" download target="_blank">
+                            <font-awesome-icon :icon="['fab', 'youtube']"/>
+                            <p class="title" style="margin-top: 46px;">Swahili User<br/><b>Guide Video</b></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
 <!--            <div class="row">-->
 <!--                <div class="col group">-->
 <!--                    <div class="row">-->
 <!--                        <div class="col item">-->
-<!--                            <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="86" width="200" alt="kitkit english text logo"/>-->
+<!--                            <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/>-->
 <!--                        </div>-->
 <!--                        <div class="col item">-->
-<!--                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_EN.pdf" download target="_blank">-->
+<!--                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_Swahili.pdf" download target="_blank">-->
 <!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
-<!--                                <p class="title">English<br/>Installation<br/><b>Guide (PDF)</b></p>-->
+<!--                                <p class="title">Swahili<br/>Installation<br/><b>Guide (PDF)</b></p>-->
 <!--                            </a>-->
 <!--                        </div>-->
 <!--                        <div class="col item">-->
-<!--                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_User_Guide_EN.pdf" download target="_blank">-->
+<!--                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_User_Guide_Swahili.pdf" download target="_blank">-->
 <!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
-<!--                                <p class="title" style="padding-top: 14px;">English User<br/><b>Guide (PDF)</b></p>-->
+<!--                                <p class="title" style="padding-top: 14px;">Swahili User<br/><b>Guide (PDF)</b></p>-->
 <!--                            </a>-->
 <!--                        </div>-->
 <!--                    </div>-->
@@ -67,70 +105,24 @@
 <!--                        <div class="col item">-->
 <!--                            <a href="#" download target="_blank">-->
 <!--                                <font-awesome-icon :icon="['far', 'download']"/>-->
-<!--                                <p class="title">English Learning<br/>Assessment<br/><b>Guide (PDF)</b></p>-->
+<!--                                <p class="title">Swahili Learning<br/>Assessment<br/><b>Guide (PDF)</b></p>-->
 <!--                            </a>-->
 <!--                        </div>-->
 <!--                        <div class="col item">-->
 <!--                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">-->
 <!--                                <font-awesome-icon :icon="['fab', 'youtube']"/>-->
-<!--                                <p class="title">English<br/>Installation<br/><b>Guide Video</b></p>-->
+<!--                                <p class="title">Swahili<br/>Installation<br/><b>Guide Video</b></p>-->
 <!--                            </a>-->
 <!--                        </div>-->
 <!--                        <div class="col item">-->
 <!--                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">-->
 <!--                                <font-awesome-icon :icon="['fab', 'youtube']"/>-->
-<!--                                <p class="title" style="padding-top: 14px;">English User<br/><b>Guide Video</b></p>-->
+<!--                                <p class="title" style="padding-top: 14px;">Swahili User<br/><b>Guide Video</b></p>-->
 <!--                            </a>-->
 <!--                        </div>-->
 <!--                    </div>-->
 <!--                </div>-->
 <!--            </div>-->
-<!--        </div>-->
-        <div v-if="productType===2" class="resource" style="margin-top: 30px">
-            <!-- Swahili -->
-            <div class="row">
-                <div class="col group">
-                    <div class="row">
-                        <div class="col item">
-                            <img class="logo attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/>
-                        </div>
-                        <div class="col item">
-                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_Installation_Guide_Swahili.pdf" download target="_blank">
-                                <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title">Swahili<br/>Installation<br/><b>Guide (PDF)</b></p>
-                            </a>
-                        </div>
-                        <div class="col item">
-                            <a href="https://web.kitkitschool.com/Download/Guide/Kitkit_School_User_Guide_Swahili.pdf" download target="_blank">
-                                <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title" style="padding-top: 14px;">Swahili User<br/><b>Guide (PDF)</b></p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col group">
-                    <div class="row">
-                        <div class="col item">
-                            <a href="#" download target="_blank">
-                                <font-awesome-icon :icon="['far', 'download']"/>
-                                <p class="title">Swahili Learning<br/>Assessment<br/><b>Guide (PDF)</b></p>
-                            </a>
-                        </div>
-                        <div class="col item">
-                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
-                                <font-awesome-icon :icon="['fab', 'youtube']"/>
-                                <p class="title">Swahili<br/>Installation<br/><b>Guide Video</b></p>
-                            </a>
-                        </div>
-                        <div class="col item">
-                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
-                                <font-awesome-icon :icon="['fab', 'youtube']"/>
-                                <p class="title" style="padding-top: 14px;">Swahili User<br/><b>Guide Video</b></p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <!-- // Guide -->
 
