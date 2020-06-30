@@ -2,7 +2,7 @@
     <div class="content support">
 
         <!-- Guide -->
-        <h2 class="title" style="margin-bottom: 30px;">Please first check these resources (manuals and tutorial videos):</h2>
+        <h2 class="title" style="margin-bottom: 30px;">Guides and Tutorial Videos</h2>
 
         <!-- English -->
         <div class="resource">
@@ -28,13 +28,13 @@
                         </a>
                     </div>
                     <div class="item">
-                        <a href="https://youtu.be/ZaB3FE2eRJk" download target="_blank">
+                        <a href="https://youtu.be/LbS90kiYcaU" download target="_blank">
                             <font-awesome-icon :icon="['fab', 'youtube']"/>
                             <p class="title">English<br/>Installation<br/><b>Guide Video</b></p>
                         </a>
                     </div>
                     <div class="item">
-                        <a href="https://youtu.be/ITfhUl8Qs8Q" download target="_blank">
+                        <a href="https://youtu.be/wQg50ImGN68" download target="_blank">
                             <font-awesome-icon :icon="['fab', 'youtube']"/>
                             <p class="title" style="margin-top: 46px;">English User<br/><b>Guide Video</b></p>
                         </a>
@@ -67,13 +67,13 @@
                         </a>
                     </div>
                     <div class="item">
-                        <a href="https://youtu.be/gahWmu22_2A" download target="_blank">
+                        <a href="https://youtu.be/PjkQTNkNHTU" download target="_blank">
                             <font-awesome-icon :icon="['fab', 'youtube']"/>
                             <p class="title">Swahili<br/>Installation<br/><b>Guide Video</b></p>
                         </a>
                     </div>
                     <div class="item">
-                        <a href="https://youtu.be/CXrBG7shlRI" download target="_blank">
+                        <a href="https://youtu.be/4hm_ubVkmXg" download target="_blank">
                             <font-awesome-icon :icon="['fab', 'youtube']"/>
                             <p class="title" style="margin-top: 46px;">Swahili User<br/><b>Guide Video</b></p>
                         </a>
@@ -100,6 +100,7 @@
                 </div>
                     </a>
                 <p class="answer">
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     Kitkit School is designed to operate on Android tablet devices only.
                 </p>
             </div>
@@ -114,11 +115,13 @@
                 </div>
                     </a>
                 <p class="answer">
-                    Go to the Settings app on the tablet to find your device information.<br/>
-                    - For Android OS versions, go to About Tablet or System menu.<br/>
-                    - For Storage, go to the Storage menu.<br/>
-                    - For Memory, go to the Memory menu.<br/>
-                    The Settings app can differ by manufacturers. Contact your manufacturer for more information.
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
+                    Go to the Settings app on your tablet.<br/>
+                    <span class="depth-02">i.</span> For Android OS versions, go to About Tablet or System menu.<br/>
+                    <span class="depth-02">ii.</span> For Storage, go to the Storage menu.<br/>
+                    <span class="depth-02">iii.</span> For Memory, go to the Memory menu. <br/>
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
+                    The Settings app may look different for tablets made by different manufacturers. Contact your manufacturer for more information.
                 </p>
             </div>
             <div class="qna">
@@ -127,12 +130,14 @@
 
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                        <div class="text">Do I need to download all files from the list for installation?</div>
+                        <div class="text">Which files do I need to download?</div>
 
                 </div>
                     </a>
                 <p class="answer">
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     You must download all files listed on our download page. Click “Download All” to download all files at once.<br/>
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     “Installer” app can be deleted on the tablet after you have successfully installed Kitkit School.
                 </p>
             </div>
@@ -147,7 +152,8 @@
                 </div>
                     </a>
                 <p class="answer">
-                    If you have a stable internet connection, it is possible to download the installation files to your tablet device. However, if you are downloading to be installed for multiple devices, we recommend using a PC to download the files and then move them to the tablet devices.
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
+                    If you have a stable internet connection, it is possible to download the installation files to your tablet device. However, if you plan to install Kitkit School on multiple devices, we recommend using a computer to download the files once and then copying them to the tablet devices.
                 </p>
             </div>
 
@@ -159,12 +165,13 @@
 
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                        <div class="text">Can I install Kitkit School to multiple numbers of tablet devices?</div>
+                        <div class="text">Can I install Kitkit School to multiple tablet devices?</div>
 
                 </div>
                     </a>
                 <p class="answer">
-                    During the sign-up process, you should have indicated the number of licenses. You can install Kitkit School as long as it does not exceed the number. In terms of users per device, you can add up to 100 users per device.
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
+                    Yes. You can install Kitkit School on as many devices as the number of licenses you have indicated during the sign-up process.
                 </p>
             </div>
             <div class="qna">
@@ -173,19 +180,20 @@
 
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                        <div class="text">Installation is not completed.</div>
+                        <div class="text">I could not complete the installation properly.</div>
 
                 </div>
                     </a>
                 <p class="answer">
-                    First, please check your device specification. It must meet below minimum requirements:<br/>
-                    - Minimum OS version: Android <span style="font-weight: 600" class="yale">6.0</span><br/>
-                    - Storage: <span style="font-weight: 600" class="yale">16GB</span> with <span style="font-weight: 600" class="yale">6GB</span> available space<br/>
-                    - RAM: <span style="font-weight: 600" class="yale">1.8GB</span><br/>
-                    Check if you have downloaded all files listed on the page and are moved to your tablet device. When you have all files, the installer app will show
-                    a yellow icon next to each file name.<br/>
-                    Check if you have an error message. Depending on the device, the installation may not be successful due to a lack of storage or RAM memory.
-                    If there is not enough space, free up space, or find another device that meets the minimum requirements.
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
+                    First, check if your devices meet below minimum requirements:<br/>
+                    <span class="depth-02">i.</span> Minimum OS version: Android <span style="font-weight: 600" class="yale">6.0</span><br/>
+                    <span class="depth-02">ii.</span> Storage: <span style="font-weight: 600" class="yale">16GB</span> with <span style="font-weight: 600" class="yale">6GB</span> available space<br/>
+                    <span class="depth-02">iii.</span> RAM: <span style="font-weight: 600" class="yale">1.8GB</span><br/>
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
+                    If your tablet does not meet the above minimum requirements, the installer should give you an error message. Check this error message to identify what requirements you are missing. If there is not enough storage space, free up space, or find another device that meets the minimum requirements.<br/>
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
+                    Make sure you have downloaded the entire installation package (all five installation files on the Download page) and have copied it onto your tablet device. If you have all files, the installer app will show a yellow arrow next to each file name.
                 </p>
             </div>
             <div class="qna">
@@ -194,11 +202,12 @@
 
                         <font-awesome-icon class="icon closed" :icon="['fal', 'chevron-circle-right']"/>
                         <font-awesome-icon class="icon open" :icon="['fal', 'chevron-circle-down']"/>
-                        <div class="text">I would like to modify the number of licenses I requested.</div>
+                        <div class="text">Can I get more licenses?</div>
 
                 </div>
                     </a>
                 <p class="answer">
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     Please send an email to <a class="email" href="mailto:kitkitsupport@enuma.com">kitkitsupport@enuma.com</a> with your account information such as your name, ID, email address, and organization.
                 </p>
             </div>
@@ -216,6 +225,7 @@
                 </div>
                     </a>
                 <p class="answer">
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     Yes. You can still use other applications other than Kitkit School.
                 </p>
             </div>
@@ -230,6 +240,7 @@
                 </div>
                     </a>
                 <p class="answer">
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     Yes. You can add up to 100 users to one tablet device. You can check how to add or remove users from the user guide manuals.
                 </p>
             </div>
@@ -244,6 +255,7 @@
                 </div>
                     </a>
                 <p class="answer">
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     No. The user data will be stored on the device being used and cannot be transferred.
                 </p>
             </div>
@@ -259,9 +271,13 @@
                     </div>
                 </a>
                 <p class="answer">
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     “Dashboard” is where you can view or download the data related to the learners' progress such as the current game level they are working on, scores on learning assessments, and detailed logs of daily user activities.<br/>
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     In order to use the Dashboard functionality, the data from the tablet needs to be uploaded to our server. Please refer to the section on “How do I upload the data?” for more information. When the data has been uploaded to our server, you can see how the registered users on the tablet have been using the Kitkit School.<br/>
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     Data is available by individual users. In order to ensure the accuracy of data, please make sure you have selected the right user profile when playing Kitkit School. For more information on how to create a user profile, please refer to our Kitkit School User Guide.<br/>
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     The dashboard may not display the data immediately after the data upload. It may take up to 2 hours for our server to process all uploaded data.
                 </p>
             </div>
@@ -274,7 +290,9 @@
                     </div>
                 </a>
                 <p class="answer">
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     Once the data from the tablets are uploaded to our server, you will be able to find the user information, total playtime (in minutes), the latest courses that the users have played in literacy and math, and the test scores from pre- and post-tests.<br/>
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     You can download the data as shown on the dashboard by clicking the “Download Dashboard Data” button. You can also download user-specific “Individual Log Data” by clicking the first name of the user. The downloaded data will be saved to your computer as a CSV file.
                 </p>
             </div>
@@ -287,13 +305,17 @@
                 </div>
                     </a>
                 <p class="answer">
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     Kitkit School automatically uploads the data to our server when the tablet device is connected to the internet. If you are using Kitkit School in an offline environment, you can bring your tablet devices to a location where you can establish a secure internet connection for the tablets. Once your tablets are connected to the internet securely, they will automatically upload the data to our server.<br/>
-                    It may take up to 24 hours for you to be able to view the uploaded data on the dashboard as our server processes all uploaded data once a day.<br/>
-                    If automatic data upload does not work, you can manually upload the data by following the below steps:<br/>
-                    - Go to the “Teacher Menu” and enter 2021 as a password.<br/>
-                    - Press the “Settings” button.<br/>
-                    - Press the “Administration” button. When asked to enter a password, enter 5241.<br/>
-                    - Press the “Upload Log Data” button.<br/>
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
+                    The dashboard may not display the data immediately after the data upload. It could take up to 2 hours for our server to process all uploaded data.<br/>
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
+                    If your tablet does not upload the data automatically, you can manually upload the data by following the below steps:<br/>
+                    <span class="depth-02">ii.</span> Go to the “Teacher Menu” and enter 2021 as a password.
+                    <span class="depth-02">ii.</span> Press the “Settings” button.<br/>
+                    <span class="depth-02">iii.</span> Press the “Administration” button. When asked to enter a password, enter 5241.<br/>
+                    <span class="depth-02">iv.</span> Press the “Upload Log Data” button.<br/>
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     It is recommended that you regularly update your data to our server.
                 </p>
             </div>
@@ -311,7 +333,16 @@
                 </div>
                     </a>
                 <p class="answer">
-                    Please check if all files from the download page are fully installed on the tablet device. Go to the Settings app and find the “Applications” menu and find a list of all apps installed. You should be able to find “Kitkit School”, “Kikit School Learning App”, “Kitkit Book Viewer”, and “Kikit Book Data”.<br/>The issue may be temporary. Exit the app and relaunch the app. Try restarting the device by turning off and on.
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
+                    The issue may be temporary. Try the following and see if the issue is resolved.<br/>
+                    <span class="depth-02">i.</span> Exit the app and then relaunch the app.<br/>
+                    <span class="depth-02">ii.</span> Restart the device by turning off and on.<br/>
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
+                    If the above does not resolve the issue, check if all installation files have been properly installed by following the below steps:<br/>
+                    <span class="depth-02">i.</span> Go to the Settings app - Applications menu.<br/>
+                    <span class="depth-02">ii.</span> Check if you have the following apps in the list of apps installed on the tablet:<br/>
+                    <i class="depth-03"> </i> “Kitkit School”, “Kikit School Learning App”, “Kitkit Book Viewer”, and “Kikit Book Data”.<br/>
+                    <span class="depth-02">iii.</span> If any of these apps are missing, run the installer again to install all missing apps.
                 </p>
             </div>
             <div class="qna">
@@ -325,8 +356,10 @@
                 </div>
                     </a>
                 <p class="answer">
-                    Usually the screen display time is set to 30 seconds or less by default. If the user is not active the screen will turn off after the default screen display time.<br/>
-                    Kitkit school is a learning app and users may not touch the screen while exploring some contents for a longer time. It is recommended that you change the screen display time to over 10 minutes. Go to the Settings app and find a display setting menu to change.
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
+                    Most tablets are set to turn off the screen if the user does not touch the screen for a set period of time.<br/>
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
+                    Kitkit school is a learning app, and users may not touch the screen while exploring some contents for a longer time. To allow ample amount of time for users to explore Kitkit School’s contents, it is recommended that you change the screen display time to over 10 minutes. You can do this from the Settings app - display setting menu.
                 </p>
             </div>
             <div class="qna">
@@ -340,10 +373,16 @@
                 </div>
                     </a>
                 <p class="answer last">
-                    You may have to reinstall Kitkit School apps if the above troubleshooting steps do not resolve the issue.<br/>
-                    Before installing Kitkit School again, please remove all existing applications.<br/>
-                    Go to the Settings app and find the “Applications” menu and find a list of all apps installed. You should be able to find “Kitkit School”, “Kikit School Learning App”, “Kitkit Book Viewer”, and “Kikit Book Data”. Click each one of them and tap “Uninstall”, and remove all apps.<br/>
-                    Download and move the files from PC to tablet and stall installation process, by referring to the installation guide.
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
+                    You may have to reinstall Kitkit School apps if other troubleshooting attempts do not resolve the issue.<br/>
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
+                    Before installing Kitkit School again, make sure to uninstall all Kitkit School apps first.<br/>
+                    <span class="depth-02">i.</span> Go to the Settings app - Applications menu.<br/>
+                    <span class="depth-02">ii.</span> Find the following apps from the list of apps installed on the tablet:<br/>
+                    <i class="depth-03"> </i> “Kitkit School”, “Kikit School Learning App”, “Kitkit Book Viewer”, and “Kikit Book Data”.<br/>
+                    <span class="depth-02">iii.</span> Click each one of them and tap “Uninstall” to remove the app.<br/>
+                    <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
+                    Reinstall Kitkit School by carefully following all the steps in the installation guide.
                 </p>
             </div>
         </div>
@@ -408,6 +447,11 @@
         text-align: center;
         margin: 0 20px 10px;
     }
+    .support .resource .item > a {
+        display: block;
+        height: 100%;
+    }
+
     .support .resource .item svg {
         color: #0c6290;
         font-size: 80px;
@@ -485,13 +529,14 @@
             left: 51px;
         }
         .support .resource .list {
-            max-width: 870px;
+            max-width: 890px;
+            padding-left: 260px;
         }
         .support .resource .list .item {
             min-width: 160px;
         }
         .support .resource .logo-item:after {
-            right: -41px;
+            right: -28px;
         }
     }
 
@@ -561,6 +606,34 @@
     }
     .support .faq .qna .answer.last {
         padding-bottom: 6px;
+    }
+    .support .faq .qna .answer .depth-01 {
+        margin-right: 5px;
+        font-size: 16px;
+    }
+    .support .faq .qna .answer .depth-02 {
+        padding-left: 20px;
+        font-size: 20px;
+        letter-spacing: -1px;
+        display: inline-block;
+        width: 36px;
+        text-align: right;
+        margin-right: 5px;
+    }
+    .support .faq .qna .answer .depth-03 {
+        position: relative;
+        padding-left: 40px;
+        padding-right: 15px;
+    }
+    .support .faq .qna .answer .depth-03:before {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 3px;
+        background-color: #333;
+        top: 10px;
+        letter-spacing: 0;
     }
     .support .faq .qna.active .answer {
         display: block;

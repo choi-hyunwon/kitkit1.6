@@ -55,7 +55,7 @@
                                     <span class="col-label-text">Name *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <ValidationProvider name="Name" :rules="{required: true, regex: alpha_num_spaces, max: 40}" v-slot="{ errors }">
+                                    <ValidationProvider name="Name" :rules="{required: true, regex: alpha_special_num_spaces, max: 40}" v-slot="{ errors }">
                                         <input type="text"
                                                class="form-control"
                                                :class="{'is-invalid' : errors[0]}"
@@ -111,7 +111,7 @@
                                     <span class="col-label-text">Organization Type *</span>
                                 </label>
                                 <div class="col col-form-input">
-                                    <ValidationProvider name="Organization Type" :rules="{required: true, regex: alpha_num_spaces, max: 40}" v-slot="{ errors }">
+                                    <ValidationProvider name="Organization Type" :rules="{required: true, regex: alpha_special_num_spaces, max: 40}" v-slot="{ errors }">
                                         <input type="text"
                                                class="form-control"
                                                :class="{'is-invalid' : errors[0]}"
@@ -300,7 +300,8 @@
                     contactName : ''
                 },
                 datePickerHover: false,
-                alpha_num_spaces: /^[a-zA-Z0-9\s]+$/
+                alpha_num_spaces: /^[a-zA-Z0-9\s]+$/,
+                alpha_special_num_spaces: /^[a-zA-Z0-9/,\s]+$/
             }
         },
         created(){

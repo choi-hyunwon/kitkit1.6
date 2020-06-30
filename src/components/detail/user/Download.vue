@@ -7,12 +7,12 @@
             <li class="precedence">
                 <div class="summary">
                     <div class="num">1.</div>
-                    <div class="text">Before downloading, please prepare a PC and a tablet device and check the minimum device specification</div>
+                    <div class="text">Prepare a computer and a tablet device and check the minimum device specification.</div>
                 </div>
                 <div class="detail">
                     <ul class="list">
-                        <li class="item">First step is to prepare a PC to download the install package and a tablet device to install Kitkit School. </li>
-                        <li class="item">Download the install package to your PC and move the files to tablet devices to install. </li>
+                        <li class="item">First step is to prepare a computer to download the install package and a tablet device to install Kitkit School.</li>
+                        <li class="item">Download the install package to your computer and move the files to tablet devices to install.</li>
                         <li class="item">If you are installing Kitkit School to multiple devices, using an SD card is more efficient.</li>
                         <li class="item" style="margin: 30px 0;">Kitkit School works on Android tablet devices. Below are the minimum specification requirements for the tablets:
                             <p class="spec">
@@ -21,7 +21,7 @@
                                 - RAM: <span class="yale">1.8GB</span>
                             </p>
                         </li>
-                        <li class="item">You "can" check your device spec in the Settings app, under About Tablet and Storage menu.</li>
+                        <li class="item">You can check your device spec in the Settings app, under About Tablet and Storage menu.</li>
                     </ul>
                 </div>
             </li>
@@ -31,13 +31,13 @@
             <li>
                 <div class="summary">
                     <div class="num">2.</div>
-                    <div class="text">Please look through the guides (PDF and video tutorials) before downloading the install package.</div>
+                    <div class="text">Watch and read the installation guides below.</div>
                 </div>
                 <div class="detail">
                     <!-- English -->
                     <div v-if="productType === 1" class="visualGuide row">
                         <div class="item col">
-                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
+                            <a href="https://youtu.be/LbS90kiYcaU" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title">English<br/>Installation<br/><b>Guide Video</b></p>
                             </a>
@@ -57,7 +57,7 @@
 <!--                            <img class="logo logo-swh attachment-full size-full" src="../../../assets/img/common/logo_Swahili.png" height="71" width="200" alt="kitkit swahili text logo"/>-->
 <!--                        </div>-->
                         <div class="item col item-01">
-                            <a href="https://youtu.be/ZaB3FE2eRJk" target="_blank">
+                            <a href="https://youtu.be/LbS90kiYcaU" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title">English<br/>Installation<br/><b>Guide Video</b></p>
                             </a>
@@ -69,7 +69,7 @@
                             </a>
                         </div>
                         <div class="item col item-03">
-                            <a href="https://youtu.be/gahWmu22_2A" target="_blank">
+                            <a href="https://youtu.be/PjkQTNkNHTU" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title">Swahili<br/>Installation<br/><b>Guide Video</b></p>
                             </a>
@@ -91,7 +91,7 @@
             <li class="packageList">
                 <div class="summary">
                     <div class="num">3.</div>
-                    <div class="text">Download the install package (all files) to your PC or SD Card.</div>
+                    <div class="text">Download the install package (all files) to your computer.</div>
                 </div>
                 <div class="detail">
                     <div>
@@ -173,9 +173,9 @@
             <li>
                 <div class="summary">
                     <div class="num">4.</div>
-                    <div class="text">Move the downloaded files from PC to your tablet device and install.</div>
+                    <div class="text">Move the downloaded files from computer to your tablet device and install.</div>
                 </div>
-                <span style="font-size: 24px; padding-left: 60px;">Please refer to the guides (PDF and videos) for detailed guidance.</span>
+                <span style="font-size: 24px; padding-left: 60px;">Please refer to the installation guides for detailed guidance.</span>
             </li>
             <!-- // 4. -->
 
@@ -183,14 +183,14 @@
             <li>
                 <div class="summary" style="padding-top: 50px;">
                     <div class="num">5.</div>
-                    <div class="text">If you have successfully installed Kitkit School, please refer to user guide manuals and video tutorials to start playing Kitkit School.</div>
+                    <div class="text">If you have successfully installed Kitkit School, please refer to user guide and video tutorials to start playing Kitkit School.</div>
                 </div>
                 <div class="detail">
 
                     <!-- English -->
                     <div v-if="productType === 1" class="visualGuide userGuide row">
                         <div class="item col">
-                            <a href="https://youtu.be/ITfhUl8Qs8Q" target="_blank">
+                            <a href="https://youtu.be/wQg50ImGN68" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title">English User<br/><b>Guide Video</b></p>
                             </a>
@@ -211,7 +211,7 @@
 <!--                        </div>-->
 
                         <div class="item col item-01">
-                            <a href="https://youtu.be/ITfhUl8Qs8Q" target="_blank">
+                            <a href="https://youtu.be/wQg50ImGN68" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title">English User<br/><b>Guide Video</b></p>
                             </a>
@@ -223,7 +223,7 @@
                             </a>
                         </div>
                         <div class="item col item-03">
-                            <a href="https://youtu.be/CXrBG7shlRI" target="_blank">
+                            <a href="https://youtu.be/4hm_ubVkmXg" target="_blank">
                                 <font-awesome-icon :icon="['fab', 'youtube']"/>
                                 <p class="title">Swahili User<br/><b>Guide Video</b></p>
                             </a>
@@ -245,7 +245,7 @@
             <li>
                 <div class="summary" style="padding-bottom: 50px;">
                     <div class="num">6.</div>
-                    <div class="text">Please go to the Support page for more information on download, installation, and using Kitkit School</div>
+                    <div class="text">If you have more questions on downloading, installing or using Kitkit School, please see the FAQ on the Support page for more information.</div>
                 </div>
             </li>
             <!-- // 6. -->

@@ -2,7 +2,7 @@
     <div class="content gridView">
         <div v-if="status === 'user'" class="userInfo">
             <span class="text">
-                License Used (Number of Tablet Being Used) : <b>{{account.licenseUsed}}</b>
+                License Used (Number of Tablets Being Used) : <b>{{account.licenseUsed}}</b>
             </span>
             <div class="vertalLine"></div>
             <span class="text">
