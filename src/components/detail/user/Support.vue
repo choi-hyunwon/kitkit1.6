@@ -272,9 +272,9 @@
                 </a>
                 <p class="answer">
                     <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
-                    “Dashboard” is where you can view or download the data related to the learners' progress such as the current game level they are working on, scores on learning assessments, and detailed logs of daily user activities.<br/>
+                    The “dashboard” is where you can view or download the data related to the learners' progress such as the current game level they are working on, scores on learning assessments, and detailed logs of daily user activities.<br/>
                     <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
-                    In order to use the Dashboard functionality, the data from the tablet needs to be uploaded to our server. Please refer to the section on “How do I upload the data?” for more information. When the data has been uploaded to our server, you can see how the registered users on the tablet have been using the Kitkit School.<br/>
+                    In order to use the dashboard functionality, the data from the tablet needs to be uploaded to our server. Please refer to the section on “How do I upload the data?” for more information. When the data has been uploaded to our server, you can see how the registered users on the tablet have been using the Kitkit School.<br/>
                     <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     Data is available by individual users. In order to ensure the accuracy of data, please make sure you have selected the right user profile when playing Kitkit School. For more information on how to create a user profile, please refer to our Kitkit School User Guide.<br/>
                     <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
@@ -311,7 +311,7 @@
                     The dashboard may not display the data immediately after the data upload. It could take up to 2 hours for our server to process all uploaded data.<br/>
                     <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     If your tablet does not upload the data automatically, you can manually upload the data by following the below steps:<br/>
-                    <span class="depth-02">ii.</span> Go to the “Teacher Menu” and enter 2021 as a password.
+                    <span class="depth-02">i.</span> Go to the “Teacher Menu” and enter 2021 as a password.<br/>
                     <span class="depth-02">ii.</span> Press the “Settings” button.<br/>
                     <span class="depth-02">iii.</span> Press the “Administration” button. When asked to enter a password, enter 5241.<br/>
                     <span class="depth-02">iv.</span> Press the “Upload Log Data” button.<br/>
