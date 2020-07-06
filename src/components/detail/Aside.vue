@@ -104,7 +104,7 @@
         height: 30px;
         background-color: #be8720;
         color: #fff;
-        font-family: 'Lato';
+        font-family: 'Lato-Regular';
         font-weight: normal;
         line-height: 0;
     }
@@ -138,7 +138,7 @@
         z-index: 100;
         margin-top: 8.5px;
         line-height: 29px;
-        font-family: 'Lato';
+        font-family: 'Lato-Regular';
         font-weight: 400;
     }
 
@@ -148,7 +148,7 @@
     }
 
     .doc-aside .menu .item.active .text {
-        font-family: 'Lato';
+        font-family: 'Lato-Regular';
         font-weight: 900;
     }
 
