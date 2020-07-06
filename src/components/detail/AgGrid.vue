@@ -420,7 +420,7 @@
     }
 
     .content.gridView .userInfo .text {
-        font-family: 'Lato';
+        font-family: 'Lato-Regular';
         letter-spacing: -0.9px;
         font-size: 28px;
         line-height: 34px;
