@@ -23,13 +23,15 @@ export const store = new Vuex.Store({
             status : '',
             sessionID : '',
             access : false,
-            loginID : ''
+            loginID : '',
+            haveToGetAgreement: false
         },
         global: {
             status : localStorage.getItem('status') !== null ? localStorage.getItem('status') : '',
             sessionID : localStorage.getItem('sessionID') !== null ? localStorage.getItem('sessionID') : '',
             access : false,
-            loginID : ''
+            loginID : '',
+            haveToGetAgreement : false
         },
         accountInit : {
             lastUpdate: '',
@@ -76,7 +78,10 @@ export const store = new Vuex.Store({
         },
         getProductType : state => {
             return state.account.productType
-        }
+        },
+        getAgreement : state => {
+            return state.global.haveToGetAgreement
+        },
     },
     /**
      * global로 사용하는 Mutations

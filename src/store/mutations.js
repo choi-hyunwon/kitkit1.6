@@ -53,5 +53,15 @@ export const mutations = {
      */
     setAccountInfo(state, accountInfo) {
         state.account = Object.assign({}, state.account, accountInfo, {access : true});
-    }
+    },
+
+    /**
+     * 약관 동의 상태 값을 세팅한다.
+     *
+     * @param state
+     * @param {String} agreement
+     */
+    setAgreement(state, agreement) {
+        state.global.haveToGetAgreement = agreement;
+    },
 };

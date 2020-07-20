@@ -121,4 +121,18 @@ export default class KitkitApi {
             })
         })
     }
+
+    /**
+     *
+     * <br> - {String}       sessionID        - 로그인 시 전달받은 sessionID
+     *
+     */
+    postAgreement() {
+        return this.request('/getAgreement', {
+            method: 'post',
+            data: qs.stringify({
+                sessionID : store.getters.getSessionID,
+            })
+        })
+    }
 }

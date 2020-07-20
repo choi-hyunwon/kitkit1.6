@@ -1,5 +1,6 @@
 <template>
     <div class="content">
+        <TermCheck>
         <!-- Download Guide -->
         <ul class="guide">
 
@@ -251,16 +252,24 @@
             <!-- // 6. -->
 
         </ul>
+        </TermCheck>
     </div>
 </template>
 
 <script>
-    import {mapActions, mapGetters} from 'vuex'
-
-    import axios from 'axios'
+    import {mapActions, mapMutations, mapGetters} from 'vuex'
+    import TermCheck from "../../popup/TermCheck";
 
     export default {
         name: 'download',
+        components : {
+            TermCheck
+        },
+        created(){
+            this.$EventBus.$on('eventTermCheck', () => {
+                this.fetchAgreement();
+            });
+        },
         mounted(){
             if(!this.account.access)this.fetchAccountInfo();
         },
@@ -272,14 +281,28 @@
         },
         methods : {
             ...mapActions({
-                postAccountInfo : 'postAccountInfo'
+                postAccountInfo : 'postAccountInfo',
+                postAgreement : 'postAgreement'
+            }),
+            ...mapMutations({
+                setAgreement : 'setAgreement'
             }),
             fetchAccountInfo(){
                 this.postAccountInfo()
                     .then((data) => {
                         console.log(`postAccountInfoResult : ${data.result}`);
                     })
+            },
+            fetchAgreement(){
+                this.postAgreement()
+                    .then((data) => {
+                        console.log(`postAgreementResult : ${data.result}`);
+                        this.setAgreement(!data.result);
+                    })
             }
+        },
+        beforeDestroy () {
+            this.$EventBus.$off('eventTermCheck')
         }
     }
 </script>

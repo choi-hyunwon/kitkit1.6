@@ -88,4 +88,16 @@ export const actions = {
             return data;
         })
     },
+
+    /**
+     * 약관 동의 정보를 전달 한다.
+     *
+     * @param commit
+     *
+     */
+    postAgreement({commit}) {
+        return kitkitApi.postAgreement().then(data =>{
+            return data;
+        })
+    }
 };

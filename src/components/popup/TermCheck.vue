@@ -44,8 +44,9 @@
                 </div>
             </template>
 
-            <template #modal-footer="{ ok }">
-                <b-button size="sm" variant="primary" @click="ok()">OK</b-button>
+            <template  #modal-footer="{ ok, cancel }">
+                <b-button size="sm" variant="secondary" @click="cancel()">Cancel</b-button>
+                <b-button size="sm" variant="primary" @click="eventTermCheck">OK</b-button>
             </template>
 
         </b-modal>
@@ -53,6 +54,7 @@
 </template>
 
 <script>
+    import {mapGetters} from 'vuex'
     import {BModal, VBModal, BButton} from 'bootstrap-vue'
 
     export default {
@@ -66,12 +68,24 @@
         },
         data: function() {
             return {
-                showTermCheck: true
+                showTermCheck: false
             }
+        },
+        computed: {
+            ...mapGetters({
+                getAgreement : 'getAgreement'
+            })
+        },
+        mounted () {
+          this.showTermCheck = this.getAgreement;
         },
         methods: {
             toggleTermCheck: function() {
                 this.showTermCheck = !this.showTermCheck;
+            },
+            eventTermCheck :function () {
+                this.showTermCheck = false;
+                this.$EventBus.$emit('eventTermCheck')
             }
         }
     }
