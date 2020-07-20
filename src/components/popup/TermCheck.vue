@@ -195,4 +195,10 @@
     .termsCollection footer.modal-footer.kitkit-modal-footer {
         padding-bottom: 40px;
     }
+
+    .termsCollection footer.modal-footer.kitkit-modal-footer .btn {
+        font-family: 'Lato-Regular';
+        font-weight: bold;
+        width: 380px;
+    }
 </style>
