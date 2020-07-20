@@ -391,7 +391,7 @@
         <!-- Contact Us -->
         <h2 class="title" style="margin-top: 32px;">Contact Us</h2>
         <div class="contactInfo">
-            Please send us an email with a description of the issue, in addition to your account information (your id, name, email address, and organization) to <a class="email" href="mailto:kitkitsupport@enuma.com">kitkitsupport@enuma.com</a>
+            Please send us an email with a description of the issue including any relevant screenshots or videos as helpful, in addition to your account information (your name, your Kitkit School ID, email address, and organization) to <a class="email" href="mailto:kitkitsupport@enuma.com">kitkitsupport@enuma.com</a>
         </div>
         <!-- // Contact Us -->
     </div>
