@@ -5,10 +5,10 @@
                  size="lg"
                  modal-class="termsCollection"
                  footer-class="kitkit-modal-footer"
-                 v-model="showTermCheck">
-            <template #modal-header="{ close }">
+                 v-model="showTermCheck"
+                 no-close-on-backdrop>
+            <template #modal-header="">
                 <h2 class="modal-title">Terms on Data Collection</h2>
-                <button type="button" class="close" @click="close()"><span aria-hidden="true">×</span></button>
             </template>
             <template #default>
                 <h3 class="subtitle">Terms on Data Collection</h3>
@@ -23,18 +23,15 @@
                         <div class="index">b)</div>
                         <div class="text">you have obtained the necessary consents from legal guardians of the students.</div>
                     </div>
-
                     <p class="detail">
                         If you do not want us to collect personally identifiable information on your students, please use non-personally identifiable usernames for student profiles. You can also take photos for student profiles which provides a user interface tool for ease of usability. We do not collect such photos; they remain solely on the devices locally.
                     </p>
-
                     <p class="detail">
                         We only collect information that is necessary for our services. We do not sell or rent information, nor do we create profiles on students for advertising. All information collected from the app is for our legitimate purposes to provide you and your students a better user and learning experience. We may also use your email address to communicate with you about our services and respond to you when you contact us.
                     </p>
                 </div>
-
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <input type="checkbox" v-model="termCheck" class="custom-control-input" id="customCheck1">
                     <label class="custom-control-label" for="customCheck1">
                         I understand and accept the above and Enuma’s
                         <a class="link" target="_blank" href="https://enuma.com/tos/">Terms of Service</a>
@@ -44,8 +41,7 @@
                 </div>
             </template>
 
-            <template  #modal-footer="{ ok, cancel }">
-                <b-button size="sm" variant="secondary" @click="cancel()">Cancel</b-button>
+            <template  #modal-footer="">
                 <b-button size="sm" variant="primary" @click="eventTermCheck">OK</b-button>
             </template>
 
@@ -68,7 +64,8 @@
         },
         data: function() {
             return {
-                showTermCheck: false
+                showTermCheck: false,
+                termCheck : false
             }
         },
         computed: {
@@ -84,8 +81,12 @@
                 this.showTermCheck = !this.showTermCheck;
             },
             eventTermCheck :function () {
-                this.showTermCheck = false;
-                this.$EventBus.$emit('eventTermCheck')
+                if(!this.termCheck){
+                    alert('agree to the terms of service please');
+                }else{
+                    this.showTermCheck = false;
+                    this.$EventBus.$emit('eventTermCheck')
+                }
             }
         }
     }
