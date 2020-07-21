@@ -82,7 +82,7 @@
             },
             eventTermCheck :function () {
                 if(!this.termCheck){
-                    alert('agree to the terms of service please');
+                    alert('Kitkit School can be downloaded after agreeing to the terms on data collection.');
                 }else{
                     this.showTermCheck = false;
                     this.$EventBus.$emit('eventTermCheck')
