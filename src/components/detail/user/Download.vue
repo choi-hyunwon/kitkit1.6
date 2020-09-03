@@ -17,7 +17,7 @@
                         <li class="item">If you are installing Kitkit School to multiple devices, using an SD card is more efficient.</li>
                         <li class="item" style="margin: 30px 0;">Kitkit School works on Android tablet devices. Below are the minimum specification requirements for the tablets:
                             <p class="spec">
-                                - Minimum OS version: <span class="yale">Android 6.0</span><br/>
+                                - Supported OS version: <span class="yale">Android 6.0 - Android 9.0</span><br/>
                                 - Storage: <span class="yale">16GB</span> with <span class="yale">6GB</span> available space<br/>
                                 - RAM: <span class="yale">1.8GB</span>
                             </p>
@@ -107,30 +107,30 @@
                         <!-- English -->
                         <div v-if="productType === 1" class="packages">
                             <div class="all">
-                                <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkitschool_EN.zip" download class="btn btn-primary btn-lg">
+                                <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkitschool_EN_1.6.2.zip" download class="btn btn-primary btn-lg">
                                     Download All <b style="color:#5a3428; margin-left: 8px; font-family: 'Lato-Regular'">2.24GB</b>
                                 </a>
                             </div>
                             <ul class="list">
                                 <li class="item">
                                     <span>Kitkit School Installer : <b>7MB</b></span>
-                                    <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkit_Installer_EN.apk" download class="btn btn-primary">Download</a>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkit_Installer_EN_1.6.2.apk" download class="btn btn-primary">Download</a>
                                 </li>
                                 <li class="item">
                                     <span>Kitkit School Learning App : <b>849.7MB</b></span>
-                                    <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkit_Learning_App_EN.apk" download class="btn btn-primary">Download</a>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkit_Learning_App_EN_1.6.2.apk" download class="btn btn-primary">Download</a>
                                 </li>
                                 <li class="item">
                                     <span>Book Viewer : <b>30.7MB</b></span>
-                                    <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkit_Book_Viewer_EN.apk" download class="btn btn-primary">Download</a>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkit_Book_Viewer_EN_1.6.2.apk" download class="btn btn-primary">Download</a>
                                 </li>
                                 <li class="item">
                                     <span>Book Data : <b>1.42GB</b></span>
-                                    <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkit_Book_Data_EN.apk" download class="btn btn-primary">Download</a>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkit_Book_Data_EN_1.6.2.apk" download class="btn btn-primary">Download</a>
                                 </li>
                                 <li class="item">
                                     <span>Kitkit School : <b>32.2MB</b></span>
-                                    <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkit_School_EN.apk" download class="btn btn-primary">Download</a>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/English_and_Math/Kitkit_School_EN_1.6.2.apk" download class="btn btn-primary">Download</a>
                                 </li>
                             </ul>
                         </div>
@@ -138,30 +138,30 @@
                         <!-- Swahili -->
                         <div v-if="productType === 2" class="packages">
                             <div class="all">
-                                <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkitschool_SW.zip" download class="btn btn-primary btn-lg">
+                                <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkitschool_SW_1.6.2.zip" download class="btn btn-primary btn-lg">
                                     Download All <b style="color:#5a3428; margin-left: 8px; font-family: 'Lato-Regular'">2.27GB</b>
                                 </a>
                             </div>
                             <ul class="list">
                                 <li class="item">
                                     <span>Kitkit School Installer : <b>7MB</b></span>
-                                    <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkit_Installer_SW.apk" download class="btn btn-primary">Download</a>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkit_Installer_SW_1.6.2.apk" download class="btn btn-primary">Download</a>
                                 </li>
                                 <li class="item">
                                     <span>Kitkit School Learning App : <b>733MB</b></span>
-                                    <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkit_Learning_App_SW.apk" download class="btn btn-primary">Download</a>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkit_Learning_App_SW_1.6.2.apk" download class="btn btn-primary">Download</a>
                                 </li>
                                 <li class="item">
                                     <span>Book Viewer : <b>30.7MB</b></span>
-                                    <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkit_Book_Viewer_SW.apk" download class="btn btn-primary">Download</a>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkit_Book_Viewer_SW_1.6.2.apk" download class="btn btn-primary">Download</a>
                                 </li>
                                 <li class="item">
                                     <span>Book Data : <b>1.55GB</b></span>
-                                    <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkit_Book_Data_SW.apk" download class="btn btn-primary">Download</a>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkit_Book_Data_SW_1.6.2.apk" download class="btn btn-primary">Download</a>
                                 </li>
                                 <li class="item">
                                     <span>Kitkit School : <b>32.2MB</b></span>
-                                    <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkit_School_SW.apk" download class="btn btn-primary">Download</a>
+                                    <a href="https://web.kitkitschool.com/Download/Installer/Swahili_and_Math/Kitkit_School_SW_1.6.2.apk" download class="btn btn-primary">Download</a>
                                 </li>
                             </ul>
                         </div>

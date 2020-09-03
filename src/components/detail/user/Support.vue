@@ -187,7 +187,7 @@
                 <p class="answer">
                     <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     First, check if your devices meet below minimum requirements:<br/>
-                    <span class="depth-02">i.</span> Minimum OS version: Android <span style="font-weight: 600" class="yale">6.0</span><br/>
+                    <span class="depth-02">i.</span> Supported OS version: Android <span style="font-weight: 600" class="yale">6.0</span> - Android <span style="font-weight: 600" class="yale">9.0</span><br/>
                     <span class="depth-02">ii.</span> Storage: <span style="font-weight: 600" class="yale">16GB</span> with <span style="font-weight: 600" class="yale">6GB</span> available space<br/>
                     <span class="depth-02">iii.</span> RAM: <span style="font-weight: 600" class="yale">1.8GB</span><br/>
                     <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
