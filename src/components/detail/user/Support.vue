@@ -2,8 +2,10 @@
     <div class="content support">
 
         <!-- Guide -->
-        <h2 class="title" style="margin-bottom: 30px;">Guides and Tutorial Videos</h2>
-
+      <h2 class="title" style="margin-bottom: 30px;">Orientation in 10 minutes</h2>
+      <div class="sub-title"><font-awesome-icon  :icon="['fab', 'youtube']"/>
+        <a href="https://youtu.be/HqAR5BK78RM" target="_blank" style="display: inline-block; vertical-align: middle;">Kikit School's learning approach and field usage</a></div>
+      <h2 class="title" style="margin-bottom: 30px;">Guides and Tutorial Videos</h2>
         <!-- English -->
         <div class="resource">
             <div class="logo-item"><img class="logo attachment-full size-full" src="../../../assets/img/common/logo_English.png" height="86" width="200" alt="kitkit english text logo"/></div>
@@ -189,7 +191,7 @@
                     First, check if your devices meet below minimum requirements:<br/>
                     <span class="depth-02">i.</span> Supported OS version: Android <span style="font-weight: 600" class="yale">6.0</span> - Android <span style="font-weight: 600" class="yale">9.0</span><br/>
                     <span class="depth-02">ii.</span> Storage: <span style="font-weight: 600" class="yale">16GB</span> with <span style="font-weight: 600" class="yale">6GB</span> available space<br/>
-                    <span class="depth-02">iii.</span> RAM: <span style="font-weight: 600" class="yale">1.8GB</span><br/>
+                    <span class="depth-02">iii.</span> RAM: <span style="font-weight: 600" class="yale">2.0GB (minimum 1.7GB)</span><br/>
                     <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
                     If your tablet does not meet the above minimum requirements, the installer should give you an error message. Check this error message to identify what requirements you are missing. If there is not enough storage space, free up space, or find another device that meets the minimum requirements.<br/>
                     <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
@@ -545,6 +547,20 @@
 
 
     /* FAQ */
+    .support .sub-title {
+      font-size: 50px;
+
+    }
+    .support .sub-title a{
+      vertical-align: middle;
+      margin-left: 10px;
+
+    }
+    .support .sub-title .fa-youtube {
+      vertical-align: middle;
+    }
+
+
     .support .faq .subtitle {
         font-size: 32px;
         line-height: 39px;
