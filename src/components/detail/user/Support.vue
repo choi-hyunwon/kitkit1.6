@@ -548,13 +548,16 @@
 
     /* FAQ */
     .support .sub-title {
-      font-size: 50px;
-
+      margin-bottom: 70px;
+    }
+    .support .sub-title svg {
+      font-size: 40px;
+      line-height: 40px ;
     }
     .support .sub-title a{
       vertical-align: middle;
       margin-left: 10px;
-
+      line-height: 40px ;
     }
     .support .sub-title .fa-youtube {
       vertical-align: middle;
