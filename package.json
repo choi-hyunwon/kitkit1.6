@@ -3,11 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "serve:dev": "vue-cli-service serve --mode dev",
-    "serve:prod": "vue-cli-service serve --mode prod",
-    "build:dev": "npm run clean:distZip && vue-cli-service build --mode build-dev",
-    "build:prod": "npm run clean:distZip && vue-cli-service build --mode build-prod",
-    "clean:distZip": "run-script-os",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "fontawesome-pro" : "npm config set \"//npm.fontawesome.com/:_authToken\" 805BDB06-0B0E-48D6-A761-61C314D95F29"
   },

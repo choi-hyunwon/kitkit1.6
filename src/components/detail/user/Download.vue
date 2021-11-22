@@ -97,7 +97,7 @@
                 <div class="detail">
                     <div>
                         <div class="header">
-                            <img width="116" height="62" src="https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng.png" class="logo attachment-full size-full" rcset="https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng.png 500w, https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng-300x156.png 300w" sizes="(max-width: 500px) 100vw, 500px" alt="kitkit school logo"/>
+                            <img width="116" height="62" src="~@/assets/img/common/kitkitlogo.png" class="logo attachment-full size-full" alt="kitkit school logo"/>
 
                             <h2 v-if="productType===1" class="title">English & Math</h2>
                             <h2 v-if="productType===2" class="title">Swahili & Math</h2>
