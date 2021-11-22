@@ -138,15 +138,36 @@
                     {headerName: 'Pre-Test Literacy', groupId : 'preTestLGroup',
                         children : [
                             {headerName: 'Test Date', field: 'PretestLDate',filter: 'agDateColumnFilter', width: 155},
-                            {headerName: 'Score', field: 'PretestLScore',filter: 'agNumberColumnFilter', width: 125}]},
+                            {headerName: 'Score', field: 'PretestLScore',filter: 'agNumberColumnFilter', width: 125,
+                              cellRenderer: function(params) {
+                                if (params.value.split('/')[0] === "0") {
+                                  return "0/0"
+                                } else {
+                                  return params.value
+                                }
+                              }}]},
                     {headerName: 'Pre-Test Math', groupId : 'preTestMGroup',
                         children : [
                             {headerName: 'Test Date', field: 'PretestMDate',filter: 'agDateColumnFilter', width: 155},
-                            {headerName: 'Score', field: 'PretestMScore',filter: 'agNumberColumnFilter', width: 125}]},
+                            {headerName: 'Score', field: 'PretestMScore',filter: 'agNumberColumnFilter', width: 125,
+                              cellRenderer: function(params) {
+                                if (params.value.split('/')[0] === "0") {
+                                  return "0/0"
+                                } else {
+                                  return params.value
+                                }
+                              }}]},
                     {headerName: 'Post-Test Literacy', groupId : 'postTestLGroup',
                         children : [
                             {headerName: 'Test Date', field: 'posttestLDate',filter: 'agDateColumnFilter', width: 155},
-                            {headerName: 'Score', field: 'posttestLScore',filter: 'agNumberColumnFilter', width: 125}]},
+                            {headerName: 'Score', field: 'posttestLScore',filter: 'agNumberColumnFilter', width: 125,
+                              cellRenderer: function(params) {
+                                if (params.value.split('/')[0] === "0") {
+                                  return "0/0"
+                                } else {
+                                  return params.value
+                                }
+                              }}]},
                     {headerName: 'Post-Test Math', groupId : 'postTestMGroup',
                         children : [
                             {headerName: 'Test Date', field: 'posttestMDate',filter: 'agDateColumnFilter', width: 155},
