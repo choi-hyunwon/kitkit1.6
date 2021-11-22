@@ -303,13 +303,13 @@
             },
             processDashboardData(data){
                 data.forEach((array) => {
-                    array.startTime = array.startTime && this.$moment(new Date(array.startTime)).format('YYYY.MM.DD');
-                    array.endTime = array.endTime && this.$moment(new Date(array.endTime)).format('YYYY.MM.DD');
-                    array.PretestLDate =  array.PretestLDate && this.$moment(new Date(array.PretestLDate)).format('YYYY.MM.DD');
-                    array.PretestMDate =  array.PretestMDate && this.$moment(new Date(array.PretestMDate)).format('YYYY.MM.DD');
-                    array.posttestLDate =  array.posttestLDate && this.$moment(new Date(array.posttestLDate)).format('YYYY.MM.DD');
-                    array.posttestMDate = array.posttestMDate && this.$moment(new Date(array.posttestMDate)).format('YYYY.MM.DD');
-                    array.lastUpdate= array.lastUpdate && this.$moment(new Date(array.lastUpdate)).format('YYYY.MM.DD HH:mm:ss');
+                    array.startTime = array.startTime && this.$moment(array.startTime).format('YYYY.MM.DD');
+                    array.endTime = array.endTime && this.$moment(array.endTime).format('YYYY.MM.DD');
+                    array.PretestLDate =  array.PretestLDate && this.$moment(array.PretestLDate).format('YYYY.MM.DD');
+                    array.PretestMDate =  array.PretestMDate && this.$moment(array.PretestMDate).format('YYYY.MM.DD');
+                    array.posttestLDate =  array.posttestLDate && this.$moment(array.posttestLDate).format('YYYY.MM.DD');
+                    array.posttestMDate = array.posttestMDate && this.$moment(array.posttestMDate).format('YYYY.MM.DD');
+                    array.lastUpdate= array.lastUpdate && this.$moment(array.lastUpdate).format('YYYY.MM.DD HH:mm:ss');
 
 
                 });
