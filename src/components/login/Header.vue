@@ -5,7 +5,7 @@
             <div class="bg-header">
                 <div class="container-fluid">
                     <router-link to="/">
-                        <img width="500" height="260" src="https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng.png" class="logo attachment-full size-full" rcset="https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng.png 500w, https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng-300x156.png 300w" sizes="(max-width: 500px) 100vw, 500px" alt="kitkit school logo"/>
+                        <img width="500" height="260" src="~@/assets/img/common/kitkitlogo.png" class="logo attachment-full size-full"  alt="kitkit school logo"/>
                     </router-link>
                     <h1 class="title">Admin</h1>
                 </div>

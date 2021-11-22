@@ -2,7 +2,7 @@
     <aside class="doc-aside">
         <div class="header">
             <router-link to="/">
-                <img width="116" height="62" src="https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng.png" class="logo attachment-full size-full" rcset="https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng.png 500w, https://kitkitschool.com/wp-content/uploads/2019/08/cropped-kitkitlogo_eng-300x156.png 300w" sizes="(max-width: 500px) 100vw, 500px" alt="kitkit school logo"/>
+                <img width="116" height="62" src="~@/assets/img/common/kitkitlogo.png" class="logo attachment-full size-full"  alt="kitkit school logo"/>
             </router-link>
             <button @click="eventSignOut" class="btn signout">
                 Sign out <font-awesome-icon :icon="['fal', 'sign-out-alt']"/>
