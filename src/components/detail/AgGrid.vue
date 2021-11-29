@@ -171,7 +171,14 @@
                     {headerName: 'Post-Test Math', groupId : 'postTestMGroup',
                         children : [
                             {headerName: 'Test Date', field: 'posttestMDate',filter: 'agDateColumnFilter', width: 155},
-                            {headerName: 'Score', field: 'posttestMScore',filter: 'agNumberColumnFilter', width: 125}]},
+                            {headerName: 'Score', field: 'posttestMScore',filter: 'agNumberColumnFilter', width: 125,
+                              cellRenderer: function(params) {
+                                if (params.value.split('/')[0] === "0") {
+                                  return "0/0"
+                                } else {
+                                  return params.value
+                                }
+                              }}]},
                 ];
             }else if (this.status === 'admin'){
                 this.columnDefs = [

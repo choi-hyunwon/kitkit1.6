@@ -3872,7 +3872,7 @@ input[type=search]:disabled + .btn-search {
   background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
 .card-header:first-child {
-  border-radius: calc(none - 1px) calc(none - 1px) 0 0; }
+  border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0; }
 .card-header + .list-group .list-group-item:first-child {
   border-top: 0; }
 
@@ -3881,7 +3881,7 @@ input[type=search]:disabled + .btn-search {
   background-color: rgba(0, 0, 0, 0.03);
   border-top: 1px solid rgba(0, 0, 0, 0.125); }
 .card-footer:last-child {
-  border-radius: 0 0 calc(none - 1px) calc(none - 1px); }
+  border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px); }
 
 .card-header-tabs {
   margin-right: -0.9375rem;
