@@ -29,7 +29,7 @@
                     Kitkit School has many data points that enable data-based monitoring
                     and provide insight into the users progress. If user data collection is an
                     important factor in your project or research, contact our team at
-                    <a class="email" href="mailto:kitkitSupport@enuma.com">kitkitSupport@enuma.com</a>.
+                    <a class="email" href="mailto:Kitkit@enuma.com">Kitkit@enuma.com</a>.
                 </p>
 
             </template>

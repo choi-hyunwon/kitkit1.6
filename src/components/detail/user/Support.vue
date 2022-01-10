@@ -210,7 +210,7 @@
                     </a>
                 <p class="answer">
                     <font-awesome-icon class="icon depth-01" :icon="['fal', 'genderless']"/>
-                    Please send an email to <a class="email" href="mailto:kitkitsupport@enuma.com">kitkitsupport@enuma.com</a> with your account information such as your name, ID, email address, and organization.
+                    Please send an email to <a class="email" href="mailto:Kitkit@enuma.com">Kitkit@enuma.com</a> with your account information such as your name, ID, email address, and organization.
                 </p>
             </div>
 
@@ -393,7 +393,7 @@
         <!-- Contact Us -->
         <h2 class="title" style="margin-top: 32px;">Contact Us</h2>
         <div class="contactInfo">
-          For technical issues, please fill out this <a class="email" href="https://docs.google.com/spreadsheets/d/1vKu8AG29PLyDDScK6OZV-YAwMfmhtixst8oUOGVrImA/edit#gid=1435412393">google form</a> to provide all relevant detail. We will get in touch with you within a few days.
+          For technical issues, please fill out this <a class="email" target="_blank" href="https://docs.google.com/spreadsheets/d/1vKu8AG29PLyDDScK6OZV-YAwMfmhtixst8oUOGVrImA/edit#gid=1435412393">google form</a> to provide all relevant detail. We will get in touch with you within a few days.
           <br>
           For any other inquiries, please contact us at <a class="email" href="mailto:Kitkit@enuma.com">Kitkit@enuma.com</a>.
         </div>

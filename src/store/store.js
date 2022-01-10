@@ -29,9 +29,9 @@ export const store = new Vuex.Store({
         global: {
             status : localStorage.getItem('status') !== null ? localStorage.getItem('status') : '',
             sessionID : localStorage.getItem('sessionID') !== null ? localStorage.getItem('sessionID') : '',
-            access : false,
-            loginID : '',
-            haveToGetAgreement : false
+            access : true,
+            loginID : 'pororoadmin',
+            haveToGetAgreement : true
         },
         accountInit : {
             lastUpdate: '',

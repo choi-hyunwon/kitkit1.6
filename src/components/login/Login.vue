@@ -60,7 +60,7 @@
                 account : '',
                 password: '',
                 tipData: '<span>Please send your account information (your name, email address, and organization) '
-                       + 'to <a class="email" href="mailto:kitkitsupport@enuma.com">kitkitsupport@enuma.com</a> and we will respond to you with the ID and Password.</span>'
+                       + 'to <a class="email" href="mailto:Kitkit@enuma.com">Kitkit@enuma.com</a> and we will respond to you with the ID and Password.</span>'
             }
         },
         props : {

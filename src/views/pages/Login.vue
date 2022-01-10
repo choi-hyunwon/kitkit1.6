@@ -30,7 +30,7 @@
         mounted(){
             if (this.access) {
                 if(this.status === 'admin') this.$router.push({path: '/Manage'});
-                else this.$router.push({path: '/Download'});
+                else this.$router.push({path: '/Dashboard'});
             }
         },
         computed: {
@@ -54,7 +54,7 @@
                             this.signInError = false;
                             this.setLoginID(signIn.account);
                             if (this.status === 'admin') this.$router.push({path: '/Manage'});
-                            else if (this.status === 'user') this.$router.push({path: '/Download'});
+                            else if (this.status === 'user') this.$router.push({path: '/Dashboard'});
                         }else this.signInError = true;
                     })
             }
