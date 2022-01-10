@@ -45,9 +45,6 @@
                     icon : 'user-check'
                 }],
                 userMenu : [{
-                    title : 'Download',
-                    icon : 'download'
-                },{
                     title : 'Dashboard',
                     icon : 'desktop'
                 },{

@@ -393,7 +393,9 @@
         <!-- Contact Us -->
         <h2 class="title" style="margin-top: 32px;">Contact Us</h2>
         <div class="contactInfo">
-            Please send us an email with a description of the issue including any relevant screenshots or videos as helpful, in addition to your account information (your name, your Kitkit School ID, email address, and organization) to <a class="email" href="mailto:kitkitsupport@enuma.com">kitkitsupport@enuma.com</a>
+          For technical issues, please fill out this <a class="email" href="https://docs.google.com/spreadsheets/d/1vKu8AG29PLyDDScK6OZV-YAwMfmhtixst8oUOGVrImA/edit#gid=1435412393">google form</a> to provide all relevant detail. We will get in touch with you within a few days.
+          <br>
+          For any other inquiries, please contact us at <a class="email" href="mailto:Kitkit@enuma.com">Kitkit@enuma.com</a>.
         </div>
         <!-- // Contact Us -->
     </div>
